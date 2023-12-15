@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+        .nav-item{
+            width: 80px;
+            text-align: center;
+        }
+        input:focus{
+            outline: none;
+        }
+        .header_btn:hover{
+            transform: scale(1.2);
+        }
+        .slick-slide{
+            transform: scale(0.8);
+            transition: all 0.4 ease-in-out;
+            opacity: 0.5;
+        }
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+        .slick-center{
+            transform: scale(1.2);
+            opacity: 1;
+        }
+        .quiz_worldCup li{
+            float: left;
+            margin-right: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        .quiz_worldCup label{
+            cursor: pointer;
+        }
+        .quiz_worldCup label:hover{
+            transform: scale(1.1);
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <br>
+        <div class="row">
+
+            <div class="col">
+                <a href="#"><img src="sampleImg/로고셈플.png" style="height: 50px; width: 230px;" alt=""></a>
+            </div>
+            <div class="col">
+                <ul class="nav justify-content-end mainBanner">
+                    <div style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                    <li class="nav-item">
+                      <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;" alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: black; margin-top: 25px;">
+        <br><br>
+    </div>
+    <div class="container-fluid" style="background-color: black; height: auto;">
+        <div class="mainSlide" style="vertical-align: bottom;">
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인1.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인2.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인3.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인4.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인5.jpg" alt=""></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="sampleImg/메인6.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="background-color: black; color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-8">
+                    <ul class="quiz_worldCup" style="list-style: none;">
+                        <li>
+                            <label for="" data-bs-toggle="modal" data-bs-target="#fan_worldCup">팬월드컵</label>
+                        </li>
+                        <li>
+                            <label for="" data-bs-toggle="modal" data-bs-target="#quiz">Quiz</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+
+<!--메인페이지 모달-->
+<!--팬월드컵 모달-->
+  <!-- Modal -->
+  <div class="modal fade" id="fan_worldCup" tabindex="-1" aria-labelledby="fan_worldCup" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">팬월드컵</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body worldCup">
+            <center>
+                <h1>23년 12월 1주차</h1>
+                <p id="cal"></p>
+                <img id="image" onclick="change(0)">
+                <img id="images" onclick="change(1)">
+                <script>
+                    text ="";
+                    var images=[];
+                    var sImages = [];
+                    
+                    var cnt=0;
+                    var num=0;
+                    var sNum = 0;
+                    var cnt2=0;
+            
+                    function show(){
+            
+                        for(i=0; i<6; i++)
+                        {
+                            images[i]= "sampleImg/메인"+(i+1)+".jpg";
+                        }
+                        images.sort(function(a,b){return 0.5- Math.random()});
+                        showImg(num);
+                    }
+            
+                    show(0);
+            
+                    function showImg(num){
+                        document.getElementById('image').src=images[num];
+                        document.getElementById('images').src=images[num+1];
+                        cnt2++;
+                    }
+            
+                    function change(n){
+                        if(cnt2<20)
+                        {
+                            cnt++;
+                            if(n == 0)
+                                sImages[sNum++] = images[num];
+                            else
+                                sImages[sNum++] = images[num+1];
+                            num+=2;
+            
+                            showImg(num);
+            
+                            if(cnt == images.length/2){
+                                for(i=0; i<sImages.length; i++){
+                                    images[i] = sImages[i];
+                                    sImages[i] = null;
+                                }
+                                images.splice(cnt);
+                                cnt = 0;
+                                num = 0;
+                                sNum = 0;
+                                showImg(num);
+                            }
+                        }
+                    }
+                    document.getElementById('cal').innerHTML=text;
+                </script>
+                </center>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!--퀴즈 모달-->
+  <div class="modal fade" id="quiz" tabindex="-1" aria-labelledby="quiz" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Wekeend Quiz</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--script 부분-->
+<script>
+    $(()=>{
+        $('.mainSlide').slick({
+            infinite:true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            speed: 500,
+            autoplaySpeed: 1500,
+            infinite: true,
+            autoplay: true,
+            centerMode: true,
+            centerPadding:"0",
+            pauseOnHover: true,
+            draggable: true,
+        });
+    })
+
+    $(()=>{
+        $('.slick-prev.slick-arrow').css("display", "none");
+        $('.slick-next.slick-arrow').css("display", "none");
+    });
+</script>
+
+
+
+
+    
+</body>
+</html>
