@@ -30,6 +30,72 @@
             padding: 0;
         }
 
+        /* following list 영역 css */
+        .following_list_area .fl_content {
+            position: relative;
+            width: 100%;
+            padding: 10px 40px;
+            border: 1px solid hsl(0, 0%, 80%);
+            border-radius: 15px;
+            background: #f7f7fa;
+        }
+
+        .following_list_area .fl_content .arrow {
+            position: absolute;
+            top: 60px;
+            padding: 0;
+            background: transparent;
+            border-radius: 15px;
+            border: none;
+            font-size: 24px;
+            line-height: 24px;
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+
+        .following_list_area .fl_content .arrow i {
+            width: 18px;
+            height: 18px;
+        }
+
+        .following_list_area .fl_content .prev {
+            left: 7px;
+        }
+
+        .following_list_area .fl_content .next {
+            right: 7px;
+        }
+
+        .following_list_area .fl_content .fl_list {
+            /*width: 390px;*/
+            overflow: hidden;
+        }
+
+        .following_list_area .fl_content .fl_list ul {
+            height: 130px;
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin-left 250ms;
+            font-size: 0;
+        }
+
+        .following_list_area .fl_content .fl_list ul li {
+            display: inline-block;
+            padding: 10px;
+            width: 128.35px;
+        }
+
+        .following_list_area .fl_content .fl_list ul li img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* following list 영역 css 끝 */
+
         /* 스타 순위 css */
         .ranking_area>#selected_area>div>select {
             width: auto;
@@ -94,49 +160,50 @@
         .ranking_area .card-body .card-text span {
             color: black;
         }
+
         /* 스타 순위 css 끝 */
 
         /* 스타가 남긴 글 css */
-        #from_star_area {
+        #star_remain_area {
             padding: 30px 0px;
         }
 
-        #fs_content {
+        #sr_content {
             overflow: auto;
         }
 
-        #fs_content>div {
+        #sr_content>div {
             float: left;
         }
 
-        #fs_title * {
+        #sr_title * {
             display: inline-block;
         }
 
-        #fs_title span {
+        #sr_title span {
             background-color: black;
             color: #fff;
             font-size: small;
             margin-bottom: 3%;
         }
 
-        #fs_title strong {
+        #sr_title strong {
             margin-bottom: 10%;
         }
 
-        #fs_content {
+        #sr_content {
             position: relative;
             width: 1100px;
             padding: 10px 40px;
             border-radius: 15px;
         }
 
-        #fs_list {
+        #sr_list {
             width: 900px;
             overflow: hidden;
         }
 
-        #fs_list ul {
+        #sr_list ul {
             height: 150px;
             width: 9999px;
             margin: 0;
@@ -146,60 +213,61 @@
             font-size: 0;
         }
 
-        #fs_list ul li {
+        #sr_list ul li {
             display: inline-block;
             width: 267px;
             height: 145px;
             margin-left: 33px;
         }
 
-        #fs_list .profile {
+        #sr_list .profile {
             float: left;
         }
 
-        #fs_list .profile img {
+        #sr_list .profile img {
             width: 54px;
             height: 54px;
             border-radius: 50%;
         }
 
-        #fs_list .msg {
+        #sr_list .msg {
             background-color: #fff;
             border-radius: 50px;
-            width: 220px;
+            width: 208px;
             height: 96px;
             padding: 16px 30px;
             margin: 32px 0px 0px 44px;
         }
 
-        #fs_list .msg:hover {
+        #sr_list .msg:hover {
             cursor: pointer;
             box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-        #fs_list * {
+        #sr_list * {
             color: black;
         }
 
-        #fs_list .msg .nickname {
+        #sr_list .msg .nickname {
             font-size: medium;
         }
 
-        #fs_list .msg p {
+        #sr_list .msg p {
             margin: 0px;
         }
 
-        #fs_list .msg .content {
+        #sr_list .msg .content {
             font-size: medium;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        #fs_list .msg .date {
+        #sr_list .msg .date {
             font-size: small;
             color: #999;
         }
+
         /* 스타가 남긴 글 css 끝 */
 
         /* 랭킹 3등 ~ 9등 css */
@@ -291,6 +359,7 @@
         .ranking_card .box_item>div>.card-text span {
             color: black;
         }
+
         /* 랭킹 3등 ~ 9등 css */
 
         /* 아티스트 추천 css */
@@ -348,6 +417,7 @@
             font-weight: 800;
             font-size: larger;
         }
+
         /* 아티스트 추천 css 끝 */
 
         /* footer css */
@@ -394,15 +464,91 @@
             font-weight: 500;
             color: #8e8e8e;
         }
-        /* footer css 끝 */
 
+        /* footer css 끝 */
     </style>
 
 </head>
 
 <body>
     <br><br><br><br><br><br><br><br>
+
+    <!-- following list 영역  -->
     <div class="container-fluid">
+        <div class="container following_list_area">
+            <h4 class="font-weight-bolder">My Followings</h4>
+            <div id="fl_content" class="fl_content">
+                <button class="arrow prev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="fl_list">
+                    <ul style="height: auto;">
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
+                        </li>
+                        <li><img
+                                src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
+                        </li>
+
+                    </ul>
+                </div>
+                <button class="arrow next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <!-- following list 영역 끝  -->
+
+        <br>
+
         <!-- 1, 2, 3 등 영역 -->
         <div class="container ranking_area">
             <div id="selected_area">
@@ -538,20 +684,20 @@
 
         <br><br>
         <!-- 스타가 남긴 글 -->
-        <div class="jumbotron jumbotron-fluid" id="from_star_area">
+        <div class="jumbotron jumbotron-fluid" id="star_remain_area">
             <div class="container">
-                <div id="fs_content" class="fs_content">
-                    <div id="fs_title">
+                <div id="sr_content" class="sr_content">
+                    <div id="sr_title">
                         <span>&nbsp;FROM. STAR&nbsp;</span>
                         <br>
                         공식 팬 카페
                         <br>
                         <strong>스타가 남긴 글</strong>
                         <br>
-                        <button class="btn btn-light prev">&lt;</button>
-                        <button class="btn btn-light next">&gt;</button>
+                        <button class="btn btn-light prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn btn-light next"><i class="fas fa-chevron-right"></i></button>
                     </div>
-                    <div id="fs_list">
+                    <div id="sr_list">
                         <ul>
                             <li>
                                 <div class="profile">
@@ -1251,6 +1397,62 @@
 
     <!-- footer 끝 -->
     <script>
+
+
+        $(window).on('resize load', function () { // 창 사이즈 변경 또는 창이 로딩 됐을 때 실행
+            /* following list 영역 */
+            // following list => fl 
+            let fl_width = 128.35; // image width
+            let fl_list_length = $(".fl_list").width(); // list 영역의 동적 길이
+            let fl_count = fl_list_length / fl_width; // list 영역에서 보여줄 프로필의 갯수 
+
+            let fl_list = $('#fl_content ul');
+            let fl_list_items = $("#fl_content ul li");
+
+            let fl_position = 0;
+
+            // shift left
+            $("#fl_content .prev").click(function () {
+                fl_position += fl_width * fl_count;
+                fl_position = Math.min(fl_position, 0)
+                fl_list.css("margin-left", fl_position + 'px');
+            });
+
+            $("#fl_content .next").click(function () {
+                // shift right
+                fl_position -= fl_width * fl_count;
+                fl_position = Math.max(fl_position, - fl_width * (fl_list_items.length - fl_count));
+                fl_list.css("margin-left", fl_position + 'px');
+            });
+            /* following list 영역 끝 */
+
+            /* 스타가 남긴 글 script */
+            // StarRemain => sr
+            let sr_width = 300; // li width
+            let sr_count = 3; // list 영역에서 보여줄 프로필의 갯수 
+
+            let sr_list = $("#sr_content ul")
+            let sr_list_items = $("#sr_content ul li");
+
+            let sr_position = 0; // default position
+
+            // shift left
+            $("#sr_content .prev").click(function () {
+                sr_position += sr_width * sr_count;
+                sr_position = Math.min(sr_position, 0)
+                sr_list.css("margin-left", sr_position + 'px');
+            })
+
+            // shift right
+            $("#sr_content .next").click(function () {
+                sr_position -= sr_width * sr_count;
+                sr_position = Math.max(sr_position, - sr_width * (sr_list_items.length - sr_count));
+                sr_list.css("margin-left", sr_position + 'px');
+            })
+
+            /* 스타가 남긴 글 script 끝 */
+        })
+
         /* 대분류 카테고리가 선택됐을 때 함수 */
         function categoryChange(e) {
             let singer = ["전체", "래퍼", "밴드", "성악", "트로트", "아이돌", "팝", "발라드", "오페라"];
@@ -1290,30 +1492,6 @@
         }
         /* 대분류 카테고리가 선택됐을 때 함수 끝 */
 
-        /* 스타가 남긴 글 script */
-        let width = 300; // li width
-        let count = 3; // visible li count
-
-        let list = $("#fs_content ul")
-        let list_items = $("#fs_content ul li");
-
-        let position = 0; // default position
-
-        // shift left
-        $("#fs_content .prev").click(function () {
-            position += width * count;
-            position = Math.min(position, 0)
-            list.css("margin-left", position + 'px');
-        })
-
-        // shift right
-        $("#fs_content .next").click(function () {
-            position -= width * count;
-            position = Math.max(position, -width * (list_items.length - count));
-            list.css("margin-left", position + 'px');
-        })
-
-        /* 스타가 남긴 글 script 끝 */
     </script>
 
 </body>
