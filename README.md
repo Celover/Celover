@@ -30,4 +30,4 @@
 
 # SchedulePage
 
-![팬페이지_스케줄 페이지](https://github.com/Celover/Celover/assets/134350800/a1c9bc6b-99a8-400e-abc0-92ed32ba4dff)
+![팬페이지_스케줄 페이지](https://github.com/Celover/Celover/assets/134350800/7ae78362-36f5-414d-9ac3-80d7c6d4a6fd)
