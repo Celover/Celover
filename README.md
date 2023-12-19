@@ -5,7 +5,7 @@
 
 # MainPage
 
-![Mainpage](https://github.com/Celover/Celover/assets/134350800/b3eee25e-fd14-48e2-adb2-88746ceaa382)
+![메인 페이지](https://github.com/Celover/Celover/assets/134350800/37d38a08-b5a9-408d-8ba1-55ea8ac660a0)
 
 
 # FeedPage
