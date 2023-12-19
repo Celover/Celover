@@ -68,18 +68,39 @@
 
         .search-empty{
             width: 260px;
-            height: 100px;
-            background-color: #f4f6f8;
+            height: auto;
             border: 0;
             border-radius: 20px;
+            background-color: white;
+            opacity: 0.9;
             position: relative;
             z-index: 100;
             margin-top: 15px;
             display: flex;
-            justify-content: center;
+            /*justify-content: center;*/
         }
         .search-empty * {
-            line-height: 100px;
+            line-height: auto;
+        }
+        .searched-artist{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .searched-artist *:hover{
+            cursor: pointer;
+        }
+        li{
+            list-style-type: none;
+        }
+        hr{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 1px;
+            margin-right: 1px;
+        }
+        .artist-list:hover{
+            transform: scale(1.05);
         }
     </style>
 
@@ -108,7 +129,65 @@
                             </tr>
                         </table>
                         <div class="search-empty">
+                            <!--
                             <label for="">검색결과가 없습니다.</label>
+                            -->
+                            <ul style="padding-left:20px; padding-bottom: 10px;">
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지1.jpg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">SHINee</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지2.jpg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">AESPA</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지3.jpeg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">AKB48</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지1.jpg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">SHINee</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지2.jpg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">AESPA</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="artist-list" style="width: 200px;">
+                                        <a href="#" class="searched-artist">
+                                                <img src="sampleImg/검색이미지3.jpeg" style="height: 30px; width: 30px;" alt="">
+                                                <label for="">AKB48</label>
+                                                <hr>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <li class="nav-item">
