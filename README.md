@@ -28,6 +28,12 @@
 ![쇼핑 페이지](https://github.com/Celover/Celover/assets/134350800/69dd1c18-0066-44b3-aa05-a8c22d18a13d)
 
 
+# ShopDetailPage
+
+![팬페이지_상품 상세 페이지](https://github.com/Celover/Celover/assets/134350800/e9479379-aae8-4aa5-9a23-2a23999015f2)
+
+
 # SchedulePage
 
 ![팬페이지_스케줄 페이지](https://github.com/Celover/Celover/assets/134350800/7ae78362-36f5-414d-9ac3-80d7c6d4a6fd)
+
