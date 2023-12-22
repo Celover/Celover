@@ -2,8 +2,6 @@
 
 ![일정](https://github.com/Celover/Celover/assets/130638184/2e6a02b6-392b-4694-b0ef-d93455ee3ec2)
 
-![free-icon-user-3856336](https://github.com/Celover/Celover/assets/130638184/4e37ba0b-ace5-42bd-9d95-0d36cc9cecae)
-
 # MainPage
 
 ![메인 페이지](https://github.com/Celover/Celover/assets/134350800/37d38a08-b5a9-408d-8ba1-55ea8ac660a0)
