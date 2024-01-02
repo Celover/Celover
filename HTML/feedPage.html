@@ -35,14 +35,30 @@
         .slick-center{
             transform: scale(1.0);
         }
+        .feedPage a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+        .feedPage a:hover{
+            opacity: 1;
+        }
+        .mainLogo:hover{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
+    <!--start header-->
     <div class="container">
         <br>
         <div class="row">
 
-            <div class="col" style="font-family: 'Bruno Ace', serif;">
+            <div class="col mainLogo" style="font-family: 'Bruno Ace', serif;">
                 <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
             </div>
             <div class="col">
@@ -79,6 +95,30 @@
 
         </div>
 
+    </div>
+    <!--end header-->
+
+    <!--피드페이지 시작-->
+    <div class="container-fluid feedPage" style="margin-top: 15px;">
+        <div class="col" style="height: 50px; background: linear-gradient(to right, #28e5f6, #c8e4f5);">
+            <ul class="nav justify-content-center" style="list-style: none; height: auto; line-height: 50px;">
+                <li>
+                    <a href="#">Feed</a>
+                </li>
+                <li>
+                    <a href="#">Aritst</a>
+                </li>
+                <li>
+                    <a href="#">Media</a>
+                </li>
+                <li>
+                    <a href="#">Schedule</a>
+                </li>
+                <li>
+                    <a href="#">Shop</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
 
