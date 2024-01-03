@@ -247,7 +247,7 @@
                 </div>
                 <!-- 사이드바 영역 끝 -->
 
-                <!-- 마이페이지 본문 영역 -->
+                <!-- 마이페이지 장바구니 영역 -->
                 <style>
                     #myPage_content {
                         padding: 0% 0% 3% 3%;
@@ -264,6 +264,7 @@
                         opacity: 1;
                     }
 
+                    /* 장바구니 css */
                     .my_basket_items .my_basket_item {
                         border-bottom: 1px solid #666666;
                     }
@@ -280,16 +281,19 @@
                         border: 1px solid rgb(221, 223, 225);
                         border-radius: 5px;
                     }
+
                     #my_basket_list .form-check-input{
                         border-radius: 50%;
                         width: 24px;
                         height: 24px;
                     }
+
                     #my_basket_list .form-check-input:checked{
                         background-color: red;
                         border: 0px;
                         border-color: none ;
                     }
+
                     #my_basket_list .form-check-input:focus{
                         outline: none !important; 
                         border-color: #d6a8e9; 
@@ -298,8 +302,9 @@
 
                     .my_basket_items .my_basket_item .product_img_area img{
                         height: 78px;
-                        width: auto;
+                        width: 78px;
                     }
+
                     .my_basket_items .my_basket_item .item_count_area button{
                         border-radius: 5px;
                         background-color: #fff;
@@ -307,31 +312,38 @@
                         height: 28px;
                         width: 28px;
                     }
+
                     .my_basket_items .my_basket_item .item_count_area {
                         display: flex;
                     }
+                    
                     .my_basket_items .my_basket_item .item_count_area .item_count{
                         height: 28px;
                         width: 38px;
                         text-align: center;
                     }
+
                     .my_basket_items .my_basket_item .item_price_area span{
                         text-align: right;
                         display: inline-block;
                         width: 120px;
                     }
+
                     #my_basket_list .basket_footer label > input{
                         margin: 0%;
                     }
+
                     #my_basket_list .basket_footer label > button{
                         border: none; 
                         background-color: #fff;
                     }
+
                     #my_basket_list .basket_footer .sep{
                         display: inline-block;
                         width: 40px;
                         text-align: center;
                     }
+                    /* 장바구니 css 끝 */
                 </style>
                 <div class="col-md-9" id="myPage_content">
                     <div id="basket_area">
@@ -490,7 +502,7 @@
 
                     </div>
                 </div>
-                <!-- 마이페이지 본문 영역 끝 -->
+                <!-- 마이페이지 장바구니 영역 끝 -->
             </div>
 
         </div>

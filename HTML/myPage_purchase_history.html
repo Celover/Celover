@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* header css */
+        .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+
+        .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            transition: all 0.4 ease-in-out;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.0);
+        }
+
+        /* header css 끝 */
+
+        /* sideMenu CSS */
+        #myPage_menu h2 {
+            font-weight: 800;
+            margin-bottom: 10%;
+            margin-left: 10px;
+        }
+
+        #myPage_menu ul li * {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgb(102, 102, 102);
+        }
+
+        #myPage_menu ul li:hover {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul li:hover * {
+            color: purple;
+        }
+
+        #myPage_menu ul .act {
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul .act * {
+            background-color: rgb(250, 250, 250);
+            color: purple;
+        }
+
+        #myPage_menu ul li .fas {
+            line-height: 1.5;
+        }
+
+        /* sideMenu CSS 끝 */
+
+        /* footer css */
+        #footer {
+            background-color: #e9ecef;
+        }
+
+        #footer .footer_title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer_title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer_title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer_content>.footer_navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer_content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer_content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer_content>.footer_info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        /* footer css 끝 */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <div class="row" style="margin: 0;">
+
+            <div class="col" style="font-family: 'Bruno Ace', serif;">
+                <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
+            </div>
+            <div class="col">
+
+                <ul class="nav justify-content-end">
+                    <div
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <br><br><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <!-- 사이드바 영역 -->
+                <div class="col-md-2" id="myPage_menu">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">My Page</h2>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between act">
+                                <a class="p-2">회원 정보 수정</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">나의 아티스트</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">내 글 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">알림 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">장바구니</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">구매내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">신고내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">문의내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 사이드바 영역 끝 -->
+
+                <!-- 마이페이지 구매내역 영역 -->
+                <style>
+                    #myPage_content {
+                        padding: 0% 0% 3% 3%;
+                    }
+
+                    #myPage_content div>h4 {
+                        font-weight: 600;
+                    }
+
+                    #myPage_content div>h4>sub {
+                        font-weight: 400;
+                        font-size: small;
+                    }
+
+                    #myPage_content div>hr {
+                        height: 2px;
+                        border: 0;
+                        background: black;
+                        opacity: 1;
+                    }
+
+                    /* 구매내역 css */
+
+                    #purchase_header>div {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    #purchase_header .form-group select {
+                        width: auto;
+                    }
+
+                    .my_purchase_items .my_purchase_item {
+                        margin: 0% 0% 1% 0%;
+                    }
+
+                    .my_purchase_items .my_purchase_detail>div {
+                        display: flex;
+                        align-items: center;
+                        margin: 1%;
+                    }
+
+                    .my_purchase_items .my_purchase_detail .etc_area {
+                        display: block;
+                    }
+
+                    .my_purchase_items .my_purchase_detail .etc_area .btn {
+                        --bs-btn-hover-bg: #fff !important;
+                        --bs-btn-active-bg: #fff !important;
+                        display: block;
+                        width: 130px;
+                        margin-bottom: 3%;
+                        color: black;
+                    }
+
+                    .my_purchase_items .my_purchase_detail .etc_area .btn-outline-primary {
+                        color: #0d6efd;
+                    }
+
+                    .my_purchase_items .my_purchase_detail .state {
+                        margin: 3%;
+                    }
+
+                    .my_purchase_items .my_purchase_detail img {
+                        border-radius: 10px;
+                        height: 100px;
+                        width: 100px;
+                    }
+
+                    .my_purchase_items .my_purchase_detail .span {
+                        height: auto;
+                        line-height: 46.25px;
+                    }
+
+                    .my_purchase_items .my_purchase_item .justify-content-between {
+                        padding: 8px 0px 13px 0px;
+                        border-bottom: 1px solid #8e8e8e;
+                    }
+
+                    .my_purchase_items .my_purchase_item .flex-grow-1>div {
+                        font-size: medium;
+                        margin: 1%;
+                    }
+
+                    .my_purchase_items .my_purchase_item .flex-grow-1>div>dl {
+                        display: flex;
+                        margin: 0%;
+                    }
+
+                    .my_purchase_items .my_purchase_item .flex-grow-1>div>dl>dt {
+                        width: 80px;
+                    }
+
+                    .my_purchase_items .my_purchase_item .flex-grow-1>div>dl>dd {
+                        margin: 0px;
+                    }
+
+                    #purchase_area .pagination * {
+                        color: black;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state {
+                        border: 1px solid rgb(243, 243, 243);
+                        padding: 2% 3% 1% 3%;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state>.state_header {
+                        padding-bottom: 2%;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state>.state_header>span {
+                        font-weight: 800;
+                        font-size: large;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.gt_area {
+                        line-height: 100px;
+                        padding: 0% 2%;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.gt_area>i {
+                        font-size: x-large;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.delivery_img_area>div {
+                        border-radius: 50%;
+                        padding: 14.2px;
+                        width: 100%;
+                        height: 66.6%;
+                        text-align: center;
+                        background-color: rgb(243, 243, 243);
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.delivery_img_area>p {
+                        padding: 10px 0%;
+                        margin: 0px;
+                        width: 100px;
+                        font-size: x-small;
+                        text-align: center;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.delivery_img_area>div>img {
+                        height: 50px;
+                        width: 50px;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_state .delivery_imgs_area>.delivery_img_area>div>span {
+                        display: block;
+                        text-align: center;
+                        font-size: small;
+                        font-weight: 800;
+                    }
+
+                    #purchase_area .delivery_info_area .delivery_notice {
+                        border: 1px solid rgb(243, 243, 243);
+                        background-color: rgb(243, 243, 243);
+                        padding: 2% 3% 1% 3%
+                    }
+
+                    /* 1:1 문의 css 시작 */
+                    #purchase_area>#inquiry_modal #inq_product_info {
+                        border: 1px solid #666666;
+                        margin-bottom: 10px;
+                        padding: 2%;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_product_info img {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_imgs_thumbnail {
+                        display: flex;
+                        margin: 2% 0% 2% 0%;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_imgs_thumbnail>div {
+                        border: 1px solid #666666;
+                        position: relative;
+                        margin: 1%;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_imgs_thumbnail>div>img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_imgs_thumbnail>div>a {
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    #purchase_area>#inquiry_modal #inq_imgs_thumbnail>div>a:hover {
+                        cursor: pointer;
+                    }
+
+                    #purchase_area>#inquiry_modal .modal-body button {
+                        width: 100%;
+                    }
+
+                    #purchase_area>#inquiry_modal .modal-body p {
+                        padding: 2% 0%;
+                        font-size: small;
+                        margin: 0px;
+                    }
+
+                    #purchase_area>#inquiry_modal .modal-footer button {
+                        width: 100%;
+                    }
+
+                    /* 1:1 문의 css 끝 */
+
+                    /* 리뷰작성 css 시작 */
+
+                    @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+                    .rate {
+                        display: inline-block;
+                        border: 0;
+                        margin-right: 15px;
+                    }
+
+                    .rate>input {
+                        display: none;
+                    }
+
+                    .rate>label {
+                        float: right;
+                        color: #ddd;
+                    }
+
+                    .rate>label:before {
+                        display: inline-block;
+                        font-size: 1rem;
+                        font-size: 18px;
+                        padding: .3rem .2rem;
+                        margin: 0;
+                        cursor: pointer;
+                        font-family: FontAwesome;
+                        content: "\f005 ";
+                    }
+
+                    .rate .half:before {
+                        content: "\f089 ";
+                        position: absolute;
+                        padding-right: 0;
+                    }
+
+                    .rate input:checked~label,
+                    .rate label:hover,
+                    .rate label:hover~label {
+                        color: #ffdc02 !important;
+                    }
+
+                    .rate input:checked+.rate label:hover,
+                    .rate input input:checked~label:hover,
+                    .rate input:checked~.rate label:hover~label,
+                    .rate label:hover~input:checked~label {
+                        color: #ffdc02 !important;
+                    }
+
+                    #purchase_area>#review_modal #rev_imgs_thumbnail {
+                        display: flex;
+                        margin: 2% 0% 2% 0%;
+                    }
+
+                    #purchase_area>#review_modal #rev_imgs_thumbnail>div {
+                        border: 1px solid #666666;
+                        position: relative;
+                        margin: 1%;
+                    }
+
+                    #purchase_area>#review_modal #rev_imgs_thumbnail>div>img {
+                        width: 70px;
+                        height: 70px;
+                    }
+
+                    #purchase_area>#review_modal #rev_imgs_thumbnail>div>a {
+                        position: absolute;
+                        top: -5px;
+                        right: -5px;
+                        background-color: #fff;
+                        border-radius: 50%;
+                        text-decoration: none;
+                        color: black;
+                    }
+
+                    #purchase_area>#review_modal #rev_imgs_thumbnail>div>a:hover {
+                        cursor: pointer;
+                    }
+
+                    #purchase_area #review_modal #rev_product_info {
+                        border: 1px solid #666666;
+                        margin-bottom: 10px;
+                        padding: 2%;
+                    }
+
+                    #purchase_area #review_modal #rev_product_info img {
+                        width: 60px;
+                        height: 60px;
+                    }
+
+                    #purchase_area #review_modal #rev_product_info span {
+                        font-size: 18px;
+                    }
+
+                    #purchase_area #review_modal .modal-body p {
+                        padding: 2% 0%;
+                        font-size: small;
+                        margin: 0px;
+                    }
+
+                    /* 리뷰작성 css 끝 */
+
+                    /* 교환/반품 css 시작 */
+
+                    /* 교환/반품 css 끝 */
+
+
+                    /* 구매내역 css 끝 */
+                </style>
+                <div class="col-md-9" id="myPage_content">
+                    <br>
+                    <div id="purchase_area">
+                        <div class="d-flex justify-content-between" id="purchase_header">
+                            <div class="form-group">
+                                <h4>구매내역<sub>&nbsp;&nbsp;최대 3년간의 주문내역까지 확인할 수 있습니다. </sub></h4>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-select" name="sellist1">
+                                    <option>3개월</option>
+                                    <option>6개월</option>
+                                    <option>1년</option>
+                                    <option>3년</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="container">
+                            <div class="row my_purchase_items">
+                                <div class="col-sm-12 my_purchase_item">
+                                    <div class="d-flex justify-content-between">
+                                        <span>2022.09.15 (18시 11분)</span>
+                                        <a>주문내역 상세보기 <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                    <div class="d-flex px-1 py-2 my_purchase_detail">
+                                        <div class="p2">
+                                            <img src="https://img-cf.kurly.com/cdn-cgi/image/width=120,h…op,quality=85/shop/data/goods/1647483683658l0.jpg"
+                                                alt="">
+                                        </div>
+                                        <div class="p2 flex-grow-1">
+                                            <div>
+                                                <dl>
+                                                    <dt>상품명</dt>
+                                                    <dd>[서울우유] 비요뜨 요거트 6종 외 4건</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>주문번호</dt>
+                                                    <dd>2281418110107</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제방법</dt>
+                                                    <dd>토스</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제금액</dt>
+                                                    <dd>26,755원</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="p2 state">
+                                            <span>배송완료</span>
+                                        </div>
+                                        <div class="p2 etc_area">
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#inquiry_modal">
+                                                1:1 문의
+                                            </button>
+                                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                                data-bs-target="#delivery_modal">
+                                                배송조회
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#review_modal">
+                                                리뷰작성
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#exchange_modal1">
+                                                교환/반품
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 my_purchase_item">
+                                    <div class="d-flex justify-content-between">
+                                        <span>2022.09.15 (18시 11분)</span>
+                                        <a>주문내역 상세보기 <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                    <div class="d-flex px-1 py-2 my_purchase_detail">
+                                        <div class="p2">
+                                            <img src="https://img-cf.kurly.com/cdn-cgi/image/width=120,h…op,quality=85/shop/data/goods/1647483683658l0.jpg"
+                                                alt="">
+                                        </div>
+                                        <div class="p2 flex-grow-1">
+                                            <div>
+                                                <dl>
+                                                    <dt>상품명</dt>
+                                                    <dd>[서울우유] 비요뜨 요거트 6종 외 4건</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>주문번호</dt>
+                                                    <dd>2281418110107</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제방법</dt>
+                                                    <dd>토스</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제금액</dt>
+                                                    <dd>26,755원</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="p2 state">
+                                            <span>배송완료</span>
+                                        </div>
+                                        <div class="p2 etc_area">
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#inquiry_modal">
+                                                1:1 문의
+                                            </button>
+                                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                                data-bs-target="#delivery_modal">
+                                                배송조회
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#review_modal">
+                                                리뷰작성
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#exchange_modal1">
+                                                교환/반품
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 my_purchase_item">
+                                    <div class="d-flex justify-content-between">
+                                        <span>2022.09.15 (18시 11분)</span>
+                                        <a>주문내역 상세보기 <i class="fas fa-chevron-right"></i></a>
+                                    </div>
+                                    <div class="d-flex px-1 py-2 my_purchase_detail">
+                                        <div class="p2">
+                                            <img src="https://img-cf.kurly.com/cdn-cgi/image/width=120,h…op,quality=85/shop/data/goods/1647483683658l0.jpg"
+                                                alt="">
+                                        </div>
+                                        <div class="p2 flex-grow-1">
+                                            <div>
+                                                <dl>
+                                                    <dt>상품명</dt>
+                                                    <dd>[서울우유] 비요뜨 요거트 6종 외 4건</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>주문번호</dt>
+                                                    <dd>2281418110107</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제방법</dt>
+                                                    <dd>토스</dd>
+                                                </dl>
+                                                <dl>
+                                                    <dt>결제금액</dt>
+                                                    <dd>26,755원</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                        <div class="p2 state">
+                                            <span>배송완료</span>
+                                        </div>
+                                        <div class="p2 etc_area">
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#inquiry_modal">
+                                                1:1 문의
+                                            </button>
+                                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                                data-bs-target="#delivery_modal">
+                                                배송조회
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#review_modal">
+                                                리뷰작성
+                                            </button>
+                                            <button type="button" class="btn btn-outline-secondary"
+                                                data-bs-toggle="modal" data-bs-target="#exchange_modal2">
+                                                교환/반품
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <br>
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                            class="fas fa-chevron-left"></i></a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#"><i
+                                            class="fas fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="delivery_info_area">
+                            <div class="col-sm-12 delivery_state">
+                                <div class="state_header">
+                                    <span>
+                                        배송상품 주문상태
+                                    </span>
+                                </div>
+                                <div class="d-flex justify-content-center delivery_imgs_area">
+                                    <div class="delivery_img_area">
+                                        <div>
+                                            <img src="sampleImg/결제완료.png" alt="">
+                                            <span>결제완료</span>
+                                        </div>
+                                        <p>
+                                            <strong>주문, 결제, 확인</strong>
+                                            <br>
+                                            이 완료 되었습니다.
+                                        </p>
+                                    </div>
+                                    <div class="gt_area">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="delivery_img_area">
+                                        <div>
+                                            <img src="sampleImg/상품준비중.png" alt="">
+                                            <span>상품준비중</span>
+                                        </div>
+                                        <p>
+                                            판매자가 발송할
+                                            <br>
+                                            <strong>상품을 준비중</strong>입니다.
+                                        </p>
+                                    </div>
+                                    <div class="gt_area">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="delivery_img_area">
+                                        <div>
+                                            <img src="sampleImg/배송시작.png" alt="">
+                                            <span>배송시작</span>
+                                        </div>
+                                        <p>
+                                            상품준비가 완료되어
+                                            <br>
+                                            곧 <strong>배송될 예정</strong>입니다.
+                                        </p>
+                                    </div>
+                                    <div class="gt_area">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="delivery_img_area">
+                                        <div>
+                                            <img src="sampleImg/배송중.png" alt="">
+                                            <span>배송중</span>
+                                        </div>
+                                        <p>
+                                            상품이 고객님께
+                                            <br>
+                                            <strong>배송중</strong>입니다.
+                                        </p>
+                                    </div>
+                                    <div class="gt_area">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                    <div class="delivery_img_area">
+                                        <div>
+                                            <img src="sampleImg/배송완료.png" alt="">
+                                            <span>배송완료</span>
+                                        </div>
+                                        <p>
+                                            상품이 주문자에게
+                                            <br>
+                                            <strong>전달완료</strong>되었습니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 delivery_notice">
+                                <span>
+                                    <span style="color: red;">
+                                        <i class="fas fa-circle-exclamation"></i> 취소/반품/교환 신청</span>전 확인해주세요!</span>
+                                <br><br>
+                                <div>
+                                    <strong>취소</strong>
+                                </div>
+                                <div>
+                                    <p>
+                                        - 여행/레저/숙박 상품은 취소 시 수수료가 발생할 수 있으며, <br>
+                                        &nbsp; 취소수수료를 확인하여 2일 이내(주말,공휴일 제외) 처리결과를 문자로 안내해드립니다. <br>
+                                        - 문화 상품은 사용 전날 24시까지 취소 신청 시 취소수수료가 발생되지 않습니다.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong>반품</strong>
+                                </div>
+                                <div>
+                                    <p>
+                                        - 상품 수령 후 7일 이내 신청하여 주세요. <br>
+                                        - 상품이 출고된 이후에는 배송 완료 후, 반품 상품을 회수합니다. <br>
+                                        - 설치상품/주문제작/해외배송/신선냉동 상품 등은 고객센터에서만 반품 신청이 가능합니다.
+                                    </p>
+                                </div>
+                                <div>
+                                    <strong>교환</strong>
+                                </div>
+                                <div>
+                                    <p>
+                                        - 상품의 교환 신청은 고객센터로 문의하여 주세요.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 문의 모달 -->
+                        <div class="modal fade" id="inquiry_modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">문의하기</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <span>상품</span>
+                                            <div id="inq_product_info">
+                                                <img src="https://thumbnail7.coupangcdn.com/thumbnails/remote/96x96ex/image/vendor_inventory/e8d8/48aa2086be7d7f8cf44df9976c082a1c435b3e5f67c77c051c665f81617b.jpg"
+                                                    alt="">
+                                                <span>오잉 노가리칩 청양마요맛, 3개, 60g</span>
+                                                <input type="hidden" value="상품코드">
+                                            </div>
+
+                                            <span>내용</span>
+                                            <div id="inq_content">
+                                                <textarea class="form-control" style="resize: none;" name="" id=""
+                                                    cols="30" rows="10"
+                                                    placeholder="판매자에게 문의할 내용을 입력해주세요. 사진을 첨부해주시면 더욱 정확한 답변이 가능합니다."></textarea>
+                                            </div>
+
+                                            <div id="inq_imgs">
+                                            </div>
+
+                                            <div id="inq_imgs_thumbnail">
+                                            </div>
+
+                                        </form>
+                                        <button class="btn btn-outline-primary" id="choosefile"><i
+                                                class="fa-regular fa-image"></i> 이미지첨부</button>
+                                        <p>* 이미지는 3개까지 첨부 가능합니다.
+                                            <br>
+                                            * 이미지 내 개인정보가 포함되지 않도록 주의(주민번호, 전화번호 등)
+                                        </p>
+                                        <p style="background-color: rgb(255, 248, 221); padding: 2%; font-size: small;">
+                                            <span class="i18n-wrapper">남겨주신 문의는 24시간내 확인 후 답변드립니다. <br> <strong>고객센터
+                                                    &gt;
+                                                    문의내역</strong>에서 확인 가능합니다.</span>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary" disabled>문의하기</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 문의 모달 끝 -->
+
+
+                        <!-- 배송조회 모달 시작 -->
+                        <div class="modal fade" id="delivery_modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">배송조회</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        API 하면서 하는게 좋을듯.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Understood</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 배송조회 모달 끝 -->
+
+
+                        <!-- 리뷰작성 모달 시작 -->
+                        <div class="modal fade" id="review_modal" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5">라뷰작성</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div id="rev_product_info">
+                                                <img src="https://thumbnail7.coupangcdn.com/thumbnails/remote/96x96ex/image/vendor_inventory/e8d8/48aa2086be7d7f8cf44df9976c082a1c435b3e5f67c77c051c665f81617b.jpg"
+                                                    alt="">
+                                                <span>오잉 노가리칩 청양마요맛, 3개, 60g</span>
+                                                <input type="hidden" value="상품코드">
+                                            </div>
+
+                                            <span>내용</span>
+                                            <div id="rev_content" style="margin-bottom: 10px;">
+                                                <textarea class="form-control" style="resize: none;" name="" id=""
+                                                    cols="30" rows="10"
+                                                    placeholder="판매자에게 문의할 내용을 입력해주세요. 사진을 첨부해주시면 더욱 정확한 답변이 가능합니다."></textarea>
+                                            </div>
+
+                                            <div class="d-flex" style="align-items: center;">
+                                                <span style="font-size: 18px;">별점&nbsp;</span>
+                                                <fieldset class="rate">
+                                                    <input type="radio" id="rating10" name="rating" value="10"><label
+                                                        for="rating10" title="5점"></label>
+                                                    <input type="radio" id="rating9" name="rating" value="9"><label
+                                                        class="half" for="rating9" title="4.5점"></label>
+                                                    <input type="radio" id="rating8" name="rating" value="8"><label
+                                                        for="rating8" title="4점"></label>
+                                                    <input type="radio" id="rating7" name="rating" value="7"><label
+                                                        class="half" for="rating7" title="3.5점"></label>
+                                                    <input type="radio" id="rating6" name="rating" value="6"><label
+                                                        for="rating6" title="3점"></label>
+                                                    <input type="radio" id="rating5" name="rating" value="5"><label
+                                                        class="half" for="rating5" title="2.5점"></label>
+                                                    <input type="radio" id="rating4" name="rating" value="4"><label
+                                                        for="rating4" title="2점"></label>
+                                                    <input type="radio" id="rating3" name="rating" value="3"><label
+                                                        class="half" for="rating3" title="1.5점"></label>
+                                                    <input type="radio" id="rating2" name="rating" value="2"><label
+                                                        for="rating2" title="1점"></label>
+                                                    <input type="radio" id="rating1" name="rating" value="1"><label
+                                                        class="half" for="rating1" title="0.5점"></label>
+                                                </fieldset>
+                                            </div>
+                                            <div id="rev_imgs_thumbnail">
+                                            </div>
+
+                                            <div id="rev_imgs">
+                                            </div>
+                                        </form>
+                                        <button class="btn btn-outline-primary" id="choosefile"><i
+                                                class="fa-regular fa-image"></i> 이미지첨부</button>
+                                        <p>* 이미지는 3개까지 첨부 가능합니다.
+                                            <br>
+                                            * 이미지 내 개인정보가 포함되지 않도록 주의(주민번호, 전화번호 등)
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" style="width: 100%;" class="btn btn-primary"
+                                            disabled>작성하기</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 리뷰작성 모달 끝 -->
+                        <!-- 교환 반품 모달 시작 -->
+
+                        <div class="modal fade" id="exchange_modal1" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <p style="font-size: 23px; font-weight: 800">사용 흔적이 없는 상품만 <br>
+                                            <span style="color: #0d6efd;">교환, 반품이 가능합니다.</span>
+                                        </p>
+                                        <p style="font-size: 12px; font-weight: 600; margin: 0%;">
+                                            📱전자제품 : 상품포장(동봉된 박스, 비닐) 확인
+                                            🧥패션상품 : 태그 및 라벨 부착 확인
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-outline-secondary" data-bs-target="#exchange_modal2"
+                                        data-bs-toggle="modal" style="--bs-btn-hover-bg: #fff !important; --bs-btn-active-bg: #fff !important; color: black;">교환, 반품 신청</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                        aria-label="Close">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exchange_modal2" aria-hidden="true"
+                            aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">Modal 2</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        여기를 모달로 띄울지 아니면 페이지를 넘길지 생각해봐야함
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle"
+                                            data-bs-toggle="modal">Back to first</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                                            aria-label="Close">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 교환 반품 모달 끝 -->
+
+
+                    </div>
+                </div>
+                <!-- 마이페이지 구매내역 영역 끝 -->
+            </div>
+
+
+
+        </div>
+
+
+        <!-- footer -->
+        <div class="container-fluid" id="footer">
+            <div class="container">
+                <br>
+                <div class="footer_title">
+                    <h2>
+                        Celover
+                        <em>since 2023.12.13</em>
+                    </h2>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_navbar">
+                        <ul class="">
+                            <li class="">
+                                <a>이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>서비스운영정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>청소년 보호 정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>개인정보처리방침&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키 설정&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a> 입점 신청</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="footer_info">
+                        <ul>
+                            <li>
+                                <span><b>상호</b> Celover COMPANY Inc.</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>공동대표</b> 박용진, 이원종</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>전화번호</b> 02-1234-5678</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>FAX</b> +82)02-1234-5678</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>주소</b> 서울특별시 강남구 테헤란로14길 6 남도빌딩 3F</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>개인정보관리책임자</b> 김시연 (siyeon@celover.com)</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>사업자등록번호</b> 000-xx-xxxx</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>통신판매업 신고번호</b> 제 2023-역삼-XXXX호</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>호스팅 서비스 사업자</b> github.io</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <span>Copyright 2023.CELOVER.All rights reserverd.</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer 끝 -->
+
+    <script>
+        /* 1:1 문의 script */
+
+        // 파일 첨부 버튼을 눌렀을 경우 input[type:file] 을 동적으로 생성하고 클릭
+        $(document).on("click", "#inquiry_modal #choosefile", function () {
+            let count = $("#inq_imgs_thumbnail div").length;
+
+            if (count < 3) {
+                $("#inq_imgs").append('<input type="file" hidden>');
+                $("#inq_imgs input").last().click();
+            } else {
+                alert("사진은 총 3개까지 첨부 가능합니다.");
+            }
+        })
+
+        // 동적으로 생성된 input[type:file] 에 change가 발생했을 경우
+        $(document).on("change", "#inq_imgs > input", function () {
+
+            if (this.files.length == 1) {
+                $("#inq_imgs_thumbnail").append(`<div><img src=""><a class="fa-solid fa-circle-xmark"></a></div>`);
+
+                const reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                reader.onload = function (e) {
+                    $("#inq_imgs_thumbnail").parent().css("display", "");
+                    $("#inq_imgs_thumbnail div").last().children("img").attr("src", e.target.result);
+                }
+            }
+        })
+
+        // 파일 썸네일에서 x 버튼을 눌렀을 경우
+        $(document).on("click", "#inq_imgs_thumbnail a", function () {
+
+            /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+            // 파일첨부를 취소하여 비어있는 input태그를 제거하는 부분 
+            var emptyFileInputs = $("#inq_imgs input[type=file]").filter(function () {
+                return $(this).val() === '';
+            });
+            emptyFileInputs.remove();
+            /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+
+            let idx = $(this).parent().index();
+            $("#inq_imgs_thumbnail div").eq(idx).remove();
+            $("#inq_imgs input").eq(idx).remove();
+        })
+
+        // textarea에 내용이 있을때 buttton을 활성화
+        $(document).on("keyup", "#inq_content textarea", function () {
+            if ($(this).val() != "") {
+                $("#inquiry_modal .modal-footer button").attr("disabled", false);
+            } else {
+                $("#inquiry_modal .modal-footer button").attr("disabled", true);
+            }
+        })
+
+        /* 1:1 문의 script 끝 */
+
+
+        /* 리뷰작성 script */
+
+        // 파일 첨부 버튼을 눌렀을 경우 input[type:file] 을 동적으로 생성하고 클릭
+        $(document).on("click", "#review_modal #choosefile", function () {
+            let count = $("#rev_imgs_thumbnail div").length;
+
+            if (count < 3) {
+                $("#rev_imgs").append('<input type="file" hidden>');
+                $("#rev_imgs input").last().click();
+            } else {
+                alert("사진은 총 3개까지 첨부 가능합니다.");
+            }
+        })
+
+        // 동적으로 생성된 input[type:file] 에 change가 발생했을 경우
+        $(document).on("change", "#rev_imgs > input", function () {
+            if (this.files.length == 1) {
+                $("#rev_imgs_thumbnail").append(`<div><img src=""><a class="fa-solid fa-circle-xmark"></a></div>`);
+
+                const reader = new FileReader();
+                reader.readAsDataURL(this.files[0]);
+                reader.onload = function (e) {
+                    $("#rev_imgs_thumbnail").parent().css("display", "");
+                    console.log($("#rev_imgs_thumbnail div").last())
+                    $("#rev_imgs_thumbnail div").last().children("img").attr("src", e.target.result);
+                }
+            }
+        })
+
+        // 파일 썸네일에서 x 버튼을 눌렀을 경우
+        $(document).on("click", "#rev_imgs_thumbnail a", function () {
+
+            /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+            // 파일첨부를 취소하여 비어있는 input태그를 제거하는 부분 
+            var emptyFileInputs = $("#rev_imgs input[type=file]").filter(function () {
+                return $(this).val() === '';
+            });
+            emptyFileInputs.remove();
+            /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+
+            let idx = $(this).parent().index();
+            $("#rev_imgs_thumbnail div").eq(idx).remove();
+            $("#rev_imgs input").eq(idx).remove();
+        })
+
+        // textarea에 내용이 있을때 buttton을 활성화
+        $(document).on("keyup", "#rev_content textarea", function () {
+            if ($(this).val() != "") {
+                $("#review_modal .modal-footer button").attr("disabled", false);
+            } else {
+                $("#review_modal .modal-footer button").attr("disabled", true);
+            }
+        })
+
+        /* 리뷰작성 script 끝 */
+
+
+    </script>
+
+    <script>
+        $(function () {
+            $(".a").click();
+        })
+
+    </script>
+
+</body>
+
+</html>
