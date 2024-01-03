@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
     <style>
-        .nav-item{
+        a{
+            text-decoration: none;
+        }
+        .nav-item {
             width: 80px;
             text-align: center;
         }
-        .header_btn:hover{
+
+        .header_btn:hover {
             transform: scale(1.2);
         }
-        input:focus{
+
+        input:focus {
             outline: none;
         }
-        .slick-slide{
+
+        .slick-slide {
             transform: scale(0.7);
             transition: all 0.4 ease-in-out;
         }
+
         .mainSlide img {
             max-width: 100%;
             transition: all 0.4s ease-in-out;
         }
-        .slick-center{
+
+        .slick-center {
             transform: scale(1.0);
         }
-        .feedPage a{
+
+        .feedPage a {
             text-decoration: none;
             color: rgb(255, 255, 255);
             opacity: 0.6;
@@ -44,14 +58,250 @@
             margin: 80px;
             font-size: large;
         }
-        .feedPage a:hover{
+
+        .feedPage a:hover {
             opacity: 1;
         }
-        .mainLogo:hover{
+
+        .mainLogo:hover {
             cursor: pointer;
         }
+
+
+
+        /* 스타가 남긴 글 css */
+        #sr_content {
+            overflow: auto;
+        }
+
+        #sr_content>div {
+            float: left;
+        }
+
+        #sr_title * {
+            display: inline-block;
+        }
+
+        #sr_title span {
+            background-color: black;
+            color: #fff;
+            font-size: small;
+            margin-bottom: 3%;
+        }
+
+        #sr_title strong {
+            margin-bottom: 10%;
+        }
+
+        #sr_content {
+            position: relative;
+            padding: 10px 40px;
+            border-radius: 15px;
+        }
+
+        #sr_list {
+            overflow: hidden;
+            width: 80vw;
+        }
+
+        #sr_list ul {
+            height: 150px;
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin-left 250ms;
+            font-size: 0;
+        }
+
+        #sr_list ul li {
+            display: inline-block;
+            width: 18vw;
+            height: 145px;
+            margin-left: 33px;
+        }
+
+        #sr_list .profile {
+            float: left;
+        }
+
+        #sr_list .profile img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+        }
+
+        #sr_list .msg {
+            background-color: #efefef;
+            border-radius: 10px;
+            width: 13vw;
+            height: 96px;
+            padding: 16px 30px;
+            margin: 32px 0px 0px 44px;
+        }
+
+        #sr_list .msg:hover {
+            cursor: pointer;
+            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #sr_list * {
+            color: black;
+        }
+
+        #sr_list .msg .nickname {
+            font-size: medium;
+        }
+
+        #sr_list .msg p {
+            margin: 0px;
+        }
+
+        #sr_list .msg .content {
+            font-size: medium;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #sr_list .msg .date {
+            font-size: small;
+            color: #999;
+        }
+
+        /* 스타가 남긴 글 css 끝 */
+
+        /*피드 우측 css 시작*/
+        .feedImg {
+            width: 100%;
+            border-radius: 20px;
+        }
+        #feedList{
+            box-sizing: border-box;
+        }
+        .createFeed{
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            border-radius: 40px;
+            box-shadow: 1px 1px 5px rgb(194, 194, 194);
+            
+        }
+        .createFeed:hover{
+            cursor: pointer;
+            box-shadow: 1px 1px 20px rgb(194, 194, 194);
+        }
+        .right-notice{
+            border-radius: 10px;
+        }
+        .right-notice a{
+            color: black;
+            font-weight: bolder;
+
+        }
+        .right-notice tr, .right-notice td{
+            border: 0px solid red;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        .notice-list{
+            display: block;
+            width:435px;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+
+        }
+        .notice-list a{
+            color: gray;
+        }
+        .notice-list a:hover{
+            text-decoration: underline;
+            color: black;
+        }
+        .notice-list thead td{
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        /* fan-chat start */
+        .fan-chat{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #f4f6f8;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        .fan-chat-hedaer{
+            width: 100%;
+            margin: auto;
+        }
+        .insertChat textarea::placeholder{
+            font-weight: bolder;
+            font-size: larger;
+        }
+        .insertChat{
+            padding: 10px;
+            padding-bottom: 0px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        /* fan-chat end */
+
+        /* footer css */
+        #footer{
+            color: gray;
+        }
+        #footer .footer_title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer_title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer_title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer_content>.footer_navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer_content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer_content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer_content>.footer_info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+        #footer a{
+            cursor: pointer;
+        }
+
+        /* footer css 끝 */
+
+        /*피드 우측 css 끝*/
     </style>
 </head>
+
 <body>
     <!--start header-->
     <div class="container">
@@ -64,33 +314,39 @@
             <div class="col">
 
                 <ul class="nav justify-content-end">
-                    <div style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                    <div
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
                         <table style="border: 0px solid red;" align="center">
                             <tr style="line-height: 37px;">
                                 <td style="width: 30px;">
                                     <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
                                 </td>
                                 <td>
-                                    <input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색">
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
                                 </td>
                             </tr>
                         </table>
-                        
+
                     </div>
                     <li class="nav-item">
-                      <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;" alt=""></a>
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;" alt=""></a>
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;" alt=""></a>
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
                     </li>
                     <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;" alt=""></a>
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
                     </li>
                 </ul>
-    
+
             </div>
 
         </div>
@@ -99,8 +355,9 @@
     <!--end header-->
 
     <!--피드페이지 시작-->
+    <!--피드 nav 시작-->
     <div class="container-fluid feedPage" style="margin-top: 15px;">
-        <div class="col" style="height: 50px; background: linear-gradient(to right, #28e5f6, #c8e4f5);">
+        <div class="col" style="height: 50px; background-color: gray;">
             <ul class="nav justify-content-center" style="list-style: none; height: auto; line-height: 50px;">
                 <li>
                     <a href="#">Feed</a>
@@ -120,8 +377,325 @@
             </ul>
         </div>
     </div>
+    <!--피드 nav 종료-->
 
+    <!-- 스타가 남긴 글 -->
+    <div class="jumbotron jumbotron-fluid" id="star_remain_area" style="padding-left: 12px; padding-right: 12px;">
+        <div class="container-fluid" style="background: linear-gradient(to bottom, gray, rgb(247, 247, 247));">
+            <div id="sr_content" class="sr_content">
+                <div id="sr_title">
+                    <span>&nbsp;FROM. STAR&nbsp;</span>
+                    <br>
+                    공식 팬 카페
+                    <br>
+                    <strong>스타가 남긴 글</strong>
+                    <br>
+                    <button class="btn btn-light prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn btn-light next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div id="sr_list">
+                    <ul>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">1위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">2위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">3위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">4위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">5위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">6위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="profile">
+                                <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                            </div>
+                            <div class="msg">
+                                <strong class="nickname">원호</strong>
+                                <p class="content">7위니 맛점했어요??asdf</p>
+                                <p class="date">2023.12.09</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br><br><br><br>
+        </div>
+    </div>
+    <!-- 스타가 남긴 글 끝 -->
 
+    <!--피드 List 시작-->
+    <div class="container-fluid" id="feedList" style="padding-left: 125px; padding-right: 125px; margin-top: -50px;">
+        <div class="row">
+            <!--좌측 피드 작성 및 리스트 시작-->
+            <div class="col-md-8" style="padding-right: 30px;">
+                <div class="createFeed">
+                    asdf
+                </div>
+            </div>
+            <!--좌측 피드 작성 및 리스트 종료-->
+
+            <!--우측 아티스트 사진, 공지사항, 채팅창 시작-->
+            <div class="col-6 col-md-4" style="padding-left: 30px;">
+
+                <!--아티스트 메인 사진 시작-->
+                <img class="feedImg" src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f706_740" alt="">
+                <!--아티스트 메인 사진 종료-->
+
+                <!--팬카페 공지사항 리스트 시작-->
+                <div style="padding-top: 20px; padding-bottom: 20px; background-color:#f4f6f8; margin-top: 30px; width: 100%; border-radius: 20px;">
+                    <table class="right-notice" border="0px solid red" style="width: 100%; ">
+                        <thead style="border-top: 10px;">
+                            <tr>
+                                <th style="width: 15%; text-align: center;">
+                                    &nbsp;<i class="bi bi-megaphone"></i>
+                                </th>
+                                <th style="width: 75%;"><a href="">팬카페 공지사항</a></th>
+                                <th style="width: 10%;"><a href=""><i class="bi bi-caret-right"></i></a></th>
+                            </tr>
+                        </thead>
+                        <tbody style="border-top: 10px;">
+                            <tr>
+                                <td></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 1기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 2기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 3기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 4기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--팬카페 공지사항 리스트 종료-->
+
+                <!--채팅장 시작-->
+                <div class="container fan-chat">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <strong>실시간 응원</strong>
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                <div class="accordion-body fan-detail">
+                                    <div class="col-6" style="padding-left: 10px; margin-bottom: 5px;">
+                                        <strong><i class="bi bi-chat-dots"></i>실시간 응원 000개</strong>
+                                    </div>
+                                    <div class="col-12 insertChat" style="height: auto;">
+                                        <span><strong>admin</strong></span>
+                                        <textarea rows="4" placeholder="응원메시지를 입력해주세요.&#13;&#10;아티스트에 대한 응원과 무관한 내용은&#13;&#10;글 삭제 및 계정 제제를 받을 수 있습니다. " style="width: 100%; border-width: 0px ; resize: none;"></textarea>
+                                        <hr style="margin: 0px; padding: 0px;">
+                                        <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
+                                            <div class="col-12">
+                                                <div style="float: right;">
+                                                    <span id="chatCount">0</span>
+                                                    <span>/</span>
+                                                    <span style="color: gray;"><strong>300</strong></span>
+                                                    <button class="btn btn-success" disabled>등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+                <!--채팅장 종료-->
+                $
+                
+
+                <!--푸터 시작-->
+                <div class="container-fluid" id="footer">
+                    <div class="container">
+                        <br>
+                        <div class="footer_title">
+                            <h2>
+                                Celover
+                                <em>since 2023.12.13</em>
+                            </h2>
+                        </div>
+                        <div class="footer_content">
+                            <div class="footer_navbar">
+                                <ul class="">
+                                    <li class="">
+                                        <a>이용약관&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>서비스운영정책&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>청소년 보호 정책&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>개인정보처리방침&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>쿠키정책&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a>쿠키 설정&nbsp;|&nbsp;</a>
+                                    </li>
+                                    <li class="">
+                                        <a> 입점 신청</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="copyright">
+                            <span>Copyright 2023.CELOVER.All rights reserverd.</span>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <!--푸터 종료-->
+            </div>
+            <!--우측 아티스트 사진, 공지사항, 채팅창 종료-->
+
+        </div>
+    </div>
+
+    <!--피드 List 끝-->
     
+    
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--피드페이지 종료-->
+
+    <script>
+
+        $(window).on('resize load', function () { // 창 사이즈 변경 또는 창이 로딩 됐을 때 실행
+            /* following list 영역 */
+            // following list => fl 
+            let fl_width = 128.35; // image width
+            let fl_list_length = $(".fl_list").width(); // list 영역의 동적 길이
+            let fl_count = fl_list_length / fl_width; // list 영역에서 보여줄 프로필의 갯수 
+
+            let fl_list = $('#fl_content ul');
+            let fl_list_items = $("#fl_content ul li");
+
+            let fl_position = 0;
+
+            // shift left
+            $("#fl_content .prev").click(function () {
+                fl_position += fl_width * fl_count;
+                fl_position = Math.min(fl_position, 0)
+                fl_list.css("margin-left", fl_position + 'px');
+            });
+
+            $("#fl_content .next").click(function () {
+                // shift right
+                fl_position -= fl_width * fl_count;
+                fl_position = Math.max(fl_position, - fl_width * (fl_list_items.length - fl_count));
+                fl_list.css("margin-left", fl_position + 'px');
+            });
+            /* following list 영역 끝 */
+
+            /* 스타가 남긴 글 script */
+            // StarRemain => sr
+            let sr_width = 20; // li width
+            let sr_count = 4; // list 영역에서 보여줄 프로필의 갯수 
+
+            let sr_list = $("#sr_content ul")
+            let sr_list_items = $("#sr_content ul li");
+
+            let sr_position = 0; // default position
+
+            // shift left
+            $("#sr_content .prev").click(function () {
+                sr_position += sr_width * sr_count;
+                sr_position = Math.min(sr_position, 0)
+                sr_list.css("margin-left", sr_position + 'vw');
+            })
+
+            // shift right
+            $("#sr_content .next").click(function () {
+                sr_position -= sr_width * sr_count;
+                sr_position = Math.max(sr_position, - sr_width * (sr_list_items.length - sr_count));
+                sr_list.css("margin-left", sr_position + 'vw');
+            })
+
+            /* 스타가 남긴 글 script 끝 */
+        })
+    </script>
+
+
 </body>
+
 </html>
