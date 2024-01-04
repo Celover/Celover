@@ -19,9 +19,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
     <style>
-        a{
+        a {
             text-decoration: none;
         }
+
         .nav-item {
             width: 80px;
             text-align: center;
@@ -176,83 +177,129 @@
             width: 100%;
             border-radius: 20px;
         }
-        #feedList{
+
+        #feedList {
             box-sizing: border-box;
         }
-        .createFeed{
+
+        .createFeed {
             width: 100%;
             height: 70px;
             background-color: white;
             border-radius: 40px;
             box-shadow: 1px 1px 5px rgb(194, 194, 194);
-            
+
         }
-        .createFeed:hover{
+
+        .createFeed:hover {
             cursor: pointer;
             box-shadow: 1px 1px 20px rgb(194, 194, 194);
         }
-        .right-notice{
+
+        .right-notice {
             border-radius: 10px;
         }
-        .right-notice a{
+
+        .right-notice a {
             color: black;
             font-weight: bolder;
 
         }
-        .right-notice tr, .right-notice td{
+
+        .right-notice tr,
+        .right-notice td {
             border: 0px solid red;
             padding-left: 5px;
             padding-right: 5px;
         }
-        .notice-list{
+
+        .notice-list {
             display: block;
-            width:435px;
-            text-overflow:ellipsis;
-            overflow:hidden;
-            white-space:nowrap;
+            width: 435px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
 
         }
-        .notice-list a{
+
+        .notice-list a {
             color: gray;
         }
-        .notice-list a:hover{
+
+        .notice-list a:hover {
             text-decoration: underline;
             color: black;
         }
-        .notice-list thead td{
+
+        .notice-list thead td {
             font-size: x-large;
             font-weight: bolder;
         }
 
         /* fan-chat start */
-        .fan-chat{
+        .fan-chat {
             margin-top: 20px;
             margin-bottom: 20px;
             background-color: #f4f6f8;
             border-radius: 20px;
             padding: 20px;
         }
-        .fan-chat-hedaer{
+
+        .fan-chat-hedaer {
             width: 100%;
             margin: auto;
         }
-        .insertChat textarea::placeholder{
+
+        .insertChat textarea::placeholder {
             font-weight: bolder;
             font-size: larger;
         }
-        .insertChat{
+
+        .insertChat {
             padding: 10px;
             padding-bottom: 0px;
             border: 1px solid lightgray;
             border-radius: 5px;
         }
 
+        .chat-content {
+            background-color: #f4f6f8;
+            height: auto;
+            margin: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .chat-content .row {
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .chat-content-detail {
+            padding: 10px 20px 20px 20px;
+        }
+
+        .chat-user {
+            font-weight: bolder;
+        }
+
+        .chat-time,
+        .chat-report {
+            color: gray;
+        }
+
+        .chat-report:hover {
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
         /* fan-chat end */
 
         /* footer css */
-        #footer{
+        #footer {
             color: gray;
         }
+
         #footer .footer_title {
             /* font-family: 'Lobster', serif;*/
             font-family: 'Bruno Ace', serif;
@@ -292,13 +339,44 @@
             font-weight: 500;
             color: #8e8e8e;
         }
-        #footer a{
+
+        #footer a {
             cursor: pointer;
         }
 
         /* footer css 끝 */
 
         /*피드 우측 css 끝*/
+
+
+        /*피드 좌측 css 시작*/
+        .createFeed{
+            box-sizing: border-box;
+        }
+        .createFeed .row, .createFeed .feed_create_icon{
+            height: 100%;
+        }
+        .feed_create_icon img{
+            height: 100%;
+            border-radius: 40px;
+            padding: 7px;
+            margin-top: -8px;
+            
+        }
+        .createFeed .feedcoment{
+            font-size: large;
+            color: gray;
+            opacity: 0.8;
+            font-weight: bolder;
+            line-height: 70px;
+        }
+        .feed_create_icon2{
+            font-size: xx-large;
+        }
+        .feed_create_icon2 i {
+            margin-right: 10px;
+        }
+        /*피드 좌측 css 종료*/
     </style>
 </head>
 
@@ -479,7 +557,16 @@
             <!--좌측 피드 작성 및 리스트 시작-->
             <div class="col-md-8" style="padding-right: 30px;">
                 <div class="createFeed">
-                    asdf
+                    <div class="row">
+                        <div class="col-10 feed_create_icon">
+                            <img src="https://cdn-v2pstatic.weverse.io/wev_web_fe/p/2_14_0/public/static/media/icon_empty_profile.b0996808ea97350978a4.png" alt="">
+                            <span class="feedcoment">여러분의 소중한 아티스트에게 피드를 남겨보세요.</span>
+                        </div>
+                        <div class="col-2 text-center feed_create_icon2" style="line-height: 60px;">
+                            <i class="bi bi-camera"></i>
+                            <i class="bi bi-camera-video"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--좌측 피드 작성 및 리스트 종료-->
@@ -488,11 +575,14 @@
             <div class="col-6 col-md-4" style="padding-left: 30px;">
 
                 <!--아티스트 메인 사진 시작-->
-                <img class="feedImg" src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f706_740" alt="">
+                <img class="feedImg"
+                    src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f706_740"
+                    alt="">
                 <!--아티스트 메인 사진 종료-->
 
                 <!--팬카페 공지사항 리스트 시작-->
-                <div style="padding-top: 20px; padding-bottom: 20px; background-color:#f4f6f8; margin-top: 30px; width: 100%; border-radius: 20px;">
+                <div
+                    style="padding-top: 20px; padding-bottom: 20px; background-color:#f4f6f8; margin-top: 30px; width: 100%; border-radius: 20px;">
                     <table class="right-notice" border="0px solid red" style="width: 100%; ">
                         <thead style="border-top: 10px;">
                             <tr>
@@ -506,19 +596,23 @@
                         <tbody style="border-top: 10px;">
                             <tr>
                                 <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 1기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 1기 서포터즈를 모집합니다. CeLover
+                                        1기 서포터즈를 모집합니다.</a></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 2기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 2기 서포터즈를 모집합니다. CeLover
+                                        1기 서포터즈를 모집합니다.</a></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 3기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 3기 서포터즈를 모집합니다. CeLover
+                                        1기 서포터즈를 모집합니다.</a></td>
                             </tr>
                             <tr>
                                 <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 4기 서포터즈를 모집합니다. CeLover 1기 서포터즈를 모집합니다.</a></td>
+                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 4기 서포터즈를 모집합니다. CeLover
+                                        1기 서포터즈를 모집합니다.</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -529,19 +623,24 @@
                 <div class="container fan-chat">
                     <div class="accordion" id="accordionExample">
                         <div class="accordion-item">
-                          <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              <strong>실시간 응원</strong>
-                            </button>
-                          </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    <strong>실시간 응원</strong>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
                                 <div class="accordion-body fan-detail">
                                     <div class="col-6" style="padding-left: 10px; margin-bottom: 5px;">
                                         <strong><i class="bi bi-chat-dots"></i>실시간 응원 000개</strong>
                                     </div>
                                     <div class="col-12 insertChat" style="height: auto;">
                                         <span><strong>admin</strong></span>
-                                        <textarea rows="4" placeholder="응원메시지를 입력해주세요.&#13;&#10;아티스트에 대한 응원과 무관한 내용은&#13;&#10;글 삭제 및 계정 제제를 받을 수 있습니다. " style="width: 100%; border-width: 0px ; resize: none;"></textarea>
+                                        <textarea id="chatMessage" rows="4"
+                                            placeholder="응원메시지를 입력해주세요.&#13;&#10;아티스트에 대한 응원과 무관한 내용은&#13;&#10;글 삭제 및 계정 제제를 받을 수 있습니다. "
+                                            style="width: 100%; border-width: 0px ; resize: none;" minlength="1"
+                                            maxlength="300"></textarea>
                                         <hr style="margin: 0px; padding: 0px;">
                                         <div class="row" style="padding-top: 10px; padding-bottom: 10px;">
                                             <div class="col-12">
@@ -549,22 +648,53 @@
                                                     <span id="chatCount">0</span>
                                                     <span>/</span>
                                                     <span style="color: gray;"><strong>300</strong></span>
-                                                    <button class="btn btn-success" disabled>등록</button>
+                                                    <button id="createChat" class="btn btn-success" disabled>등록</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--실제 채팅이 보여지는 자리-->
+                                    <div class="chat-content">
+                                        <div class="row">
+                                            <div class="col-6 chat-user">진용팍</div>
+                                            <div class="col-6 chat-data">
+                                                <span class="chat-time">2024-01-04 11:50</span>
+                                                <span class="chat-report">신고</span>
+                                            </div>
+                                        </div>
+                                        <div class="chat-content-detail">
+                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                        </div>
+                                    </div>
+                                    <div class="chat-content">
+                                        <div class="row">
+                                            <div class="col-6 chat-user">3원종</div>
+                                            <div class="col-6 chat-data">
+                                                <span class="chat-time">2024-01-04 11:50</span>
+                                                <span class="chat-report">신고</span>
+                                            </div>
+                                        </div>
+                                        <div class="chat-content-detail">
+                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                        </div>
+                                    </div>
+                                    <div class="chat-content">
+                                        <div class="row">
+                                            <div class="col-6 chat-user">시연킴</div>
+                                            <div class="col-6 chat-data">
+                                                <span class="chat-time">2024-01-04 11:50</span>
+                                                <span class="chat-report">신고</span>
+                                            </div>
+                                        </div>
+                                        <div class="chat-content-detail">
+                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
                 </div>
-                <!--채팅장 종료-->
-                $
-                
-
                 <!--푸터 시작-->
                 <div class="container-fluid" id="footer">
                     <div class="container">
@@ -613,14 +743,16 @@
                 </div>
                 <!--푸터 종료-->
             </div>
-            <!--우측 아티스트 사진, 공지사항, 채팅창 종료-->
-
         </div>
+        <!--채팅장 종료-->
+
     </div>
+    <!--우측 아티스트 사진, 공지사항, 채팅창 종료-->
 
     <!--피드 List 끝-->
-    
-    
+
+
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
@@ -692,6 +824,19 @@
             })
 
             /* 스타가 남긴 글 script 끝 */
+            /* 응원채팅창 script 시작 */
+            $(document).ready(function () {
+                const $chatMessage = $('#chatMessage');
+                const $chatCount = $('#chatCount');
+                const $createChatBtn = $('#createChat');
+
+                $chatMessage.on('input', function () {
+                    const currentCharCount = $chatMessage.val().length;
+                    $createChatBtn.prop('disabled', currentCharCount === 0 || currentCharCount > 300);
+                    $chatCount.text(currentCharCount);
+                });
+            });
+            /* 응원채팅창 script 종료 */
         })
     </script>
 
