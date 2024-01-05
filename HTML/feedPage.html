@@ -215,7 +215,7 @@
 
         .notice-list {
             display: block;
-            width: 435px;
+            width: 100%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
@@ -224,6 +224,7 @@
 
         .notice-list a {
             color: gray;
+            font-size: small;
         }
 
         .notice-list a:hover {
@@ -251,8 +252,11 @@
         }
 
         .insertChat textarea::placeholder {
-            font-weight: bolder;
-            font-size: larger;
+            font-size: small;
+        }
+
+        .insertChat-user {
+            font-weight: bold;
         }
 
         .insertChat {
@@ -262,12 +266,19 @@
             border-radius: 5px;
         }
 
+        .insertChat span {
+            font-size: small;
+        }
+
         .chat-content {
             background-color: #f4f6f8;
             height: auto;
-            margin: 10px;
             margin-top: 20px;
             border-radius: 10px;
+        }
+
+        .chat-data span {
+            font-size: small;
         }
 
         .chat-content .row {
@@ -276,14 +287,15 @@
         }
 
         .chat-content-detail {
+            font-size: small;
             padding: 10px 20px 20px 20px;
         }
 
         .chat-user {
+            font-size: small;
             font-weight: bolder;
         }
 
-        .chat-time,
         .chat-report {
             color: gray;
         }
@@ -294,6 +306,119 @@
         }
 
         /* fan-chat end */
+
+        /*fan-notice start*/
+        .fan-notice{
+            background-color: #f4f6f8;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+        .fan-notice-title{
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            font-weight: bolder;
+        }
+        .fan-notice-icon i{
+            display: flex;
+            justify-content: right;
+        }
+        .fan-notice-list{
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+        .fan-notice-detail{
+            margin-bottom: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+        .fan-notice-detail a{
+            font-size: smaller;
+            font-weight: bold;
+            color: gray
+        }
+        /*fan-notice end*/
+
+        /*feed-list css start*/
+        .feed-list{
+            margin-left: 2px;
+            margin-right: 2px;
+            height: auto;
+            padding: 15px;
+            box-shadow: 1px 1px 10px rgb(193, 193, 193);
+            border-radius: 20px;
+        }
+        .feed-list, .feed-list div{
+            border: 0px solid red;
+        }
+        .feed-user-titleimg{
+            height: 44px;
+        }
+        .feed-user-titleimg img{
+            height: 100%;
+            border-radius: 30px;
+        }
+        .feed-user-name div{
+            font-size: small;
+        }
+        .feed-user-name{
+            padding: 0px;
+        }
+        .feed-like, .feed-coment{
+            height: 30px;
+        }
+        .feed-like img, .feed-coment img{
+            height: 100%;
+        }
+        .feed-like-coment-etc{
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+        .feed-like img, .feed-coment img{
+            cursor: pointer;
+        }
+        /*feed-list css end*/
+
+        /* create feed modal css start*/
+        .create_feed_mainmodal {
+            border-radius: 20px;
+        }
+
+        .create_feed_mainmodal .modal-body {
+            border-top: 0px solid red;
+        }
+
+        .feed-textbox {
+            padding: 25px;
+        }
+
+        .feed-textbox textarea {
+            resize: none;
+            border: 0px;
+            outline: none;
+        }
+
+        .feed-textbox textarea::placeholder {
+            font-weight: bolder;
+            opacity: 0.6;
+        }
+
+        #feed-header-1 {
+            font-size: x-large;
+        }
+
+        #feed-header-2 {
+            font-weight: bolder;
+            color: gray;
+        }
+
+        /* create feed modal css end*/
 
         /* footer css */
         #footer {
@@ -344,48 +469,57 @@
             cursor: pointer;
         }
 
+        .footer_navbar a{
+            font-size: small;
+        }
+
         /* footer css 끝 */
 
         /*피드 우측 css 끝*/
 
 
         /*피드 좌측 css 시작*/
-        .createFeed{
+        .createFeed {
             box-sizing: border-box;
         }
-        .createFeed .row, .createFeed .feed_create_icon{
+
+        .createFeed .row,
+        .createFeed .feed_create_icon {
             height: 100%;
         }
-        .feed_create_icon img{
+
+        .feed_create_icon img {
             height: 100%;
             border-radius: 40px;
             padding: 7px;
             margin-top: -8px;
-            
+
         }
-        .createFeed .feedcoment{
-            font-size: large;
+
+        .createFeed .feedcoment {
             color: gray;
             opacity: 0.8;
             font-weight: bolder;
             line-height: 70px;
         }
-        .feed_create_icon2{
+
+        .feed_create_icon2 {
             font-size: xx-large;
         }
+
         .feed_create_icon2 i {
             margin-right: 10px;
         }
+
         /*피드 좌측 css 종료*/
     </style>
 </head>
 
 <body>
     <!--start header-->
-    <div class="container">
+    <div class="container-fluid">
         <br>
-        <div class="row">
-
+        <div class="row" style="padding-left: 50px; padding-right: 50px;">
             <div class="col mainLogo" style="font-family: 'Bruno Ace', serif;">
                 <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
             </div>
@@ -556,10 +690,11 @@
         <div class="row">
             <!--좌측 피드 작성 및 리스트 시작-->
             <div class="col-md-8" style="padding-right: 30px;">
-                <div class="createFeed">
+                <div class="createFeed" data-bs-toggle="modal" data-bs-target="#feed">
                     <div class="row">
                         <div class="col-10 feed_create_icon">
-                            <img src="https://cdn-v2pstatic.weverse.io/wev_web_fe/p/2_14_0/public/static/media/icon_empty_profile.b0996808ea97350978a4.png" alt="">
+                            <img src="https://cdn-v2pstatic.weverse.io/wev_web_fe/p/2_14_0/public/static/media/icon_empty_profile.b0996808ea97350978a4.png"
+                                alt="">
                             <span class="feedcoment">여러분의 소중한 아티스트에게 피드를 남겨보세요.</span>
                         </div>
                         <div class="col-2 text-center feed_create_icon2" style="line-height: 60px;">
@@ -568,7 +703,86 @@
                         </div>
                     </div>
                 </div>
+
+                <br>
+                <!--피드 리스트 시작-->
+
+                <div class="row feed-list">
+                    <div class="col-1 feed-user-titleimg">
+                        <img src="sampleImg/메인13.jpg" alt="">
+                    </div>
+                    <div class="col-3 feed-user-name">
+                        <div class="feed-user-name-main">
+                            <span style="font-weight: bolder;">21jong</span>
+                        </div>
+                        <div class="feed-createdate">
+                            <span>01.05.11:42</span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    </div>
+                    <div class="col-12 feed-like-coment-etc">
+                        <div class="row">
+                            <div class="col-1 feed-like">
+                                <img class="love" src="sampleImg/하트.png" alt="">
+                                <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
+                            </div>
+                            <div class="col-1 feed-coment">
+                                <img src="sampleImg/댓글.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(()=>{
+                        if($('.love').is(':hidden')){
+                            $('.loved').on('click', ()=>{
+                                $('.love').removeAttr('hidden');
+                                $('.loved').attr('hidden');
+                            })
+                        }else{
+                            $('.love').on('click', ()=>{
+                                $('.loved').removeAttr('hidden');
+                                $('.love').attr('hidden');
+                            })
+                        }
+                    })
+                </script>
+
+                <!--피드 리스트 종료-->
+
             </div>
+
+            <!--피드작성 모달 시작-->
+            <div class="modal fade" id="feed" tabindex="-1" aria-labelledby="feed" aria-hidden="true">
+                <!--<div class="modal fade" id="feed" tabindex="-1" aria-labelledby="feed" aria-hidden="true">-->
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content create_feed_mainmodal">
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12 text-center" style="margin-top: 20px;">
+                                        <span id="feed-header-1"><strong>팬피드 쓰기</strong></span>
+                                        <br>
+                                        <span id="feed-header-2">21Jong</span>
+                                    </div>
+                                    <div class="col-12 feed-textbox">
+                                        <textarea name="" id="feedcontent" style="width: 100%;" rows="20"
+                                            placeholder="팬 여러분들의 관심을 남겨주세요..." minlength="1"
+                                            maxlength="1000"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="feedcontentbtn" class="btn btn-success" disabled>제출</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--피드작성 모달 종료-->
+
             <!--좌측 피드 작성 및 리스트 종료-->
 
             <!--우측 아티스트 사진, 공지사항, 채팅창 시작-->
@@ -581,41 +795,40 @@
                 <!--아티스트 메인 사진 종료-->
 
                 <!--팬카페 공지사항 리스트 시작-->
-                <div
-                    style="padding-top: 20px; padding-bottom: 20px; background-color:#f4f6f8; margin-top: 30px; width: 100%; border-radius: 20px;">
-                    <table class="right-notice" border="0px solid red" style="width: 100%; ">
-                        <thead style="border-top: 10px;">
-                            <tr>
-                                <th style="width: 15%; text-align: center;">
-                                    &nbsp;<i class="bi bi-megaphone"></i>
-                                </th>
-                                <th style="width: 75%;"><a href="">팬카페 공지사항</a></th>
-                                <th style="width: 10%;"><a href=""><i class="bi bi-caret-right"></i></a></th>
-                            </tr>
-                        </thead>
-                        <tbody style="border-top: 10px;">
-                            <tr>
-                                <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 1기 서포터즈를 모집합니다. CeLover
-                                        1기 서포터즈를 모집합니다.</a></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 2기 서포터즈를 모집합니다. CeLover
-                                        1기 서포터즈를 모집합니다.</a></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 3기 서포터즈를 모집합니다. CeLover
-                                        1기 서포터즈를 모집합니다.</a></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="notice-list" colspan="2"><a href="">[Notice] CeLover 4기 서포터즈를 모집합니다. CeLover
-                                        1기 서포터즈를 모집합니다.</a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="fan-notice">
+                    <div class="row fan-notice-title">
+                        <div class="col-1"><i class="bi bi-megaphone"></i></div>
+                        <div class="col-9" style="line-height: 30px;">팬카페 공지사항</div>
+                        <div class="col-2">
+                            <a href="#" style="padding-left: 5px; color: gray;">
+                                <i class="bi bi-caret-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row fan-notice-list">
+                        <div class="col-1"></div>
+                        <div class="col-11 fan-notice-detail">
+                            <a href="#">[Notice] CeLover 1기 서포터즈를 모집합니다. CeLover1기 서포터즈를 모집합니다.</a>
+                        </div>
+                    </div>
+                    <div class="row fan-notice-list">
+                        <div class="col-1"></div>
+                        <div class="col-11 fan-notice-detail">
+                            <a href="#">[Notice] CeLover 2기 서포터즈를 모집합니다. CeLover1기 서포터즈를 모집합니다.</a>
+                        </div>
+                    </div>
+                    <div class="row fan-notice-list">
+                        <div class="col-1"></div>
+                        <div class="col-11 fan-notice-detail">
+                            <a href="#">[Notice] CeLover 3기 서포터즈를 모집합니다. CeLover1기 서포터즈를 모집합니다.</a>
+                        </div>
+                    </div>
+                    <div class="row fan-notice-list">
+                        <div class="col-1"></div>
+                        <div class="col-11 fan-notice-detail">
+                            <a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, tenetur, nihil error cupiditate maxime quam necessitatibus voluptates debitis possimus, quasi perferendis ipsam illum rem provident explicabo ea. Qui, aliquid similique.</a>
+                        </div>
+                    </div>
                 </div>
                 <!--팬카페 공지사항 리스트 종료-->
 
@@ -632,12 +845,13 @@
                             <div id="collapseOne" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body fan-detail">
-                                    <div class="col-6" style="padding-left: 10px; margin-bottom: 5px;">
-                                        <strong><i class="bi bi-chat-dots"></i>실시간 응원 000개</strong>
+                                    <div class="col-12" style="padding-left: 10px; margin-bottom: 5px;">
+                                        <i class="bi bi-chat-dots"></i>
+                                        <span style="font-size: small; font-weight: bold;">실시간 응원 000개</span>
                                     </div>
                                     <div class="col-12 insertChat" style="height: auto;">
-                                        <span><strong>admin</strong></span>
-                                        <textarea id="chatMessage" rows="4"
+                                        <span class="insertChat-user">admin</span>
+                                        <textarea id="chatMessage" rows="3"
                                             placeholder="응원메시지를 입력해주세요.&#13;&#10;아티스트에 대한 응원과 무관한 내용은&#13;&#10;글 삭제 및 계정 제제를 받을 수 있습니다. "
                                             style="width: 100%; border-width: 0px ; resize: none;" minlength="1"
                                             maxlength="300"></textarea>
@@ -647,8 +861,9 @@
                                                 <div style="float: right;">
                                                     <span id="chatCount">0</span>
                                                     <span>/</span>
-                                                    <span style="color: gray;"><strong>300</strong></span>
-                                                    <button id="createChat" class="btn btn-success" disabled>등록</button>
+                                                    <span style="color: gray;">300</span>
+                                                    <button id="createChat" class="btn btn-sm btn-success"
+                                                        disabled>등록</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -656,8 +871,8 @@
                                     <!--실제 채팅이 보여지는 자리-->
                                     <div class="chat-content">
                                         <div class="row">
-                                            <div class="col-6 chat-user">진용팍</div>
-                                            <div class="col-6 chat-data">
+                                            <div class="col-4 chat-user">용진팍</div>
+                                            <div class="col-8 chat-data text-center">
                                                 <span class="chat-time">2024-01-04 11:50</span>
                                                 <span class="chat-report">신고</span>
                                             </div>
@@ -668,8 +883,8 @@
                                     </div>
                                     <div class="chat-content">
                                         <div class="row">
-                                            <div class="col-6 chat-user">3원종</div>
-                                            <div class="col-6 chat-data">
+                                            <div class="col-4 chat-user">용진팍</div>
+                                            <div class="col-8 chat-data text-center">
                                                 <span class="chat-time">2024-01-04 11:50</span>
                                                 <span class="chat-report">신고</span>
                                             </div>
@@ -680,8 +895,8 @@
                                     </div>
                                     <div class="chat-content">
                                         <div class="row">
-                                            <div class="col-6 chat-user">시연킴</div>
-                                            <div class="col-6 chat-data">
+                                            <div class="col-4 chat-user">용진팍</div>
+                                            <div class="col-8 chat-data text-center">
                                                 <span class="chat-time">2024-01-04 11:50</span>
                                                 <span class="chat-report">신고</span>
                                             </div>
@@ -690,6 +905,7 @@
                                             원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -837,6 +1053,20 @@
                 });
             });
             /* 응원채팅창 script 종료 */
+            /*피드 작성 script 시작*/
+            $(document).ready(function () {
+                $('#feedcontent').keyup(function () {
+                    var textLength = $(this).val().length;
+
+                    if (textLength >= 1 && textLength <= 1000) {
+                        $('#feedcontentbtn').prop('disabled', false);
+                    } else {
+                        $('#feedcontentbtn').prop('disabled', true);
+                    }
+                });
+            });
+
+            /*피드 작성 script 종료*/
         })
     </script>
 
