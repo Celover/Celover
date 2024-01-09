@@ -268,75 +268,92 @@
 
                     /* 내가 좋아요한 피드 css */
 
-                    #myPage_content #report_area .container {
+                    #myPage_content #inquiry_area .container {
                         border: 1px solid #dee2e6;
                     }
 
-                    #myPage_content #report_area table {
+                    #myPage_content #inquiry_area table {
                         table-layout: fixed;
                     }
 
-                    #myPage_content #report_area table * {
+                    #myPage_content #inquiry_area table * {
                         text-align: center;
                     }
 
-                    #myPage_content #report_area table thead .col_check_box {
-                        width: 3%;
+                    #myPage_content #inquiry_area table thead tr th {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
 
-                    #myPage_content #report_area table thead .col_category {
+                    #myPage_content #inquiry_area table thead .col_check_box {
+                        width: 32px;
+                    }
+
+                    #myPage_content #inquiry_area table thead .col_num {
+                        width: auto;
+
+                    }
+
+                    #myPage_content #inquiry_area table thead .col_category {
+                        width: 12%;
+                    }
+
+                    #myPage_content #inquiry_area table thead .col_reason {
                         width: auto;
                     }
 
-                    #myPage_content #report_area table thead .col_reason {
-                        width: auto;
-                    }
-
-                    #myPage_content #report_area table thead .col_content {
+                    #myPage_content #inquiry_area table thead .col_content {
                         width: 57%;
                     }
 
-                    #myPage_content #report_area table thead .col_report_date {
-                        width: auto;
+                    #myPage_content #inquiry_area table thead .col_inquiry_date {
+                        width: 9%;
                     }
 
-                    #myPage_content #report_area table thead .col_state {
-                        width: auto;
+                    #myPage_content #inquiry_area table thead .col_state {
+                        width: 12%;
                     }
-                    
-                    #myPage_content #report_area table tbody .category {
-                        color: #666;
+
+                    #myPage_content #inquiry_area table tbody tr td {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
                     }
-                    
-                    #myPage_content #report_area table tbody .reason {
+
+                    #myPage_content #inquiry_area table tbody .category {
                         color: #666;
                     }
 
-                    #myPage_content #report_area table tbody .content {
+                    #myPage_content #inquiry_area table tbody .reason {
+                        color: #666;
+                    }
+
+                    #myPage_content #inquiry_area table tbody .content {
                         text-align: left;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
 
-                    #myPage_content #report_area table tbody .report_date {
+                    #myPage_content #inquiry_area table tbody .inquiry_date {
                         color: #666;
                     }
 
-                    #myPage_content #report_area table tbody tr:hover {
+                    #myPage_content #inquiry_area table tbody tr:hover {
                         cursor: pointer;
                     }
 
-                    #myPage_content #report_area table tfoot .delete_area {
+                    #myPage_content #inquiry_area table tfoot .delete_area {
                         text-align: right;
                     }
-                    
+
                     /* 내가 작성한 피드 css 끝 */
                 </style>
                 <div class="col-md-9" id="myPage_content">
                     <br>
-                    <div id="report_area">
-                        <h4>신고 관리</h4>
+                    <div id="inquiry_area">
+                        <h4>문의 내역</h4>
                         <hr>
 
                         <div class="container">
@@ -347,236 +364,122 @@
                                             <th scope="col" class="col_check_box">
                                                 <input class="form-check-input check_all" type="checkbox" value="">
                                             </th>
-                                            <th scope="col" class="col_category">카테고리</th>
-                                            <th scope="col" class="col_reason">신고사유</th>
-                                            <th scope="col" class="col_content">신고내용</th>
-                                            <th scope="col" class="col_report_date">신고날짜</th>
-                                            <th scope="col" class="col_state">처리상태</th>
+                                            <th scope="col" class="col_num">번호</th>
+                                            <th scope="col" class="col_category">문의유형</th>
+                                            <th scope="col" class="col_content">문의내용</th>
+                                            <th scope="col" class="col_inquiry_date">문의날짜</th>
+                                            <th scope="col" class="col_state">답변상태</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-group-divider table-hover">
-                                        <tr>
+                                        <tr class="a" data-bs-toggle="modal" data-bs-target="#inquiry_modal">
                                             <td class="check_box">
                                                 <input class="form-check-input check_one" type="checkbox" value="">
                                             </td>
+                                            <th scope="row" class="num">
+                                                5
+                                            </th>
                                             <td class="category">
-                                                게시판
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
+                                                이용 안내
                                             </td>
                                             <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
+                                                문희요
                                             </td>
-                                            <td class="report_date">
-                                                23:17
+                                            <td class="inquiry_date">
+                                                12:11
                                             </td>
                                             <td class="state">
-                                                <!-- <i class="fa-solid fa-check"> 완료</i> -->
-                                                <i class="fa-solid fa-spinner"> 처리중</i>
+                                                <!-- <i class="fa-solid fa-check" style="color: #00FF00;"> 답변 완료</i> -->
+                                                <i class="fa-solid fa-spinner" style="color: #FF0000;"> 접수 완료</i>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="check_box">
                                                 <input class="form-check-input check_one" type="checkbox" value="">
                                             </td>
+                                            <th scope="row" class="num">
+                                                4
+                                            </th>
                                             <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
+                                                교환/환불
                                             </td>
                                             <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
+                                                문희요
                                             </td>
-                                            <td class="report_date">
-                                                24.01.07
+                                            <td class="inquiry_date">
+                                                23.12.11
                                             </td>
                                             <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
+                                                <i class="fa-solid fa-check" style="color: #00FF00;"> 답변 완료</i>
+                                                <!-- <i class="fa-solid fa-spinner" style="color: #FF0000;"> 접수 완료</i> -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="check_box">
                                                 <input class="form-check-input check_one" type="checkbox" value="">
                                             </td>
+                                            <th scope="row" class="num">
+                                                3
+                                            </th>
                                             <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
+                                                상품 관련
                                             </td>
                                             <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
+                                                문희요
                                             </td>
-                                            <td class="report_date">
-                                                24.01.07
+                                            <td class="inquiry_date">
+                                                23.12.11
                                             </td>
                                             <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
+                                                <i class="fa-solid fa-check" style="color: #00FF00;"> 답변 완료</i>
+                                                <!-- <i class="fa-solid fa-spinner" style="color: #FF0000;"> 접수 완료</i> -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="check_box">
                                                 <input class="form-check-input check_one" type="checkbox" value="">
                                             </td>
+                                            <th scope="row" class="num">
+                                                2
+                                            </th>
                                             <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
+                                                이용 안내
                                             </td>
                                             <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
+                                                문희요
                                             </td>
-                                            <td class="report_date">
-                                                24.01.07
+                                            <td class="inquiry_date">
+                                                23.12.11
                                             </td>
                                             <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
+                                                <i class="fa-solid fa-check" style="color: #00FF00;"> 답변 완료</i>
+                                                <!-- <i class="fa-solid fa-spinner" style="color: #FF0000;"> 접수 완료</i> -->
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="check_box">
                                                 <input class="form-check-input check_one" type="checkbox" value="">
                                             </td>
+                                            <th scope="row" class="num">
+                                                1
+                                            </th>
                                             <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
+                                                이용 안내
                                             </td>
                                             <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
+                                                문희요
                                             </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
+                                            <td class="inquiry_date">
+                                                23.12.11
                                             </td>
                                             <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
+                                                <i class="fa-solid fa-check" style="color: #00FF00;"> 답변 완료</i>
+                                                <!-- <i class="fa-solid fa-spinner" style="color: #FF0000;"> 접수 완료</i> -->
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="check_box">
-                                                <input class="form-check-input check_one" type="checkbox" value="">
-                                            </td>
-                                            <td class="category">
-                                                댓글
-                                            </td>
-                                            <td class="reason">
-                                                폭언/욕설
-                                            </td>
-                                            <td class="content">
-                                                여기 클릭시 신고 모달 떠야 함
-                                            </td>
-                                            <td class="report_date">
-                                                24.01.07
-                                            </td>
-                                            <td class="state">
-                                                <i class="fa-solid fa-check"> 완료</i>
-                                            </td>
-                                        </tr>
-                                 
+
+
+
 
                                     </tbody>
                                     <tfoot class="table-group-divider">
@@ -586,11 +489,96 @@
                                             </td>
                                             <td colspan="3"></td>
                                             <td colspan="2" class="delete_area">
-                                                <button class="btn btn-danger">신고 삭제</button>
+                                                <button class="btn btn-danger">문의 삭제</button>
                                             </td>
                                         </tr>
                                     </tfoot>
                                 </table>
+                                <!-- 문의 모달 -->
+                                <div class="modal" tabindex="-1" id="inquiry_modal">
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h2 class="modal-title" style="font-weight: 800;">문의 상세</h2>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="container" style="border-radius: 7px;">
+                                                    <div class="row">
+                                                        <div class="bg-secondary bg-opacity-10 py-2">
+                                                            <div class="py-2">
+                                                                <strong style="font-size: large;">
+                                                                    아티스트를 등록하는 방법이 궁금해요.
+                                                                </strong>
+                                                            </div>
+                                                            <div style="font-size: small;">
+                                                                <strong>아이디 </strong>
+                                                                <span style="color: #666;">user01</span>
+    
+                                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+                                                                
+                                                                <strong>문의유형 </strong>
+                                                                <span>이용 관련</span>
+                                                                
+                                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+                                                                
+                                                                <strong>문의 날짜 </strong>
+                                                                <span>2022/12/11 14:11</span>
+                                                            </div>
+                                                        </div>
+                                                        <div style="padding: 24px 12px; min-height: 200px; border-bottom: 1px solid #dee2e6;">
+                                                            안녕하세요. 셀러버를 처음 사용하는데 아티스트를 검색하는 방법을 모르겠어요.
+                                                        </div>
+                                                        <div class="img_area p-2">
+                                                            <div class="p-1">
+                                                                <h5>
+                                                                    <i class="fas fa-paperclip"> 첨부파일</i>
+                                                                </h5>
+                                                            </div>
+                                                            <div class="p-1">
+                                                                <img style="width: 100px; height: 100px;" src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg" alt="">
+                                                                <img style="width: 100px; height: 100px;" src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg" alt="">
+                                                                <img style="width: 100px; height: 100px;" src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg" alt="">
+                                                                <img style="width: 100px; height: 100px;" src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg" alt="">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="row answer">
+                                                        <div class="d-flex p-3 answer_header" style="border-top: 1px solid #dee2e6;">
+                                                            <div class="flex-grow-1">
+                                                                <strong style="font-size: large;"><i class="fa-solid fa-headset"></i> 답변내용</strong>
+                                                            </div>
+                                                            <div style="font-size: small; line-height: 27px;">
+                                                                <strong>문의 날짜 </strong>
+                                                                <span>2022/12/11 14:11</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <hr style="margin: 0px; background-color: #dee2e6;">
+                                                        </div>
+                                                        <div class="py-2">
+                                                            저도 모르겠어요. 고객님이 직접 찾아보세요.😄😄😄
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-warning">수정하기</button>
+                                                <button type="button" class="btn btn-danger">삭제하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 문의 모달 끝 -->
+                                <script>
+                                    $(function () {
+                                        $(".a").click();
+                                    })
+                                </script>
+
                             </div>
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
