@@ -19,6 +19,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
     <style>
+        .header-nav{
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+        }
         a {
             text-decoration: none;
         }
@@ -308,45 +314,51 @@
         /* fan-chat end */
 
         /*fan-notice start*/
-        .fan-notice{
+        .fan-notice {
             background-color: #f4f6f8;
             border-radius: 20px;
             margin-top: 20px;
             padding-bottom: 10px;
         }
-        .fan-notice-title{
+
+        .fan-notice-title {
             padding-left: 25px;
             padding-right: 25px;
             padding-top: 10px;
             padding-bottom: 5px;
             font-weight: bolder;
         }
-        .fan-notice-icon i{
+
+        .fan-notice-icon i {
             display: flex;
             justify-content: right;
         }
-        .fan-notice-list{
+
+        .fan-notice-list {
             padding-left: 25px;
             padding-right: 25px;
             padding-top: 0px;
             padding-bottom: 0px;
         }
-        .fan-notice-detail{
+
+        .fan-notice-detail {
             margin-bottom: 5px;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
             word-break: break-all;
         }
-        .fan-notice-detail a{
+
+        .fan-notice-detail a {
             font-size: smaller;
             font-weight: bold;
             color: gray
         }
+
         /*fan-notice end*/
 
         /*feed-list css start*/
-        .feed-list{
+        .feed-list {
             margin-left: 2px;
             margin-right: 2px;
             height: auto;
@@ -354,35 +366,49 @@
             box-shadow: 1px 1px 10px rgb(193, 193, 193);
             border-radius: 20px;
         }
-        .feed-list, .feed-list div{
+
+        .feed-list,
+        .feed-list div {
             border: 0px solid red;
         }
-        .feed-user-titleimg{
+
+        .feed-user-titleimg {
             height: 44px;
         }
-        .feed-user-titleimg img{
+
+        .feed-user-titleimg img {
             height: 100%;
             border-radius: 30px;
         }
-        .feed-user-name div{
+
+        .feed-user-name div {
             font-size: small;
         }
-        .feed-user-name{
+
+        .feed-user-name {
             padding: 0px;
         }
-        .feed-like, .feed-coment{
+
+        .feed-like,
+        .feed-coment {
             height: 30px;
         }
-        .feed-like img, .feed-coment img{
+
+        .feed-like img,
+        .feed-coment img {
             height: 100%;
         }
-        .feed-like-coment-etc{
+
+        .feed-like-coment-etc {
             margin-top: 10px;
             margin-bottom: 5px;
         }
-        .feed-like img, .feed-coment img{
+
+        .feed-like img,
+        .feed-coment img {
             cursor: pointer;
         }
+
         /*feed-list css end*/
 
         /* create feed modal css start*/
@@ -469,7 +495,7 @@
             cursor: pointer;
         }
 
-        .footer_navbar a{
+        .footer_navbar a {
             font-size: small;
         }
 
@@ -511,21 +537,23 @@
             margin-right: 10px;
         }
 
-        .feed-etc i{
+        .feed-etc i {
             font-weight: bolder;
             opacity: 0.5;
         }
-        .feed-etc i:hover{
+
+        .feed-etc i:hover {
             cursor: pointer;
             opacity: 1;
         }
-        .feed-user-content{
+
+        .feed-user-content {
             cursor: pointer;
         }
 
         /*피드 좌측 css 종료*/
         /*알람 css 시작*/
-        .etc_area > i {
+        .etc_area>i {
             font-size: x-large;
             width: 15px;
             text-align: center;
@@ -535,7 +563,7 @@
             border-radius: 10px;
             position: absolute;
             background: #fff;
-            display: none; 
+            display: none;
             padding: 10px;
             background-color: #fff;
             margin-top: 10px;
@@ -548,7 +576,7 @@
             position: absolute;
             top: 0%;
             left: 50%;
-            width: 0;   
+            width: 0;
             height: 0;
             border: 12px solid transparent;
             border-bottom-color: #fff;
@@ -556,9 +584,9 @@
             border-left: 0;
             margin-left: -6px;
             margin-top: -12px;
-            box-shadow: -4px 0px 2px -1px rgba( 178, 178, 178, .4 );
+            box-shadow: -4px 0px 2px -1px rgba(178, 178, 178, .4);
         }
-        
+
         .etc_area .msgbox ul {
             list-style: none;
             padding: 0px;
@@ -577,44 +605,125 @@
             background-color: #e9ecef;
             cursor: pointer;
         }
-        
+
         .etc_area ul li i {
             width: 16px;
             height: 16px;
             text-align: center;
         }
+
         /*알람 css 종료*/
 
         /*게시글 삭제 모달 시작*/
-        .delete-cancel:hover, .delete-agree:hover{
+        .delete-cancel:hover,
+        .delete-agree:hover {
             cursor: pointer;
             border-radius: 15px
         }
-        .delete-agree:hover{
+
+        .delete-agree:hover {
             background-color: rgb(233, 251, 251);
         }
-        .delete-cancel:hover{
-            background-color:rgb(237, 236, 236);
+
+        .delete-cancel:hover {
+            background-color: rgb(237, 236, 236);
         }
-        .delete-cancel, .delete-agree{
+
+        .delete-cancel,
+        .delete-agree {
             font-weight: bolder;
         }
-        .delete-message{
+
+        .delete-message {
             font-weight: bolder;
         }
-        .form-check input{
+
+        .form-check input {
             line-height: 5px;
         }
-        .report-detail-option{
+
+        .report-detail-option {
             padding: 25px;
         }
+
         /*게시글 삭제 모달 종료*/
+
+        /* 피드 디테일 모달 css 시작 */
+        /*
+        .click-feed div{
+            border: 1px solid red;
+        }
+        */
+        
+        .click-feed-detail{
+            box-sizing: border-box;
+        }
+        .click-feed-detail-header{
+            height: 100%;
+            width: 50px;
+        }
+        .click-feed img{
+            width: 45px;
+            height: 45px;
+            border-radius: 20px;
+        }
+        .border1-1{
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .border1-2{
+            border-bottom: 1px solid #f0f0f0;
+            border-left: 1px solid #f0f0f0;
+        }
+        .border2-1{
+            border-top: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+        }
+        .border2-2{
+            border-left: 1px solid #f0f0f0;
+            border-top: 1px solid #f0f0f0;
+        }
+        .border1-1 li{
+            height: 25px;
+            line-height: 25px;
+        }
+        .border1-1 li>i{
+            line-height: 25px;
+            font-size: smaller;
+        }
+        .feed-content-1{
+            padding: 20px;
+            margin-bottom: 10px;
+            line-height: 30px;
+
+        }
+        /*스크롤바 none 속성 변경*/
+
+        .feed-content-1::-webkit-scrollbar{
+            display: none;
+        }
+        .main-feed-right::-webkit-scrollbar, .main-feed-left::-webkit-scrollbar{
+            display: none;
+        }
+        .main-feed-right{
+            overflow: scroll;
+            height: 1000px;
+        }
+        .main-feed-left{
+            overflow: scroll;
+            height: 1000px;
+        }
+
+        .chat-scroll::-webkit-scrollbar{
+            display: none;
+        }
+        /* 피드 디테일 모달 css 종료 */
     </style>
 </head>
 
 <body>
     <!--start header-->
-    <div class="container-fluid">
+    <div class="container-fluid header-nav">
         <br>
         <div class="row" style="padding-left: 50px; padding-right: 50px;">
             <div class="col mainLogo" style="font-family: 'Bruno Ace', serif;">
@@ -653,6 +762,11 @@
                     <li class="nav-item">
                         <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
                                 alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn"
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK7aXZVSkt2xNyssQ9rirBXFuL0Bx3P51LZg&usqp=CAU"
+                                style="width: 38px; height: 38px;" alt=""></a>
                     </li>
                 </ul>
 
@@ -786,7 +900,7 @@
     <div class="container-fluid" id="feedList" style="padding-left: 125px; padding-right: 125px; margin-top: -50px;">
         <div class="row">
             <!--좌측 피드 작성 및 리스트 시작-->
-            <div class="col-md-8" style="padding-right: 30px;">
+            <div class="col-md-8 main-feed-left" style="padding-right: 30px;">
                 <div class="createFeed" data-bs-toggle="modal" data-bs-target="#feed">
                     <div class="row">
                         <div class="col-10 feed_create_icon">
@@ -816,8 +930,10 @@
                             <span>01.05.11:42</span>
                         </div>
                     </div>
-                    <div class="col-12 feed-user-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    <div class="col-12 feed-user-content" data-bs-toggle="modal" data-bs-target="#click-feed">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
                     </div>
                     <div class="col-12 feed-like-coment-etc">
                         <div class="row">
@@ -826,7 +942,7 @@
                                 <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
                                 <span>10K+</span>
                             </div>
-                            <div class="col-2 feed-coment">
+                            <div class="col-2 feed-coment" data-bs-toggle="modal" data-bs-target="#click-feed">
                                 <img src="sampleImg/댓글.png" alt="">
                                 <span>3.5K+</span>
                             </div>
@@ -839,7 +955,8 @@
                                                     <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
                                                 </li>
                                                 <li data-bs-toggle="modal" data-bs-target="#exclamation">
-                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> 신고하기
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
                                                 </li>
                                                 <li>
                                                     <i class="fas fa-user-slash"></i> 팔로우 취소
@@ -866,7 +983,9 @@
                         </div>
                     </div>
                     <div class="col-12 feed-user-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
                     </div>
                     <div class="col-12 feed-like-coment-etc">
                         <div class="row">
@@ -888,7 +1007,8 @@
                                                     <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
                                                 </li>
                                                 <li data-bs-toggle="modal" data-bs-target="#exclamation">
-                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> 신고하기
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
                                                 </li>
                                                 <li>
                                                     <i class="fas fa-user-slash"></i> 팔로우 취소
@@ -915,7 +1035,9 @@
                         </div>
                     </div>
                     <div class="col-12 feed-user-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
                     </div>
                     <div class="col-12 feed-like-coment-etc">
                         <div class="row">
@@ -937,7 +1059,212 @@
                                                     <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
                                                 </li>
                                                 <li data-bs-toggle="modal" data-bs-target="#exclamation">
-                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> 신고하기
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row feed-list" style="margin-bottom: 20px;">
+                    <div class="col-1 feed-user-titleimg">
+                        <img src="sampleImg/메인13.jpg" alt="">
+                    </div>
+                    <div class="col-3 feed-user-name">
+                        <div class="feed-user-name-main">
+                            <span style="font-weight: bolder;">21jong</span>
+                        </div>
+                        <div class="feed-createdate">
+                            <span>01.05.11:42</span>
+                        </div>
+                    </div>
+                    <div class="col-12 feed-user-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    </div>
+                    <div class="col-12 feed-like-coment-etc">
+                        <div class="row">
+                            <div class="col-2 feed-like">
+                                <img class="love" src="sampleImg/하트.png" alt="">
+                                <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
+                                <span>10K+</span>
+                            </div>
+                            <div class="col-2 feed-coment">
+                                <img src="sampleImg/댓글.png" alt="">
+                                <span>3.5K+</span>
+                            </div>
+                            <div class="col-8 text-end feed-etc">
+                                <div class="etc_area" style="margin: 0px;">
+                                    <i class="bi bi-three-dots-vertical">
+                                        <div class="msgbox">
+                                            <ul>
+                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                    <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row feed-list" style="margin-bottom: 20px;">
+                    <div class="col-1 feed-user-titleimg">
+                        <img src="sampleImg/메인13.jpg" alt="">
+                    </div>
+                    <div class="col-3 feed-user-name">
+                        <div class="feed-user-name-main">
+                            <span style="font-weight: bolder;">21jong</span>
+                        </div>
+                        <div class="feed-createdate">
+                            <span>01.05.11:42</span>
+                        </div>
+                    </div>
+                    <div class="col-12 feed-user-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    </div>
+                    <div class="col-12 feed-like-coment-etc">
+                        <div class="row">
+                            <div class="col-2 feed-like">
+                                <img class="love" src="sampleImg/하트.png" alt="">
+                                <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
+                                <span>10K+</span>
+                            </div>
+                            <div class="col-2 feed-coment">
+                                <img src="sampleImg/댓글.png" alt="">
+                                <span>3.5K+</span>
+                            </div>
+                            <div class="col-8 text-end feed-etc">
+                                <div class="etc_area" style="margin: 0px;">
+                                    <i class="bi bi-three-dots-vertical">
+                                        <div class="msgbox">
+                                            <ul>
+                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                    <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row feed-list" style="margin-bottom: 20px;">
+                    <div class="col-1 feed-user-titleimg">
+                        <img src="sampleImg/메인13.jpg" alt="">
+                    </div>
+                    <div class="col-3 feed-user-name">
+                        <div class="feed-user-name-main">
+                            <span style="font-weight: bolder;">21jong</span>
+                        </div>
+                        <div class="feed-createdate">
+                            <span>01.05.11:42</span>
+                        </div>
+                    </div>
+                    <div class="col-12 feed-user-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    </div>
+                    <div class="col-12 feed-like-coment-etc">
+                        <div class="row">
+                            <div class="col-2 feed-like">
+                                <img class="love" src="sampleImg/하트.png" alt="">
+                                <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
+                                <span>10K+</span>
+                            </div>
+                            <div class="col-2 feed-coment">
+                                <img src="sampleImg/댓글.png" alt="">
+                                <span>3.5K+</span>
+                            </div>
+                            <div class="col-8 text-end feed-etc">
+                                <div class="etc_area" style="margin: 0px;">
+                                    <i class="bi bi-three-dots-vertical">
+                                        <div class="msgbox">
+                                            <ul>
+                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                    <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
+                                                </li>
+                                                <li>
+                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row feed-list" style="margin-bottom: 20px;">
+                    <div class="col-1 feed-user-titleimg">
+                        <img src="sampleImg/메인13.jpg" alt="">
+                    </div>
+                    <div class="col-3 feed-user-name">
+                        <div class="feed-user-name-main">
+                            <span style="font-weight: bolder;">21jong</span>
+                        </div>
+                        <div class="feed-createdate">
+                            <span>01.05.11:42</span>
+                        </div>
+                    </div>
+                    <div class="col-12 feed-user-content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                        recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                        perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                    </div>
+                    <div class="col-12 feed-like-coment-etc">
+                        <div class="row">
+                            <div class="col-2 feed-like">
+                                <img class="love" src="sampleImg/하트.png" alt="">
+                                <img class="loved" src="sampleImg/하트눌림.png" alt="" hidden>
+                                <span>10K+</span>
+                            </div>
+                            <div class="col-2 feed-coment">
+                                <img src="sampleImg/댓글.png" alt="">
+                                <span>3.5K+</span>
+                            </div>
+                            <div class="col-8 text-end feed-etc">
+                                <div class="etc_area" style="margin: 0px;">
+                                    <i class="bi bi-three-dots-vertical">
+                                        <div class="msgbox">
+                                            <ul>
+                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                    <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+                                                </li>
+                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                    신고하기
                                                 </li>
                                                 <li>
                                                     <i class="fas fa-user-slash"></i> 팔로우 취소
@@ -954,76 +1281,156 @@
 
                 <!--1. 삭제하기 시작-->
                 <!-- Modal -->
-                    <div class="modal fade" id="feed-delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" style="padding: 50px;">
+                <div class="modal fade" id="feed-delete" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" style="padding: 50px;">
                         <div class="modal-content" style="line-height: 80px; border-radius: 20px;">
                             <div class="modal-body delete-message text-center">
-                            해당 게시글을 삭제하시겠습니까?
+                                해당 게시글을 삭제하시겠습니까?
                             </div>
                             <div class="modal-footer" style="padding: 5px;">
                                 <div class="row text-center" style="width: 100%; height: 30px; line-height: 30px;">
-                                    <div class="col-6 delete-cancel" data-bs-dismiss="modal" >취소</div>
+                                    <div class="col-6 delete-cancel" data-bs-dismiss="modal">취소</div>
                                     <div class="col-6 delete-agree">확인</div>
                                 </div>
                             </div>
                         </div>
-                        </div>
                     </div>
+                </div>
                 <!--1. 삭제하기 종료-->
 
                 <!--2. 신고하기 시작-->
-                <div class="modal fade" id="exclamation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="exclamation" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog" style="padding: 50px;">
-                    <div class="modal-content" style="line-height: 80px; border-radius: 20px;">
-                        <div class="modal-body delete-message text-center">
-                        해당 게시글을 신고하시겠습니까?
-                        </div>
-                        <div class="modal-footer" style="padding: 5px;">
-                            <div class="row text-center" style="width: 100%; height: 30px; line-height: 30px;">
-                                <div class="col-6 delete-cancel" data-bs-dismiss="modal" >취소</div>
-                                <div class="col-6 delete-agree" data-bs-toggle="modal" data-bs-target="#feed-delete-detail">신고</div>
+                        <div class="modal-content" style="line-height: 80px; border-radius: 20px;">
+                            <div class="modal-body delete-message text-center">
+                                해당 게시글을 신고하시겠습니까?
+                            </div>
+                            <div class="modal-footer" style="padding: 5px;">
+                                <div class="row text-center" style="width: 100%; height: 30px; line-height: 30px;">
+                                    <div class="col-6 delete-cancel" data-bs-dismiss="modal">취소</div>
+                                    <div class="col-6 delete-agree" data-bs-toggle="modal"
+                                        data-bs-target="#feed-delete-detail">신고</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
-                <div class="modal fade" id="feed-delete-detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="feed-delete-detail" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog">
-                    <div class="modal-content" style="line-height: 50px; border-radius: 20px;">
-                        <div class="modal-body">
-                            <div class="row report-detail">
-                                <div class="col-12 text-center">
-                                    <span>신고사유 선택</span>
+                        <div class="modal-content" style="line-height: 50px; border-radius: 20px;">
+                            <div class="modal-body">
+                                <div class="row report-detail">
+                                    <div class="col-12 text-center">
+                                        <span>신고사유 선택</span>
+                                    </div>
+                                    <div class="col-12 report-detail-option" style="padding-bottom: 0px;">
+                                        <form>
+                                            <input type="radio" id="option1" name="options">
+                                            <label for="option1">이용 가이드라인 위반</label>
+                                            <br>
+                                            <input type="radio" id="option2" name="options">
+                                            <label for="option2">선정 및 폭력성 관련</label>
+                                            <br>
+                                            <input type="radio" id="option3" name="options">
+                                            <label for="option3">스팸, 광고, 도배 관련</label>
+                                        </form>
+                                    </div>
+                                    <div class="col-12 report-detail-option"
+                                        style="padding-top: 0px; padding-bottom: 0px;">
+                                        <p style="margin: 0px; padding: 0px;">신고내용</p>
+                                        <textarea name="" id="" cols="55" rows="2" style="resize: none;"
+                                            placeholder="&nbsp;&nbsp;&nbsp;위 신고 사유에 대한 자세한 신고내용을 작성해주세요."></textarea>
+                                    </div>
                                 </div>
-                                <div class="col-12 report-detail-option" style="padding-bottom: 0px;">
-                                    <form>
-                                        <input type="radio" id="option1" name="options">
-                                        <label for="option1">이용 가이드라인 위반</label>
-                                        <br>
-                                        <input type="radio" id="option2" name="options">
-                                        <label for="option2">선정 및 폭력성 관련</label>
-                                        <br>
-                                        <input type="radio" id="option3" name="options">
-                                        <label for="option3">스팸, 광고, 도배 관련</label>
-                                      </form>
-                                </div>
-                                <div class="col-12 report-detail-option" style="padding-top: 0px; padding-bottom: 0px;">
-                                    <p style="margin: 0px; padding: 0px;">신고내용</p>
-                                    <textarea name="" id="" cols="55" rows="2" style="resize: none;" placeholder="&nbsp;&nbsp;&nbsp;위 신고 사유에 대한 자세한 신고내용을 작성해주세요."></textarea>
+                            </div>
+                            <div class="modal-footer" style="padding: 5px;">
+                                <div class="row text-center" style="width: 100%; height: 30px; line-height: 30px;">
+                                    <div class="col-6 delete-cancel" data-bs-dismiss="modal">취소</div>
+                                    <div class="col-6 delete-agree">신고</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer" style="padding: 5px;">
-                            <div class="row text-center" style="width: 100%; height: 30px; line-height: 30px;">
-                                <div class="col-6 delete-cancel" data-bs-dismiss="modal" >취소</div>
-                                <div class="col-6 delete-agree">신고</div>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
                 <!--2. 신고하기 종료-->
+
+                <!--3. 피드 디테일 시작-->
+                <div class="modal fade show" id="click-feed" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true" style="display: none;">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content" style="line-height: 50px; border-radius: 20px;">
+                            <div class="modal-body">
+                                <div class="row click-feed">
+                                    <div class="col-8 click-feed-detail border1-1" style="float: left;">
+                                        <div class="row">
+                                            <div class="col-1 click-feed-userimg ">
+                                                <img src="sampleImg/메인13.jpg" alt="">
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="row" style="height: 50px;">
+                                                    <div class="col-12 feed-user-name-main" style="height: 25px; line-height: 25px;">
+                                                        <span style="font-weight: bolder;">21jong</span>
+                                                    </div>
+                                                    <div class="col-12 feed-createdate" style="height: 25px; line-height: 25px;">
+                                                        <span>01.05.11:42</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-8 text-end">
+                                                <div class="etc_area" style="margin: 0px;">
+                                                    <i class="bi bi-three-dots-vertical">
+                                                        <div class="msgbox">
+                                                            <ul>
+                                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                                    <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+                                                                </li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                                    신고하기
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 feed-content-1" style="overflow: scroll; height: 350px;">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border1-2">
+                                        br
+                                    </div>
+                                    <div class="col-8 border2-1">
+                                        <br>
+                                    </div>
+                                    <div class="col-4 border2-2">
+                                        br
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--3. 피드 디테일 종료-->
 
                 <!--각종 모달 종료-->
 
@@ -1064,7 +1471,7 @@
             <!--좌측 피드 작성 및 리스트 종료-->
 
             <!--우측 아티스트 사진, 공지사항, 채팅창 시작-->
-            <div class="col-6 col-md-4" style="padding-left: 30px;">
+            <div class="col-6 col-md-4 main-feed-right" style="padding-left: 30px;">
 
                 <!--아티스트 메인 사진 시작-->
                 <img class="feedImg"
@@ -1104,7 +1511,9 @@
                     <div class="row fan-notice-list">
                         <div class="col-1"></div>
                         <div class="col-11 fan-notice-detail">
-                            <a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, tenetur, nihil error cupiditate maxime quam necessitatibus voluptates debitis possimus, quasi perferendis ipsam illum rem provident explicabo ea. Qui, aliquid similique.</a>
+                            <a href="#">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, tenetur,
+                                nihil error cupiditate maxime quam necessitatibus voluptates debitis possimus, quasi
+                                perferendis ipsam illum rem provident explicabo ea. Qui, aliquid similique.</a>
                         </div>
                     </div>
                 </div>
@@ -1147,40 +1556,66 @@
                                         </div>
                                     </div>
                                     <!--실제 채팅이 보여지는 자리-->
-                                    <div class="chat-content">
-                                        <div class="row">
-                                            <div class="col-4 chat-user">용진팍</div>
-                                            <div class="col-8 chat-data text-center">
-                                                <span class="chat-time">2024-01-04 11:50</span>
-                                                <span class="chat-report">신고</span>
+                                    <div class="chat-scroll" style="overflow: scroll; height: 300px;">
+                                        <div class="chat-content">
+                                            <div class="row">
+                                                <div class="col-4 chat-user">용진팍</div>
+                                                <div class="col-8 chat-data text-center">
+                                                    <span class="chat-time">2024-01-04 11:50</span>
+                                                    <span class="chat-report">신고</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-content-detail">
+                                                원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
                                             </div>
                                         </div>
-                                        <div class="chat-content-detail">
-                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
-                                        </div>
-                                    </div>
-                                    <div class="chat-content">
-                                        <div class="row">
-                                            <div class="col-4 chat-user">용진팍</div>
-                                            <div class="col-8 chat-data text-center">
-                                                <span class="chat-time">2024-01-04 11:50</span>
-                                                <span class="chat-report">신고</span>
+                                        <div class="chat-content">
+                                            <div class="row">
+                                                <div class="col-4 chat-user">용진팍</div>
+                                                <div class="col-8 chat-data text-center">
+                                                    <span class="chat-time">2024-01-04 11:50</span>
+                                                    <span class="chat-report">신고</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-content-detail">
+                                                원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
                                             </div>
                                         </div>
-                                        <div class="chat-content-detail">
-                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
-                                        </div>
-                                    </div>
-                                    <div class="chat-content">
-                                        <div class="row">
-                                            <div class="col-4 chat-user">용진팍</div>
-                                            <div class="col-8 chat-data text-center">
-                                                <span class="chat-time">2024-01-04 11:50</span>
-                                                <span class="chat-report">신고</span>
+                                        <div class="chat-content">
+                                            <div class="row">
+                                                <div class="col-4 chat-user">용진팍</div>
+                                                <div class="col-8 chat-data text-center">
+                                                    <span class="chat-time">2024-01-04 11:50</span>
+                                                    <span class="chat-report">신고</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-content-detail">
+                                                원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
                                             </div>
                                         </div>
-                                        <div class="chat-content-detail">
-                                            원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                        <div class="chat-content">
+                                            <div class="row">
+                                                <div class="col-4 chat-user">용진팍</div>
+                                                <div class="col-8 chat-data text-center">
+                                                    <span class="chat-time">2024-01-04 11:50</span>
+                                                    <span class="chat-report">신고</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-content-detail">
+                                                원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                            </div>
+                                        </div>
+                                        <div class="chat-content">
+                                            <div class="row">
+                                                <div class="col-4 chat-user">용진팍</div>
+                                                <div class="col-8 chat-data text-center">
+                                                    <span class="chat-time">2024-01-04 11:50</span>
+                                                    <span class="chat-report">신고</span>
+                                                </div>
+                                            </div>
+                                            <div class="chat-content-detail">
+                                                원종님 힘내세요 저희 팬들은 항상 응원하고 있답니다 !!!
+                                            </div>
                                         </div>
                                     </div>
 
@@ -1247,7 +1682,7 @@
 
 
 
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br>
 
 
 
@@ -1346,21 +1781,21 @@
 
             /*피드 작성 script 종료*/
             /*피드 리스트 하트 클릭 시작*/
-            $(document).ready(()=>{
-            if($('.loved').is(':hidden')){
-                $('.love').on('click', ()=>{
-                    $('.loved').removeAttr('hidden');
-                    $('.love').attr('hidden', true);
-                })
-            }
-            if($('.love').is(':hidden')){
-                $('.loved').on('click', ()=>{
-                    $('.loved').attr('hidden', true);
-                    $('.love').removeAttr('hidden');
-                })
-            }
+            $(document).ready(() => {
+                if ($('.loved').is(':hidden')) {
+                    $('.love').on('click', () => {
+                        $('.loved').removeAttr('hidden');
+                        $('.love').attr('hidden', true);
+                    })
+                }
+                if ($('.love').is(':hidden')) {
+                    $('.loved').on('click', () => {
+                        $('.loved').attr('hidden', true);
+                        $('.love').removeAttr('hidden');
+                    })
+                }
 
-        })
+            })
             /*피드 리스트 하트 클릭 종료*/
             /* 알람 관리 script 시작 */
             $(".etc_area > i").click(function (e) {
@@ -1370,27 +1805,27 @@
                 let state = $(e.target).find(".msgbox").css("display");
 
                 $(".msgbox").hide();
-                $(".msgbox").parent().css("background-color","#fff");
+                $(".msgbox").parent().css("background-color", "#fff");
 
-                if(state == "none"){
-                    $(e.target).css("background-color","#e9ecef");
+                if (state == "none") {
+                    $(e.target).css("background-color", "#e9ecef");
                     msgbox.show();
-                }else{
-                    $(e.target).css("background-color","#fff");
+                } else {
+                    $(e.target).css("background-color", "#fff");
                     msgbox.hide();
                 }
             })
 
-            $(document).click(function(e) {
+            $(document).click(function (e) {
                 var msgbox = $(".etc_area > i > .msgbox");
                 if (!msgbox.is(e.target) && !msgbox.has(e.target).length) {
-                    msgbox.parent().css("background-color","#fff")
+                    msgbox.parent().css("background-color", "#fff")
                     msgbox.hide();
                 }
             });
             /* 알람 관리 script 끝 */
         })
-        
+
     </script>
 
 
