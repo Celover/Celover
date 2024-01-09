@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* header css */
+        .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+
+        .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            transition: all 0.4 ease-in-out;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.0);
+        }
+
+        /* header css 끝 */
+
+        /* sideMenu CSS */
+        #myPage_menu h2 {
+            font-weight: 800;
+            margin-bottom: 10%;
+            margin-left: 10px;
+        }
+
+        #myPage_menu ul li * {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgb(102, 102, 102);
+        }
+
+        #myPage_menu ul li:hover {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul li:hover * {
+            color: purple;
+        }
+
+        #myPage_menu ul .act {
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul .act * {
+            background-color: rgb(250, 250, 250);
+            color: purple;
+        }
+
+        #myPage_menu ul li .fas {
+            line-height: 1.5;
+        }
+
+        /* sideMenu CSS 끝 */
+
+        /* footer css */
+        #footer {
+            background-color: #e9ecef;
+        }
+
+        #footer .footer_title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer_title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer_title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer_content>.footer_navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer_content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer_content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer_content>.footer_info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        /* footer css 끝 */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <div class="row" style="margin: 0;">
+
+            <div class="col" style="font-family: 'Bruno Ace', serif;">
+                <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
+            </div>
+            <div class="col">
+
+                <ul class="nav justify-content-end">
+                    <div
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <br><br><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <!-- 사이드바 영역 -->
+                <div class="col-md-2" id="myPage_menu">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">My Page</h2>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between act">
+                                <a class="p-2">회원 정보 수정</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">나의 아티스트</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">내 글 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">알림 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">장바구니</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">구매내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">신고내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">문의내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 사이드바 영역 끝 -->
+
+                <!-- 마이페이지 본문 영역 -->
+                <style>
+                    #myPage_content {
+                        padding: 0% 0% 3% 3%;
+                    }
+
+                    #myPage_content div>h4 {
+                        font-weight: 600;
+                    }
+
+                    #myPage_content div>hr {
+                        height: 2px;
+                        border: 0;
+                        background: black;
+                        opacity: 1;
+                    }
+
+
+
+                    /* 내가 좋아요한 피드 css */
+
+                    #myPage_content #report_area .container {
+                        border: 1px solid #dee2e6;
+                    }
+
+                    #myPage_content #report_area table {
+                        table-layout: fixed;
+                    }
+
+                    #myPage_content #report_area table * {
+                        text-align: center;
+                    }
+
+                    #myPage_content #report_area table thead .col_check_box {
+                        width: 3%;
+                    }
+
+                    #myPage_content #report_area table thead .col_category {
+                        width: auto;
+                    }
+
+                    #myPage_content #report_area table thead .col_reason {
+                        width: auto;
+                    }
+
+                    #myPage_content #report_area table thead .col_content {
+                        width: 57%;
+                    }
+
+                    #myPage_content #report_area table thead .col_report_date {
+                        width: auto;
+                    }
+
+                    #myPage_content #report_area table thead .col_state {
+                        width: auto;
+                    }
+                    
+                    #myPage_content #report_area table tbody .category {
+                        color: #666;
+                    }
+                    
+                    #myPage_content #report_area table tbody .reason {
+                        color: #666;
+                    }
+
+                    #myPage_content #report_area table tbody .content {
+                        text-align: left;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
+                    #myPage_content #report_area table tbody .report_date {
+                        color: #666;
+                    }
+
+                    #myPage_content #report_area table tbody tr:hover {
+                        cursor: pointer;
+                    }
+
+                    #myPage_content #report_area table tfoot .delete_area {
+                        text-align: right;
+                    }
+                    
+                    /* 내가 작성한 피드 css 끝 */
+                </style>
+                <div class="col-md-9" id="myPage_content">
+                    <br>
+                    <div id="report_area">
+                        <h4>신고 관리</h4>
+                        <hr>
+
+                        <div class="container">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="col_check_box">
+                                                <input class="form-check-input check_all" type="checkbox" value="">
+                                            </th>
+                                            <th scope="col" class="col_category">카테고리</th>
+                                            <th scope="col" class="col_reason">신고사유</th>
+                                            <th scope="col" class="col_content">신고내용</th>
+                                            <th scope="col" class="col_report_date">신고날짜</th>
+                                            <th scope="col" class="col_state">처리상태</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-group-divider table-hover">
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                게시판
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                23:17
+                                            </td>
+                                            <td class="state">
+                                                <!-- <i class="fa-solid fa-check"> 완료</i> -->
+                                                <i class="fa-solid fa-spinner"> 처리중</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="check_box">
+                                                <input class="form-check-input check_one" type="checkbox" value="">
+                                            </td>
+                                            <td class="category">
+                                                댓글
+                                            </td>
+                                            <td class="reason">
+                                                폭언/욕설
+                                            </td>
+                                            <td class="content">
+                                                여기 클릭시 신고 모달 떠야 함
+                                            </td>
+                                            <td class="report_date">
+                                                24.01.07
+                                            </td>
+                                            <td class="state">
+                                                <i class="fa-solid fa-check"> 완료</i>
+                                            </td>
+                                        </tr>
+                                 
+
+                                    </tbody>
+                                    <tfoot class="table-group-divider">
+                                        <tr>
+                                            <td>
+                                                <input class="form-check-input check_all" type="checkbox" value="">
+                                            </td>
+                                            <td colspan="3"></td>
+                                            <td colspan="2" class="delete_area">
+                                                <button class="btn btn-danger">게시글 삭제</button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- 마이페이지 본문 영역 끝 -->
+            </div>
+
+
+
+        </div>
+
+        <script>
+            $(document).on("click", ".check_all", function () {
+
+                if ($(this).prop("checked")) {
+                    $(".check_one").prop("checked", true);
+
+                } else {
+                    $(".check_one").prop("checked", false);
+                }
+                $(".check_one").trigger("change");
+            })
+
+
+            // check 박스 클릭시
+            $(document).on("change", ".check_one", function () {
+
+                let checkNum = $(".check_one:checked").length;
+                if ($(this).prop("checked")) {
+                    $(this).parent().parent().children().css("background-color", "rgba(0, 0, 0, 0.075)")
+                } else {
+                    $(this).parent().parent().children().css("background-color", "#fff")
+                }
+
+                if (checkNum == $(".check_one").length) {
+                    $(".check_all").prop("checked", true);
+                } else {
+                    $(".check_all").prop("checked", false);
+                }
+
+                $(".count_chk").html(checkNum)
+            })
+
+            // 좋아요 취소 클릭시
+            $(document).on("click", ".delete_area button", function () {
+                console.log("좋아요 테이블에서 좋아요 삭제")
+            });
+
+
+        </script>
+
+        <!-- footer -->
+        <div class="container-fluid" id="footer">
+            <div class="container">
+                <br>
+                <div class="footer_title">
+                    <h2>
+                        Celover
+                        <em>since 2023.12.13</em>
+                    </h2>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_navbar">
+                        <ul class="">
+                            <li class="">
+                                <a>이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>서비스운영정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>청소년 보호 정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>개인정보처리방침&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키 설정&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a> 입점 신청</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="footer_info">
+                        <ul>
+                            <li>
+                                <span><b>상호</b> Celover COMPANY Inc.</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>공동대표</b> 박용진, 이원종</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>전화번호</b> 02-1234-5678</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>FAX</b> +82)02-1234-5678</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>주소</b> 서울특별시 강남구 테헤란로14길 6 남도빌딩 3F</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>개인정보관리책임자</b> 김시연 (siyeon@celover.com)</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>사업자등록번호</b> 000-xx-xxxx</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>통신판매업 신고번호</b> 제 2023-역삼-XXXX호</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>호스팅 서비스 사업자</b> github.io</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <span>Copyright 2023.CELOVER.All rights reserverd.</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer 끝 -->
+
+
+</body>
+
+</html>
