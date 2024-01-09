@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0;
+        }
+
+        /* header css */
+        .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+
+        .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            transition: all 0.4 ease-in-out;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.0);
+        }
+
+        /* header css 끝 */
+
+        /* sideMenu CSS */
+        #myPage_menu h2 {
+            font-weight: 800;
+            margin-bottom: 10%;
+            margin-left: 10px;
+        }
+
+        #myPage_menu ul li * {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgb(102, 102, 102);
+        }
+
+        #myPage_menu ul li:hover {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul li:hover * {
+            color: purple;
+        }
+
+        #myPage_menu ul .act {
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul .act * {
+            background-color: rgb(250, 250, 250);
+            color: purple;
+        }
+
+        #myPage_menu ul li .fas {
+            line-height: 1.5;
+        }
+
+        /* sideMenu CSS 끝 */
+
+        /* footer css */
+        #footer {
+            background-color: #e9ecef;
+        }
+
+        #footer .footer_title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer_title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer_title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer_content>.footer_navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer_content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer_content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer_content>.footer_info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        /* footer css 끝 */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <br>
+        <div class="row" style="margin: 0;">
+
+            <div class="col" style="font-family: 'Bruno Ace', serif;">
+                <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
+            </div>
+            <div class="col">
+
+                <ul class="nav justify-content-end">
+                    <div
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
+                                alt=""></a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+        <br><br><br><br><br>
+
+        <div class="container">
+            <div class="row">
+                <!-- 사이드바 영역 -->
+                <div class="col-md-2" id="myPage_menu">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h2 class="panel-title">My Page</h2>
+                        </div>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between act">
+                                <a class="p-2">회원 정보 수정</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">나의 아티스트</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">내 글 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">알림 관리</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">장바구니</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">구매내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">신고내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <a class="p-2">문의내역</a>
+                                <i class="fas fa-chevron-right p-2"></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 사이드바 영역 끝 -->
+
+                <!-- 마이페이지 본문 영역 -->
+                <style>
+                    #myPage_content {
+                        padding: 0% 0% 3% 3%;
+                    }
+
+                    #myPage_content div>h4 {
+                        font-weight: 600;
+                    }
+
+                    #myPage_content div>hr {
+                        height: 2px;
+                        border: 0;
+                        background: black;
+                        opacity: 1;
+                    }
+
+                    /* 내 글 관리 네비바 css */
+                    #my_board_area .nav-tabs li{
+                        width: auto;
+                    }
+
+                    #my_board_area .nav-tabs li a{
+                        color: lightgray;
+                    }
+                    
+                    #my_board_area .nav-tabs li .active{
+                        color: black;    
+                    }
+                    #my_board_area .nav_area .row{
+                        border: 1px solid #dee2e6;
+                        border-top: none;
+                        border-bottom: none;
+                    }
+
+                    #my_board_area .nav_area .row li{
+                        width: auto; 
+                        font-size: small;
+                    }
+
+                    #my_board_area .nav_area .row li a{
+                        padding: 16px 8px;
+                        color: black;
+                    }
+                    #my_board_area .nav_area .row .active > a > .underline{
+                        border-bottom: 3px solid purple;
+                        margin: 0px;
+                        margin-top: 3px;
+                    }
+                    
+                    /* 내 글 관리 네비바 css 끝 */
+                    
+                    /* 내가 작성한 피드 css */
+                    #my_board_area .feed_management{
+                        border: 1px solid #dee2e6;
+                        border-top: none;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item{
+                        border: 1px solid black;
+                        border-radius: 7px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .user_profile {
+                        align-items: center;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .user_profile img {
+                        border-radius: 50%;
+                        width: 40px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .user_info {
+                        padding-left: 10px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .user_info .user_name {
+                        font-size: large;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .user_info .create_date {
+                        font-size: small;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .etc_area {
+                        align-items: center;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .etc_area i {
+                        text-align: center;
+                        width: 10px;
+                        font-size: larger;
+                        margin: 10px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .etc_area .msgbox {
+                        border-radius: 10px;
+                        position: absolute;
+                        background: #fff;
+                        display: none;
+                        padding: 10px;
+                        background-color: #fff;
+                        margin-top: 10px;
+                        margin-left: -40px;
+                        box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .my_feed_item .etc_area .msgbox:after {
+                        content: '';
+                        position: absolute;
+                        top: 0%;
+                        left: 50%;
+                        width: 0;
+                        height: 0;
+                        border: 12px solid transparent;
+                        border-bottom-color: #fff;
+                        border-top: 0;
+                        border-left: 0;
+                        margin-left: -6px;
+                        margin-top: -12px;
+                        box-shadow: -4px 0px 2px -1px rgba(178, 178, 178, .4);
+                    }
+
+                    #my_board_area .etc_area .msgbox ul {
+                        list-style: none;
+                        padding: 0px;
+                        margin: 0px;
+                        width: 100px;
+                        text-align: left;
+
+                    }
+
+                    #my_board_area .etc_area .msgbox ul li {
+                        padding: 1%;
+                        font-size: small;
+                    }
+
+                    #my_board_area .etc_area ul li:hover {
+                        background-color: #e9ecef;
+                        cursor: pointer;
+                    }
+
+                    #my_board_area .etc_area ul li i {
+                        width: 16px;
+                        height: 16px;
+                        text-align: center;
+                    }
+
+                    #my_board_area .etc_area i:hover {
+                        cursor: pointer;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .img_area div {
+                        aspect-ratio: 1/1;
+                        padding: 0%;
+                        margin: 0%;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .img_area .img_item {
+                        padding: 3px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .img_area .img_item img {
+                        width: 100%; 
+                        height: auto;
+                        border-radius: 7px;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .img_area .img_item .remain_item_count {
+                        font-size: xx-large;
+                        position: absolute;
+                        font-weight: 800;
+                        color: #fff;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .text_area .detail_text .detail_more:hover {
+                        cursor: pointer;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .footer_area {
+                        border-bottom: 1px solid;
+                        border-top: 1px solid #dee2e6;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .footer_area > div {
+                        font-size: larger;
+
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .footer_area>div>div {
+                        padding: 1% 1% 1% 1%;
+                        border-radius: 7px;
+                        display: inline-block;
+                    }
+
+                    #my_board_area .feed_management .written_feed .my_feed_items .footer_area>div>div:hover {
+                        background-color: #f4f6f8;
+                        cursor: pointer;
+                    }
+
+
+                    /* 내가 작성한 피드 css 끝 */
+                </style>
+                <div class="col-md-9" id="myPage_content">
+                    <div id="my_board_area">
+                        <br>
+                        <h4>내 글 관리</h4>
+                        <br>
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">피드 관리</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">게시판 관리</a>
+                            </li>
+                        </ul>
+                        <div class="container nav_area"> 
+                            <div class="row">
+                                <div class="col-md">
+                                    <ul class="nav">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="#">내가 작성한 피드<hr class="underline"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">내가 좋아요한 피드</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">내가 작성한 댓글</a>
+                                        </li>
+                                    </ul>
+                                    <hr style="margin: 0%; background-color: rgb(222, 227, 232);">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container feed_management pb-5">
+                            <div class="written_feed">
+                                <div class="row my_feed_items justify-content-md-center">
+
+
+                                    <div class="col-sm-11 my_feed_item m-4">
+                                        <div class="d-flex py-3">
+                                            <div class="d-flex user_profile">
+                                                <img src="https://phinf.wevpstatic.net/MjAyMzEyMTRfMTA1/MDAxNzAyNTI0OTI1NDAz.rl6glvMsRfW2UpmKOp0BTOq6fVD7-k2kURQTFYsm7Z0g.dobPx5_GesoplEOWBLrzjtw8UyIWi8Gud5palU_lBM0g.JPEG/Weverse_7d867.jpg?type=s240"
+                                                    alt="">
+                                            </div>
+                                            <div class="user_info flex-grow-1">
+                                                <div class="user_name">
+                                                    <strong>
+                                                        <span>Jaskeerat Khaira</span>
+                                                    </strong>
+                                                </div>
+                                                <div class="create_date">
+                                                    <span>2023. 12. 22. 23:32</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex etc_area">
+                                                <i class="fas fa-ellipsis-vertical">
+                                                    <div class="msgbox">
+                                                        <ul>
+                                                            <li>
+                                                                <i class="fas fa-trash-can" style="color: red;"></i>
+                                                                삭제하기
+                                                            </li>
+                                                            <li>
+                                                                <i class="fas fa-pen-to-square"></i> 
+                                                                수정하기
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="row p-2 img_area">
+                                            <div class="col-md-8 img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="row">
+                                                    <div class="col-md-12 img_item">
+                                                        <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 img_item">
+                                                        <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md img_item" style="position: relative;">
+                                                <span class="remain_item_count">+4</span>
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row p-2 pb-4 text_area">
+                                            <div class="detail_text">pessoal, me ajudem, entrei pro fandom agora e só sei diferenciar a sua🥲🥲
+                                                Guys, help me, I joined the fandom now and I only know how to differentiate sua 🥲🥲
+                                            </div>
+                                            <!-- <span class="detail_more" style="font-weight: 800;">... 더보기</span> -->
+                                        </div>
+
+                                        <div class="row p-2 footer_area">
+                                            <div class="col-md d-flex">
+                                                <div>
+                                                    <span class="like_area">
+                                                        <!-- <i class="fa-regular fa-heart"></i> -->
+                                                        <i class="fa-solid fa-heart" style="color: red;"></i>
+                                                        <span>1.2K</span>
+                                                    </span>
+                                                </div>
+                                                &nbsp;
+                                                <div>
+                                                    <span class="comment_area">
+                                                        <i class="fa-regular fa-comment"></i>
+                                                        <span>3.5K</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-11 my_feed_item m-4">
+                                        <div class="d-flex py-3">
+                                            <div class="d-flex user_profile">
+                                                <img src="https://phinf.wevpstatic.net/MjAyMzEyMTRfMTA1/MDAxNzAyNTI0OTI1NDAz.rl6glvMsRfW2UpmKOp0BTOq6fVD7-k2kURQTFYsm7Z0g.dobPx5_GesoplEOWBLrzjtw8UyIWi8Gud5palU_lBM0g.JPEG/Weverse_7d867.jpg?type=s240"
+                                                    alt="">
+                                            </div>
+                                            <div class="user_info flex-grow-1">
+                                                <div class="user_name">
+                                                    <strong>
+                                                        <span>Jaskeerat Khaira</span>
+                                                    </strong>
+                                                </div>
+                                                <div class="create_date">
+                                                    <span>2023. 12. 22. 23:32</span>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex etc_area">
+                                                <i class="fas fa-ellipsis-vertical">
+                                                    <div class="msgbox">
+                                                        <ul>
+                                                            <li>
+                                                                <i class="fas fa-trash-can" style="color: red;"></i>
+                                                                삭제하기
+                                                            </li>
+                                                            <li>
+                                                                <i class="fas fa-pen-to-square"></i> 
+                                                                수정하기
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </i>
+                                            </div>
+                                        </div>
+                                        <div class="row p-2 img_area">
+                                            <div class="col-md-8 img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="row">
+                                                    <div class="col-md-12 img_item">
+                                                        <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 img_item">
+                                                        <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                            alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md img_item">
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                            <div class="col-md img_item" style="position: relative;">
+                                                <span class="remain_item_count">+4</span>
+                                                <img src="https://phinf.wevpstatic.net/MjAyNDAxMDFfNDMg/MDAxNzA0MDM1NTg1NDk2.4fR_QBkQf7eAazI8xgQp2_yp-6XpkJNoL-2mW4BOx1Qg.sxYDi1vkpHL076hwefQ2KaR8shrTiXbGTz7utRzuZD4g.JPEG/image.jpg?type=s1414_1414_stopgif"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="row p-2 pb-4 text_area">
+                                            <div class="detail_text">pessoal, me ajudem, entrei pro fandom agora e só sei diferenciar a sua🥲🥲
+                                                Guys, help me, I joined the fandom now and I only know how to differentiate sua 🥲🥲
+                                            </div>
+                                            <!-- <span class="detail_more" style="font-weight: 800;">... 더보기</span> -->
+                                        </div>
+
+                                        <div class="row p-2 footer_area">
+                                            <div class="col-md d-flex">
+                                                <div>
+                                                    <span class="like_area">
+                                                        <!-- <i class="fa-regular fa-heart"></i> -->
+                                                        <i class="fa-solid fa-heart" style="color: red;"></i>
+                                                        <span>1.2K</span>
+                                                    </span>
+                                                </div>
+                                                &nbsp;
+                                                <div>
+                                                    <span class="comment_area">
+                                                        <i class="fa-regular fa-comment"></i>
+                                                        <span>3.5K</span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    
+
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+                <!-- 마이페이지 본문 영역 끝 -->
+            </div>
+
+
+
+        </div>
+        <script>
+            $(function(){
+                let $detail_texts = $("#my_board_area .feed_management .written_feed .text_area .detail_text");
+
+                for(let i = 0; i < $detail_texts.length; i++){
+                    if($($detail_texts[i]).text().length > 200){
+
+                        // 원본글 저장(근데 db연결하면 필요없을거 같기는함 원본은 DB에서 불러오기 때문에)
+                        let origin_text = $($detail_texts[i]).text();
+
+                        // 슬라이싱된 텍스트로 바꿔주기
+                        $($detail_texts[i]).text($($detail_texts[i]).text().slice(0,200));
+
+                        // 더보기 버튼 삽입
+                        $($detail_texts[i]).append(`<span class="detail_more" style="font-weight: 800;">... 더보기</span>`);
+                        
+                        // 원본글 저장할 공간
+                        $($detail_texts[i]).append('<input type="hidden" value="' + origin_text + '">')
+                    }
+
+                }
+
+                $(document).on("click",".detail_more",function(){
+                    // input:hidden에 있는 원본 문자열로 바꿔치기                    
+                    $(this).parent().text($(this).next().val());
+                })
+
+                // nav_area에 active 추가
+                $(document).on("click","#my_board_area .nav_area .nav li", function(){
+                    $("#my_board_area .nav_area .nav li").removeClass("active");
+                    $("#my_board_area .nav_area .nav li a hr").remove();
+                    $(this).addClass("active");
+                    $(this).children("a").append("<hr class='underline'>");
+                })
+            })
+
+        </script>
+
+        <!-- footer -->
+        <div class="container-fluid" id="footer">
+            <div class="container">
+                <br>
+                <div class="footer_title">
+                    <h2>
+                        Celover
+                        <em>since 2023.12.13</em>
+                    </h2>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_navbar">
+                        <ul class="">
+                            <li class="">
+                                <a>이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>서비스운영정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>청소년 보호 정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>개인정보처리방침&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키정책&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a>쿠키 설정&nbsp;|&nbsp;</a>
+                            </li>
+                            <li class="">
+                                <a> 입점 신청</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <div class="footer_info">
+                        <ul>
+                            <li>
+                                <span><b>상호</b> Celover COMPANY Inc.</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>공동대표</b> 박용진, 이원종</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>전화번호</b> 02-1234-5678</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>FAX</b> +82)02-1234-5678</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>주소</b> 서울특별시 강남구 테헤란로14길 6 남도빌딩 3F</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>개인정보관리책임자</b> 김시연 (siyeon@celover.com)</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>사업자등록번호</b> 000-xx-xxxx</span>
+                            </li>
+                            <li>
+                                <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>통신판매업 신고번호</b> 제 2023-역삼-XXXX호</span>
+                            </li>
+                            <br>
+                            <li>
+                                <span><b>호스팅 서비스 사업자</b> github.io</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <span>Copyright 2023.CELOVER.All rights reserverd.</span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer 끝 -->
+
+    <script>
+        /* 피드관리 내가 작성한피드 script 시작 */
+        $("#my_board_area .etc_area i").click(function (e) {
+            e.stopPropagation();
+            console.log(" ... 눌림");
+            let msgbox = $(e.target).find(".msgbox");
+            let state = $(e.target).find(".msgbox").css("display");
+
+            $(".msgbox").hide();
+            $(".msgbox").parent().css("background-color", "#fff");
+
+            if (state == "none") {
+                $(e.target).css("background-color", "#e9ecef");
+                msgbox.show();
+            } else {
+                $(e.target).css("background-color", "#fff");
+                msgbox.hide();
+            }
+        })
+
+        $(document).click(function (e) {
+            var msgbox = $(".msgbox");
+            if (!msgbox.is(e.target) && !msgbox.has(e.target).length) {
+                msgbox.parent().css("background-color", "#fff")
+                msgbox.hide();
+            }
+        });
+        /* 알람 관리 script 끝 */
+    </script>
+
+</body>
+
+</html>
