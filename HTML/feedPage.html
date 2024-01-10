@@ -17,14 +17,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
 
     <style>
-        .header-nav{
+        .header-nav {
             position: sticky;
             top: 0px;
             z-index: 10;
             background-color: white;
         }
+
         a {
             text-decoration: none;
         }
@@ -409,6 +419,10 @@
             cursor: pointer;
         }
 
+        .feed-createdate {
+            color: gray;
+        }
+
         /*feed-list css end*/
 
         /* create feed modal css start*/
@@ -537,6 +551,10 @@
             margin-right: 10px;
         }
 
+        .feed-etc {
+            position: relative;
+        }
+
         .feed-etc i {
             font-weight: bolder;
             opacity: 0.5;
@@ -550,6 +568,31 @@
         .feed-user-content {
             cursor: pointer;
         }
+
+        /*피드 디테일 시작*/
+        .border2-2 input {
+            margin: auto;
+            height: 65%;
+            width: 80%;
+            resize: none;
+            align-items: center;
+            border-width: 0px;
+            border-radius: 20px;
+            background-color: #f0f0f1;
+            padding-left: 15px;
+            font-size: small;
+        }
+
+        .border2-2 input::placeholder {
+            font-weight: bolder;
+            color: #cfcfcf;
+        }
+
+        .border2-2 button {
+            margin-bottom: 5px;
+        }
+
+        /*피드 디테일 종료*/
 
         /*피드 좌측 css 종료*/
         /*알람 css 시작*/
@@ -611,7 +654,15 @@
             height: 16px;
             text-align: center;
         }
+        .feed-reply li{
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+        }
 
+        .reply-option1::after{
+            left: 90%;
+        }
         /*알람 css 종료*/
 
         /*게시글 삭제 모달 시작*/
@@ -654,70 +705,94 @@
             border: 1px solid red;
         }
         */
-        
-        .click-feed-detail{
+
+        .click-feed-detail {
             box-sizing: border-box;
         }
-        .click-feed-detail-header{
+
+        .click-feed-detail-header {
             height: 100%;
             width: 50px;
         }
-        .click-feed img{
+
+        .click-feed img {
             width: 45px;
             height: 45px;
             border-radius: 20px;
         }
-        .border1-1{
+
+        .border1-1 {
             border-right: 1px solid #f0f0f0;
             border-bottom: 1px solid #f0f0f0;
         }
-        .border1-2{
+
+        .border1-2 {
             border-bottom: 1px solid #f0f0f0;
             border-left: 1px solid #f0f0f0;
         }
-        .border2-1{
+
+        .border2-1 {
             border-top: 1px solid #f0f0f0;
             border-right: 1px solid #f0f0f0;
         }
-        .border2-2{
+
+        .border2-2 {
             border-left: 1px solid #f0f0f0;
             border-top: 1px solid #f0f0f0;
         }
-        .border1-1 li{
+
+        .border1-1 li {
             height: 25px;
             line-height: 25px;
         }
-        .border1-1 li>i{
+
+        .border1-1 li>i {
             line-height: 25px;
             font-size: smaller;
         }
-        .feed-content-1{
+
+        .feed-content-1 {
             padding: 20px;
             margin-bottom: 10px;
             line-height: 30px;
 
         }
+
         /*스크롤바 none 속성 변경*/
 
-        .feed-content-1::-webkit-scrollbar{
+        .feed-content-1::-webkit-scrollbar {
             display: none;
         }
-        .main-feed-right::-webkit-scrollbar, .main-feed-left::-webkit-scrollbar{
+
+        .main-feed-right::-webkit-scrollbar,
+        .main-feed-left::-webkit-scrollbar {
             display: none;
         }
-        .main-feed-right{
-            overflow: scroll;
-            height: 1000px;
-        }
-        .main-feed-left{
+
+        .main-feed-right {
             overflow: scroll;
             height: 1000px;
         }
 
-        .chat-scroll::-webkit-scrollbar{
+        .main-feed-left {
+            overflow: scroll;
+            height: 1000px;
+        }
+
+        .chat-scroll::-webkit-scrollbar {
             display: none;
         }
+
+        .border1-2{
+            overflow: scroll;
+            height: 411.8px;
+        }
+        .border1-2::-webkit-scrollbar{
+            display: none;
+        }
+
         /* 피드 디테일 모달 css 종료 */
+
     </style>
 </head>
 
@@ -1175,7 +1250,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row feed-list" style="margin-bottom: 20px;">
+                <div class="row feed-list feed-test" style="margin-bottom: 20px;">
                     <div class="col-1 feed-user-titleimg">
                         <img src="sampleImg/메인13.jpg" alt="">
                     </div>
@@ -1226,6 +1301,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="row feed-list" style="margin-bottom: 20px;">
                     <div class="col-1 feed-user-titleimg">
                         <img src="sampleImg/메인13.jpg" alt="">
@@ -1359,11 +1435,11 @@
                 <!--2. 신고하기 종료-->
 
                 <!--3. 피드 디테일 시작-->
-                <div class="modal fade show" id="click-feed" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true" style="display: none;">
+                <div class="modal fade" id="click-feed" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content" style="line-height: 50px; border-radius: 20px;">
-                            <div class="modal-body">
+                            <div class="modal-body" style="padding-bottom: 5px;">
                                 <div class="row click-feed">
                                     <div class="col-8 click-feed-detail border1-1" style="float: left;">
                                         <div class="row">
@@ -1372,18 +1448,103 @@
                                             </div>
                                             <div class="col-3">
                                                 <div class="row" style="height: 50px;">
-                                                    <div class="col-12 feed-user-name-main" style="height: 25px; line-height: 25px;">
+                                                    <div class="col-12 feed-user-name-main"
+                                                        style="height: 25px; line-height: 25px;">
                                                         <span style="font-weight: bolder;">21jong</span>
                                                     </div>
-                                                    <div class="col-12 feed-createdate" style="height: 25px; line-height: 25px;">
+                                                    <div class="col-12 feed-createdate"
+                                                        style="height: 25px; line-height: 25px;">
                                                         <span>01.05.11:42</span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-8 text-end">
+                                            <div class="col-8 text-end feed-etc">
                                                 <div class="etc_area" style="margin: 0px;">
                                                     <i class="bi bi-three-dots-vertical">
-                                                        <div class="msgbox">
+                                                        <div class="msgbox reply-option1">
+                                                            <ul>
+                                                                <li data-bs-toggle="modal" data-bs-target="#feed-delete">
+                                                                    <i class="fas fa-trash-can" style="color: red;"></i>삭제하기
+                                                                </li>
+                                                                <li data-bs-toggle="modal" data-bs-target="#exclamation">
+                                                                    <i class="fa-solid fa-triangle-exclamation" style="color: red;"></i>
+                                                                    신고하기
+                                                                </li>
+                                                                <li>
+                                                                    <i class="fas fa-user-slash"></i> 팔로우 취소
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 feed-content-1" style="overflow: scroll; height: 350px;">
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore
+                                            repellendus
+                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam.
+                                            Autem, amet est
+                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                        </div>
+                                    </div>
+                                    <div class="col-4 border1-2">
+                                        <!--피드 디테일 내 댓글 시작 -->
+                                        <div class="row">
+                                            <div class="col-2 click-feed-userimg" style="text-align: center;">
+                                                <img src="sampleImg/메인13.jpg" alt="" style="height: 30px; width: 30px;">
+                                            </div>
+                                            <div class="col-3">
+                                                <div class="row" style="height: 50px;">
+                                                    <div class="col-12 feed-user-name-main"
+                                                        style="height: 25px; line-height: 25px; padding-left: 0px;">
+                                                        <span
+                                                            style="font-weight: bolder; font-size: smaller;">21jong</span>
+                                                    </div>
+                                                    <div class="col-12 feed-createdate"
+                                                        style="height: 25px; line-height: 25px; padding-left: 0px;">
+                                                        <span style="font-size: smaller;">01.05.11:42</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-7 text-end feed-etc">
+                                                <div class="etc_area" style="margin: 0px;">
+                                                    <i class="bi bi-three-dots-vertical">
+                                                        <div class="msgbox feed-reply" style="margin-left: 80px;">
                                                             <ul>
                                                                 <li data-bs-toggle="modal" data-bs-target="#feed-delete">
                                                                     <i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
@@ -1401,29 +1562,21 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-12 feed-content-1" style="overflow: scroll; height: 350px;">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
-                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
-                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
-                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
-                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
-                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
-                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat inventore repellendus
-                                            recusandae nam, iusto eaque ducimus. Nobis provident quisquam aperiam. Autem, amet est
-                                            perspiciatis eveniet fugit eos iusto necessitatibus ullam.
+                                        <div class="col-12 feed-content-1"
+                                            style="padding-left: 50px; line-height: 20px; padding-top: 0px;">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo soluta
+                                            officia recusandae, nulla suscipit, omnis aliquid corrupti sunt ipsum quas
+                                            molestiae sed aspernatur labore rerum provident nam? Sit, porro odit.
                                         </div>
-                                    </div>
-                                    <div class="col-4 border1-2">
-                                        br
+                                        <!--피드 디테일 내 댓글 종료 -->
+
                                     </div>
                                     <div class="col-8 border2-1">
                                         <br>
                                     </div>
-                                    <div class="col-4 border2-2">
-                                        br
+                                    <div class="col-4 border2-2 text-center">
+                                        <input type="text" id="chatMessage2" placeholder="댓글을 입력해주세요.">
+                                        <button id="createChat2" class="btn btn-sm btn-success" disabled>등록</button>
                                     </div>
                                 </div>
                             </div>
@@ -1556,7 +1709,7 @@
                                         </div>
                                     </div>
                                     <!--실제 채팅이 보여지는 자리-->
-                                    <div class="chat-scroll" style="overflow: scroll; height: 300px;">
+                                    <div class="chat-scroll" style="overflow: scroll; height: 300px; margin-top: 20px;">
                                         <div class="chat-content">
                                             <div class="row">
                                                 <div class="col-4 chat-user">용진팍</div>
@@ -1766,6 +1919,21 @@
                 });
             });
             /* 응원채팅창 script 종료 */
+
+            /*피드 댓글 시작*/
+            $(document).ready(function () {
+                const $chatMessage = $('#chatMessage2');
+                const $chatCount = $('#chatCount2');
+                const $createChatBtn = $('#createChat2');
+
+                $chatMessage.on('input', function () {
+                    const currentCharCount = $chatMessage.val().length;
+                    $createChatBtn.prop('disabled', currentCharCount === 0 || currentCharCount > 300);
+                    $chatCount.text(currentCharCount);
+                });
+            });
+            /*피드 댓글 종료*/
+
             /*피드 작성 script 시작*/
             $(document).ready(function () {
                 $('#feedcontent').keyup(function () {
