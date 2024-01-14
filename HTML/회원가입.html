@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name=" viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+
+    <!-- momment.js 날짜 라이브러리  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <style>
+        /* 로그인 css */
+        #create_account_area {
+            height: 100vh;
+            text-align: center;
+        }
+
+        #create_account_area>div {
+            width: 600px;
+        }
+
+        #create_account_area .create_account_header .title {
+            font-family: 'Bruno Ace', serif;
+            font-size: 56px;
+            font-weight: 800;
+        }
+
+        #create_account_area .create_account_header .title:hover {
+            cursor: pointer;
+        }
+
+        #create_account_area .create_account_header .sub_title {
+            font-size: small;
+            margin: 0%;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns {
+            border-top: 1px solid #dee2e6;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns .col-md-3 {
+            padding: 0px;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns .col-md-3>div:hover {
+            border-radius: 7px;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns .col-md-3>div:hover {
+            cursor: pointer;
+            background-color: #dee2e6;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns>p {
+            font-size: large;
+            font-weight: 800;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns .img_area img {
+            width: 35px;
+        }
+
+        #create_account_area .create_account_body>.enroll_sns .text_area {
+            line-height: 35px;
+            font-size: small;
+        }
+
+
+
+
+
+
+
+        /* 로그인 css 끝 */
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+
+        <div id="create_account_area" class="container d-flex align-items-center">
+            <div class="m-auto">
+                <div class="create_account_header">
+                    <h2 class="title">
+                        Celover
+                    </h2>
+                    <p class="sub_title text-secondary">
+                        Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.
+                    </p>
+                </div>
+                <div class="create_account_body py-2 px-4">
+                    <div class="enroll_sns p-2">
+                        <p>SNS 회원가입</p>
+                        <div class="row justify-content-md-center">
+                            <div class="col-md-3">
+                                <div class="social_btn p-2">
+                                    <div class="img_area">
+                                        <img src="sampleImg/구글로그인버튼.png"
+                                            style="border: 1px solid #dee2e6; border-radius: 50%;" alt="">
+                                    </div>
+                                    <div class="text_area mt-1">구글로 회원가입</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="social_btn p-2">
+                                    <div class="img_area">
+                                        <img src="sampleImg/네이버로그인버튼.png" alt="">
+                                    </div>
+                                    <div class="text_area mt-1">네이버로 회원가입</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="social_btn p-2">
+                                    <div class="img_area">
+                                        <img src="sampleImg/카카오로그인버튼.png" alt="">
+                                    </div>
+                                    <div class="text_area mt-1">카카오로 회원가입</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input_area">
+                        <style>
+                            #create_account_area .create_account_body .input_area .warning_message {
+                                font-weight: 600;
+                                text-align: left;
+                                color: red;
+                                display: inline-block;
+                                font-size: xx-small;
+                                display: none;
+                            }
+
+                            #create_account_area .create_account_body .input_area>form .input-group #eye_btn i:hover {
+                                cursor: pointer;
+                            }
+
+                            #create_account_area .create_account_body .input_area>form .input-group input:focus {
+                                box-shadow: none;
+                                border-left: none;
+                            }
+
+                            #create_account_area .create_account_body .input_area>form .input-group input {
+                                border-left: none;
+                                border: none;
+                            }
+
+                            .error {
+                                position: relative;
+                                z-index: 1;
+                                box-shadow: 0 0 2px 2px #ff3f3f;
+                            }
+
+                            .success:has(input:focus) {
+                                position: relative;
+                                z-index: 1;
+                                box-shadow: 0 0 2px 2px #09aa5c;
+                            }
+
+                            #create_account_area .create_account_body .input_area>form .input-group span:has(input:focus) {
+                                z-index: 2;
+                            }
+
+                            #create_account_area .create_account_body .input_area>form .input-group span {
+                                background-color: #fff;
+                                border: none;
+                            }
+
+                            #create_account_area .d-table {
+                                display: table;
+                                border-radius: 0.375rem;
+                                box-shadow: 0 0 0 1px #dee2e6;
+                                width: 100%;
+                            }
+
+                            #create_account_area .d-table>.table-row {
+                                display: table-row;
+                            }
+
+                            #create_account_area .d-table .table-row .table-cell {
+                                display: table-cell;
+                                border-bottom: 1px solid #dee2e6;
+                            }
+
+                            #create_account_area .d-table .table-row:last-child .table-cell {
+                                border-bottom: none;
+                            }
+
+                            #create_account_area .d-table .table-row .table-cell>.top_span {
+                                border-bottom-left-radius: 0px;
+                                border-bottom-right-radius: 0px;
+                            }
+
+                            #create_account_area .d-table .table-row .table-cell>.middle_span {
+                                border-radius: 0px;
+                            }
+
+                            #create_account_area .d-table .table-row .table-cell>.bottom_span {
+                                border-top-left-radius: 0px;
+                                border-top-right-radius: 0px;
+                            }
+
+                            #create_account_area #chk_area>div {
+                                width: 50%;
+                            }
+
+                            #create_account_area #chk_area>div label {
+                                font-size: 80%;
+                                width: 48%;
+                                color: #dee2e6;
+                                border: 1px solid #dee2e6;
+                            }
+
+                            #create_account_area #chk_area>div .left_label {
+                                border-top-right-radius: 0%;
+                                border-bottom-right-radius: 0%;
+                            }
+
+                            #create_account_area #chk_area>div .right_label {
+                                border-top-left-radius: 0%;
+                                border-bottom-left-radius: 0%;
+                            }
+
+                            .btn-check:checked+.btn {
+                                font-weight: 600;
+                                color: #09aa5c !important;
+                                background-color: #fff;
+                                border: 1px solid #09aa5c !important;
+                            }
+
+                            .accordion {
+                                --bs-accordion-active-bg: var(--bs-white);
+                            }
+
+                            .accordion-button:focus {
+                                box-shadow: var(--bs-white);
+                            }
+
+                            #create_account_area .form-check-input:checked {
+
+                                background-color: #09aa5c;
+                                border-color: #09aa5c;
+                            }
+
+                            .form-check-input:hover {
+                                cursor: pointer;
+                            }
+
+                            .form-check-input:focus {
+                                border-color: #09aa5c;
+                                outline: 0;
+                                box-shadow: 0 0 0 0.25rem rgba(10, 171, 93, .25);
+                            }
+
+                            .d-flex:has(.accordion-button:not(.collapsed)) {
+                                color: var(--bs-accordion-active-color);
+                                background-color: var(--bs-accordion-active-bg);
+                                box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+                            }
+
+                            .accordion-button:not(.collapsed) {
+                                box-shadow: none
+                            }
+
+                            .accordion-body .fa-check:hover {
+                                cursor: pointer;
+                            }
+
+                            .accordion-body a:hover {
+                                cursor: pointer;
+                            }
+
+                            .accordion-body .checked {
+                                color: #09aa5c;
+                            }
+                        </style>
+                        <form action="회원가입.do">
+                            <div class="combine_area d-table">
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text top_span" id="basic-addon1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-user">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="12" cy="7" r="4"></circle>
+                                            </svg>
+                                            <input type="text" id="user_id" class="form-control top_input"
+                                                placeholder="아이디" aria-label="user_id" aria-describedby="basic-addon1">
+                                            <span class="input-group-text" id="check_icon">
+                                                <i class="fas fa-check" id="state_y"
+                                                    style="color: #09aa5c; display: none;"></i>
+                                                <i class="fas fa-xmark" id="state_n"
+                                                    style="color: #ff3f3f; display: none;"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text middle_span" id="basic-addon1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-lock">
+                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                            </svg>
+                                            <input type="password" id="user_password" class="form-control middle_input"
+                                                placeholder="비밀번호" aria-label="user_password"
+                                                aria-describedby="basic-addon1" style="border-right: none;">
+                                            <span class="input-group-text" id="eye_btn">
+                                                <i class="fa-regular fa-eye"></i>
+                                                <i class="fa-regular fa-eye-slash" style="display: none;"></i>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text bottom_span success" id="basic-addon1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-mail">
+                                                <path
+                                                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                                </path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                            <input type="text" class="form-control" id="user_email"
+                                                placeholder="[선택] 비밀번호 분실 시 확인용 이메일" aria-label="user_email"
+                                                aria-describedby="basic-addon1">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="msg_area1" class="mt-1" style="text-align: left;">
+                                <span class="warning_message" id="id1">* 아이디: 필수 정보입니다. </span>
+                                <span class="warning_message" id="id2">* 아이디: 5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만
+                                    사용가능합니다.</span>
+                                <span class="warning_message" id="id3">* 아이디: 사용할 수 없는 아이디입니다. 다른 아이디를 입력해 주세요.</span>
+                                <span class="warning_message" id="pwd1">* 비밀번호: 필수 정보입니다. </span>
+                                <span class="warning_message" id="pwd2">* 비밀번호: 8자 이상이어야 하며, 숫자/영문자/특수문자를 모두 포함해야 합니다.
+                                </span>
+                                <span class="warning_message" id="email">* 이메일: 이메일 주소가 정확한지 확인해 주세요. </span>
+                            </div>
+
+
+
+
+                            <div class="combine_area d-table mt-3">
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text top_span" id="basic-addon1" style="width: auto;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-user">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="12" cy="7" r="4"></circle>
+                                            </svg>
+                                            <input type="text" class="form-control top_input" id="user_nickname"
+                                                placeholder="닉네임" aria-label="user_nickname"
+                                                aria-describedby="basic-addon1">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text middle_span" id="basic-addon1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-calendar">
+                                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                                            </svg>
+                                            <input type="text" class="form-control middle_input" id="user_birth"
+                                                placeholder="생년월일 8자리" maxlength="10" aria-label="user_birth"
+                                                aria-describedby="basic-addon1">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="table-row">
+                                    <div class="input-group table-cell d-flex" id="chk_area">
+                                        <div class="d-flex justify-content-center py-2" id="gender_area">
+                                            <input type="radio" class="btn-check" name="gender" id="man"
+                                                autocomplete="off" checked>
+                                            <label class="btn btn-outline-secondary left_label" for="man">남자</label>
+
+                                            <input type="radio" class="btn-check" name="gender" id="woman"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-secondary right_label" for="woman">여자</label>
+                                        </div>
+                                        <div class="d-flex justify-content-center py-2" id="nationality_area">
+                                            <input type="radio" class="btn-check" name="options-base2" id="local"
+                                                autocomplete="off" checked>
+                                            <label class="btn btn-outline-secondary left_label" for="local">내국인</label>
+
+                                            <input type="radio" class="btn-check" name="options-base2" id="foreigner"
+                                                autocomplete="off">
+                                            <label class="btn btn-outline-secondary right_label"
+                                                for="foreigner">외국인</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="table-row">
+                                    <div class="input-group table-cell">
+                                        <span class="input-group-text bottom_span" id="basic-addon1">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="feather feather-smartphone">
+                                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                            </svg>
+                                            <input type="text" class="form-control" id="user_phone" placeholder="휴대전화번호"
+                                                aria-label="user_phone" oninput="autoHyphen(this);" maxlength="13" aria-describedby="basic-addon1">
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="msg_area2" class="mt-1" style="text-align: left; ">
+                                <span class="warning_message" id="nickname1">* 닉네임: 필수 정보입니다. </span>
+                                <span class="warning_message" id="nickname2">* 닉네임: 3~16자의 영문 대소문자, 숫자, 밑줄(_)만
+                                    사용가능합니다.</span>
+                                <span class="warning_message" id="nickname3">* 닉네임: 사용할 수 없는 아이디입니다. 다른 아이디를
+                                    입력해주세요.</span>
+                                <span class="warning_message" id="birth1">* 생년월일: 필수 정보입니다. </span>
+                                <span class="warning_message" id="birth2">* 생년월일: 생년월일은 8자리 숫자로 입력해주세요. </span>
+                                <span class="warning_message" id="birth3">* 생년월일: 생년월일: 생년월일이 정확한지 확인해 주세요. </span>
+                                <span class="warning_message" id="phone1">* 휴대폰번호: 필수 정보입니다. </span>
+                                <span class="warning_message" id="phone2">* 휴대전화번호: 휴대전화번호가 정확한지 확인해 주세요. </span>
+                            </div>
+
+
+                            <div class="accordion mt-3" id="terms_of_Authentication">
+                                <div class="accordion-item">
+                                    <div class="accordion-header">
+                                        <div class="d-flex p-2">
+                                            <div class="w-100" style="text-align: left;">
+                                                <div style="padding-left: 10px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckChecked" style="zoom: 1.5; border-radius: 50%;">
+                                                    <label class="form-check-label" for="flexCheckChecked"
+                                                        style="line-height: 33px;">
+                                                        <div class="d-flex">
+                                                            <div
+                                                                style="color: #09aa5c; font-size: small; font-weight: 700;">
+                                                                [필수]
+                                                            </div>
+                                                            <div style="font-weight: 700;">
+                                                                &nbsp;인증 약관 전체동의
+                                                            </div>
+                                                        </div>
+                                                    </label>
+
+                                                </div>
+                                            </div>
+                                            <div class="flex-shrink-1">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    style="padding: 8px 10px;" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row" style="text-align: left; color: #666a73">
+                                                <div class="col-sm-6 py-1">
+                                                    <i class="fas fa-check"></i>
+                                                    <a>개인정보 이용 <i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                                <div class="col-sm-6 py-1">
+                                                    <i class="fas fa-check"></i>
+                                                    <a>고유식별정보처리 <i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                                <div class="col-sm-6 py-1">
+                                                    <i class="fas fa-check"></i>
+                                                    <a>통신사 이용약관 <i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                                <div class="col-sm-6 py-1">
+                                                    <i class="fas fa-check"></i>
+                                                    <a>인증사 이용약관 <i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                                <div class="col-sm-6 py-1">
+                                                    <i class="fas fa-check"></i>
+                                                    <a>네이버 개인정보수집 <i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="msg_area3" class="mt-1" style="text-align: left;">
+                                <span class="warning_message" id="terms">* 필수 약관에 모두 동의해 주세요. </span>
+                            </div>
+
+                            <div class="d-grid gap-2 mt-3">
+                                <button class="btn btn-success" id="submit" type="button">가입하기</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+<script>
+    /* 회원정보수정 페이지 script */
+
+    $(document).on("keyup", "#create_account_area #user_id", function () {
+
+        let regexId = /^[a-z0-9_-]{5,20}$/;
+        let id = $("#create_account_area #user_id").val();
+        let $id = $("#create_account_area #user_id");
+
+        $('[id^="state"]').css("display", "none");
+
+        if (id.length != 0) { // 값이 있을때
+
+            console.log("ajax실행");
+            // ajax 성공시
+            if (!regexId.test(id)) { // 조건에 맞지 않는 경우
+                $("#check_icon .fa-xmark").css("display", "");
+                $("#check_icon .fa-check").css("display", "none");
+
+            } else {  // 조건에 맞는 경우
+                /*
+                */
+                $("#check_icon .fa-xmark").css("display", "none");
+                $("#check_icon .fa-check").css("display", "");
+
+                // ajax 실패시 (중복된 아이디)
+                /*
+                $("#check_icon .fa-xmark").css("display","");
+                $("#check_icon .fa-check").css("display","none");
+                */
+            }
+        }
+    });
+
+    $(document).on("blur", "#create_account_area #user_id", function () {
+
+        let regexId = /^[a-z0-9_-]{5,20}$/;
+        let id = $("#create_account_area #user_id").val();
+        let $id = $("#create_account_area #user_id");
+
+        $('#msg_area1 [id^="id"]').css("display", "none");
+
+        if (id.length == 0) { // 값이 없을때
+            $("#msg_area1 #id1").css("display", "block");
+            $id.parent().removeClass("success");
+            $id.parent().addClass("error");
+        } else { // 값이 있을때
+
+            if (!regexId.test(id)) { // 조건에 맞지 않는 경우
+                $("#msg_area1 #id2").css("display", "block");
+                $id.parent().removeClass("success");
+                $id.parent().addClass("error");
+
+            } else { // 조건에 맞는 경우
+                console.log("ajax실행");
+
+                // ajax 성공시
+                /*
+                */
+                $("#check_icon .fa-xmark").css("display", "none");
+                $("#check_icon .fa-check").css("display", "");
+                $id.parent().removeClass("error");
+                $id.parent().addClass("success");
+
+                // ajax 실패시 (중복된 아이디)
+                /*
+                $("#msg_area1 #id3").css("display", "block");
+                $("#check_icon .fa-xmark").css("display","");
+                $("#check_icon .fa-check").css("display","none");
+                $id.parent().removeClass("success");
+                $id.parent().addClass("error");
+                */
+            }
+        }
+    })
+
+    $(document).on("click", "#eye_btn .fa-eye", function () {
+        // 텍스트로 타입변환
+        $(this).parent().prev().attr("type", "text");
+        $(this).css("display", "none");
+        $("#eye_btn .fa-eye-slash").css("display", "")
+    })
+
+    $(document).on("click", "#eye_btn .fa-eye-slash", function () {
+        // 텍스트로 타입변환
+        $(this).parent().prev().attr("type", "password");
+        $(this).css("display", "none");
+        $("#eye_btn .fa-eye").css("display", "")
+    })
+
+    $(document).on("blur", "#create_account_area #user_password", function () {
+
+        let pw = $("#create_account_area #user_password").val();
+        let $pw = $("#create_account_area #user_password");
+        let regexPw = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+{}\[\]:;<ㄴ>,.?~\\-]).{8,}$/;
+
+        // 초기화
+        $('#msg_area1 [id^="pwd"]').css("display", "none");
+
+        if (pw.length == 0) { // 값이 비어있을때
+            // 비밀번호: 필수 정보입니다. 메시지 출력
+            $("#msg_area1 #pwd1").css("display", "block");
+            $pw.parent().removeClass("success");
+            $pw.parent().addClass("error");
+
+        } else { // 값이 있을때
+
+            if (!regexPw.test(pw)) { // 사용불가능한 비밀번호
+                $("#msg_area1 #pwd2").css("display", "block");
+                $pw.parent().removeClass("success");
+                $pw.parent().addClass("error");
+            } else { // 사용가능한 비밀번호
+                $('#msg_area1 [id^="pwd"]').css("display", "none");
+                $pw.parent().removeClass("error");
+                $pw.parent().addClass("success");
+            }
+        }
+    })
+
+    $(document).on("blur", "#create_account_area #user_nickname", function () {
+
+        let nickname = $("#create_account_area #user_nickname").val();
+        let $nickname = $("#create_account_area #user_nickname");
+        let regexNickname = /^[a-zA-Z0-9_]{3,16}$/;
+
+        $('#msg_area2 [id^="nickname"]').css("display", "none");
+
+        if (nickname.length == 0) { // 값이 없을때
+            $("#msg_area2 #nickname1").css("display", "block");
+            $nickname.parent().removeClass("success");
+            $nickname.parent().addClass("error");
+        } else { // 값이 있을때
+
+            if (!regexNickname.test(nickname)) { // 조건에 맞지 않는 경우
+                $("#msg_area2 #nickname2").css("display", "block");
+                $nickname.parent().removeClass("success");
+                $nickname.parent().addClass("error");
+
+            } else { // 조건에 맞는 경우
+                console.log("ajax실행");
+
+                // ajax 성공시
+                /*
+                */
+                $nickname.parent().removeClass("error");
+                $nickname.parent().addClass("success");
+
+                // ajax 실패시 (중복된 아이디)
+                /*
+                $("#msg_area2 #nickname3").css("display", "block");
+                $("#msg_area2 #nickname3").css("display", "block");
+                $nickname.parent().removeClass("success");
+                $nickname.parent().addClass("error");
+                */
+            }
+        }
+    })
+
+    function isValidDate(dateString, format = "YYYYMMDD") {
+        return moment(dateString, format, true).isValid();
+    }
+
+    $(document).on("blur", "#create_account_area #user_birth", function () {
+
+        let birth = $("#create_account_area #user_birth").val();
+        let $birth = $("#create_account_area #user_birth");
+        // let regexbirth = /^[a-zA-Z0-9_]{3,16}$/;
+
+        let regexbirth = /^\d{8}/;
+        $('#msg_area2 [id^="birth"]').css("display", "none");
+
+        if (birth.length == 0) { // 값이 없을때
+            $("#msg_area2 #birth1").css("display", "block");
+            $birth.parent().removeClass("success");
+            $birth.parent().addClass("error");
+
+        } else { // 값이 있을때
+
+            // . 임시 제거
+            let rawBirth = birth.replace(/\./g, "");
+
+            if (!regexbirth.test(parseInt(rawBirth))) { // 조건에 맞지 않는 경우 (숫자8자리)
+
+                console.log(rawBirth)
+                $("#msg_area2 #birth2").css("display", "block");
+                $birth.parent().removeClass("success");
+                $birth.parent().addClass("error");
+
+            } else { // 조건에 맞는 경우 (숫자 8자리)
+
+                let currentDate = moment();
+
+                let today = currentDate.format("YYYY.MM.DD");
+                let one_hundred_ten_year_ago = currentDate.subtract(110, 'years').format("YYYY.MM.DD");
+
+                // 진짜 날짜형식일때만 형식 변환해준다. yyyy.mm.dd
+                if (isValidDate(rawBirth)) {
+
+                    let formattedDate2 = rawBirth.replace(/(\d{4})(\d{2})(\d{2})/, '$1.$2.$3')
+                    $birth.val(formattedDate2);
+
+                    console.log("formattedDate2 : " + formattedDate2);
+                    console.log("one_hundred_ten_year_ago : " + one_hundred_ten_year_ago);
+                    console.log("today : " + today);
+
+                    if ((formattedDate2 > one_hundred_ten_year_ago) && (formattedDate2 < today)) {
+                        $birth.parent().removeClass("error");
+                        $birth.parent().addClass("success");
+                    } else {
+                        $("#msg_area2 #birth3").css("display", "block");
+                        $birth.parent().removeClass("success");
+                        $birth.parent().addClass("error");
+                    }
+
+                } else {
+                    $("#msg_area2 #birth3").css("display", "block");
+                    $birth.parent().removeClass("success");
+                    $birth.parent().addClass("error");
+                }
+
+
+
+            }
+        }
+    })
+
+    let autoHyphen = (e) => {
+        e.value = e.value
+            .replace(/[^0-9]/g, '')
+            .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
+    }
+
+    $(document).on("blur", "#create_account_area #user_phone", function () {
+        let phone = $("#create_account_area #user_phone").val();
+        let $phone = $("#create_account_area #user_phone");
+
+        $('#msg_area2 [id^="phone"]').css("display", "none");
+
+        if(phone.length == 0){
+            $("#msg_area2 #phone1").css("display", "block");
+            $phone.parent().removeClass("success");
+            $phone.parent().addClass("error");
+
+        }else if(phone.length == 13){
+            $phone.parent().removeClass("error");
+            $phone.parent().addClass("success");
+        }else{
+            $("#msg_area2 #phone2").css("display", "block");
+            $phone.parent().removeClass("success");
+            $phone.parent().addClass("error");
+        }
+    })
+
+
+    $(document).on("click", "#terms_of_Authentication input", function () {
+        $("#msg_area3 #terms").css("display", "");
+
+        if ($(this).prop("checked")) {
+            $(".accordion-body .fa-check").addClass("checked");
+            $(".accordion-item").removeClass("error")
+        } else {
+            $(".accordion-body .fa-check").removeClass("checked");
+            $(".accordion-item").addClass("error")
+            $("#msg_area3 #terms").css("display", "block");
+
+        }
+    })
+    $(document).on("click", ".accordion-body .fa-check", function () {
+
+        $(this).toggleClass("checked");
+
+    })
+
+    // check 박스 클릭시
+    $(document).on("click", ".accordion-body .fa-check", function () {
+        let checkNum = $(".accordion-body .fa-check.checked").length;
+        $("#msg_area3 #terms").css("display", "");
+
+        if (checkNum == $(".accordion-body .fa-check").length) {
+            $("#terms_of_Authentication input").prop("checked", true);
+            $(".accordion-item").removeClass("error")
+
+        } else {
+            $("#terms_of_Authentication input").prop("checked", false)
+            $(".accordion-item").addClass("error")
+            $("#msg_area3 #terms").css("display", "block");
+        }
+
+    })
+
+
+    $("#submit").click(function(){
+        $("#create_account_area input").trigger("blur");
+        $("#terms_of_Authentication input").trigger("click");
+        $("#terms_of_Authentication input").trigger("click");
+
+        if($(".error").length == 0){
+            console.log("회원가입 실행")
+        }
+    })
+
+</script>
+
+</html>
