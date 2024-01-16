@@ -32,12 +32,15 @@
         @media screen and (min-width: 930px) {
             /* 930px 이상 */
 
-            .header-nav .dropdown-menu {
+            .dropdown-area .dropdown-menu {
                 display: none;
             }
 
             .header-nav .mn-930 {
                 display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 0px;
             }
         }
 
@@ -46,6 +49,9 @@
             /* 930px 이하 */
             .header-nav .mx-930 {
                 display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 301px;
             }
 
         }
@@ -103,35 +109,41 @@
             cursor: pointer;
         }
 
+
         .dm-active {
             display: block;
         }
 
-        .header-nav .dropdown-menu {
+        .dropdown-area .dropdown-menu {
             width: 100%;
             border: none;
         }
 
-        .header-nav .dropdown-menu li {
+        .dropdown-area .dropdown-menu li {
             padding: 7px;
             font-size: 20px;
             border-bottom: 1px solid #dee2e6;
         }
 
-        .header-nav .dropdown-menu li a {
+        .dropdown-area .dropdown-menu li a {
             font-weight: 800;
         }
 
-        .header-nav .dropdown-menu li:hover {
+        .dropdown-areav .dropdown-menu li:hover {
             background-color: #dee2e6;
         }
 
-        .header-nav .dropdown-menu li a:hover {
+        .dropdown-area .dropdown-menu li a:hover {
             background-color: #dee2e6;
 
         }
 
-        .header-nav .dropdown-menu li .dropdown-item img {
+        .dropdown-area .dropdown-menu li .dropdown-item {
+            /*
+            text-align: center;
+            */
+        }
+        .dropdown-area .dropdown-menu li .dropdown-item img {
             width: 32px;
             height: 32px;
         }
@@ -243,9 +255,6 @@
 
 
 
-        body {
-            padding: 0px;
-        }
 
         .container-fluid {
             padding: 0;
@@ -701,104 +710,101 @@
 </head>
 
 <body>
-    <div class="container-fluid" style="position: fixed; z-index: 999;">
-        <div class="container-fluid header-nav">
+    <div class="container-fluid header-nav">
 
 
-            <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between">
 
 
-                <div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif;">
-                    <h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
-                </div>
-
-
-                <div class="p-4">
-                    <ul class="nav">
-                        <div id="searchArea"
-                            style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
-                            <table style="border: 0px solid red;" align="center">
-                                <tr style="line-height: 37px;">
-                                    <td style="width: 30px;">
-                                        <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
-                                    </td>
-                                    <td>
-                                        <input type="text" style="background-color: #f4f6f8; border: 0;"
-                                            placeholder="아티스트 검색">
-                                    </td>
-                                </tr>
-                            </table>
-
-                        </div>
-                        <li class="nav-item mx-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/알림.png"
-                                    style="width: 32px; height: 32px;" alt=""></a>
-                        </li>
-                        <li class="nav-item mx-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/게시판.png" alt=""></a>
-                        </li>
-                        <li class="nav-item mx-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" alt=""></a>
-                        </li>
-                        <li class="nav-item mx-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/사람.png" alt=""></a>
-                        </li>
-                        <li class="nav-item mx-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/고객센터.png" alt=""></a>
-                        </li>
-                        <li class="nav-item mn-930">
-                            <a href="#"><img class="header_btn" src="sampleImg/햄버거.png" alt=""></a>
-                        </li>
-                    </ul>
-
-
-                </div>
-
+            <div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif;">
+                <h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
             </div>
-            <div>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <img class="header_btn" src="sampleImg/알림.png" alt="">
-                            <span>알림관리</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <img class="header_btn" src="sampleImg/게시판.png" alt="">
-                            <span>게시판</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <img class="header_btn" src="sampleImg/랭킹.png" alt="">
-                            <span>랭킹</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <img class="header_btn" src="sampleImg/사람.png" alt="">
-                            <span>마이페이지</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <img class="header_btn" src="sampleImg/고객센터.png" alt="">
-                            <span>고객센터</span>
-                        </a>
-                    </li>
 
+
+            <div class="p-4">
+                <ul class="nav">
+                    <div id="searchArea"
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png"
+                                style="width: 32px; height: 32px;" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/고객센터.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mn-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/햄버거.png" alt=""></a>
+                    </li>
                 </ul>
+
+
             </div>
 
         </div>
+        
     </div>
+    <div class="dropdown-area">
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/알림.png" alt="">
+                    <span>알림관리</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/게시판.png" alt="">
+                    <span>게시판</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/랭킹.png" alt="">
+                    <span>랭킹</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/사람.png" alt="">
+                    <span>마이페이지</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/고객센터.png" alt="">
+                    <span>고객센터</span>
+                </a>
+            </li>
 
-    <div style="height: 93px;"></div>
+        </ul>
+    </div>
 
     <script>
         $(document).on("click", ".header-nav .mn-930", function () {
-            $(".dropdown-menu").toggleClass("dm-active")
+
+            $(".dropdown-area .dropdown-menu").toggleClass("dm-active")
         })
     </script>
     <!-- 헤더 끝 -->
