@@ -23,11 +23,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
 
-  <meta name=" viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name=" viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 
     <style>
         /* header css start */
+        @media screen and (min-width: 930px) {
+            /* 930px 이상 */
+
+            .header-nav .dropdown-menu {
+                display: none;
+            }
+
+            .header-nav .mn-930 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 930px) {
+
+            /* 930px 이하 */
+            .header-nav .mx-930 {
+                display: none;
+            }
+
+        }
+
+        @media screen and (max-width: 610px) {
+
+            /* 930px 이하 */
+            #searchArea {
+                display: none;
+            }
+        }
+
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0 !important;
+        }
+
         .header-nav {
             position: sticky;
             top: 0px;
@@ -37,21 +75,27 @@
             padding-bottom: 10px;
         }
 
-        a {
+        .header-nav a {
             text-decoration: none;
             color: black;
         }
 
-        .nav-item {
-            width: 80px;
+        .header-nav .nav-item {
+            width: 70px;
             text-align: center;
+            padding: 6.5px 0px;
         }
 
-        .header_btn:hover {
+        .header-nav .nav-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mx-930 .header_btn:hover {
             transform: scale(1.2);
         }
 
-        input:focus {
+        .header-nav input:focus {
             outline: none;
         }
 
@@ -59,7 +103,45 @@
             cursor: pointer;
         }
 
+        .dm-active {
+            display: block;
+        }
+
+        .header-nav .dropdown-menu {
+            width: 100%;
+            border: none;
+        }
+
+        .header-nav .dropdown-menu li {
+            padding: 7px;
+            font-size: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .header-nav .dropdown-menu li a {
+            font-weight: 800;
+        }
+
+        .header-nav .dropdown-menu li:hover {
+            background-color: #dee2e6;
+        }
+
+        .header-nav .dropdown-menu li a:hover {
+            background-color: #dee2e6;
+
+        }
+
+        .header-nav .dropdown-menu li .dropdown-item img {
+            width: 32px;
+            height: 32px;
+        }
+
         /* header css end */
+
+
+        #mainPage .container{
+            max-width: 1140px !important;
+        }
 
         .nav-item {
             width: 80px;
@@ -82,7 +164,10 @@
         }
 
         .mainSlide img {
+            margin: auto;
             max-width: 100%;
+            width: 70%;
+            aspect-ratio: 13/9;
             transition: all 0.4s ease-in-out;
         }
 
@@ -92,13 +177,10 @@
             z-index: 1;
         }
 
-        .quiz_worldCup li {
-            float: left;
-            margin-right: 20px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 20px;
-            font-weight: bolder;
+        .quiz_worldCup label {
+            margin: 10px 0px;
+            font-size: 3vmin;
+            font-weight: 800;
         }
 
         .quiz_worldCup label {
@@ -173,10 +255,9 @@
         .following-list-area .fl-content {
             position: relative;
             width: 100%;
-            padding: 10px 47px;
+            padding: 10px 40px;
             border: 1px solid hsl(0, 0%, 80%);
             border-radius: 15px;
-            background: #f7f7fa;
         }
 
         .following-list-area .fl-content .arrow {
@@ -186,7 +267,8 @@
             background: transparent;
             border-radius: 15px;
             border: none;
-            font-size: 30px;
+            font-size: 24px;
+            line-height: 26px;
             display: block;
             width: 30px;
             height: 30px;
@@ -206,6 +288,7 @@
         }
 
         .following-list-area .fl-content .fl-list {
+            max-width: 1024.8px;
             /*width: 390px;*/
             overflow: hidden;
         }
@@ -222,7 +305,7 @@
         .following-list-area .fl-content .fl-list ul li {
             display: inline-block;
             padding: 10px;
-            width: 150px;
+            width: 128.35px;
         }
 
         .following-list-area .fl-content .fl-list ul li img {
@@ -236,15 +319,13 @@
         /* 스타 순위 css */
         .ranking-area>#selectedArea>div>select {
             width: auto;
-            height: 50px;
-            font-size: 24px;
-
+            font-size: 16px;
         }
 
         .ranking-area>#selectedArea>div>#subcategory {
-            margin-left: 120px;
             opacity: 0;
         }
+
         .ranking-area .row-cols-md-3 {
             display: inline-flex;
         }
@@ -307,7 +388,7 @@
 
         /* 스타가 남긴 글 css */
         #starRemainArea {
-            background-color: #dee2e6;            
+            background-color: #dee2e6;
         }
 
         #srContent {
@@ -316,6 +397,9 @@
 
         #srContent>div {
             float: left;
+        }
+        #srTitle {
+            width: 135px;
         }
 
         #srTitle * {
@@ -336,13 +420,12 @@
 
         #srContent {
             position: relative;
-            width: 1296px;
-            padding: 10px 40px;
+            width: 1140px;
             border-radius: 15px;
         }
 
         #srList {
-            width: 1107px;
+            width: 1005px;
             overflow: hidden;
         }
 
@@ -358,7 +441,7 @@
 
         #srList ul li {
             display: inline-block;
-            width: 336px;
+            width: 302px;
             height: 145px;
             margin-left: 33px;
         }
@@ -376,7 +459,7 @@
         #srList .msg {
             background-color: #fff;
             border-radius: 50px;
-            width: 275px;
+            width: 208px;
             height: 96px;
             padding: 16px 30px;
             margin: 32px 0px 0px 44px;
@@ -541,8 +624,8 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 69.6px;
-            height: 69.6px;
+            width: 52.6px;
+            height: 52.6px;
         }
 
         #recommendArtist .row .card .profile-img img {
@@ -618,17 +701,21 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <br>
+    <div class="container-fluid" style="position: fixed; z-index: 999;">
         <div class="container-fluid header-nav">
-            <div class="row" style="padding-left: 50px; padding-right: 50px; ">
-                <div class="col-4 mainLogo" style="font-family: 'Bruno Ace', serif;">
-                    <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
+
+
+            <div class="d-flex justify-content-between">
+
+
+                <div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif;">
+                    <h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
                 </div>
-                <div class="col">
-    
-                    <ul class="nav justify-content-end">
-                        <div
+
+
+                <div class="p-4">
+                    <ul class="nav">
+                        <div id="searchArea"
                             style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
                             <table style="border: 0px solid red;" align="center">
                                 <tr style="line-height: 37px;">
@@ -641,1110 +728,1155 @@
                                     </td>
                                 </tr>
                             </table>
-    
+
                         </div>
-                        <li class="nav-item">
-                            <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 38px; height: 38px;"
-                                    alt=""></a>
+                        <li class="nav-item mx-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/알림.png"
+                                    style="width: 32px; height: 32px;" alt=""></a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#"><img class="header_btn" src="sampleImg/게시판.png"
-                                    style="width: 38px; height: 38px;" alt=""></a>
+                        <li class="nav-item mx-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/게시판.png" alt=""></a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" style="width: 38px; height: 38px;"
-                                    alt=""></a>
+                        <li class="nav-item mx-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" alt=""></a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#"><img class="header_btn" src="sampleImg/사람.png" style="width: 38px; height: 38px;"
-                                    alt=""></a>
+                        <li class="nav-item mx-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/사람.png" alt=""></a>
                         </li>
-                        <li class="nav-item">
-                            <a href="#"><img class="header_btn"
-                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK7aXZVSkt2xNyssQ9rirBXFuL0Bx3P51LZg&usqp=CAU"
-                                    style="width: 38px; height: 38px;" alt=""></a>
+                        <li class="nav-item mx-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/고객센터.png" alt=""></a>
+                        </li>
+                        <li class="nav-item mn-930">
+                            <a href="#"><img class="header_btn" src="sampleImg/햄버거.png" alt=""></a>
                         </li>
                     </ul>
-    
+
+
                 </div>
-    
+
             </div>
-    
+            <div>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img class="header_btn" src="sampleImg/알림.png" alt="">
+                            <span>알림관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img class="header_btn" src="sampleImg/게시판.png" alt="">
+                            <span>게시판</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img class="header_btn" src="sampleImg/랭킹.png" alt="">
+                            <span>랭킹</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img class="header_btn" src="sampleImg/사람.png" alt="">
+                            <span>마이페이지</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">
+                            <img class="header_btn" src="sampleImg/고객센터.png" alt="">
+                            <span>고객센터</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
         </div>
     </div>
 
-    <div class="container-fluid" style="background-color: black; margin-top: 25px;">
-        <br><br>
-    </div>
-    <div class="container-fluid" style="background-color: black; height: auto; z-index: 1;">
-        <div class="mainSlide" style="vertical-align: bottom;">
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인1.jpg" alt=""></a>
-            </div>
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인2.jpg" alt=""></a>
-            </div>
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인3.jpg" alt=""></a>
-            </div>
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인4.jpg" alt=""></a>
-            </div>
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인5.jpg" alt=""></a>
-            </div>
-            <div class="item">
-                <a href="#"><img src="sampleImg/메인6.jpg" alt=""></a>
-            </div>
-        </div>
-    </div>
+    <div style="height: 93px;"></div>
 
-    <div class="container-fluid" style="background-color: black; color: white;">
-        <div class="container">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-8">
-                    <ul class="quiz_worldCup" style="list-style: none;">
-                        <li>
+    <script>
+        $(document).on("click", ".header-nav .mn-930", function () {
+            $(".dropdown-menu").toggleClass("dm-active")
+        })
+    </script>
+    <!-- 헤더 끝 -->
+    
+    <!-- 메인페이지 영역 -->
+    <div class="container-fluid" id="mainPage">
+
+
+        <!-- 캐러셀 영역 -->
+        <div style="background-color: black;">
+
+            <div style="height: 50px;"></div>
+        
+            <div class="mainSlide" style="vertical-align: bottom; height: auto; z-index: 1;">
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인1.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인2.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인3.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인4.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인5.jpg" alt=""></a>
+                </div>
+                <div class="item">
+                    <a href="#"><img src="sampleImg/메인6.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="quiz_worldCup" style="color: white;">
+                <div class="container">
+                    <div class="d-flex">
+                        <div class="py-2 pe-4">
                             <label for="" data-bs-toggle="modal" data-bs-target="#fan_worldCup">팬월드컵</label>
-                        </li>
-                        <li>
+                        </div>
+                        <div class="p-2">
                             <label for="" data-bs-toggle="modal" data-bs-target="#quiz">Quiz</label>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col"></div>
             </div>
         </div>
-    </div>
+        <!-- 캐러셀 영역 끝 -->
 
-    <!--메인페이지 모달-->
-    <!--팬월드컵 모달-->
-    <!-- Modal -->
-    <div class="modal fade" id="fan_worldCup" tabindex="-1" aria-labelledby="fan_worldCup" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">팬월드컵</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body worldCup">
-                    <center>
-                        <h1>23년 12월 1주차</h1>
-                        <p id="cal"></p>
-                        <img class="worldCup_Img" id="image" onclick="change(0)">
-                        <img class="worldCup_Img" id="images" onclick="change(1)">
-                        <script>
-                            text = "";
-                            var images = [];
-                            var sImages = [];
+        <!--팬월드컵 모달-->
+        <div class="modal fade" id="fan_worldCup" tabindex="-1" aria-labelledby="fan_worldCup" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">팬월드컵</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body worldCup">
+                        <center>
+                            <h1>23년 12월 1주차</h1>
+                            <p id="cal"></p>
+                            <img class="worldCup_Img" id="image" onclick="change(0)">
+                            <img class="worldCup_Img" id="images" onclick="change(1)">
+                            <script>
+                                text = "";
+                                var images = [];
+                                var sImages = [];
 
-                            var cnt = 0;
-                            var num = 0;
-                            var sNum = 0;
-                            var cnt2 = 0;
+                                var cnt = 0;
+                                var num = 0;
+                                var sNum = 0;
+                                var cnt2 = 0;
 
-                            function show() {
-                                for (i = 0; i < 16; i++) {
-                                    images[i] = "sampleImg/메인" + (i + 1) + ".jpg";
-                                }
-                                images.sort(function (a, b) {
-                                    return 0.5 - Math.random()
-                                });
-                                showImg(num);
-                            }
-
-                            show();
-
-                            function showImg(num) {
-                                document.getElementById('image').src = images[num];
-                                document.getElementById('images').src = images[num + 1];
-                                cnt2++;
-                            }
-
-                            function change(n) {
-                                if (cnt2 < 20) {
-                                    cnt++;
-                                    if (n == 0)
-                                        sImages[sNum++] = images[num];
-                                    else
-                                        sImages[sNum++] = images[num + 1];
-                                    num += 2;
-
+                                function show() {
+                                    for (i = 0; i < 16; i++) {
+                                        images[i] = "sampleImg/메인" + (i + 1) + ".jpg";
+                                    }
+                                    images.sort(function (a, b) {
+                                        return 0.5 - Math.random()
+                                    });
                                     showImg(num);
+                                }
 
-                                    if (cnt == images.length / 2) {
-                                        for (i = 0; i < sImages.length; i++) {
-                                            images[i] = sImages[i];
-                                            sImages[i] = null;
+                                show();
+
+                                function showImg(num) {
+                                    document.getElementById('image').src = images[num];
+                                    document.getElementById('images').src = images[num + 1];
+                                    cnt2++;
+                                }
+
+                                function change(n) {
+                                    if (cnt2 < 20) {
+                                        cnt++;
+                                        if (n == 0)
+                                            sImages[sNum++] = images[num];
+                                        else
+                                            sImages[sNum++] = images[num + 1];
+                                        num += 2;
+
+                                        showImg(num);
+
+                                        if (cnt == images.length / 2) {
+                                            for (i = 0; i < sImages.length; i++) {
+                                                images[i] = sImages[i];
+                                                sImages[i] = null;
+                                            }
+                                            images.splice(cnt);
+                                            cnt = 0;
+                                            num = 0;
+                                            sNum = 0;
+                                            showImg(num);
                                         }
-                                        images.splice(cnt);
+                                    }
+                                }
+
+                                document.getElementById('cal').innerHTML = text;
+
+                                document.addEventListener('DOMContentLoaded', function () {
+                                    var fanWorldCupModal = new bootstrap.Modal(document.getElementById('fan_worldCup'));
+
+                                    fanWorldCupModal._element.addEventListener('hidden.bs.modal', function () {
+                                        // 모달이 닫힐 때 변수 재설정
                                         cnt = 0;
                                         num = 0;
                                         sNum = 0;
-                                        showImg(num);
-                                    }
-                                }
-                            }
-
-                            document.getElementById('cal').innerHTML = text;
-
-                            document.addEventListener('DOMContentLoaded', function () {
-                                var fanWorldCupModal = new bootstrap.Modal(document.getElementById('fan_worldCup'));
-
-                                fanWorldCupModal._element.addEventListener('hidden.bs.modal', function () {
-                                    // 모달이 닫힐 때 변수 재설정
-                                    cnt = 0;
-                                    num = 0;
-                                    sNum = 0;
-                                    cnt2 = 0;
-                                    text = ""; // 필요하면 텍스트 재설정
-                                    document.getElementById('cal').innerHTML = text; // 필요하면 표시된 텍스트 업데이트
+                                        cnt2 = 0;
+                                        text = ""; // 필요하면 텍스트 재설정
+                                        document.getElementById('cal').innerHTML = text; // 필요하면 표시된 텍스트 업데이트
+                                    });
                                 });
-                            });
-                        </script>
-                    </center>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--퀴즈 모달-->
-    <div class="modal fade" id="quiz" tabindex="-1" aria-labelledby="quiz" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Wekeend Quiz</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-
-                        <input class="form-control" type="text" value="아이유님의 데뷔일자는 0000년 00월 00일 000방송이다." readonly>
-                        <select class="form-select" name="" id="">
-                            <option value="">보기 중 선택</option>
-                            <option value="">2023년 12월 18일, YTN 8시 생방송</option>
-                            <option value="">2013년 12월 18일, MCountDown 생방송</option>
-                        </select>
-
-                        <input class="form-control" type="text" value="임영웅은 00000에 나와서 큰 인기를 얻었다." readonly>
-                        <select class="form-select" name="" id="">
-                            <option value="">보기 중 선택</option>
-                            <option value="">미스트롯</option>
-                            <option value="">미스터코리아</option>
-                            <option value="">미스코리아</option>
-                            <option value="">미스터트롯</option>
-                        </select>
-
+                            </script>
+                        </center>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">제출</button>
+            </div>
+        </div>
+        <!-- 팬월드컵 모달 끝 -->
+
+
+        <!--퀴즈 모달-->
+        <div class="modal fade" id="quiz" tabindex="-1" aria-labelledby="quiz" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Wekeend Quiz</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+
+                            <input class="form-control" type="text" value="아이유님의 데뷔일자는 0000년 00월 00일 000방송이다." readonly>
+                            <select class="form-select" name="" id="">
+                                <option value="">보기 중 선택</option>
+                                <option value="">2023년 12월 18일, YTN 8시 생방송</option>
+                                <option value="">2013년 12월 18일, MCountDown 생방송</option>
+                            </select>
+
+                            <input class="form-control" type="text" value="임영웅은 00000에 나와서 큰 인기를 얻었다." readonly>
+                            <select class="form-select" name="" id="">
+                                <option value="">보기 중 선택</option>
+                                <option value="">미스트롯</option>
+                                <option value="">미스터코리아</option>
+                                <option value="">미스코리아</option>
+                                <option value="">미스터트롯</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">제출</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!--퀴즈 모달 끝 -->
 
 
 
-    <!-- 원종 html -->
+        <!-- following list 영역  -->
+        <div class="container-fluid">
+            <div class="container following-list-area">
+                <h4 class="fw-bolder mt-5 mb-2">나의 커뮤니티</h4>
+                <div id="flContent" class="fl-content">
+                    <button class="arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="fl-list">
+                        <ul style="height: auto;">
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
+                            </li>
+                            <li><img
+                                    src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
+                            </li>
 
-    <!-- following list 영역  -->
-    <div class="container-fluid">
-        <div class="container following-list-area">
-            <h3 class="fw-bolder mt-5 mb-2">My Followings</h3>
-            <div id="flContent" class="fl-content">
-                <button class="arrow prev">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div class="fl-list">
-                    <ul style="height: auto;">
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzExMDhfMTQ4/MDAxNjk5NDQzNzcwMzk0.QBRL1S6o4MmxF3gUEWaTICo1IWutB5DEe_oiuHV2L4kg.P6fsugKAoopx4kyQgGWEMR1g-W7PJc4tcBvI2poTqKcg.JPEG/9710002a-c591-4f18-8af1-8aa5b9259ae6.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzEwMzFfMjMy/MDAxNjk4NzU0MTI1ODc5.5MY8RsEF6iq2QhX2p7jmnmXX08pLePA0YovlWU9Vk3Mg.RqRBUl0yf10jMih6cTenKyvhT1n5yALtJuRPV56NAk0g.JPEG/5de3dea3-af19-4b56-bf59-bcf84c6a045b.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMjA3MDhfODMg/MDAxNjU3MjY4NTE5ODY5.cvhyg36fbH_R8Q_t8eeQnisXFiHGqaj7SaqJRiNhoI8g.vDMO5ZfRCfY4gTapIg5WcvdqXA04ZQY9KbD7z8yplaUg.PNG/14609814624005194fd4e1601-640f-4289-85f9-7a84b1148da6.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzEwMTlfMjk5/MDAxNjk3NzI2NTkzNTQy.Mb4l1gp_hGiNqX2DCs-VPGJfcchoRWUiOkPycrEwg20g.a2c7kNkrmqqddURnIpiuwnMekkZgXLxBAR76gYHGA_Ug.JPEG/0b93085a-6815-44b6-8af2-a046d2498760.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA0MDNfMTM5/MDAxNjgwNDkwNzkzODU2.aggPeNmDCWg_4nTlRTJOy-s8to_li9nKy9bhriiF1KMg.HMKhGWOTXJwpP_0qZ5gmRoC9BscedPnUWEMKJLOrygcg.PNG/760858019774622634c2fcfc1-94e0-474f-812b-f8bb5f59ddac.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjhfMjQ5/MDAxNjk1ODcwMjczMjcx.kWfPxG5eeidAFqa9q2gYzprectz6fEpNBMPJjRx2LAIg.VXbg_PchIY5DP0gxN236dXb_acMj1JDSTcPC4mouF1Ug.JPEG/40e0b4b1-3601-4dd9-a77f-42d971551f33.jpeg?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA1MjVfMjA3/MDAxNjg1MDE3OTYwOTY3.It-QCieMbJEupe9ljb03Bza8p8e7tWOUCMmuUgmqzy4g.fYICCBLYFGJxky_WUeM7dPjbhtYlqb6cykapIG_tE08g.PNG/18677645385851861a9ea80be-6fa8-42e9-bc2a-9d3700099e48.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA4MjJfMjc1/MDAxNjkyNzEyNTIzMTc3.dUOo7M7h8qn-C0X7u9Ou718ljJZLGxSv8lHmRSC6fWog.irQ474UFF2vw7hruRE6qmJbfsEG4clFR6_sPcHheSocg.PNG/7719739320887855418eb035c-5c7e-44e4-be43-8c4519755c84.png?type=f416_416">
-                        </li>
-                        <li><img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjdfMjg1/MDAxNjk1ODAzODg2MTEy.XWFLO0TnyVcwgs9QJc3xqKLZSCu8d_Sh7_HLKodjS44g.rMcUBFQzfifWc16jveIB0w4C-b8W0rpwuUFqSsH52NUg.JPEG/68ac4834-a975-4736-b8e4-6e0ed6f7f412.jpeg?type=f416_416">
-                        </li>
-
-                    </ul>
-                </div>
-                <button class="arrow next">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-        <!-- following list 영역 끝  -->
-
-        <br>
-
-        <!-- 1, 2, 3 등 영역 -->
-        <div class="container ranking-area">
-            <div class="mt-4 mb-3" id="selectedArea">
-                <div class="form-group">
-                    <select class="form-select float-start" style="margin-right: 20px;" onchange="categoryChange(this);">
-                        <option value="all">전체</option>
-                        <option value="singer">가수</option>
-                        <option value="actor">배우</option>
-                        <option value="sports">스포츠</option>
-                        <option value="streamer">방송인</option>
-                        <option>기타</option>
-                    </select>
-                    <select class="form-select" id="subcategory" disabled></select>
+                        </ul>
+                    </div>
+                    <button class="arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
+            <!-- following list 영역 끝  -->
 
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
+            <br>
 
-                    <div class="card h-100">
-                        <div class="num-item">
-                            <p class="ranking">1</p>
-                            <p class="change-info">
-                                <span>
-                                    <!-- 순위 상승 -->
-                                    <i class="fas fa-chevron-up">
-                                        <span>1</span>
-                                    </i>
+            <!-- 1, 2, 3 등 영역 -->
+            <div class="container ranking-area">
+                <div class="mt-4 mb-3" id="selectedArea">
+                    <div class="form-group">
+                        <select class="form-select float-start" style="margin-right: 15px;"
+                            onchange="categoryChange(this);">
+                            <option value="all">전체</option>
+                            <option value="singer">가수</option>
+                            <option value="actor">배우</option>
+                            <option value="sports">스포츠</option>
+                            <option value="streamer">방송인</option>
+                            <option>기타</option>
+                        </select>
+                        <select class="form-select" id="subcategory" disabled></select>
+                    </div>
+                </div>
 
-                                    <!-- 순위 유지 -->
-                                    <!--
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+
+                        <div class="card h-100">
+                            <div class="num-item">
+                                <p class="ranking">1</p>
+                                <p class="change-info">
+                                    <span>
+                                        <!-- 순위 상승 -->
+                                        <i class="fas fa-chevron-up">
+                                            <span>1</span>
+                                        </i>
+
+                                        <!-- 순위 유지 -->
+                                        <!--
                                         <i class="fas fa-minus">
                                         </i>
                                     -->
 
-                                    <!-- 순위 하락 -->
-                                    <!-- 
+                                        <!-- 순위 하락 -->
+                                        <!-- 
                                         <i class="fas fa-chevron-down">
                                             <span>1</span>
                                         </i>
                                     -->
-                                </span>
-                            </p>
+                                    </span>
+                                </p>
+                            </div>
+                            <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/2103/임영웅 판.png"
+                                alt="">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">
+                                    임영웅
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal" style="color: gold;">
+                                        <span>
+                                            가수 1등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            20,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
                         </div>
-                        <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/2103/임영웅 판.png"
-                            alt="">
-                        <div class="card-body text-left">
-                            <h5 class="card-title">
-                                임영웅
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal" style="color: gold;">
+                    </div>
+
+                    <div class="col">
+
+
+                        <div class="card h-100">
+                            <div class="num-item">
+                                <p class="ranking">1</p>
+                                <p class="change-info">
                                     <span>
-                                        가수 1등
+                                        <i class="fas fa-chevron-down">
+                                            <span>1</span>
+                                        </i>
                                     </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
+                                </p>
+                            </div>
+                            <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/1911/박서진 판.png"
+                                alt="">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">
+                                    박서진
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal" style="color: silver;">
+                                        <span>
+                                            가수 2등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            14,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col">
+
+                        <div class="card h-100">
+                            <div class="num-item">
+                                <p class="ranking">3</p>
+                                <p class="change-info">
                                     <span>
-                                        20,000
+                                        <i class="fas fa-minus">
+                                            <span></span>
+                                        </i>
                                     </span>
-                                </i>
-                            </p>
+                                </p>
+                            </div>
+                            <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/2105/정동원 판.png"
+                                alt="">
+                            <div class="card-body text-left">
+                                <h5 class="card-title">
+                                    정동원
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal" style="color: #cd7f32;">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- 1, 2, 3 등 영역 끝 -->
+
+            <br><br>
+            <!-- 스타가 남긴 글 -->
+            <div class="mt-4 p-5 text-white rounded" id="starRemainArea">
+                <div class="container">
+                    <div id="srContent" class="sr-content">
+                        <div id="srTitle">
+                            <span>&nbsp;FROM. STAR&nbsp;</span>
+                            <br>
+                            <span>
+                                공식 팬 카페
+                            </span>
+                            <br>
+                            <strong>스타가 남긴 글</strong>
+                            <br>
+                            <button class="btn btn-light prev"><i class="fas fa-chevron-left"></i></button>
+                            <button class="btn btn-light next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div id="srList">
+                            <ul>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">1위니 맛점했어요??asdfasdfasdfasdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">2위니 맛점했어요??asdfasdfasdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">3위니 맛점했어요??asdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">4위니 맛점했어요??asdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">5위니 맛점했어요??asdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">6위니 맛점했어요??asdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="profile">
+                                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
+                                    </div>
+                                    <div class="msg">
+                                        <strong class="nickname">원호</strong>
+                                        <p class="content">7위니 맛점했어요??asdf</p>
+                                        <p class="date">2023.12.09</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- 스타가 남긴 글 끝 -->
 
-                <div class="col">
-
-
-                    <div class="card h-100">
+            <!-- 순위 (3등 ~ 9등) -->
+            <div class="container" id="rankingEtc">
+                <div class="row mt-5 ranking-cards">
+                    <div class="col-sm-6 ranking-card">
                         <div class="num-item">
-                            <p class="ranking">1</p>
+                            <p class="ranking">4</p>
                             <p class="change-info">
                                 <span>
                                     <i class="fas fa-chevron-down">
                                         <span>1</span>
                                     </i>
+                                    <!-- <i class="fas fa-minus">
+                                        <span>1</span>
+                                    </i>
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
                                 </span>
                             </p>
                         </div>
-                        <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/1911/박서진 판.png"
-                            alt="">
-                        <div class="card-body text-left">
-                            <h5 class="card-title">
-                                박서진
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal" style="color: silver;">
-                                    <span>
-                                        가수 2등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        14,000
-                                    </span>
-                                </i>
-                            </p>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/202311/바다 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    바다
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col">
-
-                    <div class="card h-100">
+                    <div class="col-sm-6 ranking-card">
                         <div class="num-item">
-                            <p class="ranking">3</p>
+                            <p class="ranking">5</p>
                             <p class="change-info">
                                 <span>
+                                    <i class="fas fa-chevron-up">
+                                        <span>1</span>
+                                    </i>
+                                    <!-- <i class="fas fa-minus">
+                                        <span>1</span>
+                                    </i>
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
+                                </span>
+                            </p>
+                        </div>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    라라
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ranking-card">
+                        <div class="num-item">
+                            <p class="ranking">6</p>
+                            <p class="change-info">
+                                <span>
+                                    <i class="fas fa-chevron-down">
+                                        <span>1</span>
+                                    </i>
+                                    <!-- <i class="fas fa-minus">
+                                        <span>1</span>
+                                    </i>
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
+                                </span>
+                            </p>
+                        </div>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/2002/뽀선희 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    뽀선희
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 4등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            9,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ranking-card">
+                        <div class="num-item">
+                            <p class="ranking">7</p>
+                            <p class="change-info">
+                                <span>
+                                    <!-- <i class="fas fa-chevron-down">
+                                        <span>1</span>
+                                    </i> -->
                                     <i class="fas fa-minus">
                                         <span></span>
                                     </i>
+                                    <!--
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
                                 </span>
                             </p>
                         </div>
-                        <img src="//img1.daumcdn.net/thumb/S700x420/?fname=https://t1.daumcdn.net/cafe_image/fancafe/2105/정동원 판.png"
-                            alt="">
-                        <div class="card-body text-left">
-                            <h5 class="card-title">
-                                정동원
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal" style="color: #cd7f32;">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    정동원
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-sm-6 ranking-card">
+                        <div class="num-item">
+                            <p class="ranking">7</p>
+                            <p class="change-info">
+                                <span>
+                                    <i class="fas fa-chevron-down">
+                                        <span>1</span>
+                                    </i>
+                                    <!-- <i class="fas fa-minus">
+                                        <span>1</span>
+                                    </i>
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
+                                </span>
+                            </p>
+                        </div>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    정동원
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 ranking-card">
+                        <div class="num-item">
+                            <p class="ranking">7</p>
+                            <p class="change-info">
+                                <span>
+                                    <i class="fas fa-chevron-down">
+                                        <span>1</span>
+                                    </i>
+                                    <!-- <i class="fas fa-minus">
+                                        <span>1</span>
+                                    </i>
+                                    <i class="fas fa-chevron-down">
+                                        <span></span>
+                                    </i> -->
+                                </span>
+                            </p>
+                        </div>
+                        <div class="profile-item">
+                            <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
+                        </div>
+                        <div class="box-item">
+                            <div>
+                                <h5 class="card-title">
+                                    정동원
+                                </h5>
+                                <p class="card-text">
+                                    <i class="fas fa-medal">
+                                        <span>
+                                            가수 3등
+                                        </span>
+                                    </i>
+                                    &nbsp;
+                                    <i class="fas fa-user">
+                                        <span>
+                                            7,000
+                                        </span>
+                                    </i>
+                                </p>
 
-            </div>
-        </div>
-        <!-- 1, 2, 3 등 영역 끝 -->
-
-        <br><br>
-        <!-- 스타가 남긴 글 -->
-        <div class="mt-4 p-5 text-white rounded" id="starRemainArea">
-            <div class="container">
-                <div id="srContent" class="sr-content">
-                    <div id="srTitle">
-                        <span>&nbsp;FROM. STAR&nbsp;</span>
-                        <br>
-                        <span>
-                            공식 팬 카페
-                        </span>
-                        <br>
-                        <strong>스타가 남긴 글</strong>
-                        <br>
-                        <button class="btn btn-light prev"><i class="fas fa-chevron-left"></i></button>
-                        <button class="btn btn-light next"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div id="srList">
-                        <ul>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">1위니 맛점했어요??asdfasdfasdfasdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">2위니 맛점했어요??asdfasdfasdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">3위니 맛점했어요??asdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">4위니 맛점했어요??asdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">5위니 맛점했어요??asdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">6위니 맛점했어요??asdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="profile">
-                                    <img src="https://t1.daumcdn.net/cafe_image/fancafe/2103/원호 응.png">
-                                </div>
-                                <div class="msg">
-                                    <strong class="nickname">원호</strong>
-                                    <p class="content">7위니 맛점했어요??asdf</p>
-                                    <p class="date">2023.12.09</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 스타가 남긴 글 끝 -->
-
-        <!-- 순위 (3등 ~ 9등) -->
-        <div class="container" id="rankingEtc">
-            <div class="row mt-5 ranking-cards">
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">4</p>
-                        <p class="change-info">
-                            <span>
-                                <i class="fas fa-chevron-down">
-                                    <span>1</span>
-                                </i>
-                                <!-- <i class="fas fa-minus">
-                                        <span>1</span>
-                                    </i>
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/202311/바다 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                바다
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">5</p>
-                        <p class="change-info">
-                            <span>
-                                <i class="fas fa-chevron-up">
-                                    <span>1</span>
-                                </i>
-                                <!-- <i class="fas fa-minus">
-                                        <span>1</span>
-                                    </i>
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                라라
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">6</p>
-                        <p class="change-info">
-                            <span>
-                                <i class="fas fa-chevron-down">
-                                    <span>1</span>
-                                </i>
-                                <!-- <i class="fas fa-minus">
-                                        <span>1</span>
-                                    </i>
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/2002/뽀선희 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                뽀선희
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 4등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        9,000
-                                    </span>
-                                </i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">7</p>
-                        <p class="change-info">
-                            <span>
-                                <!-- <i class="fas fa-chevron-down">
-                                        <span>1</span>
-                                    </i> -->
-                                <i class="fas fa-minus">
-                                    <span></span>
-                                </i>
-                                <!--
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                정동원
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">7</p>
-                        <p class="change-info">
-                            <span>
-                                <i class="fas fa-chevron-down">
-                                    <span>1</span>
-                                </i>
-                                <!-- <i class="fas fa-minus">
-                                        <span>1</span>
-                                    </i>
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                정동원
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 ranking-card">
-                    <div class="num-item">
-                        <p class="ranking">7</p>
-                        <p class="change-info">
-                            <span>
-                                <i class="fas fa-chevron-down">
-                                    <span>1</span>
-                                </i>
-                                <!-- <i class="fas fa-minus">
-                                        <span>1</span>
-                                    </i>
-                                    <i class="fas fa-chevron-down">
-                                        <span></span>
-                                    </i> -->
-                            </span>
-                        </p>
-                    </div>
-                    <div class="profile-item">
-                        <img src="https://t1.daumcdn.net/cafe_image/fancafe/202308/방장 라라 응.png" alt="">
-                    </div>
-                    <div class="box-item">
-                        <div>
-                            <h5 class="card-title">
-                                정동원
-                            </h5>
-                            <p class="card-text">
-                                <i class="fas fa-medal">
-                                    <span>
-                                        가수 3등
-                                    </span>
-                                </i>
-                                &nbsp;
-                                <i class="fas fa-user">
-                                    <span>
-                                        7,000
-                                    </span>
-                                </i>
-                            </p>
-
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- 순위 (3등 ~ 9등) 끝 -->
-        <br><br>
+            <!-- 순위 (3등 ~ 9등) 끝 -->
+            <br><br>
 
-        <!-- 아티스트 추천 -->
-        <div class="container" id="recommendArtist">
-            <h1 class="fw-bolder mt-5 mb-4">새로운 아티스트를 만나보세요!</h1>
-            <br>
-            <div class="row row-cols-1 row-cols-md-5 g-4">
-                <div class="col">
-                    <div class="card">
+            <!-- 아티스트 추천 -->
+            <div class="container" id="recommendArtist">
+                <h4 class="fw-bolder mt-5 mb-2">새로운 아티스트를 만나보세요!</h4>
+                <br>
+                <div class="row row-cols-1 row-cols-md-5 g-4">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card">
+                    <div class="col">
+                        <div class="card">
 
-                        <a class="" href="">
-                            <!-- 프로필 배경 -->
-                            <div class="profile-bg">
-                                <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
-                                alt="">
-                            </div>
-                            <!-- 프로필 사진-->
-                            <div class="profile-img">
-                                <img
-                                src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-                            </div>
-                            <!-- 프로필 이름 -->
-                            <div class="profile-name">
-                                <span>SEVENTEEN</span>
-                            </div>
-                        </a>
+                            <a class="" href="">
+                                <!-- 프로필 배경 -->
+                                <div class="profile-bg">
+                                    <img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416"
+                                        alt="">
+                                </div>
+                                <!-- 프로필 사진-->
+                                <div class="profile-img">
+                                    <img
+                                        src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
+                                </div>
+                                <!-- 프로필 이름 -->
+                                <div class="profile-name">
+                                    <span>SEVENTEEN</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
-               
             </div>
+            <!-- 아티스트 추천 끝 -->
         </div>
-        <!-- 아티스트 추천 끝 -->
+
         <br><br><br><br><br>
 
         <!-- footer -->
@@ -1837,7 +1969,7 @@
         $(window).on('resize load', function () { // 창 사이즈 변경 또는 창이 로딩 됐을 때 실행
             /* following list 영역 */
             // following list => fl 
-            let fl_width = 150; // image width
+            let fl_width = 128.35; // image width
             let fl_list_length = $(".fl-list").width(); // list 영역의 동적 길이 
             let fl_count = fl_list_length / fl_width; // list 영역에서 보여줄 프로필의 갯수 1214 / 
 
@@ -1863,7 +1995,7 @@
 
             /* 스타가 남긴 글 script */
             // StarRemain => sr
-            let sr_width = 300; // li width
+            let sr_width = 335; // li width
             let sr_count = 3; // list 영역에서 보여줄 프로필의 갯수 
 
             let sr_list = $("#srContent ul")
@@ -1946,7 +2078,7 @@
 
     <!-- 메인페이지 배너 부분 -->
     <script>
-        
+
         $(() => {
             $('.mainSlide').slick({
                 infinite: true,
