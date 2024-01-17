@@ -1,0 +1,26 @@
+    /* header css start */
+    .header-nav {
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+        }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+    .header_btn:hover {
+        transform: scale(1.2);
+    }
+    input:focus {
+        outline: none;
+    }
+    .mainLogo:hover {
+            cursor: pointer;
+        }
+
+    /* header css end */

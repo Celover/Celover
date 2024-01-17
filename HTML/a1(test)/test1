@@ -1,0 +1,115 @@
+        /* header css start */
+        @media screen and (min-width: 930px) {
+            /* 930px 이상 */
+
+            .dropdown-area .dropdown-menu {
+                display: none;
+            }
+
+            .header-nav .mn-930 {
+                display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 0px;
+            }
+        }
+
+        @media screen and (max-width: 930px) {
+
+            /* 930px 이하 */
+            .header-nav .mx-930 {
+                display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 301px;
+            }
+
+        }
+
+        @media screen and (max-width: 636px) {
+
+            /* 930px 이하 */
+            #searchArea {
+                display: none;
+            }
+        }
+
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0 !important;
+        }
+
+        .header-nav {
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header-nav .nav-item {
+            width: 70px;
+            text-align: center;
+            padding: 6.5px 0px;
+        }
+
+        .header-nav .nav-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mx-930 .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        .header-nav input:focus {
+            outline: none;
+        }
+
+        .mainLogo:hover {
+            cursor: pointer;
+        }
+
+
+        .dm-active {
+            display: block;
+        }
+
+        .dropdown-area .dropdown-menu {
+            width: 100%;
+            border: none;
+        }
+
+        .dropdown-area .dropdown-menu li {
+            padding: 7px;
+            font-size: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a {
+            font-weight: 800;
+        }
+
+        .dropdown-areav .dropdown-menu li:hover {
+            background-color: #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a:hover {
+            background-color: #dee2e6;
+
+        }
+        .dropdown-area .dropdown-menu li .dropdown-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* header css end */
