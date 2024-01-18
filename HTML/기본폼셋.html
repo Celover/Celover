@@ -5,10 +5,13 @@
     <!-- 헤더에 들어가는 link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/
     <link rel=" preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -26,10 +29,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet
     <!-- 헤더에 들어가는 link-->
 
-  <meta charset='utf-8' />
-  <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-  <meta name=" viewport"
-        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <!-- jquery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- fullcalendar CDN -->
@@ -39,35 +38,116 @@
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js'></script>
     <style>
         /* header css start */
+        @media screen and (min-width: 930px) {
+            /* 930px 이상 */
+
+            .dropdown-area .dropdown-menu {
+                display: none;
+            }
+
+            .header-nav .mn-930 {
+                display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 0px;
+            }
+        }
+
+        @media screen and (max-width: 930px) {
+
+            /* 930px 이하 */
+            .header-nav .mx-930 {
+                display: none;
+            }
+            .dropdown-area:has(.dm-active) {
+                height: 301px;
+            }
+
+        }
+
+        @media screen and (max-width: 636px) {
+
+            /* 930px 이하 */
+            #searchArea {
+                display: none;
+            }
+        }
+
+        body {
+            padding: 0px;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
         .header-nav {
             position: sticky;
             top: 0px;
             z-index: 10;
             background-color: white;
-            padding-top: 10px;
-            padding-bottom: 10px;
         }
 
-        a {
+        .header-nav a {
             text-decoration: none;
             color: black;
         }
 
-        .nav-item {
-            width: 80px;
+        .header-nav .nav-item {
+            width: 70px;
             text-align: center;
+            padding: 6.5px 0px;
         }
 
-        .header_btn:hover {
+        .header-nav .nav-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mx-930 .header_btn:hover {
             transform: scale(1.2);
         }
 
-        input:focus {
+        .header-nav input:focus {
             outline: none;
         }
 
         .mainLogo:hover {
             cursor: pointer;
+        }
+
+
+        .dm-active {
+            display: block;
+        }
+
+        .dropdown-area .dropdown-menu {
+            width: 100%;
+            border: none;
+        }
+
+        .dropdown-area .dropdown-menu li {
+            padding: 7px;
+            font-size: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a {
+            font-weight: 800;
+        }
+
+        .dropdown-areav .dropdown-menu li:hover {
+            background-color: #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a:hover {
+            background-color: #dee2e6;
+
+        }
+        .dropdown-area .dropdown-menu li .dropdown-item img {
+            width: 32px;
+            height: 32px;
         }
 
         /* header css end */
@@ -148,27 +228,21 @@
 
         /* 메인2분할 css end */
 
-        /* body 스타일 */
-        html,
-        body {
-            overflow: hidden;
-            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-            font-size: 14px;
-        }
     </style>
 </head>
 
-<body style="padding:30px;">
-    <!--start header-->
+<body>
+    <!--Header start-->
     <div class="container-fluid header-nav">
-        <div class="row" style="padding-left: 50px; padding-right: 50px; ">
-            <div class="col-4 mainLogo" style="font-family: 'Bruno Ace', serif;">
-                <h2 style="font-weight: 800; font-size: 2.5em;">Celover</h2>
+        <div class="d-flex justify-content-between">
+            <div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif; margin-left: 26px;">
+                <h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
             </div>
-            <div class="col">
 
-                <ul class="nav justify-content-end">
-                    <div
+
+            <div class="p-4" style="margin-right: 26px;">
+                <ul class="nav">
+                    <div id="searchArea"
                         style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
                         <table style="border: 0px solid red;" align="center">
                             <tr style="line-height: 37px;">
@@ -183,36 +257,78 @@
                         </table>
 
                     </div>
-                    <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="../sampleImg/알림.png" style="width: 38px; height: 38px;"
-                                alt=""></a>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/알림.png"
+                                style="width: 32px; height: 32px;" alt=""></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="../sampleImg/게시판.png"
-                                style="width: 38px; height: 38px;" alt=""></a>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/게시판.png" alt=""></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="../sampleImg/랭킹.png" style="width: 38px; height: 38px;"
-                                alt=""></a>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/랭킹.png" alt=""></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#"><img class="header_btn" src="../sampleImg/사람.png" style="width: 38px; height: 38px;"
-                                alt=""></a>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/사람.png" alt=""></a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#"><img class="header_btn"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK7aXZVSkt2xNyssQ9rirBXFuL0Bx3P51LZg&usqp=CAU"
-                                style="width: 38px; height: 38px;" alt=""></a>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/고객센터.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mn-930">
+                        <a href="#"><img class="header_btn" src="../sampleImg/햄버거.png" alt=""></a>
                     </li>
                 </ul>
+
 
             </div>
 
         </div>
-
+        
     </div>
+    <div class="dropdown-area">
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="../sampleImg/알림.png" alt="">
+                    <span>알림관리</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="../sampleImg/게시판.png" alt="">
+                    <span>게시판</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="../sampleImg/랭킹.png" alt="">
+                    <span>랭킹</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="../sampleImg/사람.png" alt="">
+                    <span>마이페이지</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="../sampleImg/고객센터.png" alt="">
+                    <span>고객센터</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+
+    <script>
+        $(document).on("click", ".header-nav .mn-930", function () {
+
+            $(".dropdown-area .dropdown-menu").toggleClass("dm-active")
+        })
+    </script>
+    <!-- Header end -->
     <!--기본 nav 시작-->
-    <div class="container-fluid feedPage" style="margin-top: 15px;">
+    <div class="container-fluid feedPage">
         <div class="col" style="height: 50px; background-color: gray;">
             <ul class="nav justify-content-center" style="list-style: none; height: auto; line-height: 50px;">
                 <li>
@@ -237,13 +353,11 @@
     <!--end header-->
 
     <!-- ################################# 바디 시작 ################################# -->
-    <div class="container-fluid media-main">
 
-    </div>
+
     <!-- ################################# 바디 종료 ################################# -->
 
 
-    <br><br><br><br><br><br><br><br><br><br>
     <!-- footer -->
     <div class="container-fluid" id="footer">
         <div class="container">
@@ -324,9 +438,9 @@
             </div>
         </div>
     </div>
-    </div>
 
     <!-- footer 끝 -->
 </body>
+
 
 </html>
