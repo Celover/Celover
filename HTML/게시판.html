@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+    <!-- fontawesome -->
+    <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
+    <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+
+    <meta name=" viewport"
+        content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+
+
+    <style>
+        /* header css start */
+        @media screen and (min-width: 930px) {
+            /* 930px 이상 */
+
+            .dropdown-area .dropdown-menu {
+                display: none;
+            }
+
+            .header-nav .mn-930 {
+                display: none;
+            }
+
+            .dropdown-area:has(.dm-active) {
+                height: 0px;
+            }
+        }
+
+        @media screen and (max-width: 930px) {
+
+            /* 930px 이하 */
+            .header-nav .mx-930 {
+                display: none;
+            }
+
+            .dropdown-area:has(.dm-active) {
+                height: 301px;
+            }
+
+        }
+
+        @media screen and (max-width: 610px) {
+
+            /* 930px 이하 */
+            #searchArea {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 880px) {
+
+            #boardMain #boardNavigation #searchArea div {
+                display: none;
+            }
+        }
+
+        body {
+            padding: 0px;
+        }
+
+        .container-fluid {
+            padding: 0 !important;
+        }
+
+        .header-nav {
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .header-nav .nav-item {
+            width: 70px;
+            text-align: center;
+            padding: 6.5px 0px;
+        }
+
+        .header-nav .nav-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .mx-930 .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        .header-nav input:focus {
+            outline: none;
+        }
+
+        .mainLogo:hover {
+            cursor: pointer;
+        }
+
+
+        .dm-active {
+            display: block;
+        }
+
+        .dropdown-area .dropdown-menu {
+            width: 100%;
+            border: none;
+        }
+
+        .dropdown-area .dropdown-menu li {
+            padding: 7px;
+            font-size: 20px;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a {
+            font-weight: 800;
+        }
+
+        .dropdown-areav .dropdown-menu li:hover {
+            background-color: #dee2e6;
+        }
+
+        .dropdown-area .dropdown-menu li a:hover {
+            background-color: #dee2e6;
+
+        }
+
+        .dropdown-area .dropdown-menu li .dropdown-item {
+            /*
+            text-align: center;
+            */
+        }
+
+        .dropdown-area .dropdown-menu li .dropdown-item img {
+            width: 32px;
+            height: 32px;
+        }
+
+        /* header css end */
+
+
+
+
+
+
+
+
+
+
+        /* footer css */
+        #footer {
+            background-color: #e9ecef;
+        }
+
+        #footer .footer-title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer-title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer-title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer-content>.footer-navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer-content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer-content>.footer-info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        /* footer css 끝 */
+    </style>
+
+</head>
+
+<body>
+    <div class="container-fluid header-nav">
+
+        <div class="d-flex justify-content-between">
+
+            <div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif;">
+                <h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
+            </div>
+
+            <div class="p-4">
+                <ul class="nav">
+                    <div id="searchArea"
+                        style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px;">
+                        <table style="border: 0px solid red;" align="center">
+                            <tr style="line-height: 37px;">
+                                <td style="width: 30px;">
+                                    <img src="sampleImg/돋보기.png" style="height: 20px; width: 20px;" alt="">
+                                </td>
+                                <td>
+                                    <input type="text" style="background-color: #f4f6f8; border: 0;"
+                                        placeholder="아티스트 검색">
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/알림.png" style="width: 32px; height: 32px;"
+                                alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/게시판.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/랭킹.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/사람.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mx-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/고객센터.png" alt=""></a>
+                    </li>
+                    <li class="nav-item mn-930">
+                        <a href="#"><img class="header_btn" src="sampleImg/햄버거.png" alt=""></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="dropdown-area">
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/알림.png" alt="">
+                    <span>알림관리</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/게시판.png" alt="">
+                    <span>게시판</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/랭킹.png" alt="">
+                    <span>랭킹</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/사람.png" alt="">
+                    <span>마이페이지</span>
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="#">
+                    <img class="header_btn" src="sampleImg/고객센터.png" alt="">
+                    <span>고객센터</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        $(document).on("click", ".header-nav .mn-930", function () {
+
+            $(".dropdown-area .dropdown-menu").toggleClass("dm-active")
+        })
+    </script>
+    <!-- 헤더 끝 -->
+
+    <style>
+        #boardMain .container {
+            max-width: 1140px !important;
+        }
+        #boardMain #headerBanner #bannerImg{
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        #boardMain #headerBanner #bannerImg::after{
+            border-radius: 0.75rem;
+            height: 100%;
+            width: 100%;
+            content: "";
+            background: url("https://okky.kr/pattern.svg");
+            background-size: 1016.8px;
+            background-position: right top 920px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        #boardMain #headerBanner #bannerImg #bannerContent .text-area h5{
+            height: 28px;
+            font-size: 1.25rem;
+            margin: 0px;
+        }
+        #boardMain #headerBanner #bannerImg #bannerContent .text-area aside{
+            font-size: 0.875rem;
+        }
+        #boardMain #headerBanner #bannerContent .d-flex{
+            height: 80px;
+            max-width: 1140px;
+        }
+        #boardMain #headerBanner #bannerContent .img-area img{
+            height: 100px;
+            position: absolute; 
+            bottom: 0px; 
+            right: 40px;
+        }
+        #boardMain #boardNavigation {
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        #boardMain #boardNavigation > div:first-child {
+            border-bottom: 2px solid #dee2e6;
+        }
+        #boardMain #boardNavigation > div:last-child {
+            border-bottom: 3px solid #dee2e6;
+        }
+        #boardMain #boardNavigation .row {
+            align-items: center;
+        }
+        #boardMain #boardNavigation .nav-item *{
+            color: black;
+            font-weight: 500;
+        }
+        #boardMain #boardNavigation .nav-item :hover{
+            color: #0d6efd;
+        }
+        #boardMain #boardNavigation .nav-item {
+            padding: 0px 10px;
+        }
+        #boardMain #boardNavigation .nav-item a{
+            padding: 5px 0px;
+        }
+        #boardMain #boardNavigation .nav-item .active {
+            border-bottom: 3px solid #0d6efd;
+        }
+        #boardMain #boardNavigation #searchArea div {
+            border: 2px solid #dee2e6;
+            border-radius: 0.75rem;
+            padding: 5px 10px;
+            width: 230px;
+        }
+        #boardMain #boardNavigation #searchArea > div {
+            margin: auto;
+        }
+        #boardMain #boardNavigation #searchArea > div input {
+            border: none;
+            outline: none;
+        }
+        #boardMain #boardNavigation #refreshArea i {
+            font-size: large;
+        }
+        #boardMain #boardNavigation #topPaginationArea .disabled {
+            color: rgb(203 213 225);
+        }
+        #boardMain #boardList .boardItem {
+            border-top: 2px solid hsla(220,9%,46%,.3);
+        }
+        #boardMain #boardList .boardItem .left-area .top-area img{
+            margin-right: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        #boardMain #boardList .boardItem .left-area .top-area span{
+            font-size: 12px;
+            display: block;
+        }
+        #boardMain #boardList .boardItem .left-area .top-area .create-date{
+            color: rgba(55, 65, 81, 0.8);
+        }
+        #boardMain #boardList .boardItem .left-area .middle-area:hover{
+            cursor: pointer;
+            color: #0d6efd;
+        }
+        #boardMain #boardList .boardItem .left-area .middle-area{
+            height: 24px;
+        }
+        #boardMain #boardList .boardItem .left-area .bottom-area {
+            height: 20px;
+            color: rgba(55, 65, 81, 0.8);
+            font-size: small;
+        }
+        #boardMain #boardList .boardItem .left-area .bottom-area span {
+            margin-right: 10px;
+        }
+        #boardMain #boardList .boardItem .right-area {
+            padding-top: 60px;
+        }
+        #boardMain #boardList .boardItem .right-area * {
+            font-size: small;
+        }
+        #boardMain #bottomArea * {
+            font-size: large;
+        }
+        #boardMain #bottomArea #bottomPaginationArea {
+            border-top: 3px solid #dee2e6;
+        }
+        #boardMain #bottomArea #bottomPaginationArea .pagenation-area button{
+            border: none;
+            background-color: #fff;
+            padding: 6px 12px;
+        }
+        #boardMain #bottomArea #bottomPaginationArea .pagenation-area .active{
+            color: #0d6efd;
+            border-top: 3px solid #0d6efd;
+        }
+
+    </style>
+
+    <!-- 메인페이지 영역 -->
+    <div class="container-fluid" id="boardMain">
+        
+        <div class="container" class="px-5">
+            
+            <div id="headerBanner" class="mt-4" style="position: relative;">
+                <div id="bannerImg" class="px-4 py-3">
+
+                    <div id="bannerContent">
+                        <div class="text-area">
+                            <h5 class="fw-bolder">
+                                커뮤니티
+                            </h5>
+                            <aside>다양한 사람을 만나고 의견을 나눠보세요. </aside>
+                        </div>
+                        <div class="img-area">
+                            <img src="sampleImg/자유게시판.png" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div id="boardNavigation" class="mt-4">
+                <div class="row pb-2">
+                    <div class="col">
+                        <button class="btn btn-primary"><i class="fas fa-pencil"></i> 작성하기</button>
+                    </div>
+                    <div class="col-8">
+                        
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">자유게시판</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">공지사항</a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    <div class="col" style="text-align: right;">
+                        <button class="btn btn-outline" style="border: 1px solid #dee2e6;"><i class="fas fa-arrow-down-short-wide"></i> 최신순</button>
+                    </div>
+                </div>
+
+                <div class="row py-3" style="align-items: center;">
+                    <div id="refreshArea" class="col-md-2">
+                        <i class="fa-solid fa-arrows-rotate"></i>                    
+                    </div>
+                    <div id="searchArea" class="col-md-8">
+                        <div>
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="검색어를 입력하세요">
+                        </div>
+                    </div>
+                    <div id="topPaginationArea" class="col-md-2" style="text-align: right;">
+                        <div>
+                            <span>
+                                <span id="currentPage">1</span>/<span id="totalPage">3333</span> 페이지
+                                <i class="fa-solid fa-arrow-left disabled"></i>&nbsp;
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+ 
+            <div id="boardList">
+                
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex py-3 boardItem">
+                    <div class="flex-grow-1 left-area">
+                        
+                        <div class="top-area d-flex">
+                            <img src="sampleImg/user_profile_default.png" alt="">
+                            <span class="nickname me-2">관리자</span>
+                            <span class="create-date">&bull; 2024-01-18 18:05</span>
+                        </div>
+                        <div class="middle-area my-2 d-flex">
+                            <span>지각하는 프리랜서</span>
+                        </div>
+                        <div class="bottom-area d-flex">
+                            <span>#프리랜서</span>
+                            <span>#개꿀</span>
+                        </div>
+                        
+                    </div>
+                    <div class="right-area">
+                        <div>
+                            <i class="fa-regular fa-eye"> 24</i>
+                            <i class="fa-regular fa-comment-dots"> 12</i>
+                            <i class="fa-regular fa-thumbs-up"> 30</i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div id="bottomArea">
+                <div id="bottomPaginationArea" class="d-flex" style="align-items: center;"> 
+                    
+                    <div>
+                        <i class="fa-solid fa-arrow-left-long"></i> Previous
+                    </div>
+                    <div class="flex-grow-1 pagenation-area text-center">
+                        <button class="active">1</button>
+                        <button class="">...</button>
+                        <button class="">2</button>
+                        <button class="">3</button>
+                        <button class="">4</button>
+                        <button class="">...</button>
+                        <button class="">7067</button>
+                    </div>
+                    <div>
+                        Next <i class="fa-solid fa-arrow-right-long"></i>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <br><br>
+
+    <!-- footer -->
+    <div class="container-fluid" id="footer">
+        <div class="container">
+            <br>
+            <div class="footer-title">
+                <h2>
+                    Celover
+                    <em>since 2023.12.13</em>
+                </h2>
+            </div>
+            <div class="footer-content">
+                <div class="footer-navbar">
+                    <ul class="">
+                        <li class="">
+                            <a>이용약관&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>서비스운영정책&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>청소년 보호 정책&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>개인정보처리방침&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>쿠키정책&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a>쿠키 설정&nbsp;|&nbsp;</a>
+                        </li>
+                        <li class="">
+                            <a> 입점 신청</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="footer-info">
+                    <ul>
+                        <li>
+                            <span><b>상호</b> Celover COMPANY Inc.</span>
+                        </li>
+                        <li>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>공동대표</b> 박용진, 이원종</span>
+                        </li>
+                        <li>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>전화번호</b> 02-1234-5678</span>
+                        </li>
+                        <li>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>FAX</b> +82)02-1234-5678</span>
+                        </li>
+                        <br>
+                        <li>
+                            <span><b>주소</b> 서울특별시 강남구 테헤란로14길 6 남도빌딩 3F</span>
+                        </li>
+                        <br>
+                        <li>
+                            <span><b>개인정보관리책임자</b> 김시연 (siyeon@celover.com)</span>
+                        </li>
+                        <li>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>사업자등록번호</b> 000-xx-xxxx</span>
+                        </li>
+                        <li>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;<b>통신판매업 신고번호</b> 제 2023-역삼-XXXX호</span>
+                        </li>
+                        <br>
+                        <li>
+                            <span><b>호스팅 서비스 사업자</b> github.io</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <span>Copyright 2023.CELOVER.All rights reserverd.</span>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <!-- footer 끝 -->
+
+
+
+    <!--상단 검색창 관련-->
+    <script>
+        $(document).ready(() => {
+            $('.search-empty').hide();
+            $('.search-artist').keyup(() => {
+                if ($('.search-artist').val().trim() === '') {
+                    $('.search-empty').hide();
+                } else {
+                    $('.search-empty').show();
+                }
+            })
+        })
+
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
