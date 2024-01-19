@@ -7,9 +7,9 @@
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
@@ -30,7 +30,8 @@
     <!-- 헤더에 들어가는 link-->
 
     <!-- jquery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src=" https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
     <!-- fullcalendar CDN -->
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css' rel='stylesheet' />
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js'></script>
@@ -48,6 +49,7 @@
             .header-nav .mn-930 {
                 display: none;
             }
+
             .dropdown-area:has(.dm-active) {
                 height: 0px;
             }
@@ -59,6 +61,7 @@
             .header-nav .mx-930 {
                 display: none;
             }
+
             .dropdown-area:has(.dm-active) {
                 height: 301px;
             }
@@ -77,7 +80,7 @@
             padding: 0px;
         }
 
-        a{
+        a {
             text-decoration: none;
             color: black;
         }
@@ -145,6 +148,7 @@
             background-color: #dee2e6;
 
         }
+
         .dropdown-area .dropdown-menu li .dropdown-item img {
             width: 32px;
             height: 32px;
@@ -225,47 +229,56 @@
         /* footer css 끝 */
 
         /* body start (shop-detail-warp) */
-        .shop-detail-wrap{
-            border: 0px solid red;
+        .shop-detail-wrap {
             margin-top: 50px;
+            margin-bottom: 30px;
         }
-        .shop-detail-wrap div{
-            border: 0px solid blue;
+
+        .shop-detail-wrap div {
         }
-        .shop-detail-wrap>.row{
+
+        .shop-detail-wrap>.row {
             padding-left: 100px;
             padding-right: 100px;
         }
-        .product-detail-header-img{
+
+        .product-detail-header-img {
             padding-left: 0px;
             padding-right: 100px;
             box-sizing: border-box;
         }
-        .product-detail-header-img img{
+
+        .product-detail-header-img img {
             display: block;
             margin: auto;
             width: 100%;
             height: 100%;
         }
-        .product-detail-header-right-name{
+
+        .product-detail-header-right-name {
             font-size: larger;
         }
-        .product-detail-header-right-price{
+
+        .product-detail-header-right-price {
             font-size: larger;
             font-weight: 900;
         }
-        .product-detail-header-right-bonus{
+
+        .product-detail-header-right-bonus {
             font-weight: 700;
             color: skyblue;
         }
-        #product-right-small-name-wrap{
+
+        #product-right-small-name-wrap {
             margin-bottom: 15px;
         }
-        .complete-wrap{
+
+        .complete-wrap {
             margin-top: 20px;
             height: 70px;
         }
-        .product-detail-header-right-complete{
+
+        .product-detail-header-right-complete {
             width: 100%;
             height: 100%;
             border-radius: 5px;
@@ -273,29 +286,161 @@
             font-weight: 900;
             border: 1px solid skyblue;
         }
-        #btn-addcart{
+
+        #btn-addcart {
             background-color: white;
             color: skyblue;
         }
-        #btn-checkout{
+
+        #btn-checkout {
             background-color: skyblue;
             color: white;
         }
-        #btn-addcart:hover{
+
+        #btn-addcart:hover {
             background-color: rgb(243, 251, 255);
         }
-        #btn-checkout:hover{
-            background-color:rgb(167, 217, 237);
+
+        #btn-checkout:hover {
+            background-color: rgb(167, 217, 237);
         }
-        #input_volume{
+
+        #input_volume {
             margin-left: 10px;
             width: 40px;
         }
-        .change-volume{
+
+        .change-volume {
             border: 0px;
         }
-        /* body end (shop-detail-warp) */
 
+        #product-detail-body-nav-wrap {
+            position: sticky;
+            top: 93px;
+            z-index: 9;
+            height: 60px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        #product-detail-body-nav-wrap ul {
+            padding-left: 0px;
+        }
+
+        #product-detail-body-nav-wrap ul li {
+            list-style: none;
+            color: white;
+            background-color: rgb(250, 250, 250);
+            float: left;
+            line-height: 60px;
+            vertical-align: middle;
+            text-align: center;
+            border: 1px solid rgb(238, 238, 238);
+        }
+
+        .product-detail-body-nav-list {
+            color: rgb(134, 134, 134);
+            display: block;
+            width: 268px;
+            font-size: large;
+            font-weight: 900;
+        }
+        .accordion-button:not(.collapsed), .accordion-button{
+            background-color: rgb(250, 250, 250);
+            color: rgb(134, 134, 134);
+            font-weight: 700;
+        }
+        .product-detail-body-detailImg img{
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+            margin-top: 25px;
+        }
+        .product-body-rewired-detail{
+            padding: 20px;
+        }
+        #review-img>img{
+            width: 100px;
+            height: 100px;
+            padding: 3px;
+            border-radius: 10px;
+        }
+        #review-img>img:hover{
+            cursor: pointer;
+        }
+        .checkout-user-review>img{
+            height: 26px;
+            border-radius: 30px;
+        }
+        .checkout-user-productName{
+            color: gray;
+            font-weight: 700;
+        }
+        .checkout-user-review-coment{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .fa-star{
+            color: skyblue;
+        }
+        .product-body-review-username-output{
+            font-weight: 700;
+        }
+        .review-none-img *{
+            color: gray;
+            font-size: 100px;
+        }
+        .review-none-commnet{
+            font-size: large;
+            color: gray;
+            font-weight: 700;
+        }
+        #product-detail-body-review-morephoto{
+            height: 100px;
+            width: 100px;
+            right: 30px;
+            position: absolute;
+            background-color: rgba(59, 59, 59, 0.566);
+            opacity: 0.6;
+        }
+        #product-detail-body-review-morephoto:hover{
+            opacity: 1;
+        }
+        #product-detail-body-review-morephoto span{
+            font-size: larger;
+            color: white;
+            font-weight: 700;
+            line-height: 100px;
+            padding-left: 10px;
+        }
+        .btn-outline-primary{
+            color: skyblue;
+            margin: 10px;
+            border: 0px;
+        }
+        .btn-outline-primary:hover{
+            background-color: skyblue;
+        }
+        .review-modal-body-wrap{
+            height: 600px;
+            overflow: scroll;
+        }
+        .review-modal-body-wrap::-webkit-scrollbar{
+            display: none;
+        }
+        .review-more-img-wrap img{
+            height: 158px;
+            width: 158px;
+            padding: 10px;
+        }
+        .review-one_view-wrap{
+            height: 600px;
+            overflow: scroll;
+        }
+        .review-one_view-wrap::-webkit-scrollbar{
+            display: none;
+        }
+        /* body end (shop-detail-warp) */
     </style>
 </head>
 
@@ -326,8 +471,8 @@
 
                     </div>
                     <li class="nav-item mx-930">
-                        <a href="#"><img class="header_btn" src="../sampleImg/알림.png"
-                                style="width: 32px; height: 32px;" alt=""></a>
+                        <a href="#"><img class="header_btn" src="../sampleImg/알림.png" style="width: 32px; height: 32px;"
+                                alt=""></a>
                     </li>
                     <li class="nav-item mx-930">
                         <a href="#"><img class="header_btn" src="../sampleImg/게시판.png" alt=""></a>
@@ -350,7 +495,7 @@
             </div>
 
         </div>
-        
+
     </div>
     <div class="dropdown-area">
         <ul class="dropdown-menu">
@@ -422,7 +567,7 @@
 
     <!-- ################################# 바디 시작 ################################# -->
     <div class="container shop-detail-wrap">
-        <div class="row">
+        <div class="row" style="margin-top: 50px;">
             <div class="col-7 product-detail-header-img">
                 <img src="https://www.intermarket.co.kr/data/goods/6210f7079a5dd.jpg" alt="">
             </div>
@@ -446,7 +591,8 @@
                         <div class="row">
                             <div class="col-4">
                                 <label class="product-detail-header-right-bonus">포인트 : </label>
-                                <label id="product-input-bonus" class="product-detail-header-right-bonus" style="margin-right: -5px;">1,550</label>
+                                <label id="product-input-bonus" class="product-detail-header-right-bonus"
+                                    style="margin-right: -5px;">1,550</label>
                                 <label class="product-detail-header-right-bonus">p</label>
 
                             </div>
@@ -464,13 +610,14 @@
                     </div>
 
                     <hr style="margin: 20px 0px 20px 0px;">
-                    
+
                     <div class="col-12" id="product-right-small-name-wrap">
                         <span id="product-right-small-name"></span>
                     </div>
                     <div class="col-12">
                         <button class="change-volume" id="plus_volume" style="width: 30px;">+</button>
-                        <input class="change-volume" id="input_volume" type="number" value="1" min="1" max="10" style="text-align: center;" readonly>
+                        <input class="change-volume" id="input_volume" type="number" value="1" min="1" max="10"
+                            style="text-align: center;" readonly>
                         <button class="change-volume" id="minus_volume" style="width: 30px;" disabled>-</button>
                     </div>
 
@@ -496,7 +643,7 @@
                         <label class="product-detail-header-right-price" id="product-checkout-output-price"></label>
                     </div>
                     <div class="col-12 text-end" style="color: skyblue; font-weight: 900;">
-                        누적예상 포인트 : 
+                        누적예상 포인트 :
                         <span id="product-detail-header-checkout-bonus"></span>
                         <span style="margin-left: -5px;">p</span>
                     </div>
@@ -508,9 +655,351 @@
                     </div>
                 </div>
             </div>
-            <hr style="margin: 20px 0px 20px 0px;">
+            <hr style="margin: 20px 0px 50px 0px;">
         </div>
-        <div class="col-10" style="margin: auto;">1</div>
+        <div class="col-10" style="margin: auto;">
+            <div class="row">
+                <div id="product-detail-body-nav-wrap" class="col-12">
+                    <ul>
+                        <li>
+                            <a class="product-detail-body-nav-list" href="#tag1">제품정보</a>
+                        </li>
+                        <li>
+                            <a class="product-detail-body-nav-list" href="#tag2">상품후기(<span>123</span>)</a>
+                        </li>
+                        <li>
+                            <a class="product-detail-body-nav-list" href="#tag3">문의(<span>47</span>)</a>
+                        </li>
+                        <li>
+                            <a class="product-detail-body-nav-list" href="#tag4">반품/교환정보</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12 product-detail-body-detailImg" id="product-detail-body-base product-detail-body-info">
+                    <h4 id="tag1"><strong>제품정보</strong></h4>
+                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2214647705/B.jpg?650000000" alt="">
+                    <img src="https://itaiwan.co.kr/files/attach/images/2023/07/20/2b37f6f5d81ee06e1ba5fc4b4526a3f0.jpg" alt="">
+                    <img src="https://kr.ktown4u.com/goods_files/SH0174/event_images/010387/EV10386052.default.1.png" alt="">
+
+                </div>
+
+                <hr style="margin: 50px 0px 20px 0px;">
+
+                <div class="col-12" id="product-detail-body-base product-detail-body-rewired">
+                    <h4 id="tag2"><strong>상품후기</strong></h4>
+                    <div id="review-img" style="position: relative;">
+                        <img src="../sampleImg/검색이미지1.jpg" alt="" data-bs-toggle="modal" data-bs-target="#review-one_view">
+                        <img src="../sampleImg/검색이미지2.jpg" alt="">
+                        <img src="../sampleImg/검색이미지3.jpeg" alt="">
+                        <img src="../sampleImg/게시판.png" alt="">
+                        <img src="../sampleImg/결제완료.png" alt="">
+                        <img src="../sampleImg/고객센터.png" alt="">
+                        <img src="../sampleImg/네이버로그인버튼.png" alt="">
+                        <img src="../sampleImg/구글로그인버튼.png" alt="">
+                        <img src="../sampleImg/댓글.png" alt="">
+                        <img src="../sampleImg/랭킹.png" alt="">
+                        <a href="#" id="product-detail-body-review-morephoto" data-bs-toggle="modal" data-bs-target="#review-more_view">
+                            <span>+더보기</span>
+                        </a>
+                    </div>
+
+                    <!-- 사진 리뷰 자세히보기 start -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="review-one_view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" style="padding: 30px;">
+                        <div class="modal-content review-one_view-wrap">
+                            <div class="modal-header" style="padding: 0px; padding-left: 20px;">
+                                <h4 style="margin: 0px;"><strong>사진리뷰</strong></h4>
+                                <div align="center">
+                                    <div class="btn-group btn-group-lg" role="group" aria-label="Default button group">
+                                        <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-body review-one-detail">
+                                <div class="row">
+                                    <div class="col-7" style="padding-right: 75px;">
+                                        <img style="width: 100%;" src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2214647705/B.jpg?650000000" alt="">
+                                        <img style="width: 100%;" src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2214647705/B.jpg?650000000" alt="">
+                                        <img style="width: 100%;" src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/2214647705/B.jpg?650000000" alt="">
+                                    </div>
+                                    <div class="col-5" style="padding: 0px; padding-right: 20px;">
+                                        <div class="row">
+                                            <div class="checkout-user-productName" style="margin-bottom: 10px; font-size: small;">[21JONG]2th Single Album [1JONG : HARD CODE] (VIP)</div>
+                                            <div class="col-2 checkout-user-review" style="padding-right: 0px;">
+                                                <img src="../sampleImg/user_profile_default.png" alt="">
+                                            </div>
+                                            <input type="hidden" class="product-body-review-username-input" value="1Jong">
+                                            <div class="col-4 product-body-review-username-output" style="padding-left: 0px; margin-left: -10px;"></div>
+                                            <div class="col-6 text-end" style="font-size: 12px;">
+                                                2024.01.18
+                                            </div>
+                                            <div style="font-size: small;">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                            <div class="checkout-user-review-coment">
+                                                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, asperiores culpa. Officiis mollitia voluptas sequi atque esse error, repudiandae temporibus harum laboriosam unde beatae, quaerat nisi et similique assumenda illum.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- 사진 리뷰 자세히보기 start -->
+
+
+                    <!--더보기 모달 start-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="review-more_view" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 style="margin: 0px;">사진리뷰 전체보기</h4>
+                            </div>
+                            <div class="modal-body review-modal-body-wrap">
+                                <div class="row review-more-img-wrap">
+                                    <img src="https://wimg.mk.co.kr/news/cms/202302/20/news-p.v1.20230220.242eefaa11c84a388b7235fd652a9ecd.jpg" alt="">
+                                    <img src="https://i.namu.wiki/i/99YlVXSaMfCLo-bXAx2ZHok3D1avhHBIz4gP8Lf8tli9WdK0pxPBvh92eKMIRBOs8jmGPLLBY7OlL2lFFs-TKg.webp" alt="">
+                                    <img src="https://media.bunjang.co.kr/product/236453982_1_1695730461_w360.jpg" alt="">
+                                    <img src="https://cdn.iconsumer.or.kr/news/photo/202209/25039_29758_1548.jpg" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/6279748482/B.jpg?9000000" alt="">
+                                    <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/0QTIaV4hQ9-2cSA55DdOXA" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/5439276119/B.jpg?833000000" alt="">
+                                    <img src="https://obs.line-scdn.net/r/lfstore/lfstore/sample22df3316t11fd152c" alt="">
+                                    <!--상위 샘플-->
+                                    <img src="https://wimg.mk.co.kr/news/cms/202302/20/news-p.v1.20230220.242eefaa11c84a388b7235fd652a9ecd.jpg" alt="">
+                                    <img src="https://i.namu.wiki/i/99YlVXSaMfCLo-bXAx2ZHok3D1avhHBIz4gP8Lf8tli9WdK0pxPBvh92eKMIRBOs8jmGPLLBY7OlL2lFFs-TKg.webp" alt="">
+                                    <img src="https://media.bunjang.co.kr/product/236453982_1_1695730461_w360.jpg" alt="">
+                                    <img src="https://cdn.iconsumer.or.kr/news/photo/202209/25039_29758_1548.jpg" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/6279748482/B.jpg?9000000" alt="">
+                                    <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/0QTIaV4hQ9-2cSA55DdOXA" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/5439276119/B.jpg?833000000" alt="">
+                                    <img src="https://obs.line-scdn.net/r/lfstore/lfstore/sample22df3316t11fd152c" alt="">
+                                    <!--상위 샘플-->
+                                    <img src="https://wimg.mk.co.kr/news/cms/202302/20/news-p.v1.20230220.242eefaa11c84a388b7235fd652a9ecd.jpg" alt="">
+                                    <img src="https://i.namu.wiki/i/99YlVXSaMfCLo-bXAx2ZHok3D1avhHBIz4gP8Lf8tli9WdK0pxPBvh92eKMIRBOs8jmGPLLBY7OlL2lFFs-TKg.webp" alt="">
+                                    <img src="https://media.bunjang.co.kr/product/236453982_1_1695730461_w360.jpg" alt="">
+                                    <img src="https://cdn.iconsumer.or.kr/news/photo/202209/25039_29758_1548.jpg" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/6279748482/B.jpg?9000000" alt="">
+                                    <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/0QTIaV4hQ9-2cSA55DdOXA" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/5439276119/B.jpg?833000000" alt="">
+                                    <img src="https://obs.line-scdn.net/r/lfstore/lfstore/sample22df3316t11fd152c" alt="">
+                                    <!--상위 샘플-->
+                                    <img src="https://wimg.mk.co.kr/news/cms/202302/20/news-p.v1.20230220.242eefaa11c84a388b7235fd652a9ecd.jpg" alt="">
+                                    <img src="https://i.namu.wiki/i/99YlVXSaMfCLo-bXAx2ZHok3D1avhHBIz4gP8Lf8tli9WdK0pxPBvh92eKMIRBOs8jmGPLLBY7OlL2lFFs-TKg.webp" alt="">
+                                    <img src="https://media.bunjang.co.kr/product/236453982_1_1695730461_w360.jpg" alt="">
+                                    <img src="https://cdn.iconsumer.or.kr/news/photo/202209/25039_29758_1548.jpg" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/6279748482/B.jpg?9000000" alt="">
+                                    <img src="https://d2gfz7wkiigkmv.cloudfront.net/pickin/2/1/2/0QTIaV4hQ9-2cSA55DdOXA" alt="">
+                                    <img src="https://cdn.011st.com/11dims/resize/600x600/quality/75/11src/product/5439276119/B.jpg?833000000" alt="">
+                                    <img src="https://obs.line-scdn.net/r/lfstore/lfstore/sample22df3316t11fd152c" alt="">
+                                    <!--상위 샘플-->
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--더보기 모달 end-->
+
+                    <!-- product review start -->
+                    <div class="row product-body-rewired-detail">
+                        <div class="col-3">
+                            <div class="row">
+                                <div class="col-2 checkout-user-review">
+                                    <img src="../sampleImg/user_profile_default.png" alt="">
+                                </div>
+                                <input type="hidden" class="product-body-review-username-input" value="1Jong">
+                                <div class="col-8 product-body-review-username-output"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5">
+                                    <span class="product-body-review-create_Date">2024.01.18</span>
+                                </div>
+                                <div class="col-7">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <div class="row">
+                                <div class="checkout-user-productName">[21JONG]2th Single Album [1JONG : HARD CODE] (VIP)</div>
+                                <div class="checkout-user-review-coment">
+                                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, asperiores culpa. Officiis mollitia voluptas sequi atque esse error, repudiandae temporibus harum laboriosam unde beatae, quaerat nisi et similique assumenda illum.</span>
+                                </div>
+                                <div class="checkout-user-review-img">
+                                    <img src="../sampleImg/user_profile_default.png" alt="">
+                                    <img src="../sampleImg/user_profile_default.png" alt="">
+                                    <img src="../sampleImg/user_profile_default.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 product-body-review-none">
+                        <div class="review-none-img" align="center">
+                            <i class="fa-regular fa-comment-dots"></i>
+                        </div>
+                        <div class="review-none-commnet" align="center">
+                            팬분들의 소중한 첫 후기를 기다립니다.
+                        </div>
+                    </div>
+                    <div style="margin-top: 50px;" align="center">
+                        <div class="btn-group btn-group-lg" role="group" aria-label="Default button group">
+                            <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                    <!-- product review end -->
+
+                </div>
+
+                <hr style="margin: 50px 0px 20px 0px;">
+
+                <div class="col-12" id="product-detail-body-base product-detail-body-QnA">
+                    <h4 id="tag3"><strong>문의</strong></h4>
+                </div>
+
+                <hr style="margin: 50px 0px 20px 0px;">
+
+                <div class="col-12" id="product-detail-body-base product-detail-body-exchange-return">
+                    <h4 id="tag4"><strong>반품/교환정보</strong></h4>
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
+                                    반품/교환방법
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px;">
+                                        <li>My > 주문내역 > 주문 > 상세 통해 반품/교환 신청</li>
+                                        <li>상세한 반품/교환 규정은 FAQ 확인</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseTwo">
+                                    반품/교환 가능 기간
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px;">
+                                        <li>구매자는 상품을 수령한 날부터 7일 이내에 교환/반품 신청을 하여야 하며,</li>
+                                        <li>표시·광고 내용과 다르거나 계약 내용과 다르게 이행된 경우에는 상품 수령 후 3개월 이내에 청약 철회가 가능합니다.</li>
+                                        <li>(단, 변심의 경우 교환은 불가하며, 반품 취소만 가능합니다.)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseThree">
+                                    반품/교환 비용
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px;">
+                                        <li>구매자의 변심으로 반품을 원할 경우에는 구매자가 배송비 지불</li>
+                                        <li>상품 하자나 제품 불일치, 배송 이슈로 인한 반품의 경우에는 판매자가 배송비 지불</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseFour">
+                                    반품/교환시 유의사항
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px; margin-bottom: 20px;">
+                                        <li>아래와 같은 경우 반품/교환이 제한될 수 있습니다.</li>
+                                        <li>구매자에게 책임이 있는 사유로 상품이 멸실 또는 훼손된 경우(단, 내용 확인을 위한 포장 개봉의 경우는 예외)</li>
+                                        <li>구매자의 전부 또는 일부의 사용, 소비(디지털코드 등록 포함)에 의해 상품의가치가 현저히 감소한 경우</li>
+                                        <li>시간의 경과에 의하여 재판매가 곤란할 정도로 상품의 가치가 현저히 감소한경우</li>
+                                        <li>복제가 가능한 상품의 포장을 훼손한 경우(앨범/도서/영상출판물/포토카드/포스터카드/포스터 등을 비롯한 복제 가능한 상품의 포장 개봉 시)</li>
+                                        <li>주문/제작 상품의 제작이 이미 진행된 경우(판매자에게 회복불가능한 손해가예상되고, 그러한 예정으로 청약철회권 행사가 불가하다는 사실을 서면 동의받은 경우)</li>
+                                        <li>상품의 일부 구성품을 사용하였거나, 분실하였거나 취급 부주의로 인한 파손/고장/오염으로 재판매 불가한 경우, 일부 구성품이 동봉되지 않은 채 반송된 경우</li>
+                                        <li>각 상품별로 아래와 같은 사유로 반품/교환이 제한될 수 있습니다.</li>
+                                    </ul>
+                                    <span><strong>[의류/가방/신발/ 패션잡화]</strong></span>
+                                    <ul style="margin: 0px; margin-bottom: 20px;">
+                                        <li>세탁, 상품 얼룩, 향수 냄새, 탈취제 냄새, 사용 흔적 등으로 상품의 가치가 현저히 감소한 경우</li>
+                                    </ul>
+                                    <span><strong>[앨범/도서/영상출판]</strong></span>
+                                    <ul style="margin: 0px;">
+                                        <li>복제 가능한 상품의 포장이 개봉된 경우</li>
+                                        <li>일부 구성품을 사용하였거나, 분실하였거나 취급 부주의로 인한 파손/고장/오염으로 재판매 불가한 경우</li>
+                                        <li>일부 구성품이 동봉되지 않은 채 반송된 경우</li>
+                                        <li>교환은 불량일 경우에만 동일한 상품 및 동일한 옵션에 한하여 가능합니다. 이 외에 경우에는 반품 후 재구매절차를 진행하셔야 합니다.</li>
+                                        <li>교환신청을 하더라도 판매자에게 교환할 물품의 재고가 없는 경우에는 교환이 불가능하며, 이 경우에 해당 상품의 주문을 취소처리 후, 결제시 선택했던 결제 수단으로 환불처리 됩니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseFive">
+                                    소비자 피해 보상 및 환불지연에 따른 배상
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px;">
+                                        <li>상품의 불량에 의한 반품, 교환, A/S, 환불, 품질보증 및 피해보상 등에 관한 사항은 소비자분쟁해결기준(공정거래위원회 고시)에 준하여 처리됨.</li>
+                                        <li>대금 환불 및 환불 지연에 따른 배상금 지급 조건, 절차 등은 전자상거래 등에서 의 소비자 보호에 관한 법률에 따라 처리함.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseSix">
+                                    기타사항
+                                </button>
+                            </h2>
+                            <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse show">
+                                <div class="accordion-body">
+                                    <ul style="margin: 0px;">
+                                        <li>일부 규정은 국내구매자 분들께만 해당되며, 해외구매자 분들을 위한 상세 안내는 FAQ 혹은 1:1 문의를 통해 확인해주세요.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <!-- ################################# 바디 종료 ################################# -->
@@ -602,15 +1091,15 @@
 
 <script>
     /* 별점 script start */
-    $(()=>{
+    $(() => {
         var basic_num = 5;
         var rating_value = Math.floor($('#rating-value').val());
         var inputRating = (basic_num - rating_value);
         var inputTesting = '';
-        for(let i = 0; i < rating_value; i++){
+        for (let i = 0; i < rating_value; i++) {
             inputTesting += '<i class="fa-solid fa-star"></i>';
         }
-        for(let i = 0; i < inputRating; i++){
+        for (let i = 0; i < inputRating; i++) {
             inputTesting += '<i class="fa-regular fa-star"></i>';
         }
         $('#rating-value-output').html(inputTesting);
@@ -619,52 +1108,52 @@
 
     /* 천단위 ',' script start */
     $(() => {
-            var $input = parseFloat($('#product-input-price').val().replace(/,/g, ''));                                var formattedInput = $input.toLocaleString(); // Format the number with commas
-            $("#product-output-price").html(formattedInput);
-            var $bonus = $input / 10;
-            var formattedBonus = $bonus.toLocaleString();
-            $("#product-input-bonus").html(formattedBonus);
+        var $input = parseFloat($('#product-input-price').val().replace(/,/g, '')); var formattedInput = $input.toLocaleString(); // Format the number with commas
+        $("#product-output-price").html(formattedInput);
+        var $bonus = $input / 10;
+        var formattedBonus = $bonus.toLocaleString();
+        $("#product-input-bonus").html(formattedBonus);
     });
     /* 천단위 ',' script end */
 
     /* 버튼으로 숫자 증대에 따른 최종상품 금액 및 보너스 포인트 변경 script start */
-    $(()=>{
+    $(() => {
         var now_volume = parseInt($('#input_volume').val());
         var new_volume = 1;
         var productPrice = parseInt($('#product-input-price').val());
         var checkoutPrice = productPrice * new_volume;
-        var checkoutBonus = checkoutPrice / 10 ;
+        var checkoutBonus = checkoutPrice / 10;
         $('#product-checkout-output-price').text(checkoutPrice);
         $('#product-detail-header-checkout-bonus').text(checkoutBonus);
-        
+
         function updateButtonState() {
-                $('#minus_volume').attr('disabled', new_volume === 1);
-                $('#plus_volume').attr('disabled', new_volume === 10);
-                
-            }
-            
-            $('#plus_volume').click(()=>{
-                new_volume += 1;
-                if(new_volume >= 1 && new_volume <= 10){
+            $('#minus_volume').attr('disabled', new_volume === 1);
+            $('#plus_volume').attr('disabled', new_volume === 10);
+
+        }
+
+        $('#plus_volume').click(() => {
+            new_volume += 1;
+            if (new_volume >= 1 && new_volume <= 10) {
                 $('#input_volume').val(new_volume);
                 updateButtonState();
                 $('#product-checkout-volume').text(new_volume);
                 checkoutPrice = new_volume * productPrice;
                 $('#product-checkout-output-price').text(checkoutPrice);
-                checkoutBonus = checkoutPrice / 10 ;
+                checkoutBonus = checkoutPrice / 10;
                 $('#product-detail-header-checkout-bonus').text(checkoutBonus);
             }
         })
-    
-        $('#minus_volume').click(()=>{
+
+        $('#minus_volume').click(() => {
             new_volume -= 1;
-            if(new_volume >= 1 && new_volume <= 10){
+            if (new_volume >= 1 && new_volume <= 10) {
                 $('#input_volume').val(new_volume);
                 updateButtonState();
                 $('#product-checkout-volume').text(new_volume);
                 checkoutPrice = new_volume * productPrice;
                 $('#product-checkout-output-price').text(checkoutPrice);
-                checkoutBonus = checkoutPrice / 10 ;
+                checkoutBonus = checkoutPrice / 10;
                 $('#product-detail-header-checkout-bonus').text(checkoutBonus);
             }
         })
@@ -673,6 +1162,20 @@
         $('#product-right-small-name').text(bigName);
     })
     /* 버튼으로 숫자 증대에 따른 최종상품 금액 및 보너스 포인트 변경 script end */
+
+    /* 리뷰 아이디 앞2글자 제외 나머지 '*'처리 script start */
+    $(()=>{
+        var input_username = $('.product-body-review-username-input').val();
+        var slice_username = input_username.slice(0,2);
+        var output_username = slice_username;
+        for(let i = 2; i<input_username.length; i++){
+            output_username += '*';
+        }
+        console.log(output_username);
+        $('.product-body-review-username-output').text(output_username);
+        
+    })
+    /* 리뷰 아이디 앞2글자 제외 나머지 '*'처리 script end */
 </script>
 
 </html>
