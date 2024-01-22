@@ -71,6 +71,7 @@
 					<li class=""><a>쿠키정책&nbsp;|&nbsp;</a></li>
 					<li class=""><a>쿠키 설정&nbsp;|&nbsp;</a></li>
 					<li class=""><a> 입점 신청</a></li>
+					<li class=""><a href="/fanpage/main"> 피드메인페이지(임시)</a></li>
 				</ul>
 			</div>
 			<hr>

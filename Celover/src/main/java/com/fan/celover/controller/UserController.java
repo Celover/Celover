@@ -25,5 +25,4 @@ public class UserController {
 	public String findPassword() {
 		return "main/user/findPassword";
 	}
-	
 }

@@ -13,11 +13,12 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
 
 <!-- fontawesome -->
 <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
-<link rel="stylesheet" type="text/css" href="fontawesome-free-6.5.1-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/all.min.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -162,7 +163,9 @@ body {
 
 
 			<div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif; margin-left: 26px;">
-				<h2 style="font-weight: 800; margin: 0px; font-size: 32px;">Celover</h2>
+				<h2 style="font-weight: 800; margin: 0px; font-size: 32px;">
+					<a href="/">Celover</a>
+				</h2>
 			</div>
 
 
@@ -171,7 +174,7 @@ body {
 					<div id="searchArea" style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px; margin-right:20px;'">
 						<table style="border: 0px solid red;" align="center">
 							<tr style="line-height: 37px;">
-								<td style="width: 30px;"><img src="img/돋보기.png" style="height: 20px; width: 20px;" alt=""></td>
+								<td style="width: 30px;"><img src="/img/돋보기.png" style="height: 20px; width: 20px;" alt=""></td>
 								<td><input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색"></td>
 							</tr>
 						</table>

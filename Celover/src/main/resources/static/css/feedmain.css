@@ -1,0 +1,765 @@
+        .header-nav {
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+
+        .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            transition: all 0.4 ease-in-out;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.0);
+        }
+
+        .feedPage a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+
+        .feedPage a:hover {
+            opacity: 1;
+        }
+
+        .mainLogo:hover {
+            cursor: pointer;
+        }
+
+
+
+        /* 스타가 남긴 글 css */
+        #sr_content {
+            overflow: auto;
+        }
+
+        #sr_content>div {
+            float: left;
+        }
+
+        #sr_title * {
+            display: inline-block;
+        }
+
+        #sr_title span {
+            background-color: black;
+            color: #fff;
+            font-size: small;
+            margin-bottom: 3%;
+        }
+
+        #sr_title strong {
+            margin-bottom: 10%;
+        }
+
+        #sr_content {
+            position: relative;
+            padding: 10px 40px;
+            border-radius: 15px;
+        }
+
+        #sr_list {
+            overflow: hidden;
+            width: 80vw;
+        }
+
+        #sr_list ul {
+            height: 150px;
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            transition: margin-left 250ms;
+            font-size: 0;
+        }
+
+        #sr_list ul li {
+            display: inline-block;
+            width: 18vw;
+            height: 145px;
+            margin-left: 33px;
+        }
+
+        #sr_list .profile {
+            float: left;
+        }
+
+        #sr_list .profile img {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+        }
+
+        #sr_list .msg {
+            background-color: #efefef;
+            border-radius: 10px;
+            width: 13vw;
+            height: 96px;
+            padding: 16px 30px;
+            margin: 32px 0px 0px 44px;
+        }
+
+        #sr_list .msg:hover {
+            cursor: pointer;
+            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #sr_list * {
+            color: black;
+        }
+
+        #sr_list .msg .nickname {
+            font-size: medium;
+        }
+
+        #sr_list .msg p {
+            margin: 0px;
+        }
+
+        #sr_list .msg .content {
+            font-size: medium;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        #sr_list .msg .date {
+            font-size: small;
+            color: #999;
+        }
+
+        /* 스타가 남긴 글 css 끝 */
+
+        /*피드 우측 css 시작*/
+        .feedImg {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        #feedList {
+            box-sizing: border-box;
+        }
+
+        .createFeed {
+            width: 100%;
+            height: 70px;
+            background-color: white;
+            border-radius: 40px;
+            box-shadow: 1px 1px 5px rgb(194, 194, 194);
+
+        }
+
+        .createFeed:hover {
+            cursor: pointer;
+            box-shadow: 1px 1px 20px rgb(194, 194, 194);
+        }
+
+        .right-notice {
+            border-radius: 10px;
+        }
+
+        .right-notice a {
+            color: black;
+            font-weight: bolder;
+
+        }
+
+        .right-notice tr,
+        .right-notice td {
+            border: 0px solid red;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .notice-list {
+            display: block;
+            width: 100%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+
+        .notice-list a {
+            color: gray;
+            font-size: small;
+        }
+
+        .notice-list a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+
+        .notice-list thead td {
+            font-size: x-large;
+            font-weight: bolder;
+        }
+
+        /* fan-chat start */
+        .fan-chat {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #f4f6f8;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .fan-chat-hedaer {
+            width: 100%;
+            margin: auto;
+        }
+
+        .insertChat textarea::placeholder {
+            font-size: small;
+        }
+
+        .insertChat-user {
+            font-weight: bold;
+        }
+
+        .insertChat {
+            padding: 10px;
+            padding-bottom: 0px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+        }
+
+        .insertChat span {
+            font-size: small;
+        }
+
+        .chat-content {
+            background-color: #f4f6f8;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .chat-data span {
+            font-size: small;
+        }
+
+        .chat-content .row {
+            padding-left: 20px;
+            padding-top: 10px;
+        }
+
+        .chat-content-detail {
+            font-size: small;
+            padding: 10px 20px 20px 20px;
+        }
+
+        .chat-user {
+            font-size: small;
+            font-weight: bolder;
+        }
+
+        .chat-report {
+            color: gray;
+        }
+
+        .chat-report:hover {
+            cursor: pointer;
+            font-weight: bolder;
+        }
+
+        /* fan-chat end */
+
+        /*fan-notice start*/
+        .fan-notice {
+            background-color: #f4f6f8;
+            border-radius: 20px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .fan-notice-title {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            font-weight: bolder;
+        }
+
+        .fan-notice-icon i {
+            display: flex;
+            justify-content: right;
+        }
+
+        .fan-notice-list {
+            padding-left: 25px;
+            padding-right: 25px;
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .fan-notice-detail {
+            margin-bottom: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+
+        .fan-notice-detail a {
+            font-size: smaller;
+            font-weight: bold;
+            color: gray
+        }
+
+        /*fan-notice end*/
+
+        /*feed-list css start*/
+        .feed-list {
+            margin-left: 2px;
+            margin-right: 2px;
+            height: auto;
+            padding: 15px;
+            box-shadow: 1px 1px 10px rgb(193, 193, 193);
+            border-radius: 20px;
+        }
+
+        .feed-list,
+        .feed-list div {
+            border: 0px solid red;
+        }
+
+        .feed-user-titleimg {
+            height: 44px;
+        }
+
+        .feed-user-titleimg img {
+            height: 100%;
+            border-radius: 30px;
+        }
+
+        .feed-user-name div {
+            font-size: small;
+        }
+
+        .feed-user-name {
+            padding: 0px;
+        }
+
+        .feed-like,
+        .feed-coment {
+            height: 30px;
+        }
+
+        .feed-like img,
+        .feed-coment img {
+            height: 100%;
+        }
+
+        .feed-like-coment-etc {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .feed-like img,
+        .feed-coment img {
+            cursor: pointer;
+        }
+
+        .feed-createdate {
+            color: gray;
+        }
+
+        /*feed-list css end*/
+
+        /* create feed modal css start*/
+        .create_feed_mainmodal {
+            border-radius: 20px;
+        }
+
+        .create_feed_mainmodal .modal-body {
+            border-top: 0px solid red;
+        }
+
+        .feed-textbox {
+            padding: 25px;
+        }
+
+        .feed-textbox textarea {
+            resize: none;
+            border: 0px;
+            outline: none;
+        }
+
+        .feed-textbox textarea::placeholder {
+            font-weight: bolder;
+            opacity: 0.6;
+        }
+
+        #feed-header-1 {
+            font-size: x-large;
+        }
+
+        #feed-header-2 {
+            font-weight: bolder;
+            color: gray;
+        }
+
+        /* create feed modal css end*/
+
+        /* footer css */
+        #footer {
+            color: gray;
+        }
+
+        #footer .footer_title {
+            /* font-family: 'Lobster', serif;*/
+            font-family: 'Bruno Ace', serif;
+        }
+
+        #footer .footer_title>h2 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        #footer .footer_title>h2>em {
+            font-size: 12px;
+        }
+
+        #footer .footer_content>.footer_navbar {
+            font-weight: 600;
+            color: #666666;
+        }
+
+        #footer .footer_content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #footer .footer_content ul li {
+            display: inline-block;
+        }
+
+        #footer .footer_content>.footer_info {
+            font-size: small;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer .copyright {
+            font-size: medium;
+            font-weight: 500;
+            color: #8e8e8e;
+        }
+
+        #footer a {
+            cursor: pointer;
+        }
+
+        .footer_navbar a {
+            font-size: small;
+        }
+
+        /* footer css 끝 */
+
+        /*피드 우측 css 끝*/
+
+
+        /*피드 좌측 css 시작*/
+        .createFeed {
+            box-sizing: border-box;
+        }
+
+        .createFeed .row,
+        .createFeed .feed_create_icon {
+            height: 100%;
+        }
+
+        .feed_create_icon img {
+            height: 100%;
+            border-radius: 40px;
+            padding: 7px;
+            margin-top: -8px;
+
+        }
+
+        .createFeed .feedcoment {
+            color: gray;
+            opacity: 0.8;
+            font-weight: bolder;
+            line-height: 70px;
+        }
+
+        .feed_create_icon2 {
+            font-size: xx-large;
+        }
+
+        .feed_create_icon2 i {
+            margin-right: 10px;
+        }
+
+        .feed-etc {
+            position: relative;
+        }
+
+        .feed-etc i {
+            font-weight: bolder;
+            opacity: 0.5;
+        }
+
+        .feed-etc i:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .feed-user-content {
+            cursor: pointer;
+        }
+
+        /*피드 디테일 시작*/
+        .border2-2 input {
+            margin: auto;
+            height: 65%;
+            width: 80%;
+            resize: none;
+            align-items: center;
+            border-width: 0px;
+            border-radius: 20px;
+            background-color: #f0f0f1;
+            padding-left: 15px;
+            font-size: small;
+        }
+
+        .border2-2 input::placeholder {
+            font-weight: bolder;
+            color: #cfcfcf;
+        }
+
+        .border2-2 button {
+            margin-bottom: 5px;
+        }
+
+        /*피드 디테일 종료*/
+
+        /*피드 좌측 css 종료*/
+        /*알람 css 시작*/
+        .etc_area>i {
+            font-size: x-large;
+            width: 15px;
+            text-align: center;
+        }
+
+        .etc_area .msgbox {
+            border-radius: 10px;
+            position: absolute;
+            background: #fff;
+            display: none;
+            padding: 10px;
+            background-color: #fff;
+            margin-top: 10px;
+            margin-left: 430px;
+            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .etc_area .msgbox:after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+            border-bottom-color: #fff;
+            border-top: 0;
+            border-left: 0;
+            margin-left: -6px;
+            margin-top: -12px;
+            box-shadow: -4px 0px 2px -1px rgba(178, 178, 178, .4);
+        }
+
+        .etc_area .msgbox ul {
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            width: 100px;
+            text-align: left;
+
+        }
+
+        .etc_area .msgbox ul li {
+            padding: 1%;
+            font-size: small;
+        }
+
+        .etc_area ul li:hover {
+            background-color: #e9ecef;
+            cursor: pointer;
+        }
+
+        .etc_area ul li i {
+            width: 16px;
+            height: 16px;
+            text-align: center;
+        }
+        .feed-reply li{
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+        }
+
+        .reply-option1::after{
+            left: 90%;
+        }
+        /*알람 css 종료*/
+
+        /*게시글 삭제 모달 시작*/
+        .delete-cancel:hover,
+        .delete-agree:hover {
+            cursor: pointer;
+            border-radius: 15px
+        }
+
+        .delete-agree:hover {
+            background-color: rgb(233, 251, 251);
+        }
+
+        .delete-cancel:hover {
+            background-color: rgb(237, 236, 236);
+        }
+
+        .delete-cancel,
+        .delete-agree {
+            font-weight: bolder;
+        }
+
+        .delete-message {
+            font-weight: bolder;
+        }
+
+        .form-check input {
+            line-height: 5px;
+        }
+
+        .report-detail-option {
+            padding: 25px;
+        }
+
+        /*게시글 삭제 모달 종료*/
+
+        /* 피드 디테일 모달 css 시작 */
+        /*
+        .click-feed div{
+            border: 1px solid red;
+        }
+        */
+
+        .click-feed-detail {
+            box-sizing: border-box;
+        }
+
+        .click-feed-detail-header {
+            height: 100%;
+            width: 50px;
+        }
+
+        .click-feed img {
+            width: 45px;
+            height: 45px;
+            border-radius: 20px;
+        }
+
+        .border1-1 {
+            border-right: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .border1-2 {
+            border-bottom: 1px solid #f0f0f0;
+            border-left: 1px solid #f0f0f0;
+        }
+
+        .border2-1 {
+            border-top: 1px solid #f0f0f0;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .border2-2 {
+            border-left: 1px solid #f0f0f0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .border1-1 li {
+            height: 25px;
+            line-height: 25px;
+        }
+
+        .border1-1 li>i {
+            line-height: 25px;
+            font-size: smaller;
+        }
+
+        .feed-content-1 {
+            padding: 20px;
+            margin-bottom: 10px;
+            line-height: 30px;
+
+        }
+
+        /*스크롤바 none 속성 변경*/
+
+        .feed-content-1::-webkit-scrollbar {
+            display: none;
+        }
+
+        .main-feed-right::-webkit-scrollbar,
+        .main-feed-left::-webkit-scrollbar {
+            display: none;
+        }
+
+        .main-feed-right {
+            overflow: scroll;
+            height: 1000px;
+        }
+
+        .main-feed-left {
+            overflow: scroll;
+            height: 1000px;
+        }
+
+        .chat-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .border1-2{
+            overflow: scroll;
+            height: 411.8px;
+        }
+        .border1-2::-webkit-scrollbar{
+            display: none;
+        }
+
+        /* 피드 디테일 모달 css 종료 */
+
