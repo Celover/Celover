@@ -2,7 +2,6 @@
 
 <%@ include file="../layout/header.jsp"%>
 
-
 <style>
 #mainPage .container {
 	max-width: 1140px !important;

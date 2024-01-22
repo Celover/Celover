@@ -6,24 +6,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 	
-	@GetMapping("/auth/joinForm")
+	@GetMapping("/auth/join-form")
 	public String joinForm() {
-		return "main/user/joinForm";
+		return "main/user/join-form";
 	}
 
-	@GetMapping("/auth/loginForm")
+	@GetMapping("/auth/login-form")
 	public String loginForm() {
-		return "main/user/loginForm";
+		return "main/user/login-form";
 	}
 	
-	@GetMapping("/auth/findId")
+	@GetMapping("/auth/find-id")
 	public String findId() {
-		return "main/user/findId";
+		return "main/user/find-id";
 	}
 	
-	@GetMapping("/auth/findPassword")
+	@GetMapping("/auth/find-password")
 	public String findPassword() {
-		return "main/user/findPassword";
+		return "main/user/find-password";
 	}
 	
 }

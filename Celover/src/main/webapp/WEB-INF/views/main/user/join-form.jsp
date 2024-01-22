@@ -359,12 +359,10 @@
 								<div class="table-row">
 									<div class="input-group table-cell d-flex" id="chkArea">
 										<div class="d-flex justify-content-center py-2" id="gender">
-											<input type="radio" class="btn-check" name="gender" id="man" value="m" autocomplete="off" checked> <label class="btn btn-outline-secondary left-label" for="man">남자</label> 
-											<input type="radio" class="btn-check" name="gender" id="woman" value="w" autocomplete="off"> <label class="btn btn-outline-secondary right-label" for="woman">여자</label>
+											<input type="radio" class="btn-check" name="gender" id="man" value="m" autocomplete="off" checked> <label class="btn btn-outline-secondary left-label" for="man">남자</label> <input type="radio" class="btn-check" name="gender" id="woman" value="w" autocomplete="off"> <label class="btn btn-outline-secondary right-label" for="woman">여자</label>
 										</div>
 										<div class="d-flex justify-content-center py-2" id="nationality">
-											<input type="radio" class="btn-check" name="nationality" id="local" value="l" autocomplete="off" checked> <label class="btn btn-outline-secondary left-label" for="local">내국인</label> 
-											<input type="radio" class="btn-check" name="nationality" id="foreigner" value="f" autocomplete="off"> <label class="btn btn-outline-secondary right-label" for="foreigner">외국인</label>
+											<input type="radio" class="btn-check" name="nationality" id="local" value="l" autocomplete="off" checked> <label class="btn btn-outline-secondary left-label" for="local">내국인</label> <input type="radio" class="btn-check" name="nationality" id="foreigner" value="f" autocomplete="off"> <label class="btn btn-outline-secondary right-label" for="foreigner">외국인</label>
 										</div>
 									</div>
 								</div>
@@ -451,24 +449,23 @@
     $(document).on("keyup", "#createAccountArea #userId", function () {
 
         let regexId = /^[a-z0-9_-]{5,20}$/;
-        let id = $("#createAccountArea #userId").val();
-        let $id = $("#createAccountArea #userId");
+        let userId = $("#createAccountArea #userId").val();
+        let $userId = $("#createAccountArea #userId");
 
         $('[id^="state"]').css("display", "none");
 
-        if (id.length != 0) { // 값이 있을때
+        if (userId.length != 0) { // 값이 있을때
         	
-            if (!regexId.test(id)) { // 조건에 맞지 않는 경우
+            if (!regexId.test(userId)) { // 조건에 맞지 않는 경우
                 $("#checkIcon .fa-xmark").css("display", "");
                 $("#checkIcon .fa-check").css("display", "none");
 
             } else {  // 조건에 맞는 경우
 				// 아이디 중복검사 ajax 실행            	
             	$.ajax({
-            		url : '/auth/existsUserId',
-            		data: {
-            			userId : id
-            			},success:function(result){
+            		type : "GET",
+            		url : "/auth/users/id/" + userId + "/exists",
+            		success:function(result){
             				console.log("아이디 중복체크 ajax 성공!");
             				
             				if(result){ // 중복된 아이디 
@@ -479,6 +476,7 @@
 				                $("#checkIcon .fa-check").css("display", "");
             				}
             			},error:function(){
+            				console.log(userId);
             				console.log("아이디 중복체크 ajax 실패!");
             			}
             	})
@@ -489,47 +487,46 @@
     $(document).on("blur", "#createAccountArea #userId", function () {
 
         let regexId = /^[a-z0-9_-]{5,20}$/;
-        let id = $("#createAccountArea #userId").val();
-        let $id = $("#createAccountArea #userId");
+        let userId = $("#createAccountArea #userId").val();
+        let $userId = $("#createAccountArea #userId");
 
         $('#msgArea1 [id^="id"]').css("display", "none");
 
-        if (id.length == 0) { // 값이 없을때
+        if (userId.length == 0) { // 값이 없을때
             $("#msgArea1 #id1").css("display", "block");
             $("#checkIcon .fa-xmark").css("display", "");
             $("#checkIcon .fa-check").css("display", "none");
-            $id.parent().removeClass("success");
-            $id.parent().addClass("error");
+            $userId.parent().removeClass("success");
+            $userId.parent().addClass("error");
         } else { // 값이 있을때
 
-            if (!regexId.test(id)) { // 조건에 맞지 않는 경우
+            if (!regexId.test(userId)) { // 조건에 맞지 않는 경우
                 $("#msgArea1 #id2").css("display", "block");
                 $("#checkIcon .fa-xmark").css("display", "");
                 $("#checkIcon .fa-check").css("display", "none");
-                $id.parent().removeClass("success");
-                $id.parent().addClass("error");
+                $userId.parent().removeClass("success");
+                $userId.parent().addClass("error");
 
             } else { // 조건에 맞는 경우
             
 				// 아이디 중복검사 ajax 실행            	
             	$.ajax({
-            		url : '/auth/existsUserId',
-            		data: {
-            			userId : id
-            			},success:function(result){
+            		type : "GET",
+            		url : "/auth/users/id/" + userId + "/exists",
+            		success:function(result){
             				console.log("아이디 중복체크 ajax 성공!");
             				
             				if(result){ // 중복된 아이디 
             	                $("#msgArea1 #id3").css("display", "block");
             	                $("#checkIcon .fa-xmark").css("display","");
             	                $("#checkIcon .fa-check").css("display","none");
-            	                $id.parent().removeClass("success");
-            	                $id.parent().addClass("error");
+            	                $userId.parent().removeClass("success");
+            	                $userId.parent().addClass("error");
             				}else{
             	                $("#checkIcon .fa-xmark").css("display", "none");
             	                $("#checkIcon .fa-check").css("display", "");
-            	                $id.parent().removeClass("error");
-            	                $id.parent().addClass("success");
+            	                $userId.parent().removeClass("error");
+            	                $userId.parent().addClass("success");
             				}
             			},error:function(){
             				console.log("아이디 중복체크 ajax 실패!");
@@ -606,10 +603,9 @@
                 console.log("ajax실행");
             	
 	            	$.ajax({
-	            		url : '/auth/existsNickname',
-	            		data: {
-	            			nickname : nickname
-	            			},success:function(result){
+	            		type : "GET",
+	            		url : "/auth/users/nickname/" + nickname + "/exists",
+	           			success:function(result){
 	            				console.log("닉네임 중복체크 ajax 성공!");
 	            				
 	            				if(result){ // 중복된 닉네임 
@@ -785,7 +781,7 @@
             // 회원가입 ajax 실행
              $.ajax({
             	type: "POST",
-            	url: "/auth/joinProc",
+            	url: "/auth/users",
             	data: JSON.stringify(data),
             	contentType: "application/json; charset=UTF-8",
             	dataType: "json"
