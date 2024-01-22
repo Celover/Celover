@@ -8,22 +8,22 @@ public class UserController {
 	
 	@GetMapping("/auth/joinForm")
 	public String joinForm() {
-		return "user/joinForm";
+		return "main/user/joinForm";
 	}
 
 	@GetMapping("/auth/loginForm")
 	public String loginForm() {
-		return "user/loginForm";
+		return "main/user/loginForm";
 	}
 	
 	@GetMapping("/auth/findId")
 	public String findId() {
-		return "user/findId";
+		return "main/user/findId";
 	}
 	
 	@GetMapping("/auth/findPassword")
 	public String findPassword() {
-		return "user/findPassword";
+		return "main/user/findPassword";
 	}
 	
 }
