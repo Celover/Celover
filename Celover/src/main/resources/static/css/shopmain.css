@@ -1,0 +1,129 @@
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        /* nav css start */
+        .feedPage a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+
+        .feedPage a:hover {
+            opacity: 1;
+        }
+
+        /* nav css end */
+        /* sideMenu CSS */
+        #myPage_menu h2 {
+            font-weight: 800;
+            margin-bottom: 10%;
+            margin-left: 10px;
+        }
+
+        #myPage_menu ul li * {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgb(102, 102, 102);
+        }
+
+        #myPage_menu ul li:hover {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul li:hover * {
+            color: purple;
+        }
+
+        #myPage_menu ul .act {
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul .act * {
+            background-color: rgb(250, 250, 250);
+            color: purple;
+        }
+
+        #myPage_menu ul li .fas {
+            line-height: 1.5;
+        }
+
+        /* sideMenu CSS 끝 */
+
+        /* product css 시작 */
+        .product-list div{
+            margin: auto;
+        }
+        .product-list-wrap{
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .produdct-list-innerwrap{
+            width: 100%;
+            height: 100%;
+        }
+        .product-list-title{
+            padding-left: 7%;
+        }
+        .product-list-thumbnail img{
+            display: block;
+            margin: auto;
+            width: 235px;
+            height: 265px;
+        }
+        .product-category{
+            color: gray;
+        }
+        .product-category:hover{
+            cursor: pointer;
+        }
+        .product-list-title-rating{
+            padding-bottom: 15px;
+        }
+        .product-name{
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .product-price{
+            font-size: 13px;
+            font-weight: 700;
+        }
+        .product-watting{
+            height: 300px;
+            display: block;
+            margin: auto;
+        }
+        /* product css 종료 */
+
+        /* top banner slider css start */
+        .slick-slide {
+            transform: scale(0.8);
+            transition: all 0.4 ease-in-out;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.2);
+            opacity: 1;
+            z-index: 1;
+        }
+        .slick-track{
+            margin-top: 20px;
+        }
+        .shop-main-banner-wrap{
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+        /* top banner slider css end */

@@ -490,53 +490,6 @@
                         </div>
                     </div>
                 </div>
-                                <!--푸터 시작-->
-                <div class="container-fluid" id="footer">
-                    <div class="container">
-                        <br>
-                        <div class="footer_title">
-                            <h2>
-                                Celover
-                                <em>since 2023.12.13</em>
-                            </h2>
-                        </div>
-                        <div class="footer_content">
-                            <div class="footer_navbar">
-                                <ul class="">
-                                    <li class="">
-                                        <a>이용약관&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>서비스운영정책&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>유료서비스 이용약관&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>청소년 보호 정책&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>개인정보처리방침&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>쿠키정책&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a>쿠키 설정&nbsp;|&nbsp;</a>
-                                    </li>
-                                    <li class="">
-                                        <a> 입점 신청</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="copyright">
-                            <span>Copyright 2023.CELOVER.All rights reserverd.</span>
-                        </div>
-                        <br>
-                    </div>
-                </div>
-                <!--푸터 종료-->
             </div>
         </div>
         <!--채팅장 종료-->
@@ -697,5 +650,9 @@
         })
 
     </script>
+
+
+<%@ include file="../../../layout/footer.jsp" %>
+
 </body>
 </html>

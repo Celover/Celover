@@ -1,0 +1,158 @@
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+        /* nav css start */
+        .feedPage a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+
+        .feedPage a:hover {
+            opacity: 1;
+        }
+
+        /* nav css end */
+
+        /*미디어 바디 시작*/
+        .media-body{
+            padding-top: 20px !important;
+            padding-left: 60px !important;
+            padding-right: 60px !important;
+            padding-bottom: 20px !important;
+
+        }
+        .media-body-view iframe{
+            border-radius: 20px;
+        }
+        .media-body-reply{
+            padding: 10px;
+            padding-top: 0px;
+            box-sizing: border-box;
+        }
+        .media-body-reply-detail{
+            border-radius: 20px;
+        }
+        .media-category-title-name h3{
+            margin-bottom: 0px;
+        }
+        .media-category-title-moreview{
+            line-height: 31px;
+        }
+        .media-list{
+            margin-bottom: 20px;
+        }
+        .media-list img{
+            border-radius: 20px;
+            display: block;
+            margin: auto;
+            height: 185px;
+            width: 90%;
+            box-shadow: 1px 1px 10px lightgray;
+        }
+        .media-list img:hover{
+            transform: scale(1.02);
+            transition: all 0.1s linear;
+        }
+        .media-list-thumbname{
+            width: 90%;
+            margin: auto;
+            padding-top: 5px;
+        }
+        .media-list-thumbname:hover{
+            cursor: pointer;
+        }
+        .media-type{
+            margin: auto;
+            width: 90%;
+            font-weight: bolder;
+        }
+        .media-type, .media-type *{
+            color: gray;
+        }
+        .media-new{
+            color: blue;
+            font-weight: bolder;
+        }
+        .media-hot{
+            color: red;
+            font-weight: bolder;
+        }
+        .media-category-title-moreview a:hover{
+            font-weight: bolder;
+        }
+        .media-body-title-coment-main-user-img{
+            height: 100%;
+            border-radius: 20px;
+            display: block;
+        }
+        .media-body-username-createdate{
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .media-body-title-body-coment{
+            padding: 10px;
+        }
+        .media-body-title-body-coment a{
+            color: #08ccca;
+            font-weight: 700;
+        }
+        .media-body-title-hashTag{
+            padding-top: 10px;
+        }
+        .media-body-title-hashTag a{
+            margin: 3px;
+        }
+        .media-body-reply-detail{
+            box-shadow: 1px 1px 20px lightgray;
+            height: 100%;
+            padding: 5px;
+        }
+        .media-body-reply-detail-header, .media-body-reply-detail-footer{
+            height: 6%;
+        }
+        .media-body-reply-detail-body{
+            height: 600px;
+            overflow: scroll;
+        }
+        .media-body-reply-detail-body::-webkit-scrollbar{
+            display: none;
+        }
+        .media-body-reply-detail-body-wrap{
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+        }
+        .media-body-reply-detail-body-userImg{
+            height: 35px;
+            margin: auto;
+        }
+        .media-body-reply-detail-body-userImg img{
+            height: 35px;
+            border-radius: 50px;
+        }
+        .media-body-coment, .media-body-etc-like_share{
+            padding-left: 50px;
+        }
+        .media-reply-body-username{
+            font-weight: 700;
+        }
+        .media-reply-body-create_date{
+            color: gray;
+            font-weight: 700;
+        }
+        .reply_insert_box{
+            background-color: #f4f6f8;
+            border-width: 0;
+        }
+        .reply_insert_box::placeholder{
+            padding-left: 20px;
+            font-weight: 600;
+        }
+        /*미디어 바디 종료*/

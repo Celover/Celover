@@ -14,5 +14,28 @@ public class MainController {
 	public String fanfeedMain() {
 		return "main/fanpage/feed/feedmain";
 	}
-	
+	@GetMapping("/fanpage/artist")
+	public String fanfeedArtist() {
+		return "main/fanpage/feed/feed-artist";
+	}
+	@GetMapping("/fanpage/media")
+	public String fanMedia() {
+		return "main/fanpage/media/mediamain";
+	}
+	@GetMapping("/fanpage/schedule")
+	public String fanSchedule() {
+		return "main/fanpage/calendar/calendar";
+	}
+	@GetMapping("/fanpage/shop")
+	public String fanShop() {
+		return "main/fanpage/shop/shopmain";
+	}
+	@GetMapping("/fanpage/shop/detail")
+	public String fanShopDetail() {
+		return "main/fanpage/shop/shop-detail";
+	}
+	@GetMapping("/fanpage/media/detail")
+	public String fanMediaDetail() {
+		return "main/fanpage/media/media-detail";
+	}
 }

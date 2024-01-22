@@ -1,0 +1,114 @@
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        /* nav css start */
+        .feedPage a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+
+        .feedPage a:hover {
+            opacity: 1;
+        }
+
+        /* nav css end */
+
+        /* 바디 css start */
+
+        .media-main{
+            border: 0px solid red;
+        }
+        .media-main div{
+            border: 0px solid blue;
+        }
+        .media-list{
+            padding: 5px;
+            height: 100%;
+        }
+        .media-title-img{
+            width: 420px;
+            height: 420px;
+            border-radius: 20px;
+            box-shadow: 2px 2px 20px lightgrey;
+            transition: all 0.1s linear;
+        }
+        .media-title-img:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+        .media-category-group{
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+        .media-category{
+            border-radius: 20px;
+            font-size: small;
+            height: 40px;
+            padding: 10px 12px;
+            margin: 7px;
+            margin-top: 10px;
+            box-shadow: 1px 1px 10px lightgrey;
+            font-weight: bolder;
+            background-color: #eeeef1;
+            color: black;
+            border: 0px;
+        }
+        .media-category:hover{
+            transform: scale(1.05);
+        }
+        .media-category-title-name h3{
+            margin-bottom: 0px;
+        }
+        .media-category-title-moreview{
+            line-height: 31px;
+        }
+        .media-list img{
+            border-radius: 20px;
+            border: 0px solid red;
+            display: block;
+            margin: auto;
+            height: 185px;
+            width: 90%;
+            box-shadow: 1px 1px 10px lightgray;
+        }
+        .media-list img:hover{
+            transform: scale(1.02);
+            transition: all 0.1s linear;
+        }
+        .media-list-thumbname{
+            width: 90%;
+            margin: auto;
+            padding-top: 5px;
+        }
+        .media-list-thumbname:hover{
+            cursor: pointer;
+        }
+        .media-type{
+            margin: auto;
+            width: 90%;
+            font-weight: bolder;
+        }
+        .media-type, .media-type *{
+            color: gray;
+        }
+        .media-new{
+            color: blue;
+            font-weight: bolder;
+        }
+        .media-hot{
+            color: red;
+            font-weight: bolder;
+        }
+        .media-category-title-moreview a:hover{
+            font-weight: bolder;
+        }
+        .media-list img:hover{
+			cursor: pointer;
+		}
+        /* 바디 css end */
