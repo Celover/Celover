@@ -6,13 +6,11 @@
 <title>Insert title here</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <!-- jQuery library -->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
 <!-- Popper JS -->
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -20,7 +18,7 @@
 
 <!-- fontawesome -->
 <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
-<link rel="stylesheet" type="text/css" href="fontawesome-free-6.5.1-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/all.min.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -128,24 +126,24 @@
 					<p class="sub-title text-secondary">Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.</p>
 				</div>
 				<div class="login-body py-2 px-4">
-					<form action="로그인.do">
+					<form action="/auth/login" method="post">
 						<div id="idArea" class="input-group flex-nowrap my-1">
-							<span class="input-group-text" id="addon-wrapping"> <img src="/Img/id_icon.png" alt="">
-							</span> <input type="text" class="form-control" placeholder="아이디" aria-label="Username" aria-describedby="addon-wrapping">
+							<span class="input-group-text" id="addon-wrapping"> <img src="/img/id_icon.png" alt="">
+							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디">
 						</div>
 						<div id="pwdArea" class="input-group flex-nowrap my-2">
-							<span class="input-group-text" id="addon-wrapping"> <img src="/Img/password_icon.png" alt="">
-							</span> <input type="password" class="form-control" placeholder="비밀번호" aria-label="password" aria-describedby="addon-wrapping">
+							<span class="input-group-text" id="addon-wrapping"> <img src="/img/password_icon.png" alt="">
+							</span> <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호">
 						</div>
 						<div class="d-grid mt-4">
 							<div class="find-account mb-2">
-								<a href="/auth/findId">아이디 찾기</a> / <a href="/auth/findPassword">비밀번호 찾기</a>
+								<a href="/auth/find-id">아이디 찾기</a> / <a href="/auth/find-password">비밀번호 찾기</a>
 							</div>
 							<div class="login-account d-grid gap-2">
-								<button class="btn btn-primary" type="button">로그인</button>
+								<button class="btn btn-primary" id="signIn">로그인</button>
 							</div>
 							<div class="create-accout m-4">
-								아직 회원이 아니신가요? <a href="/auth/joinForm">회원가입</a>
+								아직 회원이 아니신가요? <a href="/auth/join-form">회원가입</a>
 							</div>
 						</div>
 					</form>
@@ -158,7 +156,7 @@
 							<div class="col-md-3">
 								<div class="social-btn p-2">
 									<div class="img-area">
-										<img src="/Img/구글로그인버튼.png" style="border: 1px solid #dee2e6; border-radius: 50%;" alt="">
+										<img src="/img/구글로그인버튼.png" style="border: 1px solid #dee2e6; border-radius: 50%;" alt="">
 									</div>
 									<div class="text-area mt-1">구글로 로그인</div>
 								</div>
@@ -166,7 +164,7 @@
 							<div class="col-md-3">
 								<div class="social-btn p-2">
 									<div class="img-area">
-										<img src="/Img/네이버로그인버튼.png" alt="">
+										<img src="/img/네이버로그인버튼.png" alt="">
 									</div>
 									<div class="text-area mt-1">네이버로 로그인</div>
 								</div>
@@ -174,7 +172,7 @@
 							<div class="col-md-3">
 								<div class="social-btn p-2">
 									<div class="img-area">
-										<img src="/Img/카카오로그인버튼.png" alt="">
+										<img src="/img/카카오로그인버튼.png" alt="">
 									</div>
 									<div class="text-area mt-1">카카오로 로그인</div>
 								</div>
@@ -188,5 +186,46 @@
 		</div>
 
 	</div>
+	<script>
+	/* 	$(function(){
+			$("#loginForm").submit(function(){
+				
+				event.preventDefault();
+				let data = {
+						userId : $("#userId").val(),
+						password : $("#password").val()
+					};
+				if(data.userId == ""){
+					alert("아이디를 입력해주세요.");
+					$("#userId").focus();
+					return;
+				}
+				
+				if(data.password ==""){
+					alert("비밀번호를 입력해주세요.");
+					$("#password").focus();
+					return;
+				}
+				if(data.userId != "" && data.password !=""){
+
+					$.ajax({
+						type: "POST",
+		            	url: "/auth/login",
+		            	data: JSON.stringify(data),
+		            	contentType: "application/json; charset=UTF-8",
+		            	dataType: "json",
+		            	success:function(data){
+		            		console.log(data)
+		            	}
+					})
+					console.log(data);	
+						
+				}
+				
+				
+			})
+		}) */
+	</script>
+	
 </body>
 </html>

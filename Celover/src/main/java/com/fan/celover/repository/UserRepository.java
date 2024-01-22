@@ -14,6 +14,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	// 닉네임 존재 여부 true, false 반환
 	boolean existsByNickname(String nickname);
 
+	// 아이디 User 반환
 	Optional<User> findByUserId(String userId);
 	
 }

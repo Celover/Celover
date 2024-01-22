@@ -1,3 +1,10 @@
+## 디버깅 로그 레벨 조절
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: DEBUG
+
 server:
   port: 8888
   servlet:

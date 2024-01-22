@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
 
 <!DOCTYPE html>
 <html>
@@ -180,14 +185,19 @@ body {
 						</table>
 
 					</div>
-					<li class="nav-item sign-in-btn"><a href="/auth/loginForm">Sign-in</a></li>
-					<!-- 
-					<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/게시판.png" alt=""></a></li>
-					<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/랭킹.png" alt=""></a></li>
-					<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/사람.png" alt=""></a></li>
-					<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/고객센터.png" alt=""></a></li>
-					<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="img/햄버거.png" alt=""></a></li>
-					 -->
+					<c:choose>
+						<c:when test="${ empty principal }">
+							<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
+						</c:when>
+						<c:otherwise>
+							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/게시판.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/랭킹.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/사람.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
+							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/고객센터.png" alt=""></a></li>
+							<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="img/햄버거.png" alt=""></a></li>
+						</c:otherwise>
+					</c:choose>
 				</ul>
 
 
