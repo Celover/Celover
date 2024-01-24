@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+/* 로그인 css */
+#loginArea {
+	height: 100vh;
+	text-align: center;
+}
+
+#loginArea>div {
+	width: 600px;
+}
+
+#loginArea .login-header .title {
+	text-decoration: none;
+	color: black;
+	font-family: 'Bruno Ace', serif;
+	font-size: 56px;
+	font-weight: 800;
+}
+
+#loginArea .login-header .title:hover {
+	cursor: pointer;
+}
+
+#loginArea .login-header .sub-title {
+	font-size: small;
+	margin: 0%;
+}
+
+#loginArea .login-body form .input-group {
+	height: 60px;
+	font-size: large;
+}
+
+#loginArea .login-body form .input-group span {
+	background-color: #fff;
+}
+
+#loginArea .login-body form .input-group span img {
+	width: 20px;
+	height: 20px;
+}
+
+#loginArea .login-body form .input-group input {
+	border-left: none;
+}
+
+#loginArea .login-body form .find-account {
+	text-align: right;
+	font-size: small;
+}
+
+#loginArea .login-body form .find-account a {
+	color: black;
+	text-decoration: none;
+}
+
+#loginArea .login-body form .login-account button {
+	font-size: x-large;
+	height: 60px;
+}
+
+#loginArea .login-body form .create-accout {
+	font-size: small;
+}
+
+#loginArea .login-footer>div {
+	border-top: 1px solid #dee2e6;
+}
+
+#loginArea .login-footer .col-md-3>div:hover {
+	border-radius: 7px;
+}
+
+#loginArea .login-footer .col-md-3>div:hover {
+	cursor: pointer;
+	background-color: #dee2e6;
+}
+
+#loginArea .login-footer>div>p {
+	font-size: large;
+	font-weight: 800;
+}
+
+#loginArea .login-footer>div .img-area img {
+	width: 35px;
+}
+
+#loginArea .login-footer>div .text-area {
+	line-height: 35px;
+	font-size: small;
+}
+
+/* 로그인 css 끝 */

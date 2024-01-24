@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/* sideMenu CSS */
+#myPageMenu h2 {
+	font-weight: 800;
+	margin-bottom: 10%;
+	margin-left: 10px;
+}
+
+#myPageMenu ul li * {
+	text-decoration: none;
+	font-weight: 600;
+	color: rgb(102, 102, 102);
+}
+
+#myPageMenu ul li:hover {
+	cursor: pointer;
+	background-color: rgb(250, 250, 250);
+}
+
+#myPageMenu ul li:hover * {
+	color: purple;
+}
+
+#myPageMenu ul .act {
+	background-color: rgb(250, 250, 250);
+}
+
+#myPageMenu ul .act * {
+	background-color: rgb(250, 250, 250);
+	color: purple;
+}
+
+#myPageMenu ul li .fas {
+	line-height: 1.5;
+}
+
+/* sideMenu CSS 끝 */
+
+/* myPage 본문영역 CSS */
+#myPageContent {
+	padding: 0% 0% 3% 3%;
+}
+
+#myPageContent div>h4 {
+	font-weight: 600;
+}
+
+#myPageContent div>hr {
+	height: 2px;
+	border: 0;
+	background: black;
+	opacity: 1;
+}
+/* myPage 본문영역 CSS 끝 */

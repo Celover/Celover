@@ -17,116 +17,26 @@
 
 
 <!-- fontawesome -->
-<!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
 <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/all.min.css">
 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
-<style>
-/* 로그인 css */
-#loginArea {
-	height: 100vh;
-	text-align: center;
-}
 
-#loginArea>div {
-	width: 600px;
-}
+<link rel="stylesheet" type="text/css" href="/css/loginForm.css">
 
-#loginArea .login-header .title {
-	font-family: 'Bruno Ace', serif;
-	font-size: 56px;
-	font-weight: 800;
-}
-
-#loginArea .login-header .title:hover {
-	cursor: pointer;
-}
-
-#loginArea .login-header .sub-title {
-	font-size: small;
-	margin: 0%;
-}
-
-#loginArea .login-body form .input-group {
-	height: 60px;
-	font-size: large;
-}
-
-#loginArea .login-body form .input-group span {
-	background-color: #fff;
-}
-
-#loginArea .login-body form .input-group span img {
-	width: 20px;
-	height: 20px;
-}
-
-#loginArea .login-body form .input-group input {
-	border-left: none;
-}
-
-#loginArea .login-body form .find-account {
-	text-align: right;
-	font-size: small;
-}
-
-#loginArea .login-body form .find-account a {
-	color: black;
-	text-decoration: none;
-}
-
-#loginArea .login-body form .login-account button {
-	font-size: x-large;
-	height: 60px;
-}
-
-#loginArea .login-body form .create-accout {
-	font-size: small;
-}
-
-#loginArea .login-footer>div {
-	border-top: 1px solid #dee2e6;
-}
-
-#loginArea .login-footer .col-md-3>div:hover {
-	border-radius: 7px;
-}
-
-#loginArea .login-footer .col-md-3>div:hover {
-	cursor: pointer;
-	background-color: #dee2e6;
-}
-
-#loginArea .login-footer>div>p {
-	font-size: large;
-	font-weight: 800;
-}
-
-#loginArea .login-footer>div .img-area img {
-	width: 35px;
-}
-
-#loginArea .login-footer>div .text-area {
-	line-height: 35px;
-	font-size: small;
-}
-
-/* 로그인 css 끝 */
-</style>
 </head>
 <body>
 	<div class="container-fluid">
 		<div id="loginArea" class="container d-flex align-items-center">
 			<div class="m-auto">
 				<div class="login-header">
-					<h2 class="title">Celover</h2>
+					<a class="title" href="/">Celover</a>
 					<p class="sub-title text-secondary">Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.</p>
 				</div>
 				<div class="login-body py-2 px-4">
-					<form action="/auth/login" method="post">
+					<form action="/auth/login" method="post" id="loginForm">
 						<div id="idArea" class="input-group flex-nowrap my-1">
 							<span class="input-group-text" id="addon-wrapping"> <img src="/img/id_icon.png" alt="">
 							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디">
@@ -186,46 +96,7 @@
 		</div>
 
 	</div>
-	<script>
-	/* 	$(function(){
-			$("#loginForm").submit(function(){
-				
-				event.preventDefault();
-				let data = {
-						userId : $("#userId").val(),
-						password : $("#password").val()
-					};
-				if(data.userId == ""){
-					alert("아이디를 입력해주세요.");
-					$("#userId").focus();
-					return;
-				}
-				
-				if(data.password ==""){
-					alert("비밀번호를 입력해주세요.");
-					$("#password").focus();
-					return;
-				}
-				if(data.userId != "" && data.password !=""){
-
-					$.ajax({
-						type: "POST",
-		            	url: "/auth/login",
-		            	data: JSON.stringify(data),
-		            	contentType: "application/json; charset=UTF-8",
-		            	dataType: "json",
-		            	success:function(data){
-		            		console.log(data)
-		            	}
-					})
-					console.log(data);	
-						
-				}
-				
-				
-			})
-		}) */
-	</script>
 	
+	<script type="text/javascript" src="/js/loginForm.js"></script>
 </body>
 </html>

@@ -31,133 +31,7 @@
 
 <meta name=" viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-
-<style>
-/* header css start */
-@media screen and (min-width: 930px) {
-	/* 930px 이상 */
-	.dropdown-area .dropdown-menu {
-		display: none;
-	}
-	.header-nav .mn-930 {
-		display: none;
-	}
-	.dropdown-area:has(.dm-active) {
-		height: 0px;
-	}
-}
-
-@media screen and (max-width: 930px) {
-	/* 930px 이하 */
-	.header-nav .mx-930 {
-		display: none;
-	}
-	.dropdown-area:has(.dm-active) {
-		height: 301px;
-	}
-}
-
-@media screen and (max-width: 610px) {
-	/* 930px 이하 */
-	#searchArea {
-		display: none;
-	}
-}
-
-body {
-	padding: 0px;
-}
-
-.container-fluid {
-	padding: 0 !important;
-}
-
-.header-nav {
-	position: sticky;
-	top: 0px;
-	z-index: 10;
-	background-color: white;
-}
-
-.header-nav a {
-	text-decoration: none;
-	color: black;
-}
-
-.header-nav .nav-item {
-	width: 70px;
-	text-align: center;
-	padding: 6.5px 0px;
-}
-
-.header-nav .sign-in-btn {
-	width: auto;
-	padding: 0;
-}
-
-.header-nav .sign-in-btn a{
-	display:inline-block;
-	line-height: 45px; 
-	font-size: 18px;
-	border: none;
-	border-radius: 20px;
-	color: #fff;
-	font-weight: 800;
-	padding: 0px 24px;
-	background: linear-gradient(134deg,#07d8e2 54.07%,#35e99d 99.24%);
-}
-
-.header-nav .nav-item img {
-	width: 32px;
-	height: 32px;
-}
-
-.mx-930 .header_btn:hover {
-	transform: scale(1.2);
-}
-
-.header-nav input:focus {
-	outline: none;
-}
-
-.mainLogo:hover {
-	cursor: pointer;
-}
-
-.dm-active {
-	display: block;
-}
-
-.dropdown-area .dropdown-menu {
-	width: 100%;
-	border: none;
-}
-
-.dropdown-area .dropdown-menu li {
-	padding: 7px;
-	font-size: 20px;
-	border-bottom: 1px solid #dee2e6;
-}
-
-.dropdown-area .dropdown-menu li a {
-	font-weight: 800;
-}
-
-.dropdown-areav .dropdown-menu li:hover {
-	background-color: #dee2e6;
-}
-
-.dropdown-area .dropdown-menu li a:hover {
-	background-color: #dee2e6;
-}
-
-.dropdown-area .dropdown-menu li .dropdown-item img {
-	width: 32px;
-	height: 32px;
-}
-
-/* header css end */
-</style>
+<link rel="stylesheet" type="text/css" href="/css/header.css">
 
 </head>
 <body>
@@ -190,9 +64,9 @@ body {
 							<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/게시판.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="img/게시판.png" alt=""></a></li>
 							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/랭킹.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/사람.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/mypage-form"><img class="header_btn" src="img/사람.png" alt=""></a></li>
 							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
 							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/고객센터.png" alt=""></a></li>
 							<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="img/햄버거.png" alt=""></a></li>
@@ -221,12 +95,6 @@ body {
 
 		</ul>
 	</div>
-
-	<script>
 	
-		$(document).on("click", ".header-nav .mn-930", function() {
-
-			$(".dropdown-area .dropdown-menu").toggleClass("dm-active")
-		})
-	</script>
+	<script type="text/javascript" src="/js/header.js"></script>
 	<!-- 헤더 끝 -->

@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -26,100 +28,34 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/findPassword.css">
 
-<style>
-/* 로그인 css */
-#findAccountArea {
-	height: 100vh;
-	text-align: center;
-}
-
-#findAccountArea>div {
-	width: 600px;
-}
-
-#findAccountArea .header .title {
-	font-family: 'Bruno Ace', serif;
-	font-size: 56px;
-	font-weight: 800;
-}
-
-#findAccountArea .header .title:hover {
-	cursor: pointer;
-}
-
-#findAccountArea .header .sub-title {
-	font-size: small;
-	margin: 0%;
-}
-
-#findAccountArea .body * {
-	font-size: 12px;
-}
-
-#findAccountArea .body .nav-tabs a {
-	color: black;
-}
-
-#findAccountArea .body .row [class^="col-sm"] {
-	padding: 0px 3px;
-}
-
-#findAccountArea .body #findIdArea {
-	border: 1px solid #dee2e6;
-	border-top: 0px;
-	border-bottom-left-radius: 0.375rem;
-	border-bottom-right-radius: 0.375rem;
-}
-
-#findAccountArea .body #findIdArea #authPhone, #findAccountArea .body #findIdArea #authEmail
-	{
-	text-align: left;
-	font-size: 18px;
-}
-
-#findAccountArea .body #findIdArea #authPhone label, #findAccountArea .body #findIdArea #authEmail label
-	{
-	font-size: 20px;
-}
-
-#findAccountArea .body #findIdArea #authPhone label span,
-	#findAccountArea .body #findIdArea #authEmail label span {
-	display: block;
-	font-size: xx-small;
-}
-
-#findAccountArea .body #findIdArea #authPhone label span,
-	#findAccountArea .body #findIdArea .row {
-	align-items: center;
-}
-/* 로그인 css 끝 */
-</style>
 </head>
+
 <body>
 	<div class="container-fluid">
 
 		<div id="findAccountArea" class="container d-flex align-items-center">
 			<div class="m-auto">
 				<div class="header">
-					<h2 class="title">Celover</h2>
+					<a class="title" href="/">Celover</a>
 					<p class="sub-title text-secondary">Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.</p>
 				</div>
 
 				<div class="body py-4 px-4">
 					<div>
 						<ul class="nav nav-tabs">
-							<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">아이디 찾기</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">비밀번호 찾기</a></li>
+							<li class="nav-item"><a class="nav-link" aria-current="page" href="/auth/find-id">아이디 찾기</a></li>
+							<li class="nav-item"><a class="nav-link active" href="#">비밀번호 찾기</a></li>
 						</ul>
 					</div>
 
 
 
-					<div class="p-4" id="findIdArea">
+					<div class="p-4" id="findPwArea">
 
 						<div id="authPhone" class="form-check mb-3">
-							<input class="form-check-input" type="radio" name="auth_method" id="authPhoneBtn" checked style="zoom: 1.8;"> <label class="form-check-label" for="authPhoneBtn"> 회원정보에 등록한 휴대전화로 인증 <span class="toggle-area">회원정보에 등록한 휴대전화 번호와 입력한 휴대전화 번호가 같아야, 인증번호를 받을 수 있습니다.</span>
+							<input class="form-check-input" type="radio" name="auth_method" id="authPhoneBtn" checked style="zoom: 1.8;"> <label class="form-check-label" for="authPhoneBtn"> 회원정보에 등록한 휴대전화로 인증 <span class="toggle-area" style="color: #09aa5c; font-weight: 600;">(+** 1*-6***-1***)</span> <span class="toggle-area">회원정보에 등록한 휴대전화 번호와 입력한 휴대전화 번호가 같아야, 인증번호를 받을 수 있습니다.</span>
 							</label>
 						</div>
 
@@ -160,7 +96,7 @@
 
 
 						<div id="authEmail" class="form-check mb-3">
-							<input class="form-check-input" type="radio" name="auth_method" id="authEmailBtn" style="zoom: 1.8;"> <label class="form-check-label" for="authEmailBtn"> 본인확인 이메일로 인증 <span class="toggle-area" style="display: none;">본인확인 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.</span>
+							<input class="form-check-input" type="radio" name="auth_method" id="authEmailBtn" style="zoom: 1.8;"> <label class="form-check-label" for="authEmailBtn"> 본인확인 이메일로 인증<br> <span class="toggle-area" style="display: none; color: #09aa5c; font-weight: 600;">(lw****@n*****.com)</span> <span class="toggle-area" style="display: none;">본인확인 이메일 주소와 입력한 이메일 주소가 같아야, 인증번호를 받을 수 있습니다.</span>
 							</label>
 						</div>
 
@@ -209,19 +145,9 @@
 
 	</div>
 
-	<script>
-        $(document).on("click",".form-check-input:radio",function(){
-            
-            $(".toggle-area").css("display","none")
-            $(this).parent().next().css("display","");
-            $(this).next().children("span").css("display","");
-        })
-
-
-        
-
-    </script>
+	<script type="text/javascript" src="/js/findPassword.js"></script>
 
 
 </body>
+
 </html>

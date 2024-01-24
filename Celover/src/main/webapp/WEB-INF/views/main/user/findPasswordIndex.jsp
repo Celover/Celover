@@ -19,7 +19,6 @@
 
 
 <!-- fontawesome -->
-<!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
 <link rel="stylesheet" href="/Celover/src/main/webapp/resources/fontawesome-free-6.5.1-web/css/all.min.css">
 
 
@@ -27,50 +26,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
 
-<style>
-/* 로그인 css */
-#findAccountArea {
-	height: 100vh;
-	text-align: center;
-}
+<link rel="stylesheet" type="text/css" href="/css/findPasswordindex.css">
 
-#findAccountArea>div {
-	width: 600px;
-}
 
-#findAccountArea .header .title {
-	font-family: 'Bruno Ace', serif;
-	font-size: 56px;
-	font-weight: 800;
-}
-
-#findAccountArea .header .title:hover {
-	cursor: pointer;
-}
-
-#findAccountArea .header .sub-title {
-	margin: 0%;
-	font-weight: 800;
-	color: black;
-}
-
-#findAccountArea .body input:focus {
-	box-shadow: none;
-	border: 1px solid #dee2e6;
-	border-left: none;
-	padding-left: 0px;
-}
-
-#findAccountArea .body input {
-	border-left: none;
-	padding-left: 0px;
-}
-
-#findAccountArea .body #etcArea a {
-	text-decoration: none;
-}
-/* 로그인 css 끝 */
-</style>
 </head>
 <body>
 	<div class="container-fluid">
@@ -78,7 +36,7 @@
 		<div id="findAccountArea" class="container d-flex align-items-center">
 			<div class="m-auto">
 				<div class="header">
-					<h2 class="title">Celover</h2>
+					<a class="title" href="/">Celover</a>
 					<p class="sub-title">비밀번호를 찾고자 하는 아이디를 입력해주세요.</p>
 				</div>
 
@@ -101,7 +59,7 @@
 					<div class="row mt-3">
 						<div class="col-sm-9 mx-auto" style="height: 54px;">
 							<div class="d-grid gap-2 h-100">
-								<button class="btn btn-primary btn-lg" type="button">다음</button>
+								<button onclick="location.href='/auth/find-password2'"  class="btn btn-primary btn-lg" type="button">다음</button>
 							</div>
 
 						</div>
@@ -111,7 +69,7 @@
 
 						<div class="col-sm-9 mx-auto">
 
-							<span> 아이디가 기억나지 않는다면? <a href="아이디찾기 페이지"> 아이디 찾기 </a>
+							<span> 아이디가 기억나지 않는다면? <a href="/auth/find-id"> 아이디 찾기 </a>
 							</span>
 						</div>
 

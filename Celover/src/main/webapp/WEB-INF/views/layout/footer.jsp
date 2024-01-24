@@ -1,55 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-<style>
-/* footer css */
-#footer {
-	background-color: #e9ecef;
-}
+<link rel="stylesheet" type="text/css" href="/css/footer.css">
 
-#footer .footer-title {
-	/* font-family: 'Lobster', serif;*/
-	font-family: 'Bruno Ace', serif;
-}
-
-#footer .footer-title>h2 {
-	font-size: 40px;
-	font-weight: 800;
-}
-
-#footer .footer-title>h2>em {
-	font-size: 12px;
-}
-
-#footer .footer-content>.footer-navbar {
-	font-weight: 600;
-	color: #666666;
-}
-
-#footer .footer-content ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-#footer .footer-content ul li {
-	display: inline-block;
-}
-
-#footer .footer-content>.footer-info {
-	font-size: small;
-	font-weight: 500;
-	color: #8e8e8e;
-}
-
-#footer .copyright {
-	font-size: medium;
-	font-weight: 500;
-	color: #8e8e8e;
-}
-
-/* footer css 끝 */
-</style>
-
-<br><br>
+<br>
+<br>
 
 <!-- footer -->
 <div class="container-fluid" id="footer">
@@ -102,7 +56,6 @@
 		</div>
 		<br>
 	</div>
-</div>
 </div>
 
 <!-- footer 끝 -->

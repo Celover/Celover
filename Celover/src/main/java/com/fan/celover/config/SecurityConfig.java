@@ -1,3 +1,4 @@
+
 package com.fan.celover.config;
 
 import org.springframework.context.annotation.Bean;
@@ -45,7 +46,6 @@ public class SecurityConfig {
                         .usernameParameter("userId")
                         .passwordParameter("password")
                         .defaultSuccessUrl("/", true)
-                        //.failureUrl()
                         .permitAll()
             );
 

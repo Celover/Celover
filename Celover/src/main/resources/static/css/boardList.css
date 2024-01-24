@@ -1,0 +1,176 @@
+@charset "UTF-8";
+
+#boardMain .container {
+	max-width: 1140px !important;
+}
+
+#boardMain #headerBanner #bannerImg {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+
+#boardMain #headerBanner #bannerImg::after {
+	border-radius: 0.75rem;
+	height: 100%;
+	width: 100%;
+	content: "";
+	background: url("https://okky.kr/pattern.svg");
+	background-size: 1016.8px;
+	background-position: right top 920px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	opacity: 0.2;
+}
+
+#boardMain #headerBanner #bannerImg #bannerContent .text-area h5 {
+	height: 28px;
+	font-size: 1.25rem;
+	margin: 0px;
+}
+
+#boardMain #headerBanner #bannerImg #bannerContent .text-area aside {
+	font-size: 0.875rem;
+}
+
+#boardMain #headerBanner #bannerContent .d-flex {
+	height: 80px;
+	max-width: 1140px;
+}
+
+#boardMain #headerBanner #bannerContent .img-area img {
+	height: 100px;
+	position: absolute;
+	bottom: 0px;
+	right: 40px;
+}
+
+#boardMain #boardNavigation {
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+#boardMain #boardNavigation>div:first-child {
+	border-bottom: 2px solid #dee2e6;
+}
+
+#boardMain #boardNavigation>div:last-child {
+	border-bottom: 3px solid #dee2e6;
+}
+
+#boardMain #boardNavigation .row {
+	align-items: center;
+}
+
+#boardMain #boardNavigation .nav-item * {
+	color: black;
+	font-weight: 500;
+}
+
+#boardMain #boardNavigation .nav-item :hover {
+	color: #0d6efd;
+}
+
+#boardMain #boardNavigation .nav-item {
+	padding: 0px 10px;
+}
+
+#boardMain #boardNavigation .nav-item a {
+	padding: 5px 0px;
+}
+
+#boardMain #boardNavigation .nav-item .active {
+	border-bottom: 3px solid #0d6efd;
+}
+
+#boardMain #boardNavigation #searchArea div {
+	border: 2px solid #dee2e6;
+	border-radius: 0.75rem;
+	padding: 5px 10px;
+	width: 230px;
+}
+
+#boardMain #boardNavigation #searchArea>div {
+	margin: auto;
+}
+
+#boardMain #boardNavigation #searchArea>div input {
+	border: none;
+	outline: none;
+}
+
+#boardMain #boardNavigation #refreshArea i {
+	font-size: large;
+}
+
+#boardMain #boardNavigation #topPaginationArea .disabled {
+	color: rgb(203, 213, 225);
+}
+
+#boardMain #boardList .boardItem {
+	border-top: 2px solid hsla(220, 9%, 46%, .3);
+}
+
+#boardMain #boardList .boardItem .left-area .top-area img {
+	margin-right: 4px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+
+#boardMain #boardList .boardItem .left-area .top-area span {
+	font-size: 12px;
+	display: block;
+}
+
+#boardMain #boardList .boardItem .left-area .top-area .create-date {
+	color: rgba(55, 65, 81, 0.8);
+}
+
+#boardMain #boardList .boardItem .left-area .middle-area:hover {
+	cursor: pointer;
+	color: #0d6efd;
+}
+
+#boardMain #boardList .boardItem .left-area .middle-area {
+	height: 24px;
+}
+
+#boardMain #boardList .boardItem .left-area .bottom-area {
+	height: 20px;
+	color: rgba(55, 65, 81, 0.8);
+	font-size: small;
+}
+
+#boardMain #boardList .boardItem .left-area .bottom-area span {
+	margin-right: 10px;
+}
+
+#boardMain #boardList .boardItem .right-area {
+	padding-top: 60px;
+}
+
+#boardMain #boardList .boardItem .right-area * {
+	font-size: small;
+}
+
+#boardMain #bottomArea * {
+	font-size: large;
+}
+
+#boardMain #bottomArea #bottomPaginationArea {
+	border-top: 3px solid #dee2e6;
+}
+
+#boardMain #bottomArea #bottomPaginationArea .pagenation-area button {
+	border: none;
+	background-color: #fff;
+	padding: 6px 12px;
+}
+
+#boardMain #bottomArea #bottomPaginationArea .pagenation-area .active {
+	color: #0d6efd;
+	border-top: 3px solid #0d6efd;
+}

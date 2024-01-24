@@ -1,0 +1,502 @@
+@charset "UTF-8";
+
+#mainPage .container {
+	max-width: 1140px !important;
+}
+
+.nav-item {
+	width: 80px;
+	text-align: center;
+}
+
+input:focus {
+	outline: none;
+}
+
+.header_btn:hover {
+	transform: scale(1.2);
+}
+
+.slick-slide {
+	transform: scale(0.8);
+	transition: all 0.4 ease-in-out;
+	opacity: 0.5;
+	z-index: 1;
+}
+
+.mainSlide img {
+	margin: auto;
+	max-width: 100%;
+	width: 70%;
+	aspect-ratio: 13/9;
+	transition: all 0.4s ease-in-out;
+}
+
+.slick-center {
+	transform: scale(1.2);
+	opacity: 1;
+	z-index: 1;
+}
+
+.quiz_worldCup label {
+	margin: 10px 0px;
+	font-size: 3vmin;
+	font-weight: 800;
+}
+
+.quiz_worldCup label {
+	cursor: pointer;
+}
+
+.quiz_worldCup label:hover {
+	transform: scale(1.1);
+}
+
+.worldCup_Img {
+	width: 450px;
+	height: 400px;
+}
+
+.search-empty {
+	width: 260px;
+	height: auto;
+	border: 0;
+	border-radius: 20px;
+	background-color: white;
+	opacity: 0.9;
+	position: relative;
+	z-index: 100;
+	margin-top: 15px;
+	display: flex;
+	/*justify-content: center;*/
+}
+
+.search-empty * {
+	line-height: auto;
+}
+
+.searched-artist {
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+}
+
+.searched-artist *:hover {
+	cursor: pointer;
+}
+
+li {
+	list-style-type: none;
+}
+
+.artist-list:hover {
+	transform: scale(1.05);
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+/* following list 영역 css */
+.following-list-area .fl-content {
+	position: relative;
+	width: 100%;
+	padding: 10px 40px;
+	border: 1px solid hsl(0, 0%, 80%);
+	border-radius: 15px;
+}
+
+.following-list-area .fl-content .arrow {
+	position: absolute;
+	top: 60px;
+	padding: 0;
+	background: transparent;
+	border-radius: 15px;
+	border: none;
+	font-size: 24px;
+	line-height: 26px;
+	display: block;
+	width: 30px;
+	height: 30px;
+}
+
+.following-list-area .fl-content .arrow i {
+	width: 18px;
+	height: 18px;
+}
+
+.following-list-area .fl-content .prev {
+	left: 7px;
+}
+
+.following-list-area .fl-content .next {
+	right: 7px;
+}
+
+.following-list-area .fl-content .fl-list {
+	max-width: 1024.8px;
+	/*width: 390px;*/
+	overflow: hidden;
+}
+
+.following-list-area .fl-content .fl-list ul {
+	width: 9999px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: margin-left 250ms;
+	font-size: 0;
+}
+
+.following-list-area .fl-content .fl-list ul li {
+	display: inline-block;
+	padding: 10px;
+	width: 128.35px;
+}
+
+.following-list-area .fl-content .fl-list ul li img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+}
+
+/* following list 영역 css 끝 */
+
+/* 스타 순위 css */
+.ranking-area>#selectedArea>div>select {
+	width: auto;
+	font-size: 16px;
+}
+
+.ranking-area>#selectedArea>div>#subcategory {
+	opacity: 0;
+}
+
+.ranking-area .row-cols-md-3 {
+	display: inline-flex;
+}
+
+.ranking-area .row-cols-md-3 .card:hover {
+	cursor: pointer;
+	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.ranking-area .num-item {
+	position: absolute;
+	background-color: black;
+	color: #fff;
+	width: 58px;
+	height: 62px;
+	text-align: center;
+	font-size: x-large;
+}
+
+.ranking-area .ranking {
+	margin: 0px;
+}
+
+.ranking-area .change-info {
+	height: 22px;
+	margin: 0px;
+	font-size: medium;
+	font-weight: 600;
+}
+
+.ranking-area .change-info span {
+	color: #fff;
+}
+
+.ranking-area .fa-chevron-up {
+	color: red;
+}
+
+.ranking-area .fa-chevron-down {
+	color: blue;
+}
+
+.ranking-area .card-body .card-title {
+	font-weight: 600;
+}
+
+.ranking-area .card-body .card-text {
+	font-size: small;
+}
+
+.ranking-area .card-body .card-text .fa-user {
+	color: #C9CCD0;
+}
+
+.ranking-area .card-body .card-text span {
+	color: black;
+}
+
+/* 스타 순위 css 끝 */
+
+/* 스타가 남긴 글 css */
+#starRemainArea {
+	background-color: #dee2e6;
+}
+
+#srContent {
+	overflow: auto;
+}
+
+#srContent>div {
+	float: left;
+}
+
+#srTitle {
+	width: 135px;
+}
+
+#srTitle * {
+	color: black;
+	display: inline-block;
+}
+
+#srTitle span:first-child {
+	background-color: black;
+	color: #fff;
+	font-size: small;
+	margin-bottom: 3%;
+}
+
+#srTitle strong {
+	margin-bottom: 10%;
+}
+
+#srContent {
+	position: relative;
+	width: 1140px;
+	border-radius: 15px;
+}
+
+#srList {
+	width: 1005px;
+	overflow: hidden;
+}
+
+#srList ul {
+	height: 150px;
+	width: 9999px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: margin-left 250ms;
+	font-size: 0;
+}
+
+#srList ul li {
+	display: inline-block;
+	width: 302px;
+	height: 145px;
+	margin-left: 33px;
+}
+
+#srList .profile {
+	float: left;
+}
+
+#srList .profile img {
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+}
+
+#srList .msg {
+	background-color: #fff;
+	border-radius: 50px;
+	width: 208px;
+	height: 96px;
+	padding: 16px 30px;
+	margin: 32px 0px 0px 44px;
+}
+
+#srList .msg:hover {
+	cursor: pointer;
+	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+#srList * {
+	color: black;
+}
+
+#srList .msg .nickname {
+	font-size: medium;
+}
+
+#srList .msg p {
+	margin: 0px;
+}
+
+#srList .msg .content {
+	font-size: medium;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#srList .msg .date {
+	font-size: small;
+	color: #999;
+}
+
+/* 스타가 남긴 글 css 끝 */
+
+/* 랭킹 3등 ~ 9등 css */
+#rankingEtc .ranking-cards {
+	margin: 0px;
+	width: 100%;
+}
+
+#rankingEtc .ranking-card * {
+	/*border: 1px solid black;*/
+	
+}
+
+.ranking-cards .ranking-card {
+	padding: 0;
+	height: 130px;
+}
+
+.ranking-cards .ranking-card:hover {
+	cursor: pointer;
+	background-color: #e9ecef;
+}
+
+.ranking-card>div {
+	height: 100%;
+	padding: 0px;
+	float: left;
+}
+
+.ranking-card .num-item {
+	width: 8%;
+}
+
+.ranking-card .num-item .ranking {
+	text-align: center;
+	font-size: 28px;
+	margin: 60% 0 0 0;
+}
+
+.ranking-card .num-item .change-info {
+	margin: 0;
+	text-align: center;
+}
+
+.ranking-card .num-item .change-info>span>.fa-chevron-up {
+	color: red;
+}
+
+.ranking-card .num-item .change-info>span>.fa-chevron-down {
+	color: blue;
+}
+
+.ranking-card .num-item .change-info>span>i>span {
+	color: black;
+}
+
+.ranking-card .profile-item {
+	width: 12%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.ranking-card .profile-item img {
+	border-radius: 50%;
+	width: 100%;
+	height: auto;
+}
+
+.ranking-card .box-item {
+	width: 80%;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.ranking-card .box-item>div {
+	padding: 5%;
+	width: 100%;
+}
+
+.ranking-card .box-item>div>.card-text {
+	font-size: small;
+}
+
+.ranking-card .box-item>div>.card-text .fa-user {
+	color: #C9CCD0;
+}
+
+.ranking-card .box-item>div>.card-text span {
+	color: black;
+}
+
+/* 랭킹 3등 ~ 9등 css */
+
+/* 아티스트 추천 css */
+#recommendArtist>h4 {
+	padding: 0;
+}
+
+#recommendArtist .row .card {
+	margin-bottom: 2%;
+	border-radius: 5%;
+	/*background-color: #f8f9fa;*/
+	box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+#recommendArtist .row .card:hover {
+	transform: scale(1.05);
+}
+
+#recommendArtist .row .card a {
+	color: black;
+	text-decoration: none;
+}
+
+#recommendArtist .row .card a:hover {
+	text-decoration: none;
+}
+
+#recommendArtist .row .card .profile-bg img {
+	border-radius: 5% 5% 0% 0%;
+	width: 100%;
+	aspect-ratio: 1/1;
+}
+
+#recommendArtist .row .card .profile-img {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 52.6px;
+	height: 52.6px;
+}
+
+#recommendArtist .row .card .profile-img img {
+	border-radius: 50%;
+	box-sizing: content-box;
+	border: 5px solid white;
+	width: 100%;
+	height: 100%;
+}
+
+#recommendArtist .row .card .profile-name {
+	font-weight: 800;
+	text-align: center;
+	position: relative;
+	bottom: 15px;
+}
+
+#recommendArtist .row .card .profile-name span {
+	font-weight: 800;
+	font-size: larger;
+}
+
+/* 아티스트 추천 css 끝 */
