@@ -39,89 +39,6 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-    <style>
-        #updateModal #dropdownArtists {
-            display: none;
-            width: 386px;
-        }
-
-        #updateModal .artist-items li {
-            border-bottom: 1px solid #999999;
-        }
-
-        #updateModal .artist-items li:last-child {
-            border-bottom: none;
-            border-bottom-left-radius: 0.325rem;
-            border-bottom-right-radius: 0.325rem;
-        }
-
-        #updateModal .artist-items {
-            border-bottom-left-radius: 0.325rem;
-            border-bottom-right-radius: 0.325rem;
-            background-color: #f4f6f8;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        #updateModal .artist-items li:hover {
-            background-color: #dcdcdc;
-            cursor: pointer;
-        }
-
-        #updateModal .artist-items a {
-            color: black;
-        }
-
-        #updateModal #bannerImg {
-            height: 120px;
-        }
-
-        #updateModal #tagArea {
-            height: auto;
-            overflow: auto;
-            margin-top: 10px;
-        }
-
-        #updateModal #tagArea>span {
-            height: 100%;
-            width: auto;
-        }
-
-        #updateModal #tagArea>span>* {
-            float: left;
-            line-height: 22px;
-        }
-
-        #updateModal #tagArea>span>span {
-            font-size: 14px;
-            height: 100%;
-            margin-left: 5px;
-        }
-
-        #updateModal #tagArea>span>div input {
-            height: 20px;
-            border: 0px;
-            width: 70px;
-
-        }
-
-        #updateModal #tagArea>span>div input:focus {
-            outline: none;
-        }
-
-        #updateModal #tagArea .tag-input-area button {
-            background-color: white;
-            border: 0px;
-
-        }
-
-        #updateModal #tagArea .parent-span {
-            padding-right: 10px;
-            border: 0px;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -391,12 +308,12 @@
             </a>
             <ul id="site-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
                 <li>
-                    <a class="active" href="컨포넌트_배너.html">
+                    <a href="컨포넌트_배너.html">
                         <i class="bi bi-circle"></i><span>배너 관리</span>
                     </a>
                 </li>
                 <li>
-                    <a href="컨포넌트_팝업.html">
+                    <a class="active" href="컨포넌트_팝업.html">
                         <i class="bi bi-circle"></i><span>팝업 관리</span>
                     </a>
                 </li>
@@ -510,6 +427,44 @@
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#fan-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-star"></i><span>팬 페이지</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="fan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>팬 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>미디어 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>일정 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>피드 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>미디어 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>팬페이지 신청 및 관리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" data-bs-target="#chart-nav" data-bs-toggle="collapse" href="#">
                     <i class="bi bi-graph-up-arrow"></i><span>통계</span><i class="bi bi-chevron-down ms-auto"></i>
                 </a>
@@ -522,244 +477,204 @@
                 </ul>
             </li><!-- End Components Nav -->\
         </ul>
+        </li><!-- End Components Nav -->
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#chart-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-graph-up-arrow"></i><span>통계</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="chart-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="components-alerts.html">
+                        <i class="bi bi-circle"></i><span>준비중...</span>
+                    </a>
+                </li>
+            </ul>
+        </li><!-- End Components Nav -->\
+        </ul>
     </aside><!-- End Sidebar-->
 
     <main id="main" class="main" style="min-height: 79vh;">
 
         <div class="pagetitle">
-            <h1>배너 관리</h1>
+            <h1>팝업 관리</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="관리자_메인.html">메인</a></li>
                     <li class="breadcrumb-item">메인 관리</li>
-                    <li class="breadcrumb-item active">배너 관리</li>
+                    <li class="breadcrumb-item active">팝업 관리</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
+        <style>
+            .popup-data td span {
+                opacity: 0;
+            }
+        </style>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title fw-bolder">팝업 관리</h5>
 
-        <section class="section dashboard">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">사이트 로고</h5>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <img class="border border-light-subtle" src="assets/img/로고2.png" alt="">
-                        </div>
-                        <div class="col-md-12 mt-4">
-                            <input type="file" id="formFile" hidden>
-                            <button class="btn btn-primary">변경하기</button>
-                            <button class="btn btn-success">저장하기</button>
-                        </div>
+                <!-- Table with stripped rows -->
+                <table class="table datatable popup-data">
+                    <thead>
+                        <tr>
+                            <th scope="col">번호</th>
+                            <th scope="col">팝업 이름</th>
+                            <th scope="col">시작일</th>
+                            <th scope="col">종료일</th>
+                            <th scope="col">등록일</th>
+                            <th scope="col">상태</th>
+                            <th scope="col">
+                                <i class="bi bi-gear"></i>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Brandon Jacob</td>
+                            <td>2016-05-25</td>
+                            <td>2016-05-25</td>
+                            <td>2016-05-25</td>
+                            <td class="popup-state">
+                                <span>0</span>
+                                <i class="bx bxs-circle text-success"></i>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Bridie Kessler</td>
+                            <td>2014-12-05</td>
+                            <td>2014-12-05</td>
+                            <td>2014-12-05</td>
+                            <td class="popup-state">
+                                <span>1</span>
+                                <i class="bx bxs-circle text-danger"></i>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Ashleigh Langosh</td>
+                            <td>2011-08-12</td>
+                            <td>2011-08-12</td>
+                            <td>2011-08-12</td>
+                            <td class="popup-state">
+                                <span>1</span>
+                                <i class="bx bxs-circle text-danger"></i>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Angus Grady</td>
+                            <td>2012-06-11</td>
+                            <td>2012-06-11</td>
+                            <td>2012-06-11</td>
+                            <td class="popup-state">
+                                <span>0</span>
+                                <i class="bx bxs-circle text-success"></i>
+                            </td>
+                            <td>
+                                <button class="btn btn-warning btn-sm">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+                <!-- Disabled Backdrop Modal -->
+                <div class="row">
+                    <div class="col text-end">
+                        <button type="button" class="btn btn-primary" id="createModalBtn" data-bs-toggle="modal"
+                        data-bs-target="#disablebackdrop">팝업 등록</button>
+                        <button type="button" class="btn btn-success">저장하기</button>
                     </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">배너 노출 팬 페이지</h5>
-                    
-                    <!-- Table with hoverable rows -->
-                    <table class="table table-hover align-middle text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">아티스트명</th>
-                                <th scope="col">이미지</th>
-                                <th scope="col">태그</th>
-                                <th scope="col">등록일자</th>
-                                <th scope="col">
-                                    <i class="bi bi-gear"></i>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Brandon Jacob</td>
-                                <td>
-                                    <input class="form-control" type="file" hidden>
-                                    <img src="assets/img/김희재.jpeg" alt="" style="height: 120px;">
-                                </td>
-                                <td>
-                                    <i class="bi bi-hash">트로트</i>
-                                    <i class="bi bi-hash">잘생김</i>
-                                </td>
-                                <td>2016-05-25</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        id="updateModalBtn" data-bs-target="#updateModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Bridie Kessler</td>
-                                <td>
-                                    <img src="assets/img/장민호.jpeg" alt="" style="height: 120px;">
-                                    <input class="form-control" type="file" hidden>
-                                </td>
-                                <td>
-                                    <i class="bi bi-hash">트로트</i>
-                                    <i class="bi bi-hash">잘생김</i>
-                                </td>
-                                <td>2014-12-05</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        id="updateModalBtn" data-bs-target="#updateModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Ashleigh Langosh</td>
-                                <td>
-                                    <img src="assets/img/정동원.jpeg" alt="" style="height: 120px;">
-                                    <input class="form-control" type="file" hidden>
-                                </td>
-                                <td>
-                                    <i class="bi bi-hash">트로트</i>
-                                    <i class="bi bi-hash">잘생김</i>
-                                </td>
-                                <td>2011-08-12</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        id="updateModalBtn" data-bs-target="#updateModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Angus Grady</td>
-                                <td>
-                                    <img src="assets/img/정동원.jpeg" alt="" style="height: 120px;">
-                                    <input class="form-control" type="file" hidden>
-                                </td>
-                                <td>
-                                    <i class="bi bi-hash">트로트</i>
-                                    <i class="bi bi-hash">잘생김</i>
-                                </td>
-                                <td>2012-06-11</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        id="updateModalBtn" data-bs-target="#updateModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Raheem Lehner</td>
-                                <td>
-                                    <img src="assets/img/정동원.jpeg" alt="" style="height: 120px;">
-                                    <input class="form-control" type="file" hidden>
-                                </td>
-                                <td>
-                                    <i class="bi bi-hash">트로트</i>
-                                    <i class="bi bi-hash">잘생김</i>
-                                </td>
-                                <td>2011-04-19</td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
-                                        id="updateModalBtn" data-bs-target="#updateModal">
-                                    <i class="bi bi-pencil-square"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-sm">
-                                        <i class="bi bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="4"></td>
-                                <td colspan="2" class="text-end">
-                                    <button type="button" class="btn btn-primary">등록</button>
-                                    <button type="button" class="btn btn-success">저장</button>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <!-- 수정 모달 -->
-                    <div class="modal fade" id="updateModal" tabindex="-1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">배너 수정</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-
-                                <div class="modal-body">
-                                    <form action="" class="row g-3">
-                                        <div class="col-md-2">
-                                            <label for="order" class="form-label fw-bolder">순번</label>
-                                            <input type="number" class="form-control" id="order">
+                <div class="modal fade" id="disablebackdrop" tabindex="-1" data-bs-backdrop="false">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">팝업 등록</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3">
+                                    <div class="col-md-12">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+                                            <label for="floatingName">팝업 이름</label>
                                         </div>
-                                        <div class="col-md-10 postion-relative">
-                                            <label for="artist" class="form-label fw-bolder">아티스트</label>
-                                            <input type="text" class="form-control" id="artist">
-
-                                            <div id="dropdownArtists" class="position-absolute">
-                                                <ul class="artist-items">
-                                                    <li class="artist-item px-2 py-1"><a href="#">Action</a></li>
-                                                    <li class="artist-item px-2 py-1"><a href="#">Another action</a>
-                                                    </li>
-                                                    <li class="artist-item px-2 py-1"><a href="#">Something else
-                                                            here</a></li>
-                                                </ul>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="floatingStartDate" placeholder="Your Email">
+                                            <label for="floatingStartDate">시작일</label>
                                         </div>
-                                        <div class="col-md-10">
-                                            <label for="bannerImg" class="form-label fw-bolder">배너 이미지</label>
-                                            <img id="bannerImg" class="d-block" src="assets/img/김희재.jpeg" alt="">
-                                            <input class="form-control" type="file" id="formFile" hidden>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="date" class="form-control" id="floatingEndDate" placeholder="Password">
+                                            <label for="floatingEndDate">종료일</label>
                                         </div>
-                                        <div class="col-md-12">
-                                            <label for="tagArea" class="form-label fw-bolder">태그</label>
-
-                                            <div id="tagArea" class="row">
-                                                <span class="parent-span">
-                                                    <span>#</span>
-                                                    <div class="tag-input-area">
-                                                        <input class="tag-input" type="text" maxlength="50"
-                                                            placeholder="태그입력">
-                                                        <button type="button" class='delete-tag'>x</button>
-                                                    </div>
-                                                </span>
-                                            </div>
-
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                                                style="height: 100px;"></textarea>
+                                            <label for="floatingTextarea">내용</label>
                                         </div>
-
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                                    <button type="button" class="btn btn-primary">수정완료</button>
-                                </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="file" class="form-control">
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                            <label class="form-check-label" for="flexSwitchCheckChecked">모달 사용여부</label>
+                                        </div>
+                                    </div>
+                            
+                                </form><!-- End floating Labels Form -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">닫기</button>
+                                <button type="button" class="btn btn-primary">등록하기</button>
                             </div>
                         </div>
                     </div>
-                    <!-- End 수정 모달 -->
-                    <!-- End Table with hoverable rows -->
-                </div>
+                </div><!-- End Disabled Backdrop Modal-->
             </div>
-        </section>
-
+        </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -779,67 +694,6 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
 
-    <script>
-        /* 드롭다운 스크립트 */
-        $(function () {
-            $("#artist").keydown(function () {
-
-                /* 아티스트 찾는 ajax 실행 */
-
-                $("#dropdownArtists").css("display", "block");
-            })
-
-            $(document).on('click', ".artist-item", function () {
-                let artist_it = $(this).children().text();
-                $("#artist").val(artist_it);
-                $("#dropdownArtists").css("display", "none");
-
-            })
-
-        })
-
-
-        /* 해시태그 스크립트 */
-        $(function () {
-
-            $(document).on('keydown', '.tag-input', function () {
-                $(this).css('width', 20);
-                let value = $(this).val();
-                $('.tag-input-area').append('<div class="virtual">' + value + '</div>')
-
-                let inputWidth = $(this).siblings('.virtual').width()
-                $(this).css('width', inputWidth + 20);
-                $('.virtual').remove();
-
-            })
-            $(document).on('click', '.delete-tag', function () {
-                let tagLength = $('.tag-input').length;
-                let ti = $('.tag-input').get()
-                if (($(".delete-tag").index(this) == tagLength - 1) && (ti[tagLength - 1]).value == '') {    // 지금누른 버튼이 마지막 인덱스의 버튼일떄
-                    $(this).prev().val('');
-                } else {
-                    $(this).parent().parent().remove();
-                }
-            })
-            $(document).on('change', '.tag-input', function () {
-
-                let tagLength = $('.tag-input').length;
-                let ti = $('.tag-input').get()
-                if (ti[tagLength - 1].value != '') {
-                    $(document).on('click', '.delete-tag', function () {
-                        return;
-                    })
-
-                    $('#tagArea').append("<span class='parent-span'><span>#</span><div class='tag-input-area'><input class='tag-input' type='text' maxlength='50' placeholder='태그입력'><button type='button' class='delete-tag'>x</button></div></span>");
-                    $('.tag-input')[tagLength].focus();
-                }
-            })
-
-
-        })
-
-    </script>
-
     <!-- Vendor JS Files -->
     <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -852,6 +706,8 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+
 
 </body>
 
