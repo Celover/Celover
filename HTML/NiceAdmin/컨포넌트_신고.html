@@ -39,33 +39,33 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-    #searchArea span {
-        background-color: #fff;
-    }
+    <style>
+        #searchArea span {
+            background-color: #fff;
+        }
 
-    #searchArea input {
-        border-left: none;
-        border-top-right-radius: 0.375rem;
-        border-bottom-right-radius: 0.375rem;
-    }
+        #searchArea input {
+            border-left: none;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+        }
 
-    #searchArea input:focus {
-        outline: none;
-        box-shadow: var(--bs-white);
-        border: 1px solid #cee2e6;
-        border-left: none;
-    }
+        #searchArea input:focus {
+            outline: none;
+            box-shadow: var(--bs-white);
+            border: 1px solid #cee2e6;
+            border-left: none;
+        }
 
-    table tbody tr .report-title:hover {
-        cursor: pointer;
-    }
+        table tbody tr .report-title:hover {
+            cursor: pointer;
+        }
 
-    table tbody tr .report-title:hover {
-        color: #007bff;
-        text-decoration: underline 1px solid #007Bff;
-    }
-  </style>
+        table tbody tr .report-title:hover {
+            color: #007bff;
+            text-decoration: underline 1px solid #007Bff;
+        }
+    </style>
 </head>
 
 <body>
@@ -330,36 +330,37 @@
                     <span>대시보드</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-            <a class="nav-link" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="site-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="컨포넌트_배너.html">
-                        <i class="bi bi-circle"></i><span>배너 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_팝업.html">
-                        <i class="bi bi-circle"></i><span>팝업 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_이벤트.html">
-                        <i class="bi bi-circle"></i><span>이벤트 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_게시판.html">
-                        <i class="bi bi-circle"></i><span>게시판 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="active" href="컨포넌트_신고.html">
-                        <i class="bi bi-circle"></i><span>신고 관리</span>
-                    </a>
-                </li>
-            </ul>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="site-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_배너.html">
+                            <i class="bi bi-circle"></i><span>배너 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_팝업.html">
+                            <i class="bi bi-circle"></i><span>팝업 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_이벤트.html">
+                            <i class="bi bi-circle"></i><span>이벤트 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_게시판.html">
+                            <i class="bi bi-circle"></i><span>게시판 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="컨포넌트_신고.html">
+                            <i class="bi bi-circle"></i><span>신고 관리</span>
+                        </a>
+                    </li>
+                </ul>
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
@@ -503,7 +504,8 @@
                                 R0000001
                             </th>
                             <td>A</td>
-                            <td class="report-title" data-bs-toggle="modal" data-bs-target="#verticalycentered">욕설 신고합니다.</th>
+                            <td class="report-title" data-bs-toggle="modal" data-bs-target="#verticalycentered">욕설
+                                신고합니다.</th>
                             <td>user01</td>
                             <td>2023-01-23 18:32</td>
                         </tr>
@@ -646,82 +648,82 @@
         </div>
         <div class="modal fade" id="verticalycentered" tabindex="-1">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">신고 상세</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">신고 상세</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th class="table-active" style="width: 15%;">
+                                        신고 제목
+                                    </th>
+                                    <td>
+                                        욕설 신고할게요
+                                    </td>
+                                    <th class="table-active" style="width: 15%;">
+                                        신고번호
+                                    </th>
+                                    <td style="width: 25%;">
+                                        R0000001
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">
+                                        신고자
+                                    </th>
+                                    <td>
+                                        user01
+                                    </td>
+                                    <th class="table-active">
+                                        신고날짜
+                                    </th>
+                                    <td>
+                                        2023-12-11 20:19:22
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-active">
+                                        신고대상
+                                    </th>
+                                    <td>
+                                        <a href="#">http://celover/boards/1</a>
+                                    </td>
+                                    <th class="table-active">
+                                        분류
+                                    </th>
+                                    <td>
+                                        A
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="table-active align-middle">
+                                        내용
+                                    </th>
+                                    <td colspan="3">
+                                        <p>
+                                            &Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                            Doloribus, fuga molestiae corporis excepturi adipisci
+                                            sapiente repellat debitis. Fugit repudiandae non
+                                            exercitationem vero eum dolore aut nobis! Eveniet nobis quod
+                                            eaque!
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-primary">완료처리</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th class="table-active" style="width: 15%;">
-                                   신고 제목
-                                </th>
-                                <td>
-                                    욕설 신고할게요
-                                </td>
-                                <th class="table-active" style="width: 15%;">
-                                    신고번호
-                                </th>
-                                <td style="width: 25%;">
-                                    R0000001
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="table-active">
-                                    신고자
-                                </th>
-                                <td>
-                                    user01
-                                </td>
-                                <th class="table-active">
-                                    신고날짜
-                                </th>
-                                <td>
-                                    2023-12-11 20:19:22
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="table-active">
-                                    신고대상
-                                </th>
-                                <td>
-                                    <a href="#">http://celover/boards/1</a>
-                                </td>
-                                <th class="table-active">
-                                    분류
-                                </th>
-                                <td>
-                                    A
-                                </td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th class="table-active align-middle">
-                                    내용
-                                </th>
-                                <td colspan="3">
-                                    <p>
-                                        &Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Doloribus, fuga molestiae corporis excepturi adipisci
-                                        sapiente repellat debitis. Fugit repudiandae non
-                                        exercitationem vero eum dolore aut nobis! Eveniet nobis quod
-                                        eaque!
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                  <button type="button" class="btn btn-primary">완료처리</button>
-                </div>
-              </div>
             </div>
-          </div><!-- End Vertically centered Modal-->
+        </div><!-- End Vertically centered Modal-->
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->

@@ -39,11 +39,11 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-  <style>
-    .popup-data td span {
-        opacity: 0;
-    }
-</style>
+    <style>
+        .popup-data td span {
+            opacity: 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -308,36 +308,37 @@
                     <span>대시보드</span>
                 </a>
             </li><!-- End Dashboard Nav -->
-            <a class="nav-link" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
-                <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="site-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
-                <li>
-                    <a href="컨포넌트_배너.html">
-                        <i class="bi bi-circle"></i><span>배너 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="active" href="컨포넌트_팝업.html">
-                        <i class="bi bi-circle"></i><span>팝업 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_이벤트.html">
-                        <i class="bi bi-circle"></i><span>이벤트 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_게시판.html">
-                        <i class="bi bi-circle"></i><span>게시판 관리</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="컨포넌트_신고.html">
-                        <i class="bi bi-circle"></i><span>신고 관리</span>
-                    </a>
-                </li>
-            </ul>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="site-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_배너.html">
+                            <i class="bi bi-circle"></i><span>배너 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="컨포넌트_팝업.html">
+                            <i class="bi bi-circle"></i><span>팝업 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_이벤트.html">
+                            <i class="bi bi-circle"></i><span>이벤트 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_게시판.html">
+                            <i class="bi bi-circle"></i><span>게시판 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_신고.html">
+                            <i class="bi bi-circle"></i><span>신고 관리</span>
+                        </a>
+                    </li>
+                </ul>
             </li><!-- End Components Nav -->
 
             <li class="nav-item">
@@ -555,7 +556,7 @@
                 <div class="row">
                     <div class="col text-end">
                         <button type="button" class="btn btn-primary" id="createModalBtn" data-bs-toggle="modal"
-                        data-bs-target="#disablebackdrop">팝업 등록</button>
+                            data-bs-target="#disablebackdrop">팝업 등록</button>
                         <button type="button" class="btn btn-success">저장하기</button>
                     </div>
                 </div>
@@ -571,19 +572,22 @@
                                 <form class="row g-3">
                                     <div class="col-md-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+                                            <input type="text" class="form-control" id="floatingName"
+                                                placeholder="Your Name">
                                             <label for="floatingName">팝업 이름</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="date" class="form-control" id="floatingStartDate" placeholder="Your Email">
+                                            <input type="date" class="form-control" id="floatingStartDate"
+                                                placeholder="Your Email">
                                             <label for="floatingStartDate">시작일</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="date" class="form-control" id="floatingEndDate" placeholder="Password">
+                                            <input type="date" class="form-control" id="floatingEndDate"
+                                                placeholder="Password">
                                             <label for="floatingEndDate">종료일</label>
                                         </div>
                                     </div>
@@ -599,16 +603,16 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                            <input class="form-check-input" type="checkbox" role="switch"
+                                                id="flexSwitchCheckChecked" checked>
                                             <label class="form-check-label" for="flexSwitchCheckChecked">모달 사용여부</label>
                                         </div>
                                     </div>
-                            
+
                                 </form><!-- End floating Labels Form -->
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    data-bs-dismiss="modal">닫기</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
                                 <button type="button" class="btn btn-primary">등록하기</button>
                             </div>
                         </div>
