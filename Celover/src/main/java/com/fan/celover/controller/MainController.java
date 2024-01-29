@@ -38,4 +38,8 @@ public class MainController {
 	public String fanMediaDetail() {
 		return "main/fanpage/media/media-detail";
 	}
+	@GetMapping("/cs/csmain")
+	public String csMain() {
+		return "main/board/cs/csMain";
+	}
 }

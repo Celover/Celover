@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여러 이미지 업로드</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<input type="file" id="fileInput" multiple />
+<div id="imagePreview"></div>
+
+<script>
+$(document).ready(function() {
+  $('#fileInput').change(function(e) {
+    $('#imagePreview').empty(); // 기존에 표시된 이미지 삭제
+
+    for (let i = 0; i < e.target.files.length; i++) {
+      const reader = new FileReader();
+
+      reader.onload = function (event) {
+        $('#imagePreview').append(`<img src="${event.target.result}" width="100" height="100" />`);
+      }
+
+      reader.readAsDataURL(e.target.files[i]);
+    }
+  });
+});
+</script>
+
+</body>
+</html>

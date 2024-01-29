@@ -64,12 +64,12 @@
 							<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
 						</c:when>
 						<c:otherwise>
-							<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="img/게시판.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/랭킹.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="/mypage-form"><img class="header_btn" src="img/사람.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/mypage-form"><img class="header_btn" src="/img/사람.png" alt=""></a></li>
 							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
-							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="img/고객센터.png" alt=""></a></li>
-							<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="img/햄버거.png" alt=""></a></li>
+							<li class="nav-item mx-930"><a href="/cs/csmain"><img class="header_btn" src="/img/고객센터.png" alt=""></a></li>
+							<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="/img/햄버거.png" alt=""></a></li>
 						</c:otherwise>
 					</c:choose>
 				</ul>

@@ -1,0 +1,336 @@
+
+        .header-nav {
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+            background-color: white;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .nav-item {
+            width: 80px;
+            text-align: center;
+        }
+
+        .header_btn:hover {
+            transform: scale(1.2);
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+        .slick-slide {
+            transform: scale(0.7);
+            transition: all 0.4 ease-in-out;
+        }
+
+        .mainSlide img {
+            max-width: 100%;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .slick-center {
+            transform: scale(1.0);
+        }
+
+        .feedPage a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            opacity: 0.6;
+            font-weight: 900;
+            height: 100px;
+            margin: 80px;
+            font-size: large;
+        }
+
+        .feedPage a:hover {
+            opacity: 1;
+        }
+
+        .mainLogo:hover {
+            cursor: pointer;
+        }
+        /* sideMenu CSS */
+        #myPage_menu h2 {
+            font-weight: 800;
+            margin-bottom: 10%;
+            margin-left: 10px;
+        }
+
+        #myPage_menu ul li * {
+            text-decoration: none;
+            font-weight: 600;
+            color: rgb(102, 102, 102);
+        }
+
+        #myPage_menu ul li:hover {
+            cursor: pointer;
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul li:hover * {
+            color: purple;
+        }
+
+        #myPage_menu ul .act {
+            background-color: rgb(250, 250, 250);
+        }
+
+        #myPage_menu ul .act * {
+            background-color: rgb(250, 250, 250);
+            color: purple;
+        }
+
+        #myPage_menu ul li .fas {
+            line-height: 1.5;
+        }
+
+        /* sideMenu CSS 끝 */
+
+        /* 고객센터 css 시작 */
+
+        /* 1:1문의 css 시작 */
+        .oq-title{
+            padding: 10px;
+        }
+        .oq-title span{
+            font-weight: 900;
+        }
+        .oq-body{
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+        .oto_question-title div{
+            border: 1px solid blue;
+        }
+        .questionMtoM-btn button{
+            border: 0px;
+            background-color: rgb(167, 217, 237);
+            color: white;
+            height: 110%;
+            width: 75px;
+            border-radius: 10px;
+            font-weight: 900;
+        }
+        .questionMtoM-btn button:hover{
+            scale: 1.05;
+        }
+        .check-my-question{
+            cursor: pointer;
+        }
+        .check-my-question:hover{
+            font-weight: 900;
+        }
+        /* 1:1문의 css 종료 */
+
+        /* 자주찾는 질문 css 시작 */
+        .CS-right-title-serve{
+            color: gray;
+            font-weight: 600;
+        }
+        .CS-header{
+            padding-left: 20px;
+            padding-right: 20px;
+            height: 25px;
+        }
+        .CS-right-wrap hr{
+            height: 1px !important;
+        }
+        p{
+            margin: 0px;
+        }
+
+        /* 자주찾는 질문 css 종료 */
+
+        /* 입점신청 css 시작 */
+        .CS-right-enter-wrap{
+            border-radius: 10px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,.07), 0 1px 1px 0 rgba(0,0,0,.02);
+            margin-top: 50px;
+
+        }
+        .CS-right-enter-wrap{
+            padding: 40px;
+        }
+        .CS-right-enter-coment span{
+            font-size: large;
+            font-weight: 700;
+        }
+        .CS-right-enter-coment select{
+            text-align-last: center;
+            width: 300px;
+            height: 75px;
+            border: 0px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,.07), 0 1px 1px 0 rgba(0,0,0,.02);
+            font-size: 20px;
+            font-weight: 700;
+            color: rgb(167, 217, 237);
+        }
+        .CS-right-enter-coment option{
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .CS-right-enter-coment button{
+            width: 300px;
+            height: 75px;
+            border: 0px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,.07), 0 1px 1px 0 rgba(0,0,0,.02);
+            font-size: 20px;
+            font-weight: 700;
+            background-color: rgb(167, 217, 237);
+            color: white;
+            opacity: 0.5;
+        }
+        /* 입점신청 css 종료 */
+
+        /* 입점신청서 css 시작 */
+        .enter-form-btn-back button, .enter-form-btn-success button{
+            width: 50%;
+            height: 50px;
+            border-radius: 5px;
+            border: 0px;
+            box-shadow: 0 3px 15px 0 rgba(0,0,0,.07), 0 1px 1px 0 rgba(0,0,0,.02);
+        }
+        .enter-form-btn-back button{
+            font-weight: 700;
+            background-color: white;
+        }
+        .enter-form-btn-success button{
+            color: white;
+            font-weight: 700;
+            background-color: rgb(167, 217, 237);
+            opacity: 0.5;
+        }
+        .enter-form hr {
+            background: gray;
+        }
+        .enter-form .row .col-3 span{
+            font-size: larger;
+            font-weight: 700;
+        }
+        .enter-form .row .col-3, .enter-form .row .col-9{
+            height: auto;
+        }
+        .enter-form .row .col-9 input, .enter-form .row .col-3 span, .enter-form .row .col-9 textarea{
+            width: 100%;
+            resize: none;
+            border-radius: 10px;
+        }
+        .col-9 input{
+            height: 56px;
+        }
+        .col-9 textarea{
+            height: 150px;
+        }
+        .col-3 span{
+            line-height: 56px;
+        }
+        .enter-form .row input, .enter-form .row textarea, .enter-form .row select{
+            border: 1px solid #e8e8e8;
+        }
+        .enter-form .row select{
+            width: 100%;
+            height: 56px;
+            border-radius: 10px;
+        }
+        .enter-form .row .col-12{
+            margin-top: 45px;
+            margin-bottom: 45px;
+        }
+        .enter-form .row .col-12 span{
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        .enter-form .row .col-3, .enter-form .row .col-9{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .enter-form input, .enter-form textarea{
+            padding: 15px;
+
+        }
+        .enter-form select{
+            padding: 15px;
+            color: gray;
+            font-weight: 900;
+        }
+        .essential{
+            color: skyblue;
+            font-weight: 900;
+        }
+        /* 입점신청서 css 종료 */
+
+        /* 1:1 문의 등록 css 시작 */
+        .question-create-title, .question-create-select{
+            height: 44px;
+        }
+        .question-create-title{
+            line-height: 44px;
+        }
+        .question-create-select select, .question-create-select input , .question-create-select input, .question-create-textarea textarea{
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .question-create-textarea textarea{
+            padding-top: 15px;
+
+        }
+        .input-photo-btn{
+            height: 60px;
+            width: 60px;
+        }
+        .input-photo-btn i{
+            font-size: x-large;
+        }
+        .question-create select, .question-create textarea, .question-create button, .question-create input{
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            font-weight: 650;
+        }
+        .input-photo-btn{
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        .question-create-textarea li {
+            font-size: small;
+            color: darkgray;
+        }
+        .input-create-btn{
+            border: 0px !important;
+            color: white;
+            background-color: rgb(167, 217, 237);
+            font-size: large;
+            opacity: 0.5;
+        }
+        .question-create-title{
+            font-weight: 900;
+        }
+        .question-create input:focus, .question-create select:focus, .question-create textarea:focus{
+            outline: none;
+        }
+        /* 1:1 문의 등록 css 종료 */
+
+        /* 고객센터 css 종료 */
+        
+        #myPage_content {
+            padding: 0% 3% 3% 3%;
+        }
+
+        #myPage_content div>h4 {
+            font-weight: 600;
+        }
+
+        #myPage_content div>hr {
+            height: 2px;
+            border: 0;
+            background: black;
+            opacity: 1;
+        }

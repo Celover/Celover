@@ -20,7 +20,7 @@
 						<aside>다양한 사람을 만나고 의견을 나눠보세요.</aside>
 					</div>
 					<div class="img-area">
-						<img src="sampleImg/자유게시판.png" alt="">
+						<img src="/img/자유게시판.png" alt="">
 					</div>
 				</div>
 
@@ -76,7 +76,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -96,7 +96,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -116,7 +116,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -136,7 +136,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -156,7 +156,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -176,7 +176,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -196,7 +196,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -216,7 +216,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
@@ -236,7 +236,7 @@
 				<div class="flex-grow-1 left-area">
 
 					<div class="top-area d-flex">
-						<img src="sampleImg/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
+						<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">관리자</span> <span class="create-date">&bull; 2024-01-18 18:05</span>
 					</div>
 					<div class="middle-area my-2 d-flex">
 						<span>지각하는 프리랜서</span>
