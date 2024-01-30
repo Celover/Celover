@@ -135,7 +135,7 @@
                     </div>
                     <hr style="margin-bottom: 0px;">
                     <!-- 타이틀 시작 -->
-                    <div class="row oto_question oq-title">
+                    <div class="row oto_question oq-title" style="padding-right: 30px;">
                         <div class="col-8 text-center">
                             <span>제 목</span>
                         </div>
@@ -148,28 +148,123 @@
                         <!-- 타이틀 종료 -->
                     </div>
                     <hr style="margin: 0px; margin-bottom: 10px;">
-                    <div class="row oto_question oq-body">
-                        <div class="col-8 text-center check-my-question">
-                            <span>팬카페 순위관련 질문</span>
+                    <div class="accordion" id="mtom-question-list">
+                        <!--1개의 1:1 질문 start -->
+                        <div class="accordion-item" style="border: 0px; border-bottom: 1px solid lightgray;">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-q-1" aria-expanded="false" aria-controls="collapse-q-1">
+                              <div class="col-8">
+                                <span>팬페이지 등록은 어떻게 하는건가요?</span>
+                              </div>
+                              <div class="col-2 text-center">
+                                <span>23.01.30</span>
+                              </div>
+                              <div class="col-2 text-center">
+                                <span>답변대기</span>
+                              </div>
+                            </button>
+                          </h2>
+                          <div id="collapse-q-1" class="accordion-collapse collapse" data-bs-parent="#mtom-question-list" style="background-color: #f4f4f4; padding: 10px;">
+                            <div class="accordion-body">
+                              <div class="row">
+                                <div class="col-12" style="color: gray;">
+                                    <span>회원/이벤트/쿠폰</span>
+                                    <i style="margin-right: 5px; margin-left: 5px;" class="fas fa-angle-right"></i>
+                                    <span>회원</span>
+                                </div>
+                                <div class="col-12" style="padding: 15px;">
+                                    <p class="mtom-question-detail-comment">이번에 21Jong님의 데뷔로 인해서 팬페이지 생성 및 goods 판매를 하고싶은 YJE&M입니다.협업 및 매장 신청으로 문의드립니다.</p>
+                                </div>
+                                <div class="col-12 text-end mtom-question-btns" style="margin-top: 10px; margin-bottom: 10px;">
+                                    <button class="mtom-question-update">수정</button>
+                                    <button class="mtom-question-done" hidden>완료</button>
+                                    <span>|</span>
+                                    <button class="mtom-question-delete" data-bs-toggle="modal" data-bs-target="#delete-question-detail">삭제</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="col-2 text-center">
-                            <span>2024.01.26</span>
+                        <!--1개의 1:1 질문 end -->
+                        <div class="accordion-item" style="border: 0px; border-bottom: 1px solid lightgray;">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-q-2" aria-expanded="false" aria-controls="collapse-q-2">
+                                <div class="col-8">
+                                  <span>이벤트 쿠폰 지급 문의</span>
+                                </div>
+                                <div class="col-2 text-center">
+                                  <span>23.01.30</span>
+                                </div>
+                                <div class="col-2 text-center">
+                                  <span>답변대기</span>
+                                </div>
+                              </button>
+                            </h2>
+                            <div id="collapse-q-2" class="accordion-collapse collapse" data-bs-parent="#mtom-question-list" style="background-color: #f4f4f4; padding: 10px;">
+                              <div class="accordion-body">
+                                <div class="row">
+                                  <div class="col-12" style="color: gray;">
+                                      <span>회원/이벤트/쿠폰</span>
+                                      <i style="margin-right: 5px; margin-left: 5px;" class="fas fa-angle-right"></i>
+                                      <span>이벤트</span>
+                                  </div>
+                                  <div class="col-12" style="padding: 15px;">
+                                      <p class="mtom-question-detail-comment">2023연말 이벤트 쿠폰이 지급되지 않았는데 확인해주세요.</p>
+                                  </div>
+                                  <div class="col-12 text-end mtom-question-btns" style="margin-top: 10px; margin-bottom: 10px;">
+                                      <button class="mtom-question-update">수정</button>
+                                      <button class="mtom-question-done" hidden>완료</button>
+                                      <span>|</span>
+                                      <button class="mtom-question-delete" data-bs-toggle="modal" data-bs-target="#delete-question-detail">삭제</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+
+                      <script>
+                        $(document).ready(function() {
+                          $('.mtom-question-update').on('click', function() {
+                            // 현재 눌린 업데이트 버튼에 대한 부모 아코디언 찾기
+                            var accordionItem = $(this).closest('.accordion-item');
+                      
+                            // 해당 아코디언 내부의 .mtom-question-detail-comment 엘리먼트 찾기
+                            var commentElement = accordionItem.find('.mtom-question-detail-comment');
+                      
+                            // 텍스트 값을 가져오기
+                            var commentText = commentElement.text();
+                      
+                            // 새로운 입력 요소 생성
+                            var changeTextarea = $('<input>', { type: 'text', value: commentText }).css('width', '100%');
+                      
+                            // 원래 요소의 내용을 새로운 입력 요소로 교체
+                            commentElement.replaceWith(changeTextarea);
+                      
+                            // 업데이트 버튼의 가시성 토글
+                            accordionItem.find('.mtom-question-update').prop('hidden', true);
+                            accordionItem.find('.mtom-question-done').prop('hidden', false);
+                          });
+                        });
+                      </script>
+
+
+                      <!-- 삭제버튼 모달 start -->
+                        <!-- Modal -->
+                        <div class="modal fade" id="delete-question-detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header text-center">
+                                    <div class="col-12">작성하신 1:1문의를 정말 삭제하시겠습니까?</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">취소</button>
+                                    <button type="button" class="btn btn-primary btn-sm">삭제</button>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col-2 text-center">
-                            <span>응답대기</span>
-                        </div>
-                    </div>
-                    <div class="row oto_question oq-body">
-                        <div class="col-8 text-center check-my-question">
-                            <span>월드컵 선정기준 및 사이트 운영 기분</span>
-                        </div>
-                        <div class="col-2 text-center">
-                            <span>2024.01.28</span>
-                        </div>
-                        <div class="col-2 text-center">
-                            <span>응답완료</span>
-                        </div>
-                    </div>
+                      <!-- 삭제버튼 모달 end -->
                 </div>
                 <!-- 1:1문의 end -->
 

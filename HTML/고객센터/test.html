@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Tag Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+<div id="myElement">This is a div</div>
+<button id="changeButton">Change to Textarea</button>
+
+<script>
+  $(document).ready(function() {
+    $('#changeButton').on('click', function() {
+      // Create a new textarea element
+      var textareaElement = $('<textarea>', { text: $('#myElement').text() });
+
+      // Replace the div with the new textarea element
+      $('#myElement').replaceWith(textareaElement);
+    });
+  });
+</script>
+
+</body>
+</html>
