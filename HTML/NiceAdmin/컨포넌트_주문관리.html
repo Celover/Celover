@@ -39,6 +39,12 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <style>
+        table th {
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -704,55 +710,329 @@
                         </tr>
                     </tfoot>
                 </table>
-
-                <script>
-                    function changeDate(num) {
-                        let now = new Date();
-
-                        switch (num) {
-                            // 오늘
-                            case 1:
-                                $("#startDate").val(now.toISOString().slice(0, 10));
-                                break;
-                            // 1주
-                            case 2:
-                                $("#startDate").val(now.setDate(now.getDate() - 7));
-                                console.log(now.setDate(now.getDate() - 7).toLocaleDateString())
-                                break;
-                            // 1개월
-                            case 3:
-                                $("#startDate").val(now.setMonth(now.getMonth() - 1));
-                                break;
-                            // 3개월
-                            case 4:
-                                $("#startDate").val(now.setMonth(now.getMonth() - 3));
-                                break;
-                            // 6개월 
-                            case 5:
-                                $("#startDate").val(now.setMonth(now.getMonth() - 7));
-                                break;
-                            // 1년
-                            case 6:
-                                $("#startDate").val(now.setMonth(now.getMonth() - 12));
-                                break;
-
-                        }
-                    }
-
-                    $(function () {
-                        let now = new Date();
-                        $("#startDate").val(now.toISOString().slice(0, 10));
-                        $("#endDate").val(now.toISOString().slice(0, 10));
-                    })
-
-                    // 한달전
-
-                </script>
-
             </div>
         </div>
+        <style>
+            .orderNumber:hover {
+                cursor: pointer;
+            }
 
+            .orderNumber {
+                color: #007bff !important;
+                text-decoration: underline 1px solid #007Bff;
+            }
+        </style>
 
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title fw-bolder">주문목록</h5>
+                <div class="row">
+                    <div class="col-md-12 text-end">
+                        <img style="width: 30px;" src="assets/img/excel-icon.png" alt="">
+                    </div>
+                </div>
+                <div style="overflow-x: scroll;">
+                    <table class="table table-hover" style="white-space:nowrap; font-size: small;">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                </th>
+                                <th scope="col">
+                                    #
+                                </th>
+                                <th scope="col">
+                                    주문번호
+                                </th>
+                                <th scope="col">
+                                    처리상태
+                                </th>
+                                <th scope="col">
+                                    주문일자
+                                </th>
+                                <th scope="col">
+                                    상품코드
+                                </th>
+                                <th scope="col">
+                                    상품이미지
+                                </th>
+                                <th scope="col">
+                                    상품명
+                                </th>
+                                <th scope="col">
+                                    옵션
+                                </th>
+                                <th scope="col">
+                                    배송주소
+                                </th>
+                                <th scope="col">
+                                    판매 단가
+                                </th>
+                                <th scope="col">
+                                    구매 수량
+                                </th>
+                                <th scope="col">
+                                    배송비
+                                </th>
+                                <th scope="col">
+                                    결제금액
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody style="vertical-align: middle; text-align: center;">
+                            <tr>
+                                <th scope="col">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                </th>
+                                <th scope="row">
+                                    1
+                                </th>
+                                <td class="orderNumber" data-bs-toggle="modal" data-bs-target="#disablebackdrop">
+                                    202401301545-000001
+                                </td>
+                                <td>
+                                    입금확인
+                                </td>
+                                <td>
+                                    2024-01-30 15:45
+                                </td>
+                                <td>
+                                    P000000001
+                                </td>
+                                <td>
+                                    <img style="width: 50px; height: 50px;" src="assets/img/product-1.jpg" alt="">
+                                </td>
+                                <td>
+                                    나이키 신발
+                                </td>
+                                <td>
+                                    280mm
+                                </td>
+                                <td>
+                                    서울특별시 강남구 테헤란로14길 6 [6층]
+                                </td>
+                                <td>
+                                    121,000
+                                </td>
+                                <td>
+                                    1
+                                </td>
+                                <td>
+                                    3,000
+                                </td>
+                                <td>
+                                    124,000
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="12">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="modal fade" id="disablebackdrop" tabindex="-1" data-bs-backdrop="false">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">주문상세보기</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <h5>주문자 정보</h5>
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="table-active" style="width: 15%;">
+                                                            주문번호
+                                                        </th>
+                                                        <td>
+                                                            202401301545-000001
+                                                        </td>
+                                                        <th class="table-active" style="width: 15%;">
+                                                            주문일자
+                                                        </th>
+                                                        <td style="width: 30%;">
+                                                            2024-01-23 19:11
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            주문자
+                                                        </th>
+                                                        <td>
+                                                            <input type="text" class="form-control" value="이원종">
+                                                        </td>
+                                                        <th class="table-active">
+                                                            주문자 메일
+                                                        </th>
+                                                        <td>
+                                                            <input type="text" class="form-control"
+                                                                value="21jong@gmail.com">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            주소지
+                                                        </th>
+                                                        <td colspan="3">
+                                                            <input type="text" class="form-control"
+                                                                value="서울특별시 강남구 테헤란로14길 6 [6층]">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <h5>주문 상세 정보</h5>
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <th class="table-active" style="width: 15%;">
+                                                            상품명
+                                                        </th>
+                                                        <td>
+                                                            나이키 신발
+                                                        </td>
+                                                        <th class="table-active" style="width: 15%;">
+                                                            상품이미지
+                                                        </th>
+                                                        <td style="width: 30%;">
+                                                            <img style="width: 50px; height: 50px;"
+                                                                src="assets/img/product-1.jpg" alt="">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            상품코드
+                                                        </th>
+                                                        <td>
+                                                            P000000001
+                                                        </td>
+                                                        <th class="table-active">
+                                                            판매단가
+                                                        </th>
+                                                        <td>
+                                                            29,000
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            택배업체
+                                                        </th>
+                                                        <td>
+                                                            <input type="text" class="form-control" value="CJ 대한통운">
+                                                        </td>
+                                                        <th class="table-active">
+                                                            송장번호
+                                                        </th>
+                                                        <td>
+                                                            <input type="text" class="form-control"
+                                                                value="LP1232132131">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            수량
+                                                        </th>
+                                                        <td>
+                                                            <input type="number" class="form-control" value="1">
+                                                        </td>
+                                                        <th class="table-active">
+                                                            배송비
+                                                        </th>
+                                                        <td>
+                                                            3,000
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            배송일자
+                                                        </th>
+                                                        <td>
+                                                            2024-02-01 13:22
+                                                        </td>
+                                                        <th class="table-active">
+                                                            배송완료일자
+                                                        </th>
+                                                        <td>
+                                                            2024-02-04 16:22
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="table-active">
+                                                            요청사항
+                                                        </th>
+                                                        <td colspan="3">
+                                                            사은품 1번 신청합니다 ~~
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <h5>기타</h5>
+                                            <table class="table table-bordered">
+                                                <tr>
+                                                    <th class="table-active" style="width: 15%;">
+                                                        메모
+                                                    </th>
+                                                    <td>
+                                                        <textarea class="form-control" name="" id="" cols="30"
+                                                            rows="10"></textarea>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="table-active" style="width: 15%;">
+                                                        처리상태
+                                                    </th>
+                                                    <td>
+                                                        <select class="form-select w-25"
+                                                            aria-label="Default select example">
+                                                            <option selected>입금확인</option>
+                                                            <option value="1">배송준비중</option>
+                                                            <option value="2">배송중</option>
+                                                            <option value="3">배송완료</option>
+                                                            <option value="3">구매확정</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer justify-content-between">
+                                    <div>
+                                        <button class="btn btn-outline-secondary">
+                                            <i class="bi bi-printer"></i> 출력
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">닫기</button>
+                                        <button type="button" class="btn btn-primary">변경사항 저장하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-2" style="font-size: small;">
+                    <div class="col-md-12 text-end">
+
+                        <button class="btn btn-warning btn-sm">상태 변경</button>
+                    </div>
+
+                </div>
+           
+            </div>
+        </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -785,6 +1065,47 @@
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
+    <script>
+        function changeDate(num) {
+            let now = new Date();
+
+            switch (num) {
+                // 오늘
+                case 1:
+                    $("#startDate").val(now.toISOString().slice(0, 10));
+                    break;
+                // 1주
+                case 2:
+                    $("#startDate").val((new Date(now.setDate(now.getDate() - 7))).toISOString().slice(0, 10));
+                    break;
+                // 1개월
+                case 3:
+                    $("#startDate").val((new Date(now.setMonth(now.getMonth() - 1)).toISOString().slice(0, 10)));
+                    break;
+                // 3개월
+                case 4:
+                    $("#startDate").val((new Date(now.setMonth(now.getMonth() - 3)).toISOString().slice(0, 10)));
+                    break;
+                // 6개월 
+                case 5:
+                    $("#startDate").val((new Date(now.setMonth(now.getMonth() - 6)).toISOString().slice(0, 10)));
+                    break;
+                // 1년
+                case 6:
+                    $("#startDate").val((new Date(now.setMonth(now.getMonth() - 12)).toISOString().slice(0, 10)));
+                    break;
+
+            }
+        }
+
+        $(function () {
+
+            let now = new Date();
+            $("#endDate").val(now.toISOString().slice(0, 10));
+            $("#startDate").val((new Date(now.setMonth(now.getMonth() - 3)).toISOString().slice(0, 10)));
+        })
+
+    </script>
 </body>
 
 </html>
