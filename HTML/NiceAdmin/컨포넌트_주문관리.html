@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Celover - Admin</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="관리자_메인.html" class="logo d-flex align-items-center">
+                <img src="assets/img/admin-logo.png" alt="">
+                <span class="d-none d-lg-block">Celover</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a><!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul><!-- End Notification Dropdown Items -->
+
+                </li><!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span class="badge bg-success badge-number">3</span>
+                    </a><!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You have 3 new messages
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Maria Hudson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>4 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Anna Nelson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>6 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>David Muldon</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>8 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="#">Show all messages</a>
+                        </li>
+
+                    </ul><!-- End Messages Dropdown Items -->
+
+                </li><!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item d-flex align-items-center">
+                <a class="nav-link collapsed disabled flex-fill" href="users-profile.html">
+                    <img src="assets/img/profile-img.jpg" style="width: 36px; height: 36px;"
+                        class="rounded-circle me-2">
+                    <span>Admin01</span>
+                </a>
+                <a href="">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </li><!-- End Profile Page Nav -->
+            <hr class="my-1">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users-profile.html">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    <span>사이트 바로가기</span>
+                </a>
+            </li><!-- End Profile Page Nav -->
+
+            <li class="nav-heading"></i>사이트 관리</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="관리자_메인.html">
+                    <i class="bi bi-grid"></i>
+                    <span>대시보드</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="site-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_배너.html">
+                            <i class="bi bi-circle"></i><span>배너 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_팝업.html">
+                            <i class="bi bi-circle"></i><span>팝업 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_이벤트.html">
+                            <i class="bi bi-circle"></i><span>이벤트 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_게시판.html">
+                            <i class="bi bi-circle"></i><span>게시판 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_신고.html">
+                            <i class="bi bi-circle"></i><span>신고 관리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#user-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person-gear"></i></i><span>사용자 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="user-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_회원정보.html">
+                            <i class="bi bi-circle"></i><span>회원 정보 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_알림.html">
+                            <i class="bi bi-circle"></i><span>알림 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_권한설정.html">
+                            <i class="bi bi-circle"></i><span>권한 설정</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#shopping-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bag"></i></i><span>쇼핑</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="shopping-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_상품관리.html">
+                            <i class="bi bi-circle"></i><span>상품 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="컨포넌트_주문관리.html">
+                            <i class="bi bi-circle"></i><span>주문 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_리뷰관리.html">
+                            <i class="bi bi-circle"></i><span>리뷰 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_문의내역.html">
+                            <i class="bi bi-circle"></i><span>문의 내역</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Components Nav -->
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#fan-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-star"></i><span>팬 페이지</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="fan-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_팬관리.html">
+                            <i class="bi bi-circle"></i><span>팬 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_미디어관리.html">
+                            <i class="bi bi-circle"></i><span>미디어 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_일정관리.html">
+                            <i class="bi bi-circle"></i><span>일정 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_피드관리.html">
+                            <i class="bi bi-circle"></i><span>피드 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_팬페이지.html">
+                            <i class="bi bi-circle"></i><span>팬페이지 신청 및 관리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#chart-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-graph-up-arrow"></i><span>통계</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="chart-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>준비중...</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main" style="min-height: 79vh;">
+
+        <div class="pagetitle">
+            <h1>주문관리</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="관리자_메인.html">메인</a></li>
+                    <li class="breadcrumb-item">쇼핑</li>
+                    <li class="breadcrumb-item active">주문관리</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title fw-bolder">상품주문관리</h5>
+                <table class="table table-bordered border-secondary">
+                    <tbody>
+                        <tr>
+                            <th class="table-active" style="width: 15%;">
+                                카테고리 선택
+                            </th>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>전체선택</option>
+                                            <option value="1">카리나</option>
+                                            <option value="2">아이유</option>
+                                            <option value="3">박보검</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>전체선택</option>
+                                            <option value="1">키링</option>
+                                            <option value="2">인형</option>
+                                            <option value="3">응원봉</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th rowspan="5" class="table-active">
+                                처리상태
+                            </th>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">입금예정</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">입금확인</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="option3">
+                                    <label class="form-check-label" for="inlineCheckbox3">배송준비중</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4"
+                                        value="option4">
+                                    <label class="form-check-label" for="inlineCheckbox4">배송중</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5"
+                                        value="option5">
+                                    <label class="form-check-label" for="inlineCheckbox5">배송완료</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6"
+                                        value="option6">
+                                    <label class="form-check-label" for="inlineCheckbox6">구매확정</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7"
+                                        value="option7">
+                                    <label class="form-check-label" for="inlineCheckbox7">입금전취소완료</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox8"
+                                        value="option8">
+                                    <label class="form-check-label" for="inlineCheckbox8">취소요청</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox9"
+                                        value="option9">
+                                    <label class="form-check-label" for="inlineCheckbox9">취소완료</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox10"
+                                        value="option10">
+                                    <label class="form-check-label" for="inlineCheckbox10">반품요청</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox11"
+                                        value="option11">
+                                    <label class="form-check-label" for="inlineCheckbox11">반품승인</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox12"
+                                        value="option12">
+                                    <label class="form-check-label" for="inlineCheckbox12">반품회수완료</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox13"
+                                        value="option13">
+                                    <label class="form-check-label" for="inlineCheckbox13">반품확정</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox14"
+                                        value="option14">
+                                    <label class="form-check-label" for="inlineCheckbox14">교환요청</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox15"
+                                        value="option15">
+                                    <label class="form-check-label" for="inlineCheckbox15">교환승인</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox16"
+                                        value="option16">
+                                    <label class="form-check-label" for="inlineCheckbox16">교환회수완료</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox17"
+                                        value="option17">
+                                    <label class="form-check-label" for="inlineCheckbox17">교환반품확정</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox18"
+                                        value="option18">
+                                    <label class="form-check-label" for="inlineCheckbox18">환불요청</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox19"
+                                        value="option19">
+                                    <label class="form-check-label" for="inlineCheckbox19">환불완료</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <th class="table-active">
+                                결제수단
+                            </th>
+                            <td>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                                        value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">카드</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                                        value="option2">
+                                    <label class="form-check-label" for="inlineCheckbox2">가상계좌</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3"
+                                        value="option3">
+                                    <label class="form-check-label" for="inlineCheckbox3">실시간계좌이체</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4"
+                                        value="option4">
+                                    <label class="form-check-label" for="inlineCheckbox4">휴대폰결제</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5"
+                                        value="option5">
+                                    <label class="form-check-label" for="inlineCheckbox5">무통장</label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th class="table-active">
+                                검색
+                            </th>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>주문자명</option>
+                                            <option value="1">상품코드</option>
+                                            <option value="3">주문번호</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="table-active">
+                                주문일자
+                            </th>
+                            <td>
+                                <div class="row">
+                                    <div class="col-md-6 d-flex align-items-center">
+                                        <input id="startDate" type="date" class="form-control">
+                                        <span>&nbsp;~&nbsp;</span>
+                                        <input id="endDate" type="date" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="radio" class="btn-check" name="options-base" id="todayBtn"
+                                            autocomplete="off">
+                                        <label class="btn" for="todayBtn" onclick="changeDate(1);">오늘</label>
+
+                                        <input type="radio" class="btn-check" name="options-base" id="oneWeekBtn"
+                                            autocomplete="off">
+                                        <label class="btn" for="oneWeekBtn" onclick="changeDate(2);">1주</label>
+                                        <input type="radio" class="btn-check" name="options-base" id="oneMonthBtn"
+                                            autocomplete="off">
+                                        <label class="btn" for="oneMonthBtn" onclick="changeDate(3);">1개월</label>
+
+                                        <input type="radio" class="btn-check" name="options-base" id="threeMonthBtn"
+                                            autocomplete="off" checked>
+                                        <label class="btn" for="threeMonthBtn" onclick="changeDate(4);">3개월</label>
+
+                                        <input type="radio" class="btn-check" name="options-base" id="sixMonthBtn"
+                                            autocomplete="off">
+                                        <label class="btn" for="sixMonthBtn" onclick="changeDate(5);">6개월</label>
+                                        <input type="radio" class="btn-check" name="options-base" id="oneYearBtn"
+                                            autocomplete="off">
+                                        <label class="btn" for="oneYearBtn" onclick="changeDate(6);">1년</label>
+                                    </div>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <button type="button" class="btn btn-success">검색</button>
+                                <button type="button" class="btn btn-outline-success">초기화</button>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <script>
+                    function changeDate(num) {
+                        let now = new Date();
+
+                        switch (num) {
+                            // 오늘
+                            case 1:
+                                $("#startDate").val(now.toISOString().slice(0, 10));
+                                break;
+                            // 1주
+                            case 2:
+                                $("#startDate").val(now.setDate(now.getDate() - 7));
+                                console.log(now.setDate(now.getDate() - 7).toLocaleDateString())
+                                break;
+                            // 1개월
+                            case 3:
+                                $("#startDate").val(now.setMonth(now.getMonth() - 1));
+                                break;
+                            // 3개월
+                            case 4:
+                                $("#startDate").val(now.setMonth(now.getMonth() - 3));
+                                break;
+                            // 6개월 
+                            case 5:
+                                $("#startDate").val(now.setMonth(now.getMonth() - 7));
+                                break;
+                            // 1년
+                            case 6:
+                                $("#startDate").val(now.setMonth(now.getMonth() - 12));
+                                break;
+
+                        }
+                    }
+
+                    $(function () {
+                        let now = new Date();
+                        $("#startDate").val(now.toISOString().slice(0, 10));
+                        $("#endDate").val(now.toISOString().slice(0, 10));
+                    })
+
+                    // 한달전
+
+                </script>
+
+            </div>
+        </div>
+
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
