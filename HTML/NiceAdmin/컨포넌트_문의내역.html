@@ -39,6 +39,31 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <STYle>
+        #searchArea span {
+            background-color: #fff;
+        }
+
+        #searchArea input {
+            border-left: none;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+        }
+
+        #searchArea input:focus {
+            outline: none;
+            box-shadow: var(--bs-white);
+            border: 1px solid #cee2e6;
+            border-left: none;
+        }
+
+        #recentInquiry tbody tr .inquiry-title:hover,#allInquiry tbody tr .inquiry-title:hover {
+            cursor: pointer;
+            color: #007bff;
+            text-decoration: underline 1px solid #007Bff;
+        }
+
+    </STYle>
 </head>
 
 <body>
@@ -452,11 +477,355 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title fw-bolder"></h5>
+                <h5 class="card-title fw-bolder pb-0">최근 문의</h5>
+                <p style="font-size: small;">답변하지 않은 최근 문의 내역만 보여집니다.</p>
+                <div class="row mb-2 justify-content-end">
+                    <div class="col-md-2" style="font-size: small;">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>제목</option>
+                            <option value="1">내용</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="searchArea" class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <table id="recentInquiry" class="table table-hover table-bordered">
+                    <thead class="table-active">
+                        <tr>
+                            <th scope="col">
+                                no
+                            </th>
+                            <th scope="col">
+                                분류
+                            </th>
+                            <th scope="col">
+                                제목
+                            </th>
+                            <th scope="col">
+                                아이디
+                            </th>
+                            <th scope="col">
+                                작성일
+                            </th>
+                            <th scope="col">
+                                상태
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                배송관련
+                            </td>
+                            <td class="inquiry-title" data-bs-toggle="modal" data-bs-target="#disablebackdrop">
+                                택배가 사라졌어요
+                            </td>
+                            <td>
+                                user01
+                            </td>
+                            <td>
+                                2024-01-23 15:22
+                            </td>
+                            <td>
+                                답변 대기중
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="modal fade" id="disablebackdrop" tabindex="-1" data-bs-backdrop="false">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">문의상세</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container mb-4" style="border-radius: 7px; border: 1px solid #dee2e6;">
+                                    <div class="row">
+                                        <div class="bg-secondary bg-opacity-10 py-2">
+                                            <div class="py-2">
+                                                <strong style="font-size: large;">
+                                                    아티스트를 등록하는 방법이 궁금해요.
+                                                </strong>
+                                            </div>
+                                            <div style="font-size: small;">
+                                                <strong>아이디 </strong>
+                                                <span style="color: #666;">user01</span>
+
+                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+
+                                                <strong>문의유형 </strong>
+                                                <span>이용 관련</span>
+
+                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+
+                                                <strong>문의 날짜 </strong>
+                                                <span>2022/12/11 14:11</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            style="padding: 24px 12px; min-height: 200px; border-bottom: 1px solid #dee2e6;">
+                                            안녕하세요. 셀러버를 처음 사용하는데 아티스트를 검색하는 방법을 모르겠어요.
+                                        </div>
+                                        <div class="img-area p-2">
+                                            <div class="p-1">
+                                                <h5>
+                                                    <i class="fas fa-paperclip"> 첨부파일</i>
+                                                </h5>
+                                            </div>
+                                            <div class="p-1">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="container" style="border-radius: 7px; border: 1px solid #dee2e6;">
+
+                                    <div class="row answer">
+                                        <div class="d-flex p-3 answer-header">
+                                            <div class="flex-grow-1">
+                                                <strong style="font-size: large;"><i class="fa-solid fa-headset"></i>
+                                                    답변하기</strong>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <hr style="margin: 0px; background-color: #dee2e6;">
+                                        </div>
+                                        <div class="py-2">
+                                            <textarea class="form-control" name="" id="" cols="30" rows="8"></textarea>
+                                        </div>
+                                        <!-- <div class="d-flex p-3 answer-header" style="border-top: 1px solid #dee2e6;">
+                                                <div class="flex-grow-1">
+                                                    <strong style="font-size: large;"><i class="fa-solid fa-headset"></i>
+                                                        답변내용</strong>
+                                                    </div>
+                                                    <div style="font-size: small; line-height: 27px;">
+                                                        <strong>답변 날짜 </strong>
+                                                        <span>2022/12/11 14:11</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                            <hr style="margin: 0px; background-color: #dee2e6;">
+                                        </div>
+                                        <div class="py-2">
+                                            저도 모르겠어요. 고객님이 직접 찾아보세요.😄😄😄
+                                        </div> -->
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-12 text-end">
+                                            <button class="btn btn-success btn-sm">답변하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-danger">문의 삭제하기</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Disabled Backdrop Modal-->
             </div>
         </div>
 
 
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title fw-bolder pb-0">전체 문의</h5>
+                <p style="font-size: small;">모든 문의 내역이 보여집니다.</p>
+                <!-- 백 작업시 아이디 수정 -->
+                <div class="row mb-2 justify-content-end">
+                    <div class="col-md-2" style="font-size: small;">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>제목</option>
+                            <option value="1">내용</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <div id="searchArea" class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <table id="allInquiry" class="table table-hover table-bordered">
+                    <thead class="table-active">
+                        <tr>
+                            <th scope="col">
+                                no
+                            </th>
+                            <th scope="col">
+                                분류
+                            </th>
+                            <th scope="col">
+                                제목
+                            </th>
+                            <th scope="col">
+                                아이디
+                            </th>
+                            <th scope="col">
+                                작성일
+                            </th>
+                            <th scope="col">
+                                상태
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                1
+                            </th>
+                            <td>
+                                배송관련
+                            </td>
+                            <td class="inquiry-title" data-bs-toggle="modal" data-bs-target="#disablebackdrop">
+                                택배가 사라졌어요
+                            </td>
+                            <td>
+                                user01
+                            </td>
+                            <td>
+                                2024-01-23 15:22
+                            </td>
+                            <td>
+                                답변 대기중
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="modal fade" id="disablebackdrop" tabindex="-1" data-bs-backdrop="false">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">문의상세</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container mb-4" style="border-radius: 7px; border: 1px solid #dee2e6;">
+                                    <div class="row">
+                                        <div class="bg-secondary bg-opacity-10 py-2">
+                                            <div class="py-2">
+                                                <strong style="font-size: large;">
+                                                    아티스트를 등록하는 방법이 궁금해요.
+                                                </strong>
+                                            </div>
+                                            <div style="font-size: small;">
+                                                <strong>아이디 </strong>
+                                                <span style="color: #666;">user01</span>
+
+                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+
+                                                <strong>문의유형 </strong>
+                                                <span>이용 관련</span>
+
+                                                <span class="vr" style="margin: 0px 4px; vertical-align: -2px;"></span>
+
+                                                <strong>문의 날짜 </strong>
+                                                <span>2022/12/11 14:11</span>
+                                            </div>
+                                        </div>
+                                        <div
+                                            style="padding: 24px 12px; min-height: 200px; border-bottom: 1px solid #dee2e6;">
+                                            안녕하세요. 셀러버를 처음 사용하는데 아티스트를 검색하는 방법을 모르겠어요.
+                                        </div>
+                                        <div class="img-area p-2">
+                                            <div class="p-1">
+                                                <h5>
+                                                    <i class="fas fa-paperclip"> 첨부파일</i>
+                                                </h5>
+                                            </div>
+                                            <div class="p-1">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                                <img style="width: 100px; height: 100px;"
+                                                    src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/photography/discover/landscape-photography/CODERED_B1_landscape_P2d_714x348.jpg.img.jpg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="container" style="border-radius: 7px; border: 1px solid #dee2e6;">
+
+                                    <div class="row answer">
+                                        <div class="d-flex p-3 answer-header">
+                                            <div class="flex-grow-1">
+                                                <strong style="font-size: large;"><i class="fa-solid fa-headset"></i>
+                                                    답변하기</strong>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <hr style="margin: 0px; background-color: #dee2e6;">
+                                        </div>
+                                        <div class="py-2">
+                                            <textarea class="form-control" name="" id="" cols="30" rows="8"></textarea>
+                                        </div>
+                                        <!-- <div class="d-flex p-3 answer-header" style="border-top: 1px solid #dee2e6;">
+                                                <div class="flex-grow-1">
+                                                    <strong style="font-size: large;"><i class="fa-solid fa-headset"></i>
+                                                        답변내용</strong>
+                                                    </div>
+                                                    <div style="font-size: small; line-height: 27px;">
+                                                        <strong>답변 날짜 </strong>
+                                                        <span>2022/12/11 14:11</span>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                            <hr style="margin: 0px; background-color: #dee2e6;">
+                                        </div>
+                                        <div class="py-2">
+                                            저도 모르겠어요. 고객님이 직접 찾아보세요.😄😄😄
+                                        </div> -->
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-md-12 text-end">
+                                            <button class="btn btn-success btn-sm">답변하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-danger">문의 삭제하기</button>
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">닫기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End Disabled Backdrop Modal-->
+            </div>
+        </div>
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
