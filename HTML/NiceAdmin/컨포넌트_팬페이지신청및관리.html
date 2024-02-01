@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Celover - Admin</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    /* 팬페이지 신청현황 css start */
+    .card .card-body{
+        padding-bottom: 0px;
+    }
+    .fanpage-create, .fanpage-management{
+        padding: 30px;
+        padding-top: 0px;
+    }
+    .fanpage-create table, .fanpage-management table{
+        width: 100%;
+    }
+    .fanpage-create table thead, .fanpage-management table thead{
+        border-bottom: 1px solid darkgray;
+    }
+    .fanpage-create table th, .fanpage-create table td, .fanpage-management table th, .fanpage-management table td {
+        width: 5%;
+        padding: 5px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .fanpage-create table select{
+        width: 85px;
+        border: 0px;
+        border-radius: 5px;
+        background-color: #f4f4f4;
+        text-align: center;
+    }
+    .fanpage-create table select:hover{
+        box-shadow: 1px 1px 5px gray;
+    }
+    .fanpage-create table button{
+        border: 0px;
+        background-color: white;
+        color: green;
+        font-size: 20px;
+    }
+    .fa-square-check:hover{
+        scale: 1.05;
+    }
+    .fanpage-create tbody span{
+        font-size: smaller;
+        text-decoration: underline;
+        color: gray;
+    }
+    .fanpage-create tbody span:hover{
+        cursor: pointer;
+    }
+    .fw-bolder{
+        padding-bottom: 5px;
+    }
+    .reseon-refuse-comment{
+        width: 100%;
+        height: 100px;
+        resize: none;
+        border: 1px solid lightgray;
+        padding: 10px;
+    }
+    .reseon-refuse-comment:focus{
+        outline: none;
+    }
+    .all-check-title{
+        font-size: large;
+        font-weight: 900;
+    }
+    .all-check-wrap{
+        padding: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    .title-name{
+        font-weight: 900;
+    }
+    .essential{
+        font-size: small;
+        color: skyblue;
+        font-weight: 900;
+    }
+    .all-check-wrap input{
+        border: 0px;
+    }
+    .all-check-wrap input:focus{
+        border: 0px;
+        outline: none;
+    }
+    .all-check-wrap p{
+        margin: 0px;
+    }
+    .all-check-wrap input, .all-check-wrap textarea{
+        pointer-events: none;
+        width: 100%;
+    }
+    .all-check-wrap textarea{
+        resize: none;
+        height: auto;
+        border: 0px;
+    }
+    .business-card{
+        box-sizing: border-box;
+    }
+    .all-check-wrap .check-img{
+        width: 100%;
+    }
+    #all-check .modal-body, #all-editor .modal-body{
+        height: 550px;
+        overflow: scroll;
+    }
+    /* 팬페이지 신청현황 css end */
+
+    /* 팬페이지 관리현황 css start */
+    .fanpage-management button{
+        border: 0px;
+        color: gray
+    }
+    .all-editor-wrap{
+        padding: 10px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid lightgray;
+    }
+    .all-editor-wrap input{
+        border: 1px solid gray;
+    }
+    .all-editor-wrap input:focus{
+        border: 1px solid gray;
+        outline: none;
+    }
+    .all-editor-wrap p{
+        margin: 0px;
+    }
+    .all-editor-wrap input, .all-editor-wrap textarea{
+        width: 100%;
+    }
+    .all-editor-wrap textarea{
+        resize: none;
+        height: auto;
+        border: 0px;
+    }
+    .all-editor-wrap .editor-img{
+        width: 100%;
+    }
+    /* 팬페이지 관리현황 css end */
+  </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="관리자_메인.html" class="logo d-flex align-items-center">
+                <img src="assets/img/admin-logo.png" alt="">
+                <span class="d-none d-lg-block">Celover</span>
+            </a>
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+        </div><!-- End Logo -->
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a><!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-check-circle text-success"></i>
+                            <div>
+                                <h4>Sit rerum fuga</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>2 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Dicta reprehenderit</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>4 hrs. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul><!-- End Notification Dropdown Items -->
+
+                </li><!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span class="badge bg-success badge-number">3</span>
+                    </a><!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You have 3 new messages
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Maria Hudson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>4 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>Anna Nelson</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>6 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="message-item">
+                            <a href="#">
+                                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                                <div>
+                                    <h4>David Muldon</h4>
+                                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                                    <p>8 hrs. ago</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="dropdown-footer">
+                            <a href="#">Show all messages</a>
+                        </li>
+
+                    </ul><!-- End Messages Dropdown Items -->
+
+                </li><!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Kevin Anderson</h6>
+                            <span>Web Designer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item d-flex align-items-center">
+                <a class="nav-link collapsed disabled flex-fill" href="users-profile.html">
+                    <img src="assets/img/profile-img.jpg" style="width: 36px; height: 36px;"
+                        class="rounded-circle me-2">
+                    <span>Admin01</span>
+                </a>
+                <a href="">
+                    <i class="bi bi-box-arrow-right"></i>
+                </a>
+            </li><!-- End Profile Page Nav -->
+            <hr class="my-1">
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="users-profile.html">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    <span>사이트 바로가기</span>
+                </a>
+            </li><!-- End Profile Page Nav -->
+
+            <li class="nav-heading"></i>사이트 관리</li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="관리자_메인.html">
+                    <i class="bi bi-grid"></i>
+                    <span>대시보드</span>
+                </a>
+            </li><!-- End Dashboard Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#site-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-house-gear"></i><span>메인 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="site-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_배너.html">
+                            <i class="bi bi-circle"></i><span>배너 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_팝업.html">
+                            <i class="bi bi-circle"></i><span>팝업 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_이벤트.html">
+                            <i class="bi bi-circle"></i><span>이벤트 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_게시판.html">
+                            <i class="bi bi-circle"></i><span>게시판 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_신고.html">
+                            <i class="bi bi-circle"></i><span>신고 관리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#user-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-person-gear"></i></i><span>사용자 관리</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="user-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_회원정보.html">
+                            <i class="bi bi-circle"></i><span>회원 정보 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_알림.html">
+                            <i class="bi bi-circle"></i><span>알림 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_권한설정.html">
+                            <i class="bi bi-circle"></i><span>권한 설정</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#shopping-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-bag"></i></i><span>쇼핑</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="shopping-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_상품관리.html">
+                            <i class="bi bi-circle"></i><span>상품 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_주문관리.html">
+                            <i class="bi bi-circle"></i><span>주문 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_리뷰관리.html">
+                            <i class="bi bi-circle"></i><span>리뷰 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_문의내역.html">
+                            <i class="bi bi-circle"></i><span>문의 내역</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li><!-- End Components Nav -->
+
+
+            <li class="nav-item">
+                <a class="nav-link" data-bs-target="#fan-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-star"></i><span>팬 페이지</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="fan-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="컨포넌트_팬페이지관리.html">
+                            <i class="bi bi-circle"></i><span>팬페이지 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_미디어관리.html">
+                            <i class="bi bi-circle"></i><span>미디어 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_일정관리.html">
+                            <i class="bi bi-circle"></i><span>일정 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="컨포넌트_피드관리.html">
+                            <i class="bi bi-circle"></i><span>피드 관리</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active" href="컨포넌트_팬페이지신청및관리.html">
+                            <i class="bi bi-circle"></i><span>팬페이지 신청 및 관리</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" data-bs-target="#chart-nav" data-bs-toggle="collapse" href="#">
+                    <i class="bi bi-graph-up-arrow"></i><span>통계</span><i class="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="chart-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    <li>
+                        <a href="components-alerts.html">
+                            <i class="bi bi-circle"></i><span>준비중...</span>
+                        </a>
+                    </li>
+                </ul>
+            </li><!-- End Components Nav -->
+        </ul>
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main" style="min-height: 79vh;">
+
+        <div class="pagetitle">
+            <h1>팬페이지 신청 및 관리</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="관리자_메인.html">메인</a></li>
+                    <li class="breadcrumb-item">팬 페이지</li>
+                    <li class="breadcrumb-item active">팬 페이지 신청 및 관리</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <!-- @@@@@@@@@@@@@ 팬페이지 관리 body start @@@@@@@@@@@@@ -->
+
+        <!-- ## 팬페이지 신청현황 start -->
+        <div class="card">
+            <div class="card-body" style="margin-bottom: 10px;">
+                <h5 class="card-title fw-bolder">팬페이지 신청 현황</h5>
+                <div class="row">
+                    <div class="col-3" style="color: gray; font-weight: 900; padding-left: 20px;">
+                        <span>승인대기 현황 : </span>
+                        <span>2</span>
+                    </div>
+                    <div class="col-9 text-end">
+                        <i class="fa-solid fa-arrow-up-short-wide"></i>
+                        <select name="" id="">
+                            <option value="">신청일기준</option>
+                            <option value="">ID순서</option>
+                            <option value="">활동명</option>
+                            <option value="">레이블명</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container fanpage-create">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>신청자ID</th>
+                            <th>아티스트 타입</th>
+                            <th>활동명</th>
+                            <th>레이블명</th>
+                            <th>신청일자</th>
+                            <th>현재상태</th>
+                            <th>승인관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>21Jong</td>
+                            <td>가수(솔로)</td>
+                            <td>21Jong</td>
+                            <td>YJE&M</td>
+                            <td>2024-01-30</td>
+                            <td>
+                                <label class="view-now-state">접수완료</label>
+                                <i class="bx bxs-circle text-success"></i>
+                                <br>
+                                <span data-bs-toggle="modal" data-bs-target="#all-check">전체보기</span>
+                            </td>
+                            <td>
+                                <select class="fanpage-create-agreement" name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="checkreport">접수완료</option>
+                                    <option value="refuse">반려</option>
+                                    <option value="approve">승인</option>
+                                </select>
+                                <button class="fanpage-create-agreement-checker">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary real-refuse-btn" data-bs-toggle="modal" data-bs-target="#reseon-refuse" hidden>
+                                    reseon-refuse
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>buzz</td>
+                            <td>가수(그룹)</td>
+                            <td>buzz</td>
+                            <td>YJE&M</td>
+                            <td>2024-01-25</td>
+                            <td class="fanpage-now-state">
+                                <label class="view-now-state">반려</label>
+                                <i class="bx bxs-circle text-danger"></i>
+                                <br>
+                                <span data-bs-toggle="modal" data-bs-target="#all-check">전체보기</span>
+                            </td>
+                            <td>
+                                <select class="fanpage-create-agreement" name="" id="">
+                                    <option value="">선택</option>
+                                    <option value="checkreport">접수완료</option>
+                                    <option value="refuse">반려</option>
+                                    <option value="approve">승인</option>
+                                </select>
+                                <button class="fanpage-create-agreement-checker">
+                                    <i class="fa-regular fa-square-check"></i>
+                                </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary real-refuse-btn" data-bs-toggle="modal" data-bs-target="#reseon-refuse" hidden>
+                                    reseon-refuse
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- ## 팬페이지 신청현황 end -->
+
+        <!-- 전체보기 modal start -->
+        <div class="modal fade" id="all-check" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">입점신청서 전체보기</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <span class="all-check-title">아티스트 정보</span>
+                        <div class="row all-check-wrap">
+                            <div class="col-4">
+                                <span class="title-name">활동명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="21JONG">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">데뷔일자</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" name="" id="" value="2023-01-01">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">대표 SNS</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="21JONG@instargram.com">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">주요 작품(음반) 정보</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">21JONG@instargram.com</div>
+                            <div class="col-4">
+                                <span class="title-name">주요 활동 이력</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="2023 YJ award 대상 수상" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">기타소개</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                        </div>
+
+                        <span class="all-check-title">Celover 입점정보</span>
+                        <div class="row all-check-wrap">
+                            <div class="col-4">
+                                <span class="title-name">입점 희망 시기</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="2024년 11월 11일">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">입점 희망 사유</span>
+                            </div>
+                            <div class="col-8">
+                                <textarea name="" id="" placeholder="신청자 미작성란 입니다."></textarea>
+                            </div>
+                        </div>
+
+                        <span class="all-check-title">레이블 및 담당자 정보</span>
+                        <div class="row all-check-wrap">
+                            <div class="col-4">
+                                <span class="title-name">레이블명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="YJE&M">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="박용진">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 연락처</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="010-1234-5678">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 이메일</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="email" value="123@123.123" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 소속팀명</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="마케팅3부" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">명함첨부</span>
+                            </div>
+                            <div class="col-8 business-card">
+                                <img class="check-img" src="https://www.idbins.com/pcweb/bizxpress/bf/__media/V1511_03_3.png">
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <script>
+            $(()=>{
+                let text = '<span>신청자 미작성란 입니다.</span>'
+                if($('.business-card').html() === ''){
+                    $('.business-card').html(text);
+                }
+                $('.check-img').click(function(){
+                    window.open(this.src);
+                })
+            })
+
+        </script>
+
+        <!-- 전체보기 modal end -->
+
+        <!-- 반려 사유 작성 modal start-->
+        <!-- Modal -->
+        <div class="modal fade" id="reseon-refuse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalLabel">반려사유 작성</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <textarea class="reseon-refuse-comment" name="" id="" placeholder="반려사유에 대해 정확하게 작성하여 고지될 수 있도록 작성간 유의 바랍니다."></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+                <button type="button" class="btn btn-danger agree-refuse">반려</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- 반려 사유 작성 modal end-->
+
+        <script>
+            $(()=>{
+                let agreement = '';
+                $('.fanpage-create-agreement').on('change',function(){
+                    agreement = $(this).val();
+                })
+                $('.fanpage-create-agreement-checker').click(function(){
+                    if(agreement != '' && agreement == 'refuse'){
+                        console.log('반려');
+                        document.querySelector('.real-refuse-btn').click();
+                        /*
+                        $(this).closest('tr').find('.view-now-state').text('반려');
+                        $(this).closest('tr').find('.bx.bxs-circle').removeClass('text-success').addClass('text-danger');
+                        */
+                    }else if(agreement != '' && agreement == 'approve'){
+                        console.log('승인');
+                        $(this).closest('tr').prop('hidden', true);
+                    }else if(agreement != '' && agreement == 'checkreport'){
+                        console.log('확인완료');
+                        $(this).closest('tr').find('.view-now-state').text('접수완료');
+                        $(this).closest('tr').find('.bx.bxs-circle').removeClass('text-danger').addClass('text-success');
+                    }
+                })
+
+                $('.agree-refuse').click(function(){
+                    $(this).closest('tr').find('.view-now-state').text('반려');
+                    $(this).closest('tr').find('.bx.bxs-circle').removeClass('text-success').addClass('text-danger');
+                })
+            })
+        </script>
+
+        <!-- ## 팬페이지 관리현황 start -->
+        <div class="card">
+            <div class="card-body" style="margin-bottom: 10px;">
+                <h5 class="card-title fw-bolder">팬페이지 관리 현황</h5>
+                <div class="row">
+                    <div class="col-6" style="color: gray; font-weight: 900; padding-left: 20px;">
+                        <span>전체 : </span>
+                        <span>150</span>
+
+                        &nbsp;&nbsp;&nbsp;
+
+                        <span>운용<i class="bx bxs-circle text-success"></i> : </span>
+                        <span>120</span>
+                        |
+                        <span>점검<i class="bx bxs-circle text-warning"></i> : </span>
+                        <span>10</span>
+                        |
+                        <span>폐쇄<i class="bx bxs-circle"></i> : </span>
+                        <span>20</span>
+                    </div>
+                    <div class="col-6 text-end">
+                        <i class="fa-solid fa-arrow-up-short-wide"></i>
+                        <select name="" id="">
+                            <option value="">아티스트명</option>
+                            <option value="">레이블명</option>
+                            <option value="">개설일</option>
+                            <option value="">팬가입자</option>
+                            <option value="">운용상태</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="container fanpage-management">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>아티스트명</th>
+                            <th>아티스트 타입</th>
+                            <th>레이블명</th>
+                            <th>개설일</th>
+                            <th>팬가입자</th>
+                            <th>운용상태</th>
+                            <th>관리</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>BlackPink</td>
+                            <td>가수(그룹)</td>
+                            <td>YGE&M</td>
+                            <td>2020-01-01</td>
+                            <td>10563</td>
+                            <td>
+                                <span>운용<i class="bx bxs-circle text-success"></i></span>
+                            </td>
+                            <td>
+                                <button>
+                                    <i class="fa-solid fa-sliders" data-bs-toggle="modal" data-bs-target="#all-editor"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>방탄소년단</td>
+                            <td>가수(그룹)</td>
+                            <td>HIVE</td>
+                            <td>2017-10-17</td>
+                            <td>180133</td>
+                            <td>
+                                <span>점검<i class="bx bxs-circle text-warning"></i></span>
+                            </td>
+                            <td>
+                                <button>
+                                    <i class="fa-solid fa-sliders" data-bs-toggle="modal" data-bs-target="#all-editor"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>BIGBANG</td>
+                            <td>가수(그룹)</td>
+                            <td>YGE&M</td>
+                            <td>2015-12-12</td>
+                            <td>20133</td>
+                            <td>
+                                <span>폐쇄<i class="bx bxs-circle"></i></span>
+                            </td>
+                            <td>
+                                <button>
+                                    <i class="fa-solid fa-sliders" data-bs-toggle="modal" data-bs-target="#all-editor"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- 팬페이지 관리현황 관리 modal start -->
+        <div class="modal fade" id="all-editor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h2 class="modal-title fs-5" id="exampleModalLabel">팬페이지 상세보기/수정</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <span class="all-check-title">팬페이지 정보 및 수정</span>
+                        <div class="row all-editor-wrap">
+                            <div class="col-4">
+                                <span class="title-name">팬 가입자수</span>
+                            </div>
+                            <div class="col-8">
+                                <span>15647</span>
+                                <span>명</span>
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">운용상태 수정</span>
+                            </div>
+                            <div class="col-8">
+                                <select name="" id="">
+                                    <option value="">운용</option>
+                                    <option value="">점검</option>
+                                    <option value="">폐쇄</option>
+                                </select>
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">최초개설일</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" value="2023-12-31" disabled>
+                            </div>
+                        </div>
+
+                        <span class="all-check-title">아티스트 정보 수정</span>
+                        <div class="row all-editor-wrap">
+                            <div class="col-4">
+                                <span class="title-name">활동명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="21JONG">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">데뷔일자</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="date" name="" id="" value="2023-01-01">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">대표 SNS</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="21JONG@instargram.com">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">주요 작품(음반) 정보</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="21JONG@instargram.com">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">주요 활동 이력</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="2023 YJ award 대상 수상" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">기타소개</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                        </div>
+
+                        <span class="all-check-title">레이블 및 담당자 정보 수정</span>
+                        <div class="row all-editor-wrap">
+                            <div class="col-4">
+                                <span class="title-name">레이블명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="YJE&M">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자명</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="박용진">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 연락처</span>
+                                <span class="essential">(필수)</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="010-1234-5678">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 이메일</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="email" value="123@123.123" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">담당자 소속팀명</span>
+                            </div>
+                            <div class="col-8">
+                                <input type="text" value="마케팅3부" placeholder="신청자 미작성란 입니다.">
+                            </div>
+                            <div class="col-4">
+                                <span class="title-name">명함첨부</span>
+                            </div>
+                            <div class="col-8 business-card">
+                                <input type="file">
+                                <img class="check-img" src="https://www.idbins.com/pcweb/bizxpress/bf/__media/V1511_03_3.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="border-top: 0px; padding-top: 0px;">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        <button type="button" class="btn btn-success">수정</button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <script>
+            $(()=>{
+                let text = '<span>신청자 미작성란 입니다.</span>'
+                if($('.business-card').html() === ''){
+                    $('.business-card').html(text);
+                }
+                $('.editor-img').click(function(){
+                    window.open(this.src);
+                })
+            })
+
+        </script>
+        <!-- 팬페이지 관리현황 관리 modal end -->
+        
+        <!-- ## 팬페이지 관리현황 end -->
+
+        <!-- @@@@@@@@@@@@@ 팬페이지 관리 body end @@@@@@@@@@@@@ -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
