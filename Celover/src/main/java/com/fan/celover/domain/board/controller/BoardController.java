@@ -1,4 +1,4 @@
-package com.fan.celover.controller;
+package com.fan.celover.domain.board.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

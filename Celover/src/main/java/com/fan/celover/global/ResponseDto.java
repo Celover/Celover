@@ -1,4 +1,4 @@
-package com.fan.celover.controller.dto;
+package com.fan.celover.global;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,5 +1,5 @@
 
-package com.fan.celover.config;
+package com.fan.celover.global;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,25 +29,34 @@ public class SecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 	
+	/*
+	 * @Autowired private OAuth2UserService oAuth2UserService;
+	 */
+	
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-	        .csrf((csrfConfig) ->
-					csrfConfig.disable()
+	        .csrf(csrfConfig ->	csrfConfig
+	        		.disable()
 	        ) // csrf 토큰 비활성화 (테스트시 걸어두는게 좋음)
-            .authorizeHttpRequests((request) -> 
-            	request.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-                .requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/img/**", "/fontawesome-free-6.5.1-web/**").permitAll()
-                .anyRequest().authenticated()
+            .authorizeHttpRequests(request -> request
+	        		.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+	                .requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/img/**", "/fontawesome-free-6.5.1-web/**").permitAll()
+	                .anyRequest().authenticated()
             )
-                .formLogin(login -> login
-                        .loginPage("/auth/login-form")
-                        .loginProcessingUrl("/auth/login")
-                        .usernameParameter("userId")
-                        .passwordParameter("password")
-                        .defaultSuccessUrl("/", true)
-                        .permitAll()
-            );
+            .formLogin(login -> login
+	                .loginPage("/auth/login-form")
+	                .loginProcessingUrl("/auth/login")
+	                .usernameParameter("userId")
+	                .passwordParameter("password")
+	                .defaultSuccessUrl("/", true)
+	                .permitAll()
+    		)
+		/*
+		 * .oauth2Login(oauth2 -> oauth2 .loginPage("/auth/login-form")
+		 * .defaultSuccessUrl("/") .userInfoEndpoint(userInfo -> userInfo
+		 * .userService(oAuth2UserService) ) )
+		 */;
 
         return http.build();
     }
