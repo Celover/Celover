@@ -33,7 +33,8 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
     <!-- fontawesome -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -51,24 +52,88 @@
             padding: 10px;
         }
 
+        /*
         .fanpage-list-wrap * {
         }
-
+        */
         .fanpage-list-wrap .fanpage-list-header {
             padding: 10px;
             border-bottom: 1px solid gray;
         }
-        .fanpage-list-wrap button{
+
+        .fanpage-list-wrap button {
             border: 0px;
         }
-        .fanpage-list-header{
+
+        .fanpage-list-header {
             font-weight: 900;
         }
-        .fanpage-list-body{
+
+        .fanpage-list-body {
             padding: 10px;
         }
-        .dropdown-menu{
+
+        .dropdown-menu {
             border-radius: 5px;
+        }
+
+        #editor-fan .modal-body .container {}
+
+        #editor-fan .modal-body .container div {}
+
+        .fan-editor-header {
+            font-weight: 900;
+            border-bottom: 1px solid gray;
+        }
+
+        .fan-editor-body {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .fa-square-check {
+            color: green;
+            cursor: pointer;
+        }
+
+        .media-body div {
+            padding: 0px;
+        }
+
+        .media-body input {
+            width: 100%;
+        }
+        .fa-gear{
+            cursor: pointer;
+        }
+        .fa-star{
+            color: yellow;
+        }
+        #editor-feed-2 .row div{
+            border: 1px solid white;
+        }
+        #editor-feed-2 .row input, #editor-feed-2 .row select{
+            width: 100%;
+            text-align: center;
+            border: 1px solid lightgray;
+            
+        }
+        #editor-feed-2 .row textarea{
+            width: 100%;
+            height: 200px;
+            resize: none;
+            padding: 10px;
+            border: 1px solid lightgray;
+        }
+
+        #editor-feed-2 .row textarea:focus ,#editor-feed-2 .row input:focus{
+            outline: none;
+        }
+
+        #editor-feed-2 .row .col-2{
+            font-weight: 900;
+            text-align: center;
+            background-color: #f4f4f4;
         }
     </style>
 </head>
@@ -524,13 +589,18 @@
                         </div>
                         <div class="col">
                             <div class="dropdown">
-                                <button role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-gears"></i></button>
+                                <button role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                        class="fa-solid fa-gears"></i></button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">팬 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">미디어 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">일정 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">피드 관리</a></li>
-                                  </ul>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editor-fan">팬
+                                            관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#editor-media">미디어 관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#editor-calendar">일정 관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-target="#editor-feed" data-bs-toggle="modal">피드
+                                            관리</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -546,13 +616,18 @@
                         </div>
                         <div class="col">
                             <div class="dropdown">
-                                <button role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-gears"></i></button>
+                                <button role="button" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                        class="fa-solid fa-gears"></i></button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">팬 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">미디어 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">일정 관리</a></li>
-                                    <li><a class="dropdown-item" href="#">피드 관리</a></li>
-                                  </ul>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editor-fan">팬
+                                            관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#editor-media">미디어 관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-toggle="modal"
+                                            data-bs-target="#editor-calendar">일정 관리</a></li>
+                                    <li><a class="dropdown-item" data-bs-target="#editor-feed" data-bs-toggle="modal">피드
+                                            관리</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -560,6 +635,300 @@
                 <!-- 팬페이지 관리 body end -->
             </div>
         </div>
+
+        <!-- 관리기능 modal start -->
+
+        <!-- 팬 관리 modal start -->
+        <!-- Modal -->
+        <div class="modal fade" id="editor-fan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">팬 관리</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+                            <div class="row fan-editor-header">
+                                <div class="col-1">회원번호</div>
+                                <div class="col">닉네임</div>
+                                <div class="col">가입일</div>
+                                <div class="col-1">성별</div>
+                                <div class="col">회원등급</div>
+                                <div class="col">상태</div>
+                                <div class="col-1">수정</div>
+                            </div>
+                            <div class="row fan-editor-body">
+                                <div class="col-1">1</div>
+                                <div class="col">용진p</div>
+                                <div class="col">2024-02-02</div>
+                                <div class="col-1">남</div>
+                                <div class="col">
+                                    <select name="" id="fan-grade">
+                                        <option value="normal">일반회원</option>
+                                        <option value="artist">아티스트</option>
+                                        <option value="admin">관리자</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select name="" id="fan-state">
+                                        <option value="normal">정상회원</option>
+                                        <option value="sanction">제재회원</option>
+                                        <option value="block">차단회원</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <i class="fa-solid fa-square-check"></i>
+                                </div>
+                            </div>
+                            <div class="row fan-editor-body">
+                                <div class="col-1">2</div>
+                                <div class="col">시연K</div>
+                                <div class="col">2024-01-02</div>
+                                <div class="col-1">여</div>
+                                <div class="col">
+                                    <select name="" id="fan-grade">
+                                        <option value="normal">일반회원</option>
+                                        <option value="artist">아티스트</option>
+                                        <option value="admin">관리자</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <select name="" id="fan-state">
+                                        <option value="normal">정상회원</option>
+                                        <option value="sanction">제재회원</option>
+                                        <option value="block">차단회원</option>
+                                        <option value="delete">탈퇴회원</option>
+                                    </select>
+                                </div>
+                                <div class="col-1">
+                                    <i class="fa-solid fa-square-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 팬 관리 modal end -->
+
+        <!-- 미디어 관리 modal start -->
+        <div class="modal fade" id="editor-media" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">미디어 관리</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+                            <div class="row fan-editor-header">
+                                <div class="col">미디어번호</div>
+                                <div class="col">제목</div>
+                                <div class="col">등록ID</div>
+                                <div class="col">등록일</div>
+                                <div class="col">미디어종류</div>
+                                <div class="col">URL/파일</div>
+                                <div class="col">조회수</div>
+                                <div class="col">댓글</div>
+                                <div class="col">상태</div>
+                                <div class="col">수정</div>
+                            </div>
+                            <div class="row fan-editor-body media-body">
+                                <div class="col">1</div>
+                                <div class="col">
+                                    <input type="text" value="[Vlog]원종이의 슬기로운 숙소생활 제 1탄 (feat. YJE&M)">
+                                </div>
+                                <div class="col">21Jong</div>
+                                <div class="col">2024-01-24</div>
+                                <div class="col">
+                                    <select name="" id="">
+                                        <option value="video">동영상</option>
+                                        <option value="photo">사진</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="text" value="https://youtu.be/JleoAppaxi0?si=uhvto41dED8HdQ1W">
+                                </div>
+                                <div class="col">105678</div>
+                                <div class="col">4788</div>
+                                <div class="col">
+                                    <select name="" id="">
+                                        <option value="public">공개</option>
+                                        <option value="private">비공개</option>
+                                        <option value="delete">삭제</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <i class="fa-solid fa-square-check"></i>
+                                </div>
+                            </div>
+                            <div class="row fan-editor-body media-body">
+                                <div class="col">2</div>
+                                <div class="col">
+                                    <input type="text" value="MCount에 나타난 1종2">
+                                </div>
+                                <div class="col">21Jong</div>
+                                <div class="col">2024-02-1</div>
+                                <div class="col">
+                                    <select name="" id="">
+                                        <option value="video">동영상</option>
+                                        <option value="photo">사진</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <input type="text" value="https://youtu.be/JleoAppaxi0?si=uhvto41dED8HdQ1W">
+                                </div>
+                                <div class="col">678</div>
+                                <div class="col">88</div>
+                                <div class="col">
+                                    <select name="" id="">
+                                        <option value="public">공개</option>
+                                        <option value="private">비공개</option>
+                                        <option value="delete">삭제</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <i class="fa-solid fa-square-check"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 미디어 관리 modal end -->
+
+        <!-- 일정 관리 modal start -->
+        <div class="modal fade" id="editor-calendar" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 일정 관리 modal end -->
+
+        <!-- 피드 관리 modal start -->
+        <div class="modal fade" id="editor-feed" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">피드 관리</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+                            <div class="row fan-editor-header">
+                                <div class="col">구분</div>
+                                <div class="col">작성자</div>
+                                <div class="col">좋아요</div>
+                                <div class="col">댓글</div>
+                                <div class="col">작성일</div>
+                                <div class="col">수정일</div>
+                                <div class="col">상태</div>
+                                <div class="col">관리</div>
+                            </div>
+                            <div class="row fan-editor-body media-body feed-body">
+                                <div class="col">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="col">Admin</div>
+                                <div class="col">127</div>
+                                <div class="col">66</div>
+                                <div class="col">2023-02-02</div>
+                                <div class="col">2024-01-08</div>
+                                <div class="col">공개</div>
+                                <div class="col">
+                                    <i class="fa-solid fa-gear" data-bs-target="#editor-feed-2" data-bs-toggle="modal"></i>
+                                </div>
+                            </div>
+                            <div class="row fan-editor-body media-body feed-body">
+                                <div class="col">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="col">YJE&M</div>
+                                <div class="col">17</div>
+                                <div class="col">6</div>
+                                <div class="col">2023-03-14</div>
+                                <div class="col">2023-04-18</div>
+                                <div class="col">공개</div>
+                                <div class="col">
+                                    <i class="fa-solid fa-gear" data-bs-target="#editor-feed-2" data-bs-toggle="modal"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="editor-feed-2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-2">구분</div>
+                                <div class="col-4">
+                                    <select name="" id="">
+                                        <option value="">아티스트</option>
+                                        <option value="">팬</option>
+                                    </select>
+                                </div>
+                                <div class="col-2">작성자</div>
+                                <div class="col-4">admin</div>
+                                <div class="col-2">좋아요</div>
+                                <div class="col-4">12345</div>
+                                <div class="col-2">댓글</div>
+                                <div class="col-4">123</div>
+                                <div class="col-2">작성일</div>
+                                <div class="col-4">
+                                    <input type="date">
+                                </div>
+                                <div class="col-2">수정일</div>
+                                <div class="col-4">
+                                    <input type="date">
+                                </div>
+                                <div class="col-2">상태</div>
+                                <div class="col-4">
+                                    <select name="" id="">
+                                        <option value="">공개</option>
+                                        <option value="">비공개</option>
+                                        <option value="">삭제</option>
+                                    </select>
+                                </div>
+                                <div class="col-2">기타</div>
+                                <div class="col-4">
+                                    <input type="text">
+                                </div>
+                                <div class="col-2">내용</div>
+                                <div class="col-10">
+                                    <textarea name="" id=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-target="#editor-feed" data-bs-toggle="modal">이전으로</button>
+                        <button class="btn btn-success" data-bs-target="#editor-feed" data-bs-toggle="modal">저장 후 돌아가기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 피드 관리 modal end -->
+
+        <!-- 관리기능 modal end -->
 
 
     </main><!-- End #main -->
