@@ -1,15 +1,15 @@
+package com.fan.celover.global.config;
 
-package com.fan.celover.global;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+
+import com.fan.celover.domain.user.service.OAuth2UserService;
 
 import jakarta.servlet.DispatcherType;
 
@@ -18,30 +18,18 @@ import jakarta.servlet.DispatcherType;
 @EnableMethodSecurity
 public class SecurityConfig {
 	
-	@Bean
-	public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
-			throws Exception {
-		return authenticationConfiguration.getAuthenticationManager();
-	}
-	
-	@Bean
-	public BCryptPasswordEncoder bcryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-	
-	/*
-	 * @Autowired private OAuth2UserService oAuth2UserService;
-	 */
+	@Autowired
+	private OAuth2UserService OAuth2UserService;
 	
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
 	        .csrf(csrfConfig ->	csrfConfig
 	        		.disable()
-	        ) // csrf 토큰 비활성화 (테스트시 걸어두는게 좋음)
+	        ) // csrf 토큰 비활성화
             .authorizeHttpRequests(request -> request
 	        		.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
-	                .requestMatchers("/", "/auth/**", "/js/**", "/css/**", "/img/**", "/fontawesome-free-6.5.1-web/**").permitAll()
+	                .requestMatchers("/", "/auth/**", "/login/**", "/js/**", "/css/**", "/img/**", "/fontawesome-free-6.5.1-web/**").permitAll()
 	                .anyRequest().authenticated()
             )
             .formLogin(login -> login
@@ -51,13 +39,15 @@ public class SecurityConfig {
 	                .passwordParameter("password")
 	                .defaultSuccessUrl("/", true)
 	                .permitAll()
-    		)
-		/*
-		 * .oauth2Login(oauth2 -> oauth2 .loginPage("/auth/login-form")
-		 * .defaultSuccessUrl("/") .userInfoEndpoint(userInfo -> userInfo
-		 * .userService(oAuth2UserService) ) )
-		 */;
-
+            )
+            .oauth2Login(oauth2 -> oauth2
+	                .loginPage("/auth/login-form")
+            		.defaultSuccessUrl("/", true)
+            		.userInfoEndpoint(endpoint -> endpoint
+            				.userService(OAuth2UserService))
+            		
+    		);
+ 
         return http.build();
     }
 }

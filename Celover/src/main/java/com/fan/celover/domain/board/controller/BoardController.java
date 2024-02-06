@@ -10,5 +10,4 @@ public class BoardController {
 	public String boardForm() {
 		return "main/board/boardList";
 	}
-	
 }

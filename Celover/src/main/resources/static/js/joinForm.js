@@ -381,7 +381,7 @@ $("#submit").click(function() {
 				} else {
 					alert("회원가입이 완료되었습니다.");
 					console.log(resp);
-					location.href = "/";
+					location.href = "/auth/login-form";
 				}
 				console.log("회원가입 ajax 통신 성공 !");
 

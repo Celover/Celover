@@ -4,11 +4,10 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.fan.celover.domain.user.SocialType;
 import com.fan.celover.domain.user.User;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
-
+public interface UserRepository extends JpaRepository<User, Long>{
+	
 	/* findBy vs existsBy vs countBy
 	 * count는 전체행을 조회한 후 조건에 맞는 값의 개수를 반환해준다.
 	 * exist는 조회를 하다가 조건에 맞는 데이터가 있을 경우 반환해준다.
@@ -35,10 +34,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	// 닉네임 존재 여부 true, false 반환
 	boolean existsByNickname(String nickname);
 	
-	Optional<User> findByRefreshToken(String refreshToken);
-
-	Optional<User> findByUserId(String userId);
-
 	// 아이디 User 반환
 	/*
 	 *  Optional
@@ -51,6 +46,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 	 *  즉, 메소드의 반환값이 절대 null이 아니라면 Optional 사용을 지양해야된다.
 	 */
 	
-	Optional<User> findBySocialTypeAndSocialId(SocialType socialType, String socialId);
+	Optional<User> findByUserId(String userId);
+	
+//	Optional<User> findByEmailAndOauthType(String email, String oauthType);
 	
 }

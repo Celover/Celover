@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fan.celover.domain.user.dto.UserSignUpDto;
+import com.fan.celover.domain.user.User;
 import com.fan.celover.domain.user.service.UserService;
 import com.fan.celover.global.ResponseDto;
 
@@ -47,11 +47,11 @@ public class UserApiController {
 	
 	// 회원가입
 	@PostMapping("/auth/users")
-	public ResponseDto<Integer> signUp(@RequestBody UserSignUpDto userSignUpDto) throws Exception {
+	public ResponseDto<Integer> signUp(@RequestBody User user) throws Exception {
 		System.out.println("createUser 실행됨");
-		System.out.println("유저정보: " + userSignUpDto);
+		System.out.println("유저정보: " + user);
 
-		userService.signUp(userSignUpDto);
+		userService.signUp(user);
 
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}

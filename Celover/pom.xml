@@ -26,12 +26,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-oauth2-client</artifactId>
 		</dependency>
-		 -->
 		<!-- 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -63,12 +61,18 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+	<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			 <exclusions>
+			    <exclusion>
+			      <groupId>org.junit.vintage</groupId>
+			      <artifactId>junit-vintage-engine</artifactId>
+			  	</exclusion>
+			  </exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -76,11 +80,13 @@
 			<scope>test</scope>
 		</dependency>
 		<!--  추가 라이브러리 시작 -->
+		
 		<!-- JSP 템플릿 엔진 -->
 		<dependency>
 		  <groupId>org.apache.tomcat.embed</groupId>
 		  <artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+		
 		
 		<!-- jstl -->
 		<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
@@ -105,11 +111,19 @@
 			<version>3.0.1</version>
 		</dependency>
 		
+		
 		<!-- 시큐리티 태그 라이브러리 -->
 		<dependency>
 		  <groupId>org.springframework.security</groupId>
 		  <artifactId>spring-security-taglibs</artifactId>
 		</dependency>
+		
+		<!-- jwt 라이브러리 -->
+<!-- 		<dependency>
+		  <groupId>com.auth0</groupId>
+		  <artifactId>java-jwt</artifactId>
+		  <version>4.2.1</version>
+		</dependency> -->
 
 		<!-- 추가 라이브러리 끝 -->
 		
