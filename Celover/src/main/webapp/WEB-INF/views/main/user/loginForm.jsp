@@ -64,7 +64,7 @@
 						<p>SNS 로그인</p>
 						<div class="row justify-content-md-center">
 							<div class="col-md-3">
-								<div class="social-btn p-2">
+								<div id="googleBtn" class="social-btn p-2">
 									<div class="img-area">
 										<img src="/img/구글로그인버튼.png" style="border: 1px solid #dee2e6; border-radius: 50%;" alt="">
 									</div>
@@ -72,7 +72,7 @@
 								</div>
 							</div>
 							<div class="col-md-3">
-								<div class="social-btn p-2">
+								<div id="naverBtn" class="social-btn p-2">
 									<div class="img-area">
 										<img src="/img/네이버로그인버튼.png" alt="">
 									</div>
@@ -80,7 +80,7 @@
 								</div>
 							</div>
 							<div class="col-md-3">
-								<div class="social-btn p-2">
+								<div id="kakaoBtn" class="social-btn p-2">
 									<div class="img-area">
 										<img src="/img/카카오로그인버튼.png" alt="">
 									</div>

@@ -41,10 +41,10 @@
 		<div class="d-flex justify-content-between">
 
 
-			<div class="mainLogo p-4" style="font-family: 'Bruno Ace', serif; margin-left: 26px;">
-				<h2 style="font-weight: 800; margin: 0px; font-size: 32px;">
-					<a href="/">Celover</a>
-				</h2>
+			<div class="mainLogo p-4" style="margin-left: 26px;">
+				<a href="/"> 
+					<img src="/img/로고-Bruno_Ace.png">
+				</a>
 			</div>
 
 

@@ -86,6 +86,16 @@ body {
 	outline: none;
 }
 
+.mainLogo {
+	display: flex;
+	align-items: center;
+}
+
+.mainLogo img {
+	width:150px;
+	height: auto;
+}
+
 .mainLogo:hover {
 	cursor: pointer;
 }

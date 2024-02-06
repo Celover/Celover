@@ -1,10 +1,11 @@
-/* 회원정보수정 페이지 script */
+/* 회원가입 페이지 script */
+
+/* 아이디 관련 */
 $(document).on("keyup", "#createAccountArea #userId", function() {
 
 	let regexId = /^[a-z0-9_-]{5,20}$/;
 	let userId = $("#createAccountArea #userId").val();
-	let $userId = $("#createAccountArea #userId");
-
+	
 	$('[id^="state"]').css("display", "none");
 
 	if (userId.length != 0) { // 값이 있을때
@@ -89,6 +90,7 @@ $(document).on("blur", "#createAccountArea #userId", function() {
 	}
 })
 
+/* 비밀번호 텍스트로 보기 */
 $(document).on("click", "#eyeBtn .fa-eye", function() {
 	// 텍스트로 타입변환
 	$(this).parent().prev().attr("type", "text");
@@ -96,6 +98,7 @@ $(document).on("click", "#eyeBtn .fa-eye", function() {
 	$("#eyeBtn .fa-eye-slash").css("display", "")
 })
 
+/* 비밀번호 ***로 보기 */
 $(document).on("click", "#eyeBtn .fa-eye-slash", function() {
 	// 텍스트로 타입변환
 	$(this).parent().prev().attr("type", "password");
@@ -103,7 +106,6 @@ $(document).on("click", "#eyeBtn .fa-eye-slash", function() {
 	$("#eyeBtn .fa-eye").css("display", "")
 })
 
-// 비밀번호 유효성 검사
 /* $(document).on("blur", "#createAccountArea #password", function () {
 
 	let pw = $("#createAccountArea #password").val();
@@ -133,6 +135,37 @@ $(document).on("click", "#eyeBtn .fa-eye-slash", function() {
 	}
 }) */
 
+/* 이메일 유효성 검사 */
+$(document).on("blur", "#createAccountArea #email", function(){
+
+	let email = $("#createAccountArea #email").val();
+	let $email = $("#createAccountArea #email");
+	let regexEmail = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;	
+	
+	$('#msgArea1 [id^="email"]').css("display", "none");
+
+	
+	if(email.length == 0){
+		$("#msgArea1 #email1").css("display", "none");
+		$email.parent().removeClass("error");
+	}else{
+		
+		if(!regexEmail.test(email)){ // 조건에 맞지 않는 경우
+			$("#msgArea1 #email1").css("display", "block");
+			$email.parent().removeClass("success");
+			$email.parent().addClass("error");
+		} else {
+			$("#msgArea1 #email1").css("display", "none");
+			$email.parent().removeClass("error");
+			$email.parent().addClass("success");
+		}
+	}
+	
+})
+
+
+
+/* 닉네임 유효성 검사 */
 $(document).on("blur", "#createAccountArea #nickname", function() {
 
 	let nickname = $("#createAccountArea #nickname").val();
@@ -178,6 +211,7 @@ $(document).on("blur", "#createAccountArea #nickname", function() {
 	}
 })
 
+/* 생년월일 유효성 검사 */
 function isValidDate(dateString, format = "YYYYMMDD") {
 	return moment(dateString, format, true).isValid();
 }
@@ -246,12 +280,14 @@ $(document).on("blur", "#createAccountArea #birth", function() {
 	}
 })
 
+/* 전화번호 입력시 자동 하이픈 */
 let autoHyphen = (e) => {
 	e.value = e.value
 		.replace(/[^0-9]/g, '')
 		.replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, "$1-$2-$3").replace(/(\-{1,2})$/g, "");
 }
 
+/* 전화번호 유효성검사 */
 $(document).on("blur", "#createAccountArea #phone", function() {
 	let phone = $("#createAccountArea #phone").val();
 	let $phone = $("#createAccountArea #phone");
@@ -273,7 +309,7 @@ $(document).on("blur", "#createAccountArea #phone", function() {
 	}
 })
 
-
+/* 인증 약관 체크 검사 */
 $(document).on("click", "#termsOfAuthentication input", function() {
 	$("#msgArea3 #terms").css("display", "");
 
@@ -293,7 +329,7 @@ $(document).on("click", ".accordion-body .fa-check", function() {
 
 })
 
-// check 박스 클릭시
+/* 인증 약관 체크버튼 클릭시 */
 $(document).on("click", ".accordion-body .fa-check", function() {
 	let checkNum = $(".accordion-body .fa-check.checked").length;
 	$("#msgArea3 #terms").css("display", "");
@@ -310,7 +346,7 @@ $(document).on("click", ".accordion-body .fa-check", function() {
 
 })
 
-
+/* 가입버튼 클릭시 */
 $("#submit").click(function() {
 	$("#createAccountArea input").trigger("blur");
 	$("#termsOfAuthentication input").trigger("click");
@@ -345,7 +381,7 @@ $("#submit").click(function() {
 				} else {
 					alert("회원가입이 완료되었습니다.");
 					console.log(resp);
-					location.href = "/";
+					location.href = "/auth/login-form";
 				}
 				console.log("회원가입 ajax 통신 성공 !");
 
