@@ -33,11 +33,6 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
 	@Autowired
 	private UserRepository userRepository;
 //	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}
-	
 	
 	// kakao, naver, google 로 부터 받은 request 데이터에 대한 후처리되는 함수
 	@Override
@@ -77,7 +72,7 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
             user = User.builder()
                     .userId(oauth2Id)
                     .email(email)
-                    .password(bCryptPasswordEncoder().encode(celoverKey))
+                    .password(new BCryptPasswordEncoder().encode(celoverKey))
                     .role(Role.ROLE_VISITOR)
                     .status(UserStatus.ACTIVE)
                     .provider(provider)

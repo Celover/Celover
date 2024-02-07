@@ -23,10 +23,10 @@ public class RedirectController {
         
         if (authorities.contains(new SimpleGrantedAuthority("ROLE_VISITOR"))) {
         	System.out.println("ROLE_VISITOR");
-            return "redirect:/visitor/additional-info"; // ADMIN 권한이면 /admin/dashboard로 리다이렉트
-        } else {
+            return "redirect:/visitor/additional-info";
+        }else {
         	System.out.println("ROLE_OTHERS");
-            return "redirect:/"; // 그 외의 경우엔 /user/profile로 리다이렉트
+            return "redirect:/";
         }
 	}
 }
