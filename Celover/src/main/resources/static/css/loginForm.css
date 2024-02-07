@@ -10,15 +10,7 @@
 	width: 600px;
 }
 
-#loginArea .login-header .title {
-	text-decoration: none;
-	color: black;
-	font-family: 'Bruno Ace', serif;
-	font-size: 56px;
-	font-weight: 800;
-}
-
-#loginArea .login-header .title:hover {
+#loginArea .login-header #logo:hover {
 	cursor: pointer;
 }
 

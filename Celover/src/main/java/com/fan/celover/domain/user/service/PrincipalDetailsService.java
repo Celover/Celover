@@ -1,5 +1,6 @@
 package com.fan.celover.domain.user.service;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,14 @@ public class PrincipalDetailsService implements UserDetailsService{
 	
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
-
-        Optional<User> user= userRepository.findByUserId(userId);
-        if (user.isPresent()) {
-            System.out.println("user : " + user.get());
-            return new PrincipalDetails(user.get());
-        }
-        return null;
+    	try {
+    		Optional<User> user= userRepository.findByUserId(userId);
+    		return new PrincipalDetails(user.get());
+    	}catch (NoSuchElementException e) {
+    		throw new UsernameNotFoundException("NoSuchElementException");
+    	}
+    	
     }
+    
 
 }

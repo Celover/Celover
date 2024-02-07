@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import com.fan.celover.domain.user.Role;
 import com.fan.celover.domain.user.User;
+import com.fan.celover.domain.user.UserStatus;
 import com.fan.celover.domain.user.dto.GoogleUserInfo;
 import com.fan.celover.domain.user.dto.KakaoUserInfo;
 import com.fan.celover.domain.user.dto.NaverUserInfo;
@@ -24,6 +26,10 @@ import com.fan.celover.domain.user.repository.UserRepository;
 @Service
 public class OAuth2UserService extends DefaultOAuth2UserService {
 
+	@Value("${celover.key}")
+	private String celoverKey;
+	
+	
 	@Autowired
 	private UserRepository userRepository;
 //	
@@ -71,8 +77,9 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
             user = User.builder()
                     .userId(oauth2Id)
                     .email(email)
-                    .password(bCryptPasswordEncoder().encode("celover"))
-                    .role(Role.ROLE_VISITER)
+                    .password(bCryptPasswordEncoder().encode(celoverKey))
+                    .role(Role.ROLE_VISITOR)
+                    .status(UserStatus.ACTIVE)
                     .provider(provider)
                     .providerId(providerId).build();
             userRepository.save(user);

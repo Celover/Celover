@@ -9,7 +9,7 @@ var cnt2 = 0;
 
 function show() {
 	for (i = 0; i < 16; i++) {
-		images[i] = "sampleImg/메인" + (i + 1) + ".jpg";
+		images[i] = "/img/메인" + (i + 1) + ".jpg";
 	}
 	images.sort(function(a, b) {
 		return 0.5 - Math.random()

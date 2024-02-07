@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,11 +30,14 @@
 
 </head>
 <body>
+
 	<div class="container-fluid">
 		<div id="loginArea" class="container d-flex align-items-center">
 			<div class="m-auto">
 				<div class="login-header">
-					<a class="title" href="/">Celover</a>
+					<a href="/"> 
+						<img id="logo" class="mb-3" style="height: 45px; width: auto" src="/img/로고-Bruno_Ace2.png">
+					</a>
 					<p class="sub-title text-secondary">Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.</p>
 				</div>
 				<div class="login-body py-2 px-4">
@@ -52,6 +57,12 @@
 							<div class="login-account d-grid gap-2">
 								<button class="btn btn-primary" id="signIn">로그인</button>
 							</div>
+							<span class="mt-3"> <c:if test="${error}">
+									<p id="valid" style="font-size: small" class="alert alert-danger">
+										<i class="fa-solid fa-triangle-exclamation">&nbsp;${exception}</i>
+									</p>
+								</c:if>
+							</span>
 							<div class="create-accout m-4">
 								아직 회원이 아니신가요? <a href="/auth/join-form">회원가입</a>
 							</div>
@@ -96,7 +107,7 @@
 		</div>
 
 	</div>
-	
+
 	<script type="text/javascript" src="/js/loginForm.js"></script>
 </body>
 </html>

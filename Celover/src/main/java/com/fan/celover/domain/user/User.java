@@ -1,5 +1,7 @@
 package com.fan.celover.domain.user;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import com.fan.celover.domain.BaseTimeEntity;
 
 import jakarta.persistence.Column;
@@ -62,6 +64,9 @@ public class User extends BaseTimeEntity {
 
 	@Column(nullable = true, length = 13)
 	private String phone;
+	
+	@Enumerated(EnumType.STRING)
+    private UserStatus status;
 //	
 //	@Column(nullable = false, length = 13)
 //    private String role;//권한 -> USER, ADMIN
@@ -72,7 +77,7 @@ public class User extends BaseTimeEntity {
 
     @Builder
 	public User(String userId, String password, String email, String nickname, String imageUrl, String provider,
-			String providerId, String birth, String gender, String nationality, String phone, Role role) {
+			String providerId, String birth, String gender, String nationality, String phone, UserStatus status, Role role) {
 		this.userId = userId;
 		this.password = password;
 		this.email = email;
@@ -84,6 +89,7 @@ public class User extends BaseTimeEntity {
 		this.gender = gender;
 		this.nationality = nationality;
 		this.phone = phone;
+		this.status = status;
 		this.role = role;
 	}
 

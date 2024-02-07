@@ -10,15 +10,8 @@
 	width: 600px;
 }
 
-#createAccountArea .createAccountHeader .title {
-	text-decoration: none;
-	color: black;
-	font-family: 'Bruno Ace', serif;
-	font-size: 56px;
-	font-weight: 800;
-}
 
-#createAccountArea .createAccountHeader .title:hover {
+#createAccountArea .createAccountHeader #logo:hover {
 	cursor: pointer;
 }
 

@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+
+<sec:authorize access="isAuthenticated()">
+	<sec:authentication property="principal" var="principal"/>
+</sec:authorize>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,86 +39,38 @@
 <link rel="stylesheet" type="text/css" href="/css/joinForm.css">
 
 </head>
-
 <body>
 	<div class="container-fluid">
 
 		<div id="createAccountArea" class="container d-flex align-items-center">
 			<div class="m-auto">
 				<div class="createAccountHeader">
-					<a href="/"> 
-						<img id="logo" class="mb-3" style="height: 45px; width: auto" src="/img/로고-Bruno_Ace2.png">
+					<a href="/"> <img id="logo" class="mb-3" style="height: 45px; width: auto" src="/img/로고-Bruno_Ace2.png">
 					</a>
 					<p class="sub-title text-secondary">Celover는 아티스트와 팬들의 소통을 위한 팬 커뮤니티 플랫폼입니다.</p>
 				</div>
 				<div class="create-account-body py-2 px-4">
 					<div class="enroll-sns p-2">
-						<p>SNS 회원가입</p>
-						<div class="row justify-content-md-center">
-							<div class="col-md-3">
-								<div class="social-btn p-2">
-									<div class="img-area">
-										<img src="/img/구글로그인버튼.png" style="border: 1px solid #dee2e6; border-radius: 50%;" alt="">
-									</div>
-									<div class="text-area mt-1">구글로 회원가입</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="social-btn p-2">
-									<div class="img-area">
-										<img src="/img/네이버로그인버튼.png" alt="">
-									</div>
-									<div class="text-area mt-1">네이버로 회원가입</div>
-								</div>
-							</div>
-							<div class="col-md-3">
-								<div class="social-btn p-2">
-									<div class="img-area">
-										<img src="/img/카카오로그인버튼.png" alt="">
-									</div>
-									<div class="text-area mt-1">카카오로 회원가입</div>
-								</div>
-							</div>
-						</div>
+						<p>소셜 로그인 추가정보 입력</p>
 					</div>
-
 					<div class="input-area">
 						<div class="combine-area d-table">
 							<div class="table-row">
 								<div class="input-group table-cell">
-									<span class="input-group-text top-span" id="basic-addon1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
-                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                                <circle cx="12" cy="7" r="4"></circle>
-                                            </svg> <input type="text" id="userId" class="form-control top-input" placeholder="아이디" aria-label="userId" aria-describedby="basic-addon1"> <span class="input-group-text" id="checkIcon"> <i class="fas fa-check" id="stateY" style="color: #09aa5c; display: none;"></i> <i class="fas fa-xmark" id="stateN" style="color: #ff3f3f; display: none;"></i>
-									</span>
-									</span>
-								</div>
-							</div>
-
-							<div class="table-row">
-								<div class="input-group table-cell">
-									<span class="input-group-text middle-span" id="basic-addon1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock">
-                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                                            </svg> <input type="password" id="password" class="form-control middle-input" placeholder="비밀번호" aria-label="password" aria-describedby="basic-addon1" style="border-right: none;"> <span class="input-group-text" id="eyeBtn"> <i class="fa-regular fa-eye"></i> <i class="fa-regular fa-eye-slash" style="display: none;"></i>
-									</span>
-									</span>
-								</div>
-							</div>
-
-							<div class="table-row">
-								<div class="input-group table-cell">
-									<span class="input-group-text bottom-span success" id="basic-addon1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
+									<span class="input-group-text success" id="basic-addon1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mail">
                                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
                                                 </path>
                                                 <polyline points="22,6 12,13 2,6"></polyline>
-                                            </svg> <input type="text" class="form-control" id="email" placeholder="[선택] 비밀번호 분실 시 확인용 이메일" aria-label="email" aria-describedby="basic-addon1">
+                                            </svg> 
+                                            <input type="hidden" id="hiddenUserId" value="${principal.username}">
+                                            <input type="hidden" id="hiddenPassword" value="${principal.password}">
+                                            <input type="text" class="form-control" id="email" placeholder="[선택] 비밀번호 분실 시 확인용 이메일" aria-label="userEmail" aria-describedby="basic-addon1">
 									</span>
 								</div>
 							</div>
 						</div>
 						<div id="msgArea1" class="mt-1" style="text-align: left;">
-							<span class="warning-message" id="id1">* 아이디: 필수 정보입니다. </span> <span class="warning-message" id="id2">* 아이디: 5~20자의 영문 소문자, 숫자와 특수기호(_),(-)만 사용가능합니다.</span> <span class="warning-message" id="id3">* 아이디: 사용할 수 없는 아이디입니다. 다른 아이디를 입력해 주세요.</span> <span class="warning-message" id="pwd1">* 비밀번호: 필수 정보입니다. </span> <span class="warning-message" id="pwd2">* 비밀번호: 8자 이상이어야 하며, 숫자/영문자/특수문자를 모두 포함해야 합니다. </span> <span class="warning-message" id="email1">* 이메일: 이메일 주소가 정확한지 확인해 주세요. </span>
+							<span class="warning-message" id="email1">* 이메일: 이메일 주소가 정확한지 확인해 주세요. </span>
 						</div>
 
 
@@ -124,7 +82,7 @@
 									<span class="input-group-text top-span" id="basic-addon1" style="width: auto;"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                                 <circle cx="12" cy="7" r="4"></circle>
-                                            </svg> <input type="text" class="form-control top-input" id="nickname" placeholder="닉네임" aria-label="nickname" aria-describedby="basic-addon1">
+                                            </svg> <input type="text" class="form-control top-input" id="nickname" placeholder="닉네임" aria-label="userNickname" aria-describedby="basic-addon1">
 									</span>
 								</div>
 							</div>
@@ -136,7 +94,7 @@
                                                 <line x1="16" y1="2" x2="16" y2="6"></line>
                                                 <line x1="8" y1="2" x2="8" y2="6"></line>
                                                 <line x1="3" y1="10" x2="21" y2="10"></line>
-                                            </svg> <input type="text" class="form-control middle-input" id="birth" placeholder="생년월일 8자리" maxlength="10" aria-label="birth" aria-describedby="basic-addon1">
+                                            </svg> <input type="text" class="form-control middle-input" id="birth" placeholder="생년월일 8자리" maxlength="10" aria-label="userBirth" aria-describedby="basic-addon1">
 									</span>
 								</div>
 							</div>
@@ -152,12 +110,13 @@
 								</div>
 							</div>
 
+
 							<div class="table-row">
 								<div class="input-group table-cell">
 									<span class="input-group-text bottom-span" id="basic-addon1"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smartphone">
                                                 <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
                                                 <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                                            </svg> <input type="text" class="form-control" id="phone" placeholder="휴대전화번호" aria-label="phone" oninput="autoHyphen(this);" maxlength="13" aria-describedby="basic-addon1">
+                                            </svg> <input type="text" class="form-control" id="phone" placeholder="휴대전화번호" aria-label="userPhone" oninput="autoHyphen(this);" maxlength="13" aria-describedby="basic-addon1">
 									</span>
 								</div>
 							</div>
@@ -172,10 +131,14 @@
 								<div class="accordion-header">
 									<div class="d-flex p-2">
 										<div class="w-100" style="text-align: left;">
-											<div class="d-flex" style="padding-left: 10px; align-items: center;">
-												<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="zoom: 1.5; border-radius: 50%;"> <label class="form-check-label" for="flexCheckChecked" style="line-height: 33px;"></label>
-												<div class="ps-2" style="color: #09aa5c; font-size: small; font-weight: 700;">[필수]</div>
-												<div style="font-weight: 700;">&nbsp;인증 약관 전체동의</div>
+											<div style="padding-left: 10px;">
+												<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" style="zoom: 1.5; border-radius: 50%;"> <label class="form-check-label" for="flexCheckChecked" style="line-height: 33px;">
+													<div class="d-flex">
+														<div style="color: #09aa5c; font-size: small; font-weight: 700;">[필수]</div>
+														<div style="font-weight: 700;">&nbsp;인증 약관 전체동의</div>
+													</div>
+												</label>
+
 											</div>
 										</div>
 										<div class="flex-shrink-1">
@@ -223,7 +186,8 @@
 		</div>
 
 	</div>
-
-	<script type="text/javascript" src="/js/joinForm.js"></script>
 </body>
+
+<script type="text/javascript" src="/js/additionalInfoForm.js"></script>
+
 </html>

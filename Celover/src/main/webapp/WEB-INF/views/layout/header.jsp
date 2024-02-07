@@ -35,6 +35,13 @@
 
 </head>
 <body>
+	<c:if test="${ not empty alertMsg }">
+		<script>
+			alert("${ alertMsg }");
+		</script>
+		<c:remove var="alertMsg" scope="session"/>
+	</c:if>
+	
 	<div class="container-fluid header-nav">
 
 
@@ -82,15 +89,15 @@
 	</div>
 	<div class="dropdown-area">
 		<ul class="dropdown-menu">
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="sampleImg/알림.png" alt=""> <span>알림관리</span>
+			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/알림.png" alt=""> <span>알림관리</span>
 			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="sampleImg/게시판.png" alt=""> <span>게시판</span>
+			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/게시판.png" alt=""> <span>게시판</span>
 			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="sampleImg/랭킹.png" alt=""> <span>랭킹</span>
+			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/랭킹.png" alt=""> <span>랭킹</span>
 			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="sampleImg/사람.png" alt=""> <span>마이페이지</span>
+			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/사람.png" alt=""> <span>마이페이지</span>
 			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="sampleImg/고객센터.png" alt=""> <span>고객센터</span>
+			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/고객센터.png" alt=""> <span>고객센터</span>
 			</a></li>
 
 		</ul>
