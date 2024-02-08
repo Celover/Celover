@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 
 <sec:authorize access="isAuthenticated()">
-	<sec:authentication property="principal" var="principal"/>
+	<sec:authentication property="principal" var="principal" />
 </sec:authorize>
 
 <!DOCTYPE html>
@@ -39,69 +39,64 @@
 		<script>
 			alert("${ alertMsg }");
 		</script>
-		<c:remove var="alertMsg" scope="session"/>
+		<c:remove var="alertMsg" scope="session" />
 	</c:if>
-	
+
 	<div class="container-fluid header-nav">
+		<div class="container">
 
 
-		<div class="d-flex justify-content-between">
+			<div class="d-flex justify-content-between">
 
+				<div class="mainLogo p-4">
+					<a href="/"> <img src="/img/로고-Bruno_Ace.png">
+					</a>
+				</div>
 
-			<div class="mainLogo p-4" style="margin-left: 26px;">
-				<a href="/"> 
-					<img src="/img/로고-Bruno_Ace.png">
-				</a>
-			</div>
-
-
-			<div class="p-4" style="margin-right: 26px;">
-				<ul class="nav">
-					<div id="searchArea" style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px; margin-right:20px;'">
-						<table style="border: 0px solid red;" align="center">
-							<tr style="line-height: 37px;">
-								<td style="width: 30px;"><img src="/img/돋보기.png" style="height: 20px; width: 20px;" alt=""></td>
-								<td><input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색"></td>
-							</tr>
-						</table>
-
-					</div>
-					<c:choose>
-						<c:when test="${ empty principal }">
-							<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
-						</c:when>
-						<c:otherwise>
-							<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="/mypage-form"><img class="header_btn" src="/img/사람.png" alt=""></a></li>
-							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
-							<li class="nav-item mx-930"><a href="/cs/csmain"><img class="header_btn" src="/img/고객센터.png" alt=""></a></li>
-							<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="/img/햄버거.png" alt=""></a></li>
-						</c:otherwise>
-					</c:choose>
-				</ul>
-
-
+				<div class="p-4">
+					<ul class="nav">
+						<div id="searchArea" style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px; margin-right: 20px;'">
+							<table style="border: 0px solid red;" align="center">
+								<tr style="line-height: 37px;">
+									<td style="width: 30px;"><img src="/img/돋보기.png" style="height: 20px; width: 20px;" alt=""></td>
+									<td><input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색"></td>
+								</tr>
+							</table>
+						</div>
+						<c:choose>
+							<c:when test="${ empty principal }">
+								<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
+								<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li>
+								<li class="nav-item mx-930"><a href="/mypage/info"><img class="header_btn" src="/img/사람.png" alt=""></a></li>
+								<!-- 							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
+ -->
+								<li class="nav-item mx-930"><a href="/cs/csmain"><img class="header_btn" src="/img/고객센터.png" alt=""></a></li>
+								<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="/img/햄버거.png" alt=""></a></li>
+							</c:otherwise>
+						</c:choose>
+					</ul>
+				</div>
 			</div>
 
 		</div>
+		<div class="dropdown-area">
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/알림.png" alt=""> <span>알림관리</span>
+				</a></li>
+				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/게시판.png" alt=""> <span>게시판</span>
+				</a></li>
+				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/랭킹.png" alt=""> <span>랭킹</span>
+				</a></li>
+				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/사람.png" alt=""> <span>마이페이지</span>
+				</a></li>
+				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/고객센터.png" alt=""> <span>고객센터</span>
+				</a></li>
 
+			</ul>
+		</div>
 	</div>
-	<div class="dropdown-area">
-		<ul class="dropdown-menu">
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/알림.png" alt=""> <span>알림관리</span>
-			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/게시판.png" alt=""> <span>게시판</span>
-			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/랭킹.png" alt=""> <span>랭킹</span>
-			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/사람.png" alt=""> <span>마이페이지</span>
-			</a></li>
-			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/고객센터.png" alt=""> <span>고객센터</span>
-			</a></li>
-
-		</ul>
-	</div>
-	
 	<script type="text/javascript" src="/js/header.js"></script>
 	<!-- 헤더 끝 -->

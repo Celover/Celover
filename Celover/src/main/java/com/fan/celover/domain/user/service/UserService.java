@@ -3,6 +3,11 @@ package com.fan.celover.domain.user.service;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,11 +20,17 @@ import com.fan.celover.domain.user.repository.UserRepository;
 @Service
 public class UserService {
 
+	@Value("${celover.key}")
+	private String celoverKey;
+	
 	@Autowired
 	private UserRepository userRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
 
 	@Transactional
 	public boolean existsUserId(String userId) {
@@ -73,6 +84,10 @@ public class UserService {
 		persistance.setNationality(user.getNationality());
 		persistance.setPhone(user.getPhone());
 		persistance.setRole(Role.ROLE_USER);
+		
+		Authentication authentication = authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(user.getUserId(), celoverKey));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
 	}
 }

@@ -89,12 +89,4 @@ public class UserController {
 	 * 
 	 */
 
-	/*************************** 마이페이지 컨트롤러 시작 *****************************/
-
-	// 마이페이지
-	@GetMapping("/mypage-form")
-	public String myPageForm() {
-		return "main/mypage/myPage";
-	}
-
 }

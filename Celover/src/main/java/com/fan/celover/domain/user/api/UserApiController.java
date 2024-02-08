@@ -20,15 +20,9 @@ import com.fan.celover.global.ResponseDto;
 
 @RestController
 public class UserApiController {
-
-	@Value("${celover.key}")
-	private String celoverKey;
 	
 	@Autowired
 	private UserService userService;
-
-	@Autowired
-	private AuthenticationManager authenticationManager;
 
 	// 아이디 중복 체크
 	@GetMapping("/auth/users/id/{userId}/exists")
@@ -76,9 +70,6 @@ public class UserApiController {
 
 		userService.updateUser(user);
 		
-		Authentication authentication = authenticationManager
-				.authenticate(new UsernamePasswordAuthenticationToken(user.getUserId(), celoverKey));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 
 	}

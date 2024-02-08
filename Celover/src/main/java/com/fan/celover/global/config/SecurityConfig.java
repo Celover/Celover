@@ -68,6 +68,7 @@ public class SecurityConfig {
 	        		.dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
 	                .requestMatchers("/", "/auth/**", "/redirect", "/login/**", "/js/**", "/favicon.ico", "/css/**", "/img/**", "/fontawesome-free-6.5.1-web/**").permitAll()
 	                .requestMatchers("/visitor/**").hasRole("VISITOR")
+	                .requestMatchers("/mypage/**").hasAnyRole("USER","ADMIN")
 	                .anyRequest()
 //	                .permitAll()
 	                .hasAnyRole("USER","ADMIN")
