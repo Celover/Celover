@@ -14,15 +14,25 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fan.celover.domain.user.User;
+import com.fan.celover.domain.user.model.User;
 import com.fan.celover.domain.user.service.UserService;
-import com.fan.celover.global.ResponseDto;
+import com.fan.celover.global.dto.ResponseDto;
+import com.fan.celover.global.security.util.SecurityUtils;
 
 @RestController
 public class UserApiController {
 	
+	@Value("${celover.key}")
+	private String celoverKey;
+	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
+	@Autowired
+	private SecurityUtils securityUtils;
 
 	// 아이디 중복 체크
 	@GetMapping("/auth/users/id/{userId}/exists")
@@ -68,7 +78,13 @@ public class UserApiController {
 		System.out.println("updateUser 실행됨");
 		System.out.println("User : " + user);
 
-		userService.updateUser(user);
+		String userId = securityUtils.getUserDetails().getUsername();
+		
+		userService.updateUser(userId, user);
+		
+		Authentication authentication = authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(userId, celoverKey));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 

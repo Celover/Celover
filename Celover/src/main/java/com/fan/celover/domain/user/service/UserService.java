@@ -12,16 +12,13 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.fan.celover.domain.user.Role;
-import com.fan.celover.domain.user.User;
-import com.fan.celover.domain.user.UserStatus;
+import com.fan.celover.domain.user.model.Role;
+import com.fan.celover.domain.user.model.User;
+import com.fan.celover.domain.user.model.UserStatus;
 import com.fan.celover.domain.user.repository.UserRepository;
 
 @Service
 public class UserService {
-
-	@Value("${celover.key}")
-	private String celoverKey;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -29,8 +26,6 @@ public class UserService {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
-	@Autowired
-	private AuthenticationManager authenticationManager;
 
 	@Transactional
 	public boolean existsUserId(String userId) {
@@ -72,8 +67,8 @@ public class UserService {
 	}
 	
 	@Transactional
-	public void updateUser(User user) {
-		User persistance = userRepository.findByUserId(user.getUserId()).orElseThrow(() -> {
+	public void updateUser(String userId, User user) {
+		User persistance = userRepository.findByUserId(userId).orElseThrow(() -> {
 			return new NoSuchElementException();
 		});
 		
@@ -84,10 +79,6 @@ public class UserService {
 		persistance.setNationality(user.getNationality());
 		persistance.setPhone(user.getPhone());
 		persistance.setRole(Role.ROLE_USER);
-		
-		Authentication authentication = authenticationManager
-				.authenticate(new UsernamePasswordAuthenticationToken(user.getUserId(), celoverKey));
-		SecurityContextHolder.getContext().setAuthentication(authentication);
 		
 	}
 }

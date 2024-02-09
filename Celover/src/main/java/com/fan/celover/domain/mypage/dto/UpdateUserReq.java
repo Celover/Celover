@@ -1,6 +1,8 @@
 package com.fan.celover.domain.mypage.dto;
 
 
+import com.fan.celover.global.validation.ValidationGroups;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -26,20 +28,21 @@ public class UpdateUserReq {
 	 * Reference : https://kiki-100.tistory.com/238
 	 */
 
-	
-	@Pattern(regexp="^[a-zA-Z0-9_]{3,16}$", message = "3~16자의 영문 대소문자, 숫자, 밑줄(_)만 사용가능합니다.")
+	@NotBlank(message = "닉네임은 필수 입력사항입니다.", groups = ValidationGroups.NotEmptyGroupFirst.class)
+	@Pattern(regexp="^[a-zA-Z0-9_]{3,16}$", message = "3~16자의 영문 대소문자, 숫자, 밑줄(_)만 사용가능합니다.", groups = ValidationGroups.PatternCheckGroupFirst.class)
 	private String nickname;
 
-	@Pattern(regexp="^\\\\d{2,3}-\\\\d{3,4}-\\\\d{4}$", message="유효한 전화번호 형식이 아닙니다. ex)010-XXXX-XXXX")
+	@NotBlank(message = "전화번호는 필수 입력사항입니다.", groups = ValidationGroups.NotEmptyGroupSecond.class)
+	@Pattern(regexp="^\\d{2,3}-\\d{3,4}-\\d{4}$", message="유효한 전화번호 형식이 아닙니다. ex) 010-XXXX-XXXX", groups = ValidationGroups.PatternCheckGroupSecond.class)
 	private String phone;
 
 	@Pattern(regexp="^[mfn]$", message="유효한 성별이 아닙니다.")
 	private String gender;
 
-	@Pattern(regexp="^\\\\d{4}-\\\\d{2}-\\\\d{2}$", message="유효한 날짜 형식으로 입력하세요. ex) 1999-02-10")
+	@NotBlank(message = "생년월일은 필수 입력사항입니다.", groups = ValidationGroups.NotEmptyGroupThird.class)
+	@Pattern(regexp="^\\d{4}-\\d{2}-\\d{2}$", message="유효한 날짜 형식으로 입력하세요. ex) 1999-02-10", groups = ValidationGroups.PatternCheckGroupThird.class)
 	private String birth;
 
-	@NotBlank(message = "이메일은 필수 입력사항입니다.")
 	@Email(message = "올바른 이메일 형식이 아닙니다.")
 	private String email;
 

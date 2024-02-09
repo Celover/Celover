@@ -369,8 +369,19 @@
 						contentType: "application/json; charset=UTF-8",
 						dataType: "json",
 						success:function(resp){
-							console.log(resp.data)
+							
+							console.log(resp.data);
+							
 							console.log("회원정보 수정 ajax 통신 성공!")
+							
+							if (resp.status === 500) {
+								alert(resp.data);
+							} else {
+								alert("회원정보가 변경되었습니다.");
+								location.reload();
+								
+							}
+							
 						},error:function(error){
 							console.log("회원정보 수정 ajax 통신 실패!")
 						}

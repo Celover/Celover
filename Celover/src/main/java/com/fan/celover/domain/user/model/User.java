@@ -48,7 +48,7 @@ public class User extends BaseTimeEntity {
 	@Column(nullable = true)
 	private String provider; // kakao, naver, google
 	
-	@Column(nullable = true)
+	@Column(nullable = true, unique = true)
 	private String providerId; // 12312432432 아이디
 	
 	@Column(nullable = true)
