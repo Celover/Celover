@@ -1,4 +1,4 @@
-package com.fan.celover.domain.user.dto;
+package com.fan.celover.global.security.dto;
 
 import java.util.Map;
 

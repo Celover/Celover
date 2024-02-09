@@ -1,4 +1,4 @@
-package com.fan.celover.domain.user.dto;
+package com.fan.celover.global.security.dto;
 
 public interface OAuth2UserInfo {
 	String getProviderId(); // google, facebook

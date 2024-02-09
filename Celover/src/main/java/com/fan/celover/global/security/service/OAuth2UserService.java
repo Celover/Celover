@@ -1,4 +1,4 @@
-package com.fan.celover.domain.user.service;
+package com.fan.celover.global.security.service;
 
 import java.util.Map;
 import java.util.Optional;
@@ -13,15 +13,15 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import com.fan.celover.domain.user.Role;
-import com.fan.celover.domain.user.User;
-import com.fan.celover.domain.user.UserStatus;
-import com.fan.celover.domain.user.dto.GoogleUserInfo;
-import com.fan.celover.domain.user.dto.KakaoUserInfo;
-import com.fan.celover.domain.user.dto.NaverUserInfo;
-import com.fan.celover.domain.user.dto.OAuth2UserInfo;
-import com.fan.celover.domain.user.dto.PrincipalDetails;
+import com.fan.celover.domain.user.model.Role;
+import com.fan.celover.domain.user.model.User;
+import com.fan.celover.domain.user.model.UserStatus;
 import com.fan.celover.domain.user.repository.UserRepository;
+import com.fan.celover.global.security.dto.GoogleUserInfo;
+import com.fan.celover.global.security.dto.KakaoUserInfo;
+import com.fan.celover.global.security.dto.NaverUserInfo;
+import com.fan.celover.global.security.dto.OAuth2UserInfo;
+import com.fan.celover.global.security.model.PrincipalDetails;
 
 @Service
 public class OAuth2UserService extends DefaultOAuth2UserService {

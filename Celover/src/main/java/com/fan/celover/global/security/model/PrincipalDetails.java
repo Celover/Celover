@@ -1,4 +1,4 @@
-package com.fan.celover.domain.user.dto;
+package com.fan.celover.global.security.model;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -9,8 +9,8 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
-import com.fan.celover.domain.user.Role;
-import com.fan.celover.domain.user.User;
+import com.fan.celover.domain.user.model.Role;
+import com.fan.celover.domain.user.model.User;
 
 import lombok.Getter;
 

@@ -1,8 +1,6 @@
-package com.fan.celover.domain.user;
+package com.fan.celover.domain.user.model;
 
-import org.hibernate.annotations.ColumnDefault;
-
-import com.fan.celover.domain.BaseTimeEntity;
+import com.fan.celover.global.common.BaseTimeEntity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

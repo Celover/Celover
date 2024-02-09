@@ -1,4 +1,4 @@
-package com.fan.celover.global.config;
+package com.fan.celover.global.security.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -12,9 +12,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
-import com.fan.celover.domain.user.service.OAuth2UserService;
-import com.fan.celover.global.handler.CustomAccessDeniedHandler;
-import com.fan.celover.global.handler.LoginFailureHandler;
+import com.fan.celover.global.security.handler.CustomAccessDeniedHandler;
+import com.fan.celover.global.security.handler.LoginFailureHandler;
+import com.fan.celover.global.security.service.OAuth2UserService;
 
 import jakarta.servlet.DispatcherType;
 
@@ -47,17 +47,7 @@ public class SecurityConfig {
 	   return new CustomAccessDeniedHandler();
 	}
 	
-//	@Autowired
-//	private LoginFailureHandler loginFailureHandler;
-//	@Autowired
-//	private CustomAccessDeniedHandler customAccessDeniedHandler;
-//	@Bean
-//	AccessDeniedHandler customAccessDeniedHandler() {
-//	    return (request, response, accessDeniedException) -> {
-//	        // custom Handling here
-//	    };
-//	}
-
+	
 	@Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http

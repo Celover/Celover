@@ -1,4 +1,4 @@
-package com.fan.celover.domain;
+package com.fan.celover.global.common;
 
 import java.time.LocalDateTime;
 
