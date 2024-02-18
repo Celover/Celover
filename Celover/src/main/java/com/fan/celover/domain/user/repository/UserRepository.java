@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fan.celover.domain.user.User;
 
-public interface UserRepository extends JpaRepository<User, Long>{
+public interface UserRepository extends JpaRepository<User, Integer>{
 	
 	/* findBy vs existsBy vs countBy
 	 * count는 전체행을 조회한 후 조건에 맞는 값의 개수를 반환해준다.
