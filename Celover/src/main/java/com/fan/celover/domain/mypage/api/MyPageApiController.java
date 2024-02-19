@@ -41,8 +41,6 @@ public class MyPageApiController {
 	@Autowired
 	private SecurityUtils securityUtils;
 
-	private TokenService tokenService;
-
 	// 닉네임 중복 확인
 	@GetMapping("/mypage/users/nickname/{nickname}/exists")
 	public boolean existsNickname(@PathVariable String nickname) {
@@ -99,6 +97,7 @@ public class MyPageApiController {
 		if (bindingResult.getFieldError() != null) {
 			throw new ValidationException(bindingResult.getFieldError().getDefaultMessage());
 		}
+		// 닉네임 이메일 중복검사하고 메시지 출력
 
 		User user = myPageService.updateUser(userId, updateUserReq);
 
@@ -107,5 +106,6 @@ public class MyPageApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 
 	}
+		
 
 }

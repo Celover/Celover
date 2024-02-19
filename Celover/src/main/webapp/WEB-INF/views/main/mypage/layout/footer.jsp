@@ -6,6 +6,5 @@
 
 </div>
 
-<script type="text/javascript" src="/js/myPage.js"></script>
 
 <%@ include file="/WEB-INF/views/layout/footer.jsp"%>
