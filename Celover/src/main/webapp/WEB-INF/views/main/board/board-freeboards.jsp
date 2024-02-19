@@ -2,7 +2,6 @@
 <%@ include file="/WEB-INF/views/layout/header.jsp"%>
 
 <link rel="stylesheet" type="text/css" href="/css/boardList.css">
-<script type="text/javascript" src="/js/boardList.js"></script>
 
 
 
@@ -30,9 +29,9 @@
 		<div id="boardNavigation" class="mt-4">
 			<div class="row pb-2">
 				<div class="col">
-					<button class="btn btn-primary">
+					<a class="btn btn-primary" href="/board/new">
 						<i class="fas fa-pencil"></i> 작성하기
-					</button>
+					</a>
 				</div>
 				<div class="col-8">
 

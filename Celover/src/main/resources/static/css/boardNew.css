@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+@media screen and (max-width: 992px) {
+	/* 930px 이상 */
+	#boardEnrollArea {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	/* 930px 이상 */
+	#boardEnrollArea {
+		padding-left: 10rem;
+		padding-right: 10rem;
+	}
+}
+
+#boardEnrollArea label {
+	font-size: large;
+}
+
+/* 해시태그 관련 */
+
+
+#input-tag {
+    height: auto;
+    overflow: auto;
+}
+
+#input-tag>span {
+    height: 100%;
+    width: auto;
+}
+
+#input-tag>span>* {
+    float: left;
+    line-height: 22px;
+}
+
+#input-tag>span>span {
+    font-size: 16px;
+    height: 100%;
+    margin-left: 5px;
+}
+
+#input-tag>span>div input {
+    height: 20px;
+    border: 0px;
+    width: 70px;
+    
+}
+
+#input-tag>span>div input:focus {
+    outline: none;
+}
+
+.tag-input-area button {
+    background-color: white !important;
+    border: 0px;
+
+}
+.parent-span{
+    padding-right: 10px;
+    border: 0px;
+}
+
+.enroll form .enrollForm{
+	font-size: 22px;
+	font-weight: 600;
+}
+
+.img_area img{
+    margin: 0px 20px;
+}
+
+.img_area td span{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 64px;
+}
+.virtual{
+	min-width: 50px;
+}
+/* 해시태그 관련 끝 */

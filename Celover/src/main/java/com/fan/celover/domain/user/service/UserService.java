@@ -72,6 +72,8 @@ public class UserService {
 			return new NoSuchElementException();
 		});
 		
+		// 추후 닉네임과 이메일 중복 검사 필요
+		
 		persistance.setEmail(user.getEmail());
 		persistance.setNickname(user.getNickname());
 		persistance.setBirth(user.getBirth());

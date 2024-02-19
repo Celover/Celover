@@ -10,14 +10,27 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <title>Celover</title>
+
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+
+<!--     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <script type="text/javascript" src="cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+ -->
+
+<!-- slick carousel -->
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- bs icon -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
 
@@ -25,11 +38,11 @@
 <!-- <link rel="stylesheet" href="/Celover/src/main/webapp/resources/css/all.min.css"> -->
 <link rel="stylesheet" type="text/css" href="/fontawesome-free-6.5.1-web/css/all.min.css">
 
+<!-- google font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Lobster&display=swap" rel="stylesheet">
 
-<meta name=" viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 
@@ -68,7 +81,7 @@
 								<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
 							</c:when>
 							<c:otherwise>
-								<li class="nav-item mx-930"><a href="/board-form"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
+								<li class="nav-item mx-930"><a href="/board/freeboards"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
 								<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li>
 								<li class="nav-item mx-930"><a href="/mypage/info"><img class="header_btn" src="/img/사람.png" alt=""></a></li>
 								<!-- 							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
