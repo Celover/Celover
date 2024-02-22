@@ -227,18 +227,5 @@
 	</div>
 </div>
 
-<script>
-	// 작성하기 눌렀을 때
-	$("#writeBoard").click(function() {
-		location.href = "/board/new";
-	})
-	
-	$(function(){
-		$(document).on("click",".title",function(){
-			location
-		})
-	})
-</script>
-
-
+<script src="/js/board-freeboards.js"></script>
 <%@ include file="/WEB-INF/views/layout/footer.jsp"%>
