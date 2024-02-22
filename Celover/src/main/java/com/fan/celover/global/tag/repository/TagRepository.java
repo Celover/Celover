@@ -8,6 +8,6 @@ public interface TagRepository extends JpaRepository<Tag, Integer> {
 
 	boolean existsByTagName(String tagName);
 	
-	// null 일 수 없으므로 Optional은 빼자 
+	// 태그를 앞에서 저장하고 찾기 때문에 null 일 수 없으므로 Optional은 빼자 
 	Tag findByTagName(String tagName);
 }

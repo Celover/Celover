@@ -1,8 +1,11 @@
 package com.fan.celover.domain.board.model;
 
+import java.util.List;
+
 import com.fan.celover.domain.user.model.User;
 import com.fan.celover.global.common.BaseTimeEntity;
 import com.fan.celover.global.role.Status;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +18,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -53,10 +57,24 @@ public class Board extends BaseTimeEntity{
 	@Enumerated(EnumType.STRING)
 	private Status status;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	// EAGER -> 항상 데이터를 가져온다. 즉 Board를 select 할 때 항상 USER 테이블 정보까지 함께 조회한다.
 	// LAZY -> 필요할때만 가져온다.
 	@JoinColumn(name="userId")
 	private User user;
+	
+	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY) 
+	@JsonIgnoreProperties({"board"})
+//	@JsonIgnore
+	private List<BoardTag> boardTag;
+	
+//	public void setBoardTag(List<BoardTag> list) {
+//		for(BoardTag boardTag : list) {
+//			if(!this.boardTag.contains(boardTag)) {
+//				this.boardTag.add(boardTag);
+//				boardTag.setParent(this);
+//			}
+//		}
+//	}
 	
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.fan.celover.domain.board.model.Board;
-import com.fan.celover.global.tag.model.BoardTag;
+import com.fan.celover.domain.board.model.BoardTag;
 import com.fan.celover.global.tag.model.Tag;
 import com.fan.celover.global.tag.repository.BoardTagRepository;
 import com.fan.celover.global.tag.repository.TagRepository;

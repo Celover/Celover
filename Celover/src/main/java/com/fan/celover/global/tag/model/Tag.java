@@ -1,10 +1,18 @@
 package com.fan.celover.global.tag.model;
 
+import java.util.List;
+
+import com.fan.celover.domain.board.model.BoardTag;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -28,7 +36,11 @@ public class Tag {
 	private int id;
 	
 	@NotBlank
-	@Column(length = 100)
+	@Column(nullable = false)
 	private String tagName;
+	
+    @OneToMany(mappedBy = "tag", fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"tag"})
+    private List<BoardTag> BoardTags;
 
 }

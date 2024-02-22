@@ -1,6 +1,6 @@
-package com.fan.celover.global.tag.model;
+package com.fan.celover.domain.board.model;
 
-import com.fan.celover.domain.board.model.Board;
+import com.fan.celover.global.tag.model.Tag;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,13 +28,23 @@ public class BoardTag {
 	
     @Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="boardId")
 	private Board board;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="tagId")
 	private Tag tag;
+	
+//    public void setParent(Board board) {
+//        this.board = board;
+//        this.id = new RecruitCategoryId(recruitment.getId(), category.getId());
+//    }
+//    
+//    @Override
+//    public BoardId getId() {
+//        return id;
+//    }
 }

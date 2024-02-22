@@ -28,8 +28,6 @@ public class BoardApiController {
 		
 		Board board = boardSevice.saveBoard(enrollBoardReq, principal.getUser());
 		
-		System.out.println(board);
-		
 		tagSevice.saveTag(board, enrollBoardReq.getHashTag());
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
