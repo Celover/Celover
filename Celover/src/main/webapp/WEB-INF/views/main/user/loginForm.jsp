@@ -44,11 +44,11 @@
 					<form action="/auth/login" method="post" id="loginForm">
 						<div id="idArea" class="input-group flex-nowrap my-1">
 							<span class="input-group-text" id="addon-wrapping"> <img src="/img/id_icon.png" alt="">
-							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디">
+							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디" value="admin">
 						</div>
 						<div id="pwdArea" class="input-group flex-nowrap my-2">
 							<span class="input-group-text" id="addon-wrapping"> <img src="/img/password_icon.png" alt="">
-							</span> <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호">
+							</span> <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호" value="1234">
 						</div>
 						<div class="d-grid mt-4">
 							<div class="find-account mb-2">

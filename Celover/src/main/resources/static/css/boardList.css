@@ -105,6 +105,10 @@
 	font-size: large;
 }
 
+#boardMain #boardNavigation #topPaginationArea a{
+	color: black;
+}
+
 #boardMain #boardNavigation #topPaginationArea .disabled {
 	color: rgb(203, 213, 225);
 }
@@ -129,7 +133,12 @@
 	color: rgba(55, 65, 81, 0.8);
 }
 
-#boardMain #boardList .boardItem .left-area .middle-area:hover {
+#boardMain #boardList .boardItem .left-area .middle-area a {
+	color: black;
+	text-decoration: none;
+}
+
+#boardMain #boardList .boardItem .left-area .middle-area a:hover {
 	cursor: pointer;
 	color: #0d6efd;
 }
@@ -164,7 +173,17 @@
 	border-top: 3px solid #dee2e6;
 }
 
-#boardMain #bottomArea #bottomPaginationArea .pagenation-area button {
+#boardMain #bottomArea #bottomPaginationArea a.prev-next{
+	color: #cccccc;
+	text-decoration: none;
+}
+
+#boardMain #bottomArea #bottomPaginationArea a.prev-next.active{
+	color: black;
+}
+
+#boardMain #bottomArea #bottomPaginationArea .pagenation-area a {
+	border-radius: 0px;
 	border: none;
 	background-color: #fff;
 	padding: 6px 12px;

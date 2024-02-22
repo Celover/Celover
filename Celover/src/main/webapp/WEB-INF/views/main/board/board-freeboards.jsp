@@ -58,7 +58,28 @@
 				</div>
 				<div id="topPaginationArea" class="col-md-2" style="text-align: right;">
 					<div>
-						<span> <span id="currentPage">1</span>/<span id="totalPage">3333</span> 페이지 <i class="fa-solid fa-arrow-left disabled"></i>&nbsp; <i class="fa-solid fa-arrow-right"></i>
+						<span> <span id="currentPage">${boards.number}</span>/<span id="totalPage">${boards.totalPages - 1}</span> 페이지 
+						<c:choose>
+							<c:when test="${!boards.first }">
+								<!-- 페이지가 첫번째가 아닐 경우 previous 버튼 활성화 -->
+								<a class="prev-next" href="?page=${boards.number - 1}"><i class="fa-solid fa-arrow-left-long"></i></a>&nbsp;
+							</c:when>
+							<c:otherwise>
+								<!-- 페이지가 첫번째가 일 경우 previous 버튼 비활성화 -->
+								<a class="prev-next"><i class="fa-solid fa-arrow-left-long disabled"></i></a>&nbsp;
+							</c:otherwise>
+						</c:choose>
+						<c:choose>
+							<c:when test="${!boards.last }">
+								<!-- 페이지가 마지막이 아닐 경우 next 버튼 활성화 -->	
+								<a class="prev-next" href="?page=${boards.number + 1}"><i class="fa-solid fa-arrow-right"></i></a>
+							</c:when>
+							<c:otherwise>
+								<!-- 페이지가 첫번째가 일 경우 next 버튼 비활성화 -->
+								<a class="prev-next"><i class="fa-solid fa-arrow-right disabled"></i></a>
+							</c:otherwise>
+						</c:choose>
+						
 						</span>
 					</div>
 
@@ -75,8 +96,8 @@
 						<div class="top-area d-flex">
 							<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">${board.nickname }</span> <span class="create-date">&bull; ${board.createDate }</span>
 						</div>
-						<div class="middle-area my-2 d-flex">
-							<span>${board.title }</span>
+						<div class="middle-area my-2 d-flex title">
+							<a href="/board/${board.id }">${board.title }</a>
 						</div>
 						<div class="bottom-area d-flex">
 							<c:forEach var="tag" items="${board.boardTags}">
@@ -207,13 +228,15 @@
 </div>
 
 <script>
-	$(function() {
-		console.log(${boards.totalPages})
-		console.log(${boards.number})
-	})
 	// 작성하기 눌렀을 때
 	$("#writeBoard").click(function() {
 		location.href = "/board/new";
+	})
+	
+	$(function(){
+		$(document).on("click",".title",function(){
+			location
+		})
 	})
 </script>
 
