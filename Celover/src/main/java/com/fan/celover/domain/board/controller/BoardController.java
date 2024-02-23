@@ -7,6 +7,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.fan.celover.domain.board.service.BoardService;
 
@@ -26,6 +27,12 @@ public class BoardController {
 		System.out.println(boardService.boardList(pageable));
 		model.addAttribute("boards", boardService.boardList(pageable));
 		return "main/board/board-freeboards";
+	}
+	
+	@GetMapping("board/{id}")
+	public String boardDetailForm(@PathVariable int id, Model model) {
+		model.addAttribute("boardId", id);
+		return "main/board/board-detail";
 	}
 
 	@GetMapping("board/notices")

@@ -1,6 +1,6 @@
 package com.fan.celover.domain.board.service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
 import com.fan.celover.domain.board.dto.BoardListResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardReq;
 import com.fan.celover.domain.board.model.Board;
@@ -55,6 +56,27 @@ public class BoardService {
 		Page<BoardListResponseDto> dto = entity.map(e -> new BoardListResponseDto(e));
 		
 		return dto;
+	}
+	
+	@Transactional
+	public void updateCount(int boardId) {
+		Board board = boardRepository.findById(boardId).orElseThrow(() -> {
+			return new IllegalArgumentException("글 찾기 실패 : 존재하지 않는 게시글 입니다.");
+		});
+		
+		board.setCount(board.getCount() + 1);
+		
+		boardRepository.save(board);
+		
+	}
+	
+	@Transactional
+	public BoardDetailResponseDto boardDetail(int boardId) {
+		Board board = boardRepository.findByIdAndStatus(boardId, Status.Y).orElseThrow(()->{
+			throw new IllegalArgumentException("존재하지 않는 게시글 입니다.");
+		});
+		
+		return new BoardDetailResponseDto(board);
 	}
 	
 

@@ -1,0 +1,159 @@
+@charset "UTF-8";
+
+#boardDetail .container {
+	max-width: 1140px !important;
+}
+
+.line {
+	font-weight: 800;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	font-size: large;
+	margin: 14px 0px;
+}
+
+.line a {
+	text-decoration: none;
+}
+
+.line::before {
+	content: "";
+	flex-grow: 0.05;
+	margin: 0px;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+.line::after {
+	content: "";
+	flex-grow: 1;
+	margin: 0px;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 0px;
+	line-height: 0px;
+}
+
+#boardDetail #boardDetailTop * {
+	align-items: center;
+}
+
+#boardDetail #boardDetailTop .left-area img {
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+}
+
+#boardDetail #boardDetailTop .right-area #writerNickname {
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+#boardDetail #boardDetailTop .right-area .board-info {
+	height: 20px;
+	font-size: small;
+	color: rgba(55, 65, 81, 0.8);
+}
+
+#boardDetail #boardDetailMiddle #boardTitle h4 {
+	font-weight: 700;
+	margin: 0px;
+}
+
+#boardDetail #boardDetailMiddle #boardFooter {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+}
+
+#boardDetail #boardDetailMiddle #boardFooter .btn { -
+	-bs-btn-border-color: none;
+	background-color: #f3f4f6;
+}
+
+#boardDetail #boardDetailMiddle #boardFooter .like-area {
+	font-size: x-large;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item {
+	border-bottom: 2px solid #dee2e6;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item:last-child
+	{
+	border-bottom: none;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-first-section img
+	{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-second-section .reply-writer
+	{
+	font-size: large;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-second-section .reply-etc
+	{
+	font-size: small;
+	color: rgba(55, 65, 81, 0.8);
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-third-section
+	{
+	font-size: large;
+	color: rgba(55, 65, 81, 0.8);
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-third-section i
+	{
+	text-align: center;
+	width: 10px;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-third-section i:hover
+	{
+	color: black;
+	cursor: pointer;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply {
+	border: 1px solid #dee2e6;
+	border-radius: 0.5rem;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myNickname {
+	font-size: large;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myReplyContent textarea
+	{
+	width: 100%;
+	border: none;
+	resize: none;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myReplyContent textarea:focus
+	{
+	border: none;
+	outline: none;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myReplyFooter {
+	align-items: center;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myReplyFooter #attachFile
+	{
+	font-size: larger;
+}
+
+#boardDetail #boardDetailBottom #replyArea #writeReply #myReplyFooter #submitReply .btn
+	{ -
+	-bs-btn-border-color: none;
+}
