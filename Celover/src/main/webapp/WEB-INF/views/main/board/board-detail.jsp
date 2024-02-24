@@ -3,6 +3,43 @@
 
 <link rel="stylesheet" type="text/css" href="/css/boardDetail.css">
 
+<style>
+   #writeReply #inqImgsThumbnail {
+       display: flex;
+       margin: 1% 0% 1% 0%;
+   }
+
+   #writeReply #inqImgsThumbnail>div {
+       border: 1px solid #666666;
+       position: relative;
+       margin: 1%;
+   }
+
+   #writeReply #inqImgsThumbnail>div>img {
+       width: 70px;
+       height: 70px;
+   }
+
+   #writeReply #inqImgsThumbnail>div>a {
+       position: absolute;
+       top: -5px;
+       right: -5px;
+       background-color: #fff;
+       border-radius: 50%;
+       text-decoration: none;
+       color: black;
+   }
+
+   #writeReply #inqImgsThumbnail>div>a:hover {
+       cursor: pointer;
+   }
+   
+   #myReplyFooter i:hover{
+   	 	cursor: pointer;
+   }
+
+</style>
+
 <!-- 메인페이지 영역 -->
 <div class="container-fluid" id="boardDetail">
 
@@ -128,17 +165,21 @@
 				<div id="writeReply" class="p-4">
 
 					<div id="myNickname" class="mb-2">
-						<span class="fw-bolder">21jong</span>
+						<span class="fw-bolder">${principal.user.nickname }</span>
 					</div>
 					<div id="myReplyContent">
-						<textarea name="" id="" cols="30" rows="1" placeholder="댓글을 남겨보세요."></textarea>
+						<textarea id="" cols="30" rows="1" placeholder="댓글을 남겨보세요."></textarea>
+					</div>
+					<div>
+						<div id="inqImgs"></div>
+                        <div id="inqImgsThumbnail"></div>
 					</div>
 					<div id="myReplyFooter" class="d-flex">
 						<div id="attachFile" class="flex-grow-1">
 							<i class="fas fa-camera"></i>
 						</div>
 						<div id="submitReply">
-							<button class="btn" disabled>등록</button>
+							<button class="btn btn-primary" disabled>등록</button>
 						</div>
 					</div>
 
@@ -154,8 +195,129 @@
 </div>
 
 <script>
+
+	//파일 첨부 버튼을 눌렀을 경우 input[type:file] 을 동적으로 생성하고 클릭
+	$(document).on("click", "#myReplyFooter #attachFile i", function () {
+	    let count = $("#inqImgsThumbnail div").length;
+	
+	    if (count < 3) {
+	        $("#inqImgs").append('<input class="uploadFile" type="file" hidden>');
+	        $("#inqImgs input").last().click();
+	    } else {
+	        alert("사진은 총 3개까지 첨부 가능합니다.");
+	    }
+	})
+	
+	// 동적으로 생성된 input[type:file] 에 change가 발생했을 경우
+	$(document).on("change", "#inqImgs > input", function () {
+	
+	    if (this.files.length == 1) {
+	        $("#inqImgsThumbnail").append(`<div><img src=""><a class="fa-solid fa-circle-xmark"></a></div>`);
+	
+	        const reader = new FileReader();
+	        reader.readAsDataURL(this.files[0]);
+	        reader.onload = function (e) {
+	            $("#inqImgsThumbnail").parent().css("display", "");
+	            $("#inqImgsThumbnail div").last().children("img").attr("src", e.target.result);
+	        }
+	    }
+	})
+	
+	// 파일 썸네일에서 x 버튼을 눌렀을 경우
+	$(document).on("click", "#inqImgsThumbnail a", function () {
+	
+	    /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+	    // 파일첨부를 취소하여 비어있는 input태그를 제거하는 부분 
+	    var emptyFileInputs = $("#inqImgs input[type=file]").filter(function () {
+	        return $(this).val() === '';
+	    });
+	    emptyFileInputs.remove();
+	    /* 여기 사이에 있는 js 폼 전송시에도 있어야할듯 */
+	
+	    let idx = $(this).parent().index();
+	    $("#inqImgsThumbnail div").eq(idx).remove();
+	    $("#inqImgs input").eq(idx).remove();
+	})
 	
 	$(function(){
+		
+		$("#submitReply").click(function(){
+			let formData = new FormData();
+			
+			let inputFile = $("#inqImgs .uploadFile");
+			
+			 
+			let files = [];
+			
+			for(let i = 0; i < inputFile.length; i++){
+				/* files.push(inputFile[i].files) */
+				formData.append("uploadFile",inputFile[i].files);
+			} 
+			
+			console.log(formData)
+			
+		})
+		
+		$(document).on("keyup", "#myReplyContent textarea", function(){
+			if($(this).val().length > 0){
+				$("#submitReply button").prop("disabled", false);
+			}else{
+				$("#submitReply button").prop("disabled", true);
+			}
+		})
+		
+		 $("#submitReply").click(function(){
+		
+			let formData = new FormData();
+			
+			let inputFile = $("#inqImgs .uploadFile");
+			
+			if(inputFile.length > 0){
+				for(let i = 0; i < inputFile.length; i++){
+					for(let j = 0; j < inputFile[i].files.length; j++){
+						console.log(" fileInput[i].files[j] :::"+ inputFile[i].files[j]);
+						formData.append("file",inputFile[i].files[j]);
+							
+					 /* files.push(inputFile[i].files) */ 
+					}
+				} 
+			}
+			
+			let requestDto = {
+				userId : ${principal.user.id },
+				boardId : ${boardId},
+				content : $("#myReplyContent textarea").val(),
+			}
+			
+			formData.append("requestDto", new Blob([JSON.stringify(requestDto)], {type: "application/json"}));
+			
+			$.ajax({
+				method:"POST",
+				data: formData,
+				enctype:"multipart/form-data",
+				url:"/api/board/${boardId}/reply",
+				processData: false,
+				contentType: false,
+				/* data: JSON.stringify(data), */
+				/* dataType: "json", */
+				success:function(res){
+					if (res.status === 500) {
+						alert(res.data);
+					} else {
+						console.log("게시글 등록 ajax 성공");
+						alert("댓글 작성이 완료되었습니다.");
+						$("#myReplyContent textarea").val("")
+						$("#submitReply button").prop("disabled", true);
+						$("#inqImgsThumbnail a").click();
+					 }
+				},error:function(error){
+					console.log("댓글작성 ajax 통신 실패")
+				}
+			})
+			
+		})
+		
+		
 		
 		$.ajax({
 			method:"POST",

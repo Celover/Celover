@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
 import com.fan.celover.domain.board.dto.BoardListResponseDto;
-import com.fan.celover.domain.board.dto.EnrollBoardReq;
+import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.repository.BoardRepository;
 import com.fan.celover.domain.user.model.User;
@@ -26,7 +26,7 @@ public class BoardService {
 	private BoardRepository boardRepository;
 
 	@Transactional
-	public Board saveBoard(EnrollBoardReq enrollBoardReq, User user) {
+	public Board saveBoard(EnrollBoardRequestDto enrollBoardReq, User user) {
 
 		// back에서 게시글 제목 null check
 		if (enrollBoardReq.getTitle() == null || enrollBoardReq.getTitle().equals("")) {

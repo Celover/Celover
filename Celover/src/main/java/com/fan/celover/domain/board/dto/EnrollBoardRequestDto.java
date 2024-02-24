@@ -7,7 +7,7 @@ import lombok.ToString;
 
 @ToString
 @Data
-public class EnrollBoardReq {
+public class EnrollBoardRequestDto {
 
 	private String title;
 	private String content;
