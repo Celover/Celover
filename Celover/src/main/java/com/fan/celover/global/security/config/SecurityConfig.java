@@ -60,7 +60,7 @@ public class SecurityConfig {
 	                .requestMatchers("/visitor/**").hasRole("VISITOR")
 	                .requestMatchers("/mypage/**").hasAnyRole("USER","ADMIN")
 	                .anyRequest()
-//	                .permitAll()
+//	                .permitAll() // 포스트맨 테스트 용
 	                .hasAnyRole("USER","ADMIN")
             )
             .exceptionHandling(handling -> handling

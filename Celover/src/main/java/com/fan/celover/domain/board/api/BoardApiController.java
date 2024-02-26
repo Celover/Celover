@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
+import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
 import com.fan.celover.domain.board.dto.ReplySaveRequestDto;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.service.BoardService;
@@ -46,7 +50,7 @@ public class BoardApiController {
 		
 	}
 	
-	@PostMapping("/api/board/{id}")
+	@GetMapping("/api/board/{id}")
 	public ResponseDto<Integer> selectBoard(@PathVariable int id, Model model) {
 		
 		BoardDetailResponseDto board = boardService.boardDetail(id);
@@ -55,6 +59,13 @@ public class BoardApiController {
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), board, 1);
 //		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
+	
+	@DeleteMapping("/api/board/{id}/reply")
+	public ResponseDto<Integer> deleteReply(@RequestBody ReplyDeleteRequestDto replyDeleteRequestDto){
+		
+		replyService.deleteReply(replyDeleteRequestDto);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	

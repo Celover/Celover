@@ -16,8 +16,8 @@
 			}
 
 			#writeReply #inqImgsThumbnail>div>img {
-				width: 70px;
-				height: 70px;
+				max-width: 70px;
+				max-height: 70px;
 			}
 
 			#writeReply #inqImgsThumbnail>div>a {
@@ -37,6 +37,66 @@
 			#myReplyFooter i:hover {
 				cursor: pointer;
 			}
+			
+			.etc-area > i {
+            font-size: x-large;
+            width: 15px;
+            text-align: center;
+	        }
+	
+	        .etc-area .msgbox {
+	            border-radius: 10px;
+	            position: absolute;
+	            background: #fff;
+	            display: none; 
+	            padding: 10px;
+	            background-color: #fff;
+	            margin-top: 10px;
+	            margin-left: -40px;
+	            box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	        }
+	
+	        .etc-area .msgbox:after {
+	            content: '';
+	            position: absolute;
+	            top: 0%;
+	            left: 50%;
+	            width: 0;   
+	            height: 0;
+	            border: 12px solid transparent;
+	            border-bottom-color: #fff;
+	            border-top: 0;
+	            border-left: 0;
+	            margin-left: -6px;
+	            margin-top: -12px;
+	            box-shadow: -4px 0px 2px -1px rgba( 178, 178, 178, .4 );
+	        }
+	        
+	        .etc-area .msgbox ul {
+	            list-style: none;
+	            padding: 0px;
+	            margin: 0px;
+	            width: 80px;
+	            text-align: left;
+	
+	        }
+	
+	        .etc-area .msgbox ul li {
+	            padding: 5px;
+	            font-size: small;
+	            text-align: center;
+	        }
+	
+	        .etc-area ul li:hover {
+	            background-color: #e9ecef;
+	            cursor: pointer;
+	        }
+	        
+	        .etc-area ul li i {
+	            width: 16px;
+	            height: 16px;
+	            text-align: center;
+	        }
 		</style>
 
 		<!-- 메인페이지 영역 -->
@@ -93,35 +153,7 @@
 
 					<div id="replyArea">
 
-						<div id="replyItems">
-
-							<div class="reply-item py-3">
-								<div class="d-flex">
-									<div class="reply-first-section me-2">
-										<img src="sampleImg/user_profile_default.png" alt="">
-									</div>
-									<div class="reply-second-section">
-										<div class="reply-writer fw-bold">
-											<span>21jong</span>
-										</div>
-										<div class="reply-content pt-2">
-											<span>좋은 글 감사합니다 . &Lorem ipsum dolor sit amet consectetur adipisicing elit.
-												Maxime perspiciatis beatae magnam odio eveniet nihil magni sapiente
-												officiis! Quod quam dignissimos atque totam consequatur illum sapiente
-												exercitationem praesentium dicta odio!</span>
-										</div>
-										<div class="reply-etc d-flex">
-											<span class="me-2">2024.01.18 22:45</span>
-											<span>답글쓰기</span>
-										</div>
-									</div>
-									<div class="reply-third-section px-2">
-										<i class="fas fa-ellipsis-vertical"></i>
-									</div>
-								</div>
-							</div>
-
-						</div>
+						<div id="replyItems"></div>
 
 						<div id="writeReply" class="p-4">
 
@@ -156,7 +188,6 @@
 		</div>
 
 		<script>
-
 
 			$(function () {
 
@@ -204,23 +235,6 @@
 					$("#inqImgs input").eq(idx).remove();
 				})
 
-				$("#submitReply").click(function () {
-					let formData = new FormData();
-
-					let inputFile = $("#inqImgs .uploadFile");
-
-
-					let files = [];
-
-					for (let i = 0; i < inputFile.length; i++) {
-						/* files.push(inputFile[i].files) */
-						formData.append("uploadFile", inputFile[i].files);
-					}
-
-					console.log(formData)
-
-				})
-
 				$(document).on("keyup", "#myReplyContent textarea", function () {
 					if ($(this).val().length > 0) {
 						$("#submitReply button").prop("disabled", false);
@@ -229,7 +243,7 @@
 					}
 				})
 
-				$("#submitReply").click(function () {
+				$("#submitReply button").click(function () {
 
 					let formData = new FormData();
 
@@ -272,20 +286,78 @@
 								$("#submitReply button").prop("disabled", true);
 								$("#inqImgsThumbnail a").click();
 								loadBoard();
-
 							}
 						}, error: function (error) {
 							console.log("댓글작성 ajax 통신 실패")
-						}
+						}	
 					})
 
 				})
 
 			})
-			function loadBoard() {
+
+			
+	        /* ... 클릭 script 시작 */
+	        $(document).on("click", ".etc-area > i", function(e){
+	            e.stopPropagation();
+	            console.log(" ... 눌림");
+	            let msgbox = $(e.target).find(".msgbox");
+	            let state = $(e.target).find(".msgbox").css("display");
+
+	            $(".msgbox").hide();
+	            $(".msgbox").parent().css("background-color","#fff");
+
+	            if(state == "none"){
+	                $(e.target).css("background-color","#e9ecef");
+	                msgbox.show();
+	            }else{
+	                $(e.target).css("background-color","#fff");
+	                msgbox.hide();
+	            }
+	        })
+
+	        $(document).click(function(e) {
+	            var msgbox = $(".etc-area > i > .msgbox");
+	            if (!msgbox.is(e.target) && !msgbox.has(e.target).length) {
+	                msgbox.parent().css("background-color","#fff")
+	                msgbox.hide();
+	            }
+	        });
+	        /* ... 클릭 script 끝 */
+	        
+	        /* 댓글삭제 script */
+	        $(document).on("click",".delete-reply", function(){
+	        	
+	        	let data = {
+					replyId : $(this).find('.hidden-id').val(),
+					userId : ${principal.user.id}
+				}
+	        	console.log(data)
+	        	
+	        	$.ajax({
+	        		method: "DELETE",
+					url: "/api/board/" + data.replyId + "/reply",
+					contentType: "application/json; charset=UTF-8",
+					dataType: "json",
+					data: JSON.stringify(data),
+					success:function(res){
+						
+						if (res.status === 500) {
+							alert(res.data);
+						} else {
+							alert("댓글을 삭제했습니다.");
+							loadBoard();
+						}
+					},error:function(){
+						console.log("댓글 삭제 ajax 통신 실패");
+					}
+	        	})
+	        })
+	        
+   			function loadBoard() {
 
 				$.ajax({
-					method: "POST",
+					method: "GET",
 					url: "/api/board/${boardId}",
 					contentType: "application/json; charset=UTF-8",
 					dataType: "json",
@@ -300,10 +372,14 @@
 
 						let tags = board.boardTags.map(e => e.tagObjResponseDto.tagName);
 
+						let tagHtml = "";
+						
 						for (let tag of tags) {
 							console.log(tag);
-							$(".tag-area").append("<button class='btn'>#<span>" + tag + "</span></button>&nbsp;");
+							tagHtml += `<button class='btn'>#<span>` + tag + `</span></button>&nbsp;`
 						}
+						
+						$(".tag-area").html(tagHtml);
 
 						let replies = board.replies;
 
@@ -334,17 +410,27 @@
 										<span class="me-2">` + replies[i].createDate + `</span> <span>답글쓰기</span>
 									</div>
 								</div>
-								<div class="reply-third-section px-2">
-									<i class="fas fa-ellipsis-vertical"></i>
-								</div>
-							</div>
-						</div>`;
+								<div class="reply-third-section px-2 etc-area">
+									<i class="fas fa-ellipsis-vertical">
+										<div class="msgbox">
+							                <ul>`
+							if("${principal.user.nickname}" === replies[i].nickname ){
+								html += `<li class="delete-reply">
+											<input class="hidden-id" type="hidden" value="` + replies[i].replyId + `">
+			                        		<i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+				                    	</li>`
+							}else{
+								html += `<li class="report-reply">
+			                        		<i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> 신고하기
+				                    	</li>`
+							}
+							html += `</ul></div></i></div></div></div>`;
 						}
 						$("#replyItems").html(html);
 
 						$("#boardDetailBottom #replyCount").html(replies.length);
-						console.log(html)
-						console.log(replies)
+						console.log(html);
+						console.log(replies);
 
 
 					}, error: function (err) {
@@ -353,6 +439,8 @@
 					}
 				})
 			}
+
+	        
 		</script>
 
 		<%@ include file="/WEB-INF/views/layout/footer.jsp" %>

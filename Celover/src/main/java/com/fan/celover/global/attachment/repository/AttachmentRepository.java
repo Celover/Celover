@@ -11,4 +11,6 @@ public interface AttachmentRepository extends JpaRepository<Attachment, Long>{
 
 	List<Attachment> findByReferenceNoInAndCategory(List<Integer> referenceNo, Category category);
 	
+	int deleteByReferenceNoAndCategory(int referenceNo, Category category);
+	
 }

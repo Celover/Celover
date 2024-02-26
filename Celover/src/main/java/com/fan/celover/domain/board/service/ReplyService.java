@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
 import com.fan.celover.domain.board.dto.ReplySaveRequestDto;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.model.Reply;
@@ -61,6 +62,20 @@ public class ReplyService {
 			List<Attachment> attachments = fileUtil.saveFile(files, Category.REPLY, referenceNo);
 			System.out.println(attachments);
 			attachmentRepository.saveAll(attachments);
+		}
+	}
+	
+	@Transactional
+	public void deleteReply(ReplyDeleteRequestDto replyDeleteRequestDto) {
+		int result = replyRepository.deleteByUserIdAndId(replyDeleteRequestDto.getUserId(), replyDeleteRequestDto.getReplyId());
+		
+		// attachment 삭제
+		attachmentRepository.deleteByReferenceNoAndCategory(replyDeleteRequestDto.getReplyId(), Category.REPLY);
+		
+		System.out.println(result);
+		
+		if(result == 0) {
+			throw new IllegalArgumentException("댓글 삭제를 실패했습니다.");
 		}
 	}
 	
