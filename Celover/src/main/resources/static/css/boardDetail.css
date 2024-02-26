@@ -104,6 +104,18 @@
 	color: rgba(55, 65, 81, 0.8);
 }
 
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-second-section #imgArea div
+	{
+	border: 1px solid black;
+	width: 70px;
+	height: 70px;
+}
+
+#boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-second-section #imgArea div img
+	{
+	width: 100%;
+}
+
 #boardDetail #boardDetailBottom #replyArea #replyItems .reply-item .reply-third-section
 	{
 	font-size: large;

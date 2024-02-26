@@ -1,6 +1,9 @@
 package com.fan.celover.domain.board.service;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,9 +14,15 @@ import org.springframework.transaction.annotation.Transactional;
 import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
 import com.fan.celover.domain.board.dto.BoardListResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
+import com.fan.celover.domain.board.dto.ReplyResponseDto;
 import com.fan.celover.domain.board.model.Board;
+import com.fan.celover.domain.board.model.Reply;
 import com.fan.celover.domain.board.repository.BoardRepository;
 import com.fan.celover.domain.user.model.User;
+import com.fan.celover.global.attachment.dto.ReplyAttachmentResponseDto;
+import com.fan.celover.global.attachment.model.Attachment;
+import com.fan.celover.global.attachment.repository.AttachmentRepository;
+import com.fan.celover.global.role.Category;
 import com.fan.celover.global.role.Status;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +33,9 @@ public class BoardService {
 
 	@Autowired
 	private BoardRepository boardRepository;
+	
+	@Autowired
+	private AttachmentRepository attachmentRepository;
 
 	@Transactional
 	public Board saveBoard(EnrollBoardRequestDto enrollBoardReq, User user) {
@@ -72,11 +84,39 @@ public class BoardService {
 	
 	@Transactional
 	public BoardDetailResponseDto boardDetail(int boardId) {
-		Board board = boardRepository.findByIdAndStatus(boardId, Status.Y).orElseThrow(()->{
+		
+		Board board = boardRepository.findByIdAndStatus(boardId, Status.Y).orElseThrow(() -> {
 			throw new IllegalArgumentException("존재하지 않는 게시글 입니다.");
 		});
 		
-		return new BoardDetailResponseDto(board);
+		// 참조번호(replyId) [1, 2] 
+		List<Integer> referenceNos = board.getReplies().stream().map(Reply::getId).collect(Collectors.toList());
+		
+		// board Entity to Dto
+		BoardDetailResponseDto boardDetailResponseDto = new BoardDetailResponseDto(board);
+		
+		// 참조번호를 이용해서 첨부파일들 불러온다.
+		List<Attachment> attachments = attachmentRepository.findByReferenceNoInAndCategory(referenceNos, Category.REPLY);
+
+		// attachment Entity to Dto
+		List<ReplyAttachmentResponseDto> attachmentResponseDtos = attachments.stream().map(ReplyAttachmentResponseDto::new).collect(Collectors.toList());
+		
+		// boardDetailResponseDto의 List<Reply>를 가져와서 반복문
+		for(ReplyResponseDto replyResponseDto : boardDetailResponseDto.getReplies()) {
+			// reply의 id와 attachment의 referenceNo를 비교해서 같은것들을 담아줄 List<Attachment> 생성
+			List<ReplyAttachmentResponseDto> matchingAttachments = new ArrayList<>();
+			// DB에서 불러온 attachment들을 위한 반복문
+			for(ReplyAttachmentResponseDto replyAttachmentResponseDto : attachmentResponseDtos) {
+				// reply의 id와 attachment의 참조번호를 비교하는 조건문
+				if(replyResponseDto.getReplyId() == replyAttachmentResponseDto.getReferenceNo()) {
+					// 참일 경우 matchingAttachments에 추가
+					matchingAttachments.add(replyAttachmentResponseDto);
+				}
+			}
+			// 각각의 replyResponseDto에 attachments 추가
+			replyResponseDto.setAt(matchingAttachments);
+		}
+		return boardDetailResponseDto;
 	}
 	
 

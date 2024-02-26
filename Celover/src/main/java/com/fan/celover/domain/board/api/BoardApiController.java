@@ -54,11 +54,12 @@ public class BoardApiController {
 		boardService.updateCount(id);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), board, 1);
+//		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	
 	@PostMapping("/api/board/{id}/reply")
-	public ResponseDto<Integer> selectReplys(@RequestPart(value = "requestDto") ReplySaveRequestDto requestDto, @RequestPart(value = "file", required = false) List<MultipartFile> files) {
+	public ResponseDto<Integer> saveReply(@RequestPart(value = "requestDto") ReplySaveRequestDto requestDto, @RequestPart(value = "file", required = false) List<MultipartFile> files) {
 
 		// 파일을 DB에 등록하는 작업은 replyService에서 한다.
 		// => 댓글을 저장하고 나서 컨트롤러로 돌아올때 커밋이 된다.
@@ -74,6 +75,7 @@ public class BoardApiController {
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
+	
 }
 
 

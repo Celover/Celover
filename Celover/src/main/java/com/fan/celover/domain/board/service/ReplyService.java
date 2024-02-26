@@ -14,9 +14,9 @@ import com.fan.celover.domain.board.repository.BoardRepository;
 import com.fan.celover.domain.board.repository.ReplyRepository;
 import com.fan.celover.domain.user.model.User;
 import com.fan.celover.domain.user.repository.UserRepository;
-import com.fan.celover.global.Attachment.AttachmentRepository;
-import com.fan.celover.global.file.model.Attachment;
-import com.fan.celover.global.file.util.AttachmentUtil;
+import com.fan.celover.global.attachment.model.Attachment;
+import com.fan.celover.global.attachment.repository.AttachmentRepository;
+import com.fan.celover.global.attachment.util.AttachmentUtil;
 import com.fan.celover.global.role.Category;
 import com.fan.celover.global.role.Status;
 
@@ -53,17 +53,15 @@ public class ReplyService {
 		});
 		System.out.println(requestDto);
 		
+		Reply newReply = Reply.builder().content(requestDto.getContent()).board(board).user(user).build();
+		
+		int referenceNo = replyRepository.save(newReply).getId();
+		
 		if(files != null) {
-			List<Attachment> attachments = fileUtil.saveFile(files, Category.BOARD, requestDto.getBoardId());
+			List<Attachment> attachments = fileUtil.saveFile(files, Category.REPLY, referenceNo);
 			System.out.println(attachments);
 			attachmentRepository.saveAll(attachments);
 		}
-
-		
-		Reply newReply = Reply.builder().content(requestDto.getContent()).board(board).user(user).build();
-		
-//		replyRepository.save(newReply);
-	
 	}
 	
 }

@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fan.celover.domain.board.model.Board;
+import com.fan.celover.global.attachment.model.Attachment;
 import com.fan.celover.global.common.ConvertLocaldatetimeToString;
 
 import lombok.AccessLevel;
@@ -28,6 +29,7 @@ public class BoardDetailResponseDto {
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private String createDate;
 	private List<BoardTagResponseDto> boardTags;
+	private List<ReplyResponseDto> replies;
 	
 	public BoardDetailResponseDto(Board board) {
 		this.id = board.getId();
@@ -37,6 +39,8 @@ public class BoardDetailResponseDto {
 		this.nickname = board.getUser().getNickname();
 		this.createDate = ConvertLocaldatetimeToString.calculateTime(board.getCreateDate());
 		this.boardTags = board.getBoardTag().stream().map(BoardTagResponseDto::new).collect(Collectors.toList());
+		this.replies = board.getReplies().stream().map(ReplyResponseDto::new).collect(Collectors.toList());
 	}
+	
 	
 }

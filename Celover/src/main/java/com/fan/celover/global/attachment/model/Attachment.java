@@ -1,9 +1,11 @@
-package com.fan.celover.global.file.model;
+package com.fan.celover.global.attachment.model;
 
 import com.fan.celover.global.common.BaseTimeEntity;
 import com.fan.celover.global.role.Category;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,6 +33,7 @@ public class Attachment extends BaseTimeEntity{
 	private int id;
 	
 	@NotNull
+	@Enumerated(value = EnumType.STRING) // db에 index가 아닌 String으로 저장
 	private Category category;
 	
 	@NotNull
@@ -44,6 +47,5 @@ public class Attachment extends BaseTimeEntity{
 	
 	@NotBlank
 	private String changeName;
-	
 	
 }

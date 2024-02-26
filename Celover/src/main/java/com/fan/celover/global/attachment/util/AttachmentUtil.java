@@ -1,4 +1,4 @@
-package com.fan.celover.global.file.util;
+package com.fan.celover.global.attachment.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +9,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fan.celover.global.file.model.Attachment;
+import com.fan.celover.global.attachment.model.Attachment;
 import com.fan.celover.global.role.Category;
 
 @Component
