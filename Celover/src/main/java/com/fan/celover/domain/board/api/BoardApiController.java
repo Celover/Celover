@@ -19,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
 import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
+import com.fan.celover.domain.board.dto.ReplyResponseDto;
 import com.fan.celover.domain.board.dto.ReplySaveRequestDto;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.service.BoardService;
@@ -76,7 +77,7 @@ public class BoardApiController {
 		// => 댓글을 저장하고 나서 컨트롤러로 돌아올때 커밋이 된다.
 		// 	  즉 댓글을 저장되고 파일을 저장되지 않을 수 있다.
 		//    댓글이 저장성공했지만 파일 등록 실패시 rollback
-		replyService.saveReply(requestDto, files);
+		ReplyResponseDto dto = replyService.saveReply(requestDto, files);
 
 		
 		/*
@@ -84,7 +85,7 @@ public class BoardApiController {
 		 * System.out.println(file.getOriginalFilename()); // }
 		 */		
 		
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), dto, 1);
 	}
 	
 }

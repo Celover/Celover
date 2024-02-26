@@ -277,6 +277,7 @@
 						/* data: JSON.stringify(data), */
 						/* dataType: "json", */
 						success: function (res) {
+							
 							if (res.status === 500) {
 								alert(res.data);
 							} else {
@@ -285,11 +286,60 @@
 								$("#myReplyContent textarea").val("")
 								$("#submitReply button").prop("disabled", true);
 								$("#inqImgsThumbnail a").click();
-								loadBoard();
+								
+								let html = "";
+								let imgHtml = "";
+								
+									html += `<div class="reply-item py-3">
+												<div class="d-flex">
+													<div class="reply-first-section me-2">
+														<img src="sampleImg/user_profile_default.png" alt="">
+													</div>
+													<div class="reply-second-section flex-grow-1">
+														<div class="reply-writer fw-bold">
+															<span>` + res.msg.nickname + `</span>
+														</div>
+														<div class="reply-content py-2">
+															<span>` + res.msg.content + `</span>
+														</div>
+														<div class="imgArea" class="d-flex">`;
+									if(res.msg.replyAttachmentResponseDtos.length > 0){
+										for(let j = 0; j < res.msg.replyAttachmentResponseDtos.length; j++){
+											imgHtml += `<div class="m-2"><img src="`+ res.msg.replyAttachmentResponseDtos[j].imgPath + res.msg.replyAttachmentResponseDtos[j].changeName +`"></div>`
+										}
+									}
+									html+=	`</div>
+											<div class="reply-etc d-flex">
+												<span class="me-2">` + res.msg.createDate + `</span> <span>답글쓰기</span>
+											</div>
+										</div>
+										<div class="reply-third-section px-2 etc-area">
+											<i class="fas fa-ellipsis-vertical">
+												<div class="msgbox">
+									                <ul>`
+									if("${principal.user.nickname}" === res.msg.nickname ){
+										html += `<li class="delete-reply">
+													<input class="hidden-id" type="hidden" value="` + res.msg.replyId + `">
+					                        		<i class="fas fa-trash-can" style="color: red;"></i> 삭제하기
+						                    	</li>`
+									}else{
+										html += `<li class="report-reply">
+					                        		<i class="fa-solid fa-triangle-exclamation" style="color: red;"></i> 신고하기
+						                    	</li>`
+									}
+									html += `</ul></div></i></div></div></div>`;
+								
+								$("#replyItems").append(html);
+								
+								$(".imgArea").last().html('<div class="m-2"><img src="/img/로딩.gif"></div>');
+								
+								setTimeout(function() {
+									$(".imgArea").last().html(imgHtml);
+								}, 1500);
 							}
 						}, error: function (error) {
 							console.log("댓글작성 ajax 통신 실패")
-						}	
+						}
 					})
 
 				})
@@ -398,7 +448,7 @@
 												<div class="reply-content py-2">
 													<span>` + replies[i].content + `</span>
 												</div>
-												<div id="imgArea" class="d-flex">`;
+												<div class="imgArea" class="d-flex">`;
 							if(replies[i].replyAttachmentResponseDtos.length > 0){
 								for(let j = 0; j < replies[i].replyAttachmentResponseDtos.length; j++){
 									console.log(replies[i].replyAttachmentResponseDtos[j].imgPath)
@@ -431,7 +481,8 @@
 						$("#boardDetailBottom #replyCount").html(replies.length);
 						console.log(html);
 						console.log(replies);
-
+						
+						// 마지막에 이미지 불러오기
 
 					}, error: function (err) {
 						console.log(err);

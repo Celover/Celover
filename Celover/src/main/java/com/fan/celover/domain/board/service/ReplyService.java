@@ -1,6 +1,8 @@
 package com.fan.celover.domain.board.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
+import com.fan.celover.domain.board.dto.ReplyResponseDto;
 import com.fan.celover.domain.board.dto.ReplySaveRequestDto;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.model.Reply;
@@ -15,6 +18,7 @@ import com.fan.celover.domain.board.repository.BoardRepository;
 import com.fan.celover.domain.board.repository.ReplyRepository;
 import com.fan.celover.domain.user.model.User;
 import com.fan.celover.domain.user.repository.UserRepository;
+import com.fan.celover.global.attachment.dto.ReplyAttachmentResponseDto;
 import com.fan.celover.global.attachment.model.Attachment;
 import com.fan.celover.global.attachment.repository.AttachmentRepository;
 import com.fan.celover.global.attachment.util.AttachmentUtil;
@@ -43,7 +47,7 @@ public class ReplyService {
 	private AttachmentUtil fileUtil;
 	
 	@Transactional
-	public void saveReply(ReplySaveRequestDto requestDto, List<MultipartFile> files) {
+	public ReplyResponseDto saveReply(ReplySaveRequestDto requestDto, List<MultipartFile> files) {
 		
 		User user = userRepository.findById(requestDto.getUserId()).orElseThrow(()->{
 			return new IllegalArgumentException("존재하지 않는 회원입니다.");
@@ -63,6 +67,20 @@ public class ReplyService {
 			System.out.println(attachments);
 			attachmentRepository.saveAll(attachments);
 		}
+		
+		// 새롭게 등록된 ReplyDto
+		ReplyResponseDto replyResponseDto = new ReplyResponseDto(newReply);
+		
+        List<Integer> refernceNoToList = new ArrayList<>();
+        refernceNoToList.add(referenceNo);
+		
+		List<Attachment> attachments = attachmentRepository.findByReferenceNoInAndCategory(refernceNoToList, Category.REPLY);
+		
+		List<ReplyAttachmentResponseDto> attachmentResponseDtos = attachments.stream().map(ReplyAttachmentResponseDto::new).collect(Collectors.toList());
+		
+		replyResponseDto.setAt(attachmentResponseDtos);
+		
+		return replyResponseDto;
 	}
 	
 	@Transactional
