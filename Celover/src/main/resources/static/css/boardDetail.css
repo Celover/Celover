@@ -77,6 +77,18 @@
 	font-size: x-large;
 }
 
+#boardDetail #boardDetailMiddle #boardFooter .like-area i{
+	color: red;
+}
+
+#boardDetail #boardDetailMiddle #boardFooter .like-area span{
+	color: black;
+}
+
+#boardDetail #boardDetailMiddle #boardFooter .like-area:hover {
+	cursor: pointer;
+}
+
 #boardDetail #boardDetailBottom #replyArea #replyItems .reply-item {
 	border-bottom: 2px solid #dee2e6;
 }

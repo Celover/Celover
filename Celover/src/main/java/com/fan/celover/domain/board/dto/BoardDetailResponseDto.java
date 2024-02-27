@@ -8,6 +8,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.global.attachment.model.Attachment;
 import com.fan.celover.global.common.ConvertLocaldatetimeToString;
+import com.fan.celover.global.likes.dto.LikeCountResponseDto;
 
 import lombok.AccessLevel;
 import lombok.Getter;

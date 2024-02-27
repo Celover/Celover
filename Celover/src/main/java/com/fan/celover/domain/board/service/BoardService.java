@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +23,7 @@ import com.fan.celover.domain.user.model.User;
 import com.fan.celover.global.attachment.dto.ReplyAttachmentResponseDto;
 import com.fan.celover.global.attachment.model.Attachment;
 import com.fan.celover.global.attachment.repository.AttachmentRepository;
+import com.fan.celover.global.likes.likesRepository.LikesRepository;
 import com.fan.celover.global.role.Category;
 import com.fan.celover.global.role.Status;
 

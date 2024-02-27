@@ -5,12 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +23,9 @@ import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.service.BoardService;
 import com.fan.celover.domain.board.service.ReplyService;
 import com.fan.celover.global.dto.ResponseDto;
+import com.fan.celover.global.likes.dto.LikeCountResponseDto;
+import com.fan.celover.global.likes.dto.LikesRequestDto;
+import com.fan.celover.global.likes.service.LikesService;
 import com.fan.celover.global.security.model.PrincipalDetails;
 import com.fan.celover.global.tag.service.TagService;
 
@@ -40,6 +41,9 @@ public class BoardApiController {
 	@Autowired 
 	private ReplyService replyService;
 	
+	@Autowired
+	private LikesService likesService;
+	
 	@PostMapping("/api/board")
 	public ResponseDto<Integer> saveBoard(@RequestBody EnrollBoardRequestDto enrollBoardReq, @AuthenticationPrincipal PrincipalDetails principal){
 		
@@ -51,8 +55,22 @@ public class BoardApiController {
 		
 	}
 	
+	@GetMapping("/api/board/{id}/likes")
+	public ResponseDto<Integer> selectBoardLikes(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails){
+		
+		// 해당 게시글에 내가 좋아요 했는지, 좋아요 갯수는 몇개인지 출력
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), likesService.selectBoardLikes(id, principalDetails.getUser().getId()), 1);
+	}
+	
+	@PostMapping("/api/board/{id}/likes")
+	public ResponseDto<Integer> updateBoardLikes(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails){
+		
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), likesService.updateBoardLikes(id, principalDetails.getUser()), 1);
+	}
+	
+	
 	@GetMapping("/api/board/{id}")
-	public ResponseDto<Integer> selectBoard(@PathVariable int id, Model model) {
+	public ResponseDto<Integer> selectBoard(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principal) {
 		
 		BoardDetailResponseDto board = boardService.boardDetail(id);
 		

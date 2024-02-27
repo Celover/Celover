@@ -137,10 +137,7 @@
 							<div class="tag-area flex-grow-1">
 							</div>
 							<div class="like-area">
-								<i class="far fa-thumbs-up"> 20</i>
-								<!--
-                                <i class="fas fa-thumbs-up"></i>
-                            -->
+								<i class="far fa-heart"> <span>0</span></i>
 							</div>
 						</div>
 					</div>
@@ -192,6 +189,8 @@
 			$(function () {
 
 				loadBoard();
+				loadLikes();
+				
 				//파일 첨부 버튼을 눌렀을 경우 input[type:file] 을 동적으로 생성하고 클릭
 				$(document).on("click", "#myReplyFooter #attachFile i", function () {
 					let count = $("#inqImgsThumbnail div").length;
@@ -331,11 +330,13 @@
 								
 								$("#replyItems").append(html);
 								
-								$(".imgArea").last().html('<div class="m-2"><img src="/img/로딩.gif"></div>');
+								if(imgHtml != ""){
+									$(".imgArea").last().html('<div class="m-2"><img src="/img/로딩.gif"></div>');
+									setTimeout(function() {
+										$(".imgArea").last().html(imgHtml);
+									}, 1500);
+								}
 								
-								setTimeout(function() {
-									$(".imgArea").last().html(imgHtml);
-								}, 1500);
 							}
 						}, error: function (error) {
 							console.log("댓글작성 ajax 통신 실패")
@@ -404,6 +405,51 @@
 	        	})
 	        })
 	        
+	        // 좋아요를 눌렀을 경우
+	        $(document).on("click", ".like-area i", function(){
+	        	
+	        	console.log("좋아요 눌림 !");
+	        	
+	        	$.ajax({
+					method: "POST",
+					url: "/api/board/${boardId}/likes",
+					contentType: "application/json; charset=UTF-8",
+					dataType: "json",
+					success: function(res){
+						console.log(res)
+						if(res.msg.status == true){
+							$(".like-area").html("<i class='fas fa-heart'> <span></span></i>");
+						}else{
+							$(".like-area").html("<i class='far fa-heart'> <span></span></i>");
+						}
+						$(".like-area i span").text(res.msg.count);	
+					}
+				})
+	        })
+	        
+	        function loadLikes(){
+	        	
+				$.ajax({
+					method: "GET",
+					url: "/api/board/${boardId}/likes",
+					contentType: "application/json; charset=UTF-8",
+					dataType: "json",
+					success: function(res){
+						console.log(res);
+						
+						if(res.msg.status == false){ // 내가 좋아요 안눌렀을떄 
+							$(".like-area").html("<i class='far fa-heart'> <span></span></i>");							
+						}else{
+							$(".like-area").html("<i class='fas fa-heart'> <span></span></i>");							
+						}
+						$(".like-area i span").text(res.msg.count);					
+						
+					},error:function(){
+						console.log("좋아요 불러오기 ajax 통신 실패")
+					}
+				})
+	        }
+	        
    			function loadBoard() {
 
 				$.ajax({
@@ -418,8 +464,9 @@
 						$(".create-date").html("&bull; " + board.createDate);
 						$(".count").html("&bull; <i class='fa-regular fa-eye'></i> " + board.count);
 						$("#boardTitle h4").text(board.title);
-						$("#boardContent").html(board.content);
-
+						$("#boardContent").html(board.content);		
+						
+						
 						let tags = board.boardTags.map(e => e.tagObjResponseDto.tagName);
 
 						let tagHtml = "";
