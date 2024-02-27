@@ -9,6 +9,7 @@ import lombok.ToString;
 @Data
 public class EnrollBoardRequestDto {
 
+	private int id;
 	private String title;
 	private String content;
 	private String type;

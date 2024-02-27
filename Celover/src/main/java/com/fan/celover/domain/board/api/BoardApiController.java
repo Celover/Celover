@@ -1,6 +1,8 @@
 package com.fan.celover.domain.board.api;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,12 +11,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fan.celover.domain.board.dto.BoardDetailResponseDto;
+import com.fan.celover.domain.board.dto.BoardAndReplyDetailResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
 import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
 import com.fan.celover.domain.board.dto.ReplyResponseDto;
@@ -23,8 +27,6 @@ import com.fan.celover.domain.board.model.Board;
 import com.fan.celover.domain.board.service.BoardService;
 import com.fan.celover.domain.board.service.ReplyService;
 import com.fan.celover.global.dto.ResponseDto;
-import com.fan.celover.global.likes.dto.LikeCountResponseDto;
-import com.fan.celover.global.likes.dto.LikesRequestDto;
 import com.fan.celover.global.likes.service.LikesService;
 import com.fan.celover.global.security.model.PrincipalDetails;
 import com.fan.celover.global.tag.service.TagService;
@@ -51,7 +53,7 @@ public class BoardApiController {
 		
 		tagService.saveTag(board, enrollBoardReq.getHashTag());
 		
-		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), board.getId() ,1);
 		
 	}
 	
@@ -68,16 +70,29 @@ public class BoardApiController {
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), likesService.updateBoardLikes(id, principalDetails.getUser()), 1);
 	}
 	
+	// 게시글 수정 또는 삭제
+	@PutMapping("/api/board/{id}")
+	public ResponseDto<Integer> updateOrDeleteBoard(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principalDetails, @RequestBody Optional<EnrollBoardRequestDto> enrollBoardOptional){
+		
+		if(enrollBoardOptional.isPresent()) { // dto 있을 경우
+			System.out.println(enrollBoardOptional.get());
+			boardService.updateBoard(enrollBoardOptional.get(), principalDetails.getUser());
+			return new ResponseDto<Integer>(HttpStatus.OK.value(), id ,1);
+		}else {
+			boardService.deleteBoard(id, principalDetails.getUser().getId());
+			return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+		}
+		
+	}
 	
 	@GetMapping("/api/board/{id}")
 	public ResponseDto<Integer> selectBoard(@PathVariable int id, @AuthenticationPrincipal PrincipalDetails principal) {
 		
-		BoardDetailResponseDto board = boardService.boardDetail(id);
+		BoardAndReplyDetailResponseDto board = boardService.selectBoardAndReplyDetail(id);
 		
 		boardService.updateCount(id);
 		
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), board, 1);
-//		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 	}
 	
 	@DeleteMapping("/api/board/{id}/reply")

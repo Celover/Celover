@@ -6,15 +6,21 @@ $('.summernote').summernote({
 /* 해시태그 스크립트 */
 $(function() {
 
-	$(document).on('keydown', '.tag-input', function() {
-		$(this).css('width', 20);
-		let value = $(this).val();
-		$('.tag-input-area').append(
-			'<div class="virtual">' + value + '</div>')
+	$(document).on('keyup', '.tag-input', function() {
+		
+		if($(this).val() == ""){
+			$(this).next().click();
+		}else{
+			$(this).css('width', 20);
+			let value = $(this).val();
+			$('.tag-input-area').append(
+				'<div class="virtual">' + value + '</div>')
+	
+			let inputWidth = $(this).siblings('.virtual').width()
+			$(this).css('width', inputWidth + 20);
+			$('.virtual').remove();
+		}
 
-		let inputWidth = $(this).siblings('.virtual').width()
-		$(this).css('width', inputWidth + 20);
-		$('.virtual').remove();
 
 	})
 
@@ -66,7 +72,10 @@ $(function() {
 		for (i = 0; i < hashtag.length - 1; i++) {
 			hashlist.push(hashtag[i].value)
 		}
-
+		
+		// 공백이나 빈 문자열 제거
+		hashlist = hashlist.filter(item => item.trim() !== "");
+		
 		let data = {
 			title: $("#title").val(),
 			content: $("#content").val(),
@@ -87,7 +96,8 @@ $(function() {
 				} else {
 					console.log("게시글 등록 ajax 성공");
 					alert("글쓰기가 완료되었습니다.");
-					window.history.back();
+					console.log(res)
+					location.href="/board/"+ res.msg;
 				}
 
 			}, error: function(err) {

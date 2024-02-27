@@ -68,7 +68,7 @@
 	border-bottom: 2px solid rgba(0, 0, 0, 0.35);
 }
 
-#boardDetail #boardDetailMiddle #boardFooter .btn { 
+#boardDetail #boardDetailMiddle #boardFooter .tag-area .btn { 
 	--bs-btn-border-color: none;
 	background-color: #f3f4f6;
 }

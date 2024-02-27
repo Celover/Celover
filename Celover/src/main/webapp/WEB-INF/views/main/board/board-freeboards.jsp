@@ -110,6 +110,7 @@
 								</div>
 								<div class="middle-area my-2 d-flex title">
 									<a href="/board/${board.id }">${board.title }</a>
+									<input class="hiddenPageNo" type="hidden" value="${boards.number }">
 								</div>
 								<div class="bottom-area d-flex">
 									<c:forEach var="tag" items="${board.boardTags}">
@@ -127,7 +128,6 @@
 				</c:otherwise>
 			</c:choose>
 		</div>
-
 
 		<div id="bottomArea">
 			<div id="bottomPaginationArea" class="d-flex" style="align-items: center;">
@@ -253,5 +253,5 @@
 	console.log("${empty boards.content}")
 </script>
 
-<script src="/js/board-freeboards.js"></script>
+<script src="/js/boardFreeboards.js"></script>
 <%@ include file="/WEB-INF/views/layout/footer.jsp"%>

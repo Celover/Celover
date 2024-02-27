@@ -38,10 +38,19 @@
 				cursor: pointer;
 			}
 			
-			.etc-area > i {
-            font-size: x-large;
-            width: 15px;
-            text-align: center;
+			#boardDetailTop i:hover{
+				cursor: pointer;
+			}
+			
+			#boardDetailTop .etc-area > i {
+	            font-size: x-large;
+	            width: 15px;
+	            text-align: center;
+	        }
+	        
+			#myReplyFooter .etc-area > i {
+	            width: 15px;
+	            text-align: center;
 	        }
 	
 	        .etc-area .msgbox {
@@ -107,89 +116,137 @@
 				<div class="line">
 					<span>커뮤니티</span>&nbsp;/&nbsp; <a href="/board/freeboards" style="color: #0d6efd;">자유게시판</a>
 				</div>
-				<div id="boardDetailTop" class="mb-4">
-					<div class="d-flex">
-						<div class="left-area">
-							<img src="sampleImg/user_profile_default.png" alt="">
-						</div>
-						<div class="right-area ps-2">
-							<div id="writerNickname" class="d-flex">
-								<span></span>
-							</div>
-							<div class="board-info d-flex">
-								<span class="create-date pe-3"></span>
-								<span class="count"></span>
-							</div>
-						</div>
+		<div id="boardDetailTop" class="mb-4">
+			<div class="d-flex">
+				<div class="left-area">
+					<img src="sampleImg/user_profile_default.png" alt="">
+				</div>
+				<div class="right-area ps-2 flex-grow-1">
+					<div id="writerNickname" class="d-flex">
+						<span></span>
+					</div>
+					<div class="board-info d-flex">
+						<span class="create-date pe-3"></span> 
+						<span class="count pe-3"></span>
+						<span class="modified-date"></span>
 					</div>
 				</div>
+				<div class="util-area etc-area">
+					<i class="fas fa-ellipsis-vertical">
+						<div class="msgbox">
+			                <ul>
+			                	<li id="updateBoard">
+			                		<i class="fa-solid fa-pen-to-square"></i>수정하기
+			                	</li>
+			                	<li id="deleteBoard">
+			                		<i class="fa-solid fa-trash-can"></i>삭제하기		 					
+			                	</li>
+			                </ul>
+		                </div>
+                	</i>
+				</div>
+				
+			</div>
+		</div>
 
-				<div id="boardDetailMiddle" class="mb-4">
-					<div id="boardTitle">
-						<h4></h4>
-					</div>
+		<div id="boardDetailMiddle" class="mb-4">
+			<div id="boardTitle">
+				<h4></h4>
+			</div>
 
-					<div id="boardContent" class="py-5">
-					</div>
-
-					<div id="boardFooter" class="pb-4">
-						<div class="d-flex">
-							<div class="tag-area flex-grow-1">
-							</div>
-							<div class="like-area">
-								<i class="far fa-heart"> <span>0</span></i>
-							</div>
-						</div>
+			<div id="boardContent" class="py-5"></div>
+			<div id="boardFooter" class="pb-4">
+				<div class="d-flex">
+					<div class="tag-area flex-grow-1"></div>
+					<div class="like-area">
+						<i class="far fa-heart"> <span>0</span></i>
 					</div>
 				</div>
+			</div>
+		</div>
 
-				<div id="boardDetailBottom">
-					<div class="mb-3">
-						<span id="replyCount"></span>개의 댓글
+		<div id="boardDetailBottom">
+			<div class="mb-3">
+				<span id="replyCount">0</span>개의 댓글
+			</div>
+
+			<div id="replyArea">
+
+				<div id="replyItems"></div>
+
+				<div id="writeReply" class="p-4">
+
+					<div id="myNickname" class="mb-2">
+						<span class="fw-bolder">${principal.user.nickname }</span>
 					</div>
-
-					<div id="replyArea">
-
-						<div id="replyItems"></div>
-
-						<div id="writeReply" class="p-4">
-
-							<div id="myNickname" class="mb-2">
-								<span class="fw-bolder">${principal.user.nickname }</span>
-							</div>
-							<div id="myReplyContent">
-								<textarea id="" cols="30" rows="1" placeholder="댓글을 남겨보세요."></textarea>
-							</div>
-							<div>
-								<div id="inqImgs"></div>
-								<div id="inqImgsThumbnail"></div>
-							</div>
-							<div id="myReplyFooter" class="d-flex">
-								<div id="attachFile" class="flex-grow-1">
-									<i class="fas fa-camera"></i>
-								</div>
-								<div id="submitReply">
-									<button class="btn btn-primary" disabled>등록</button>
-								</div>
-							</div>
-
+					<div id="myReplyContent">
+						<textarea id="" cols="30" rows="1" placeholder="댓글을 남겨보세요."></textarea>
+					</div>
+					<div>
+						<div id="inqImgs"></div>
+						<div id="inqImgsThumbnail"></div>
+					</div>
+					<div id="myReplyFooter" class="d-flex">
+						<div id="attachFile" class="flex-grow-1">
+							<i class="fas fa-camera"></i>
 						</div>
-
-
+						<div id="submitReply">
+							<button class="btn btn-primary" disabled>등록</button>
+						</div>
 					</div>
 
 				</div>
+
 
 			</div>
+
+		</div>
+
+	</div>
 
 		</div>
 
 		<script>
 
 			$(function () {
+				
+				// 현재 게시글의 리스트 페이지 번호를 가져오는 메서드
+				if(sessionStorage.getItem('currentPage') == null){
+					// 만약 리스트를 통해서 board에 접근한것이 아닌 url을 직접 입력하여 들어온경우 0으로 세팅
+					sessionStorage.setItem('currentPage', 0);
+				}
 
 				loadBoard();
 				loadLikes();
+				
+				// 게시글 수정
+				$(document).on("click", ".util-area #updateBoard", function(){
+					location.href= "/board/${boardId}/update";
+				})
+				
+				// 게시글 삭제
+				$(document).on("click", ".util-area #deleteBoard", function(){
+					console.log("게시글 삭제 클릭!");
+					
+		     		$.ajax({
+		        		method: "PUT",
+						url: "/api/board/" + ${boardId},
+						contentType: "application/json; charset=UTF-8",
+						dataType: "json",
+						success:function(res){
+							console.log(res);
+							if (res.status === 500) {
+								alert(res.data);
+							} else {
+								alert("게시글이 삭제 되었습니다.");
+								location.href="/board/freeboards?page=" + sessionStorage.getItem("currentPage");
+							}
+						},error:function(){
+							console.log("게시글 삭제 ajax 통신 실패!")	
+						}
+			     	})
+ 					
+				})
 				
 				//파일 첨부 버튼을 눌렀을 경우 input[type:file] 을 동적으로 생성하고 클릭
 				$(document).on("click", "#myReplyFooter #attachFile i", function () {
@@ -242,6 +299,7 @@
 					}
 				})
 
+				// 댓글 작성 버튼 클릭
 				$("#submitReply button").click(function () {
 
 					let formData = new FormData();
@@ -462,6 +520,9 @@
 						console.log(board);
 						$("#writerNickname").text(board.nickname);
 						$(".create-date").html("&bull; " + board.createDate);
+						if(board.lastModifiedDate != null){
+							$(".modified-date").html("&bull; 수정됨 " + board.lastModifiedDate);
+						}
 						$(".count").html("&bull; <i class='fa-regular fa-eye'></i> " + board.count);
 						$("#boardTitle h4").text(board.title);
 						$("#boardContent").html(board.content);		
