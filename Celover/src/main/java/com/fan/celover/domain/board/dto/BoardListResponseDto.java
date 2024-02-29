@@ -1,12 +1,9 @@
 package com.fan.celover.domain.board.dto;
 
-import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.data.domain.Page;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fan.celover.domain.board.model.Board;
@@ -23,28 +20,32 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class BoardListResponseDto {
-
+	
 	private int id;
 	private String title;
 	private String content;
-	private String type;
+	private char type;
 	private int count;
 	private String nickname;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private String createDate;
-	private List<BoardTagResponseDto> boardTags;
+	private long replyCount;
+	private long likesCount;
+	private String[] tagNames;
 	
-	// Entity -> Dto
-	public BoardListResponseDto(Board board) {
-		this.id = board.getId();
-		this.title = board.getTitle();
-		this.content = board.getContent();
-		this.type = board.getType();
-		this.count = board.getCount();
-		this.nickname = board.getUser().getNickname();
-		this.createDate = ConvertLocaldatetimeToString.calculateTime(board.getCreateDate());
-//		this.createDate = board.getCreateDate().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		this.boardTags = board.getBoardTag().stream().map(BoardTagResponseDto::new).collect(Collectors.toList());
+	public BoardListResponseDto(int id, String title, String content, char type, int count, String nickname, Timestamp createDate,
+			long replyCount, long likesCount, String tagNames) {
+		this.id = id;
+		this.title = title;
+		this.content = content;
+		this.type = type;
+		this.count = count;
+		this.nickname = nickname;
+		this.createDate = ConvertLocaldatetimeToString.calculateTime(createDate.toLocalDateTime());
+		this.replyCount = replyCount;
+		this.likesCount = likesCount;
+		if(tagNames != null) {
+			this.tagNames = tagNames.split(",");
+		}
 	}
 
 	/*

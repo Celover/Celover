@@ -1,5 +1,6 @@
 package com.fan.celover.global.common;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
@@ -12,6 +13,8 @@ public class ConvertLocaldatetimeToString {
 		public static final int HOUR = 24;
 		public static final int DAY = 30;
 	}
+	
+	
 
 	public static String calculateTime(LocalDateTime localDateTime) {
 		

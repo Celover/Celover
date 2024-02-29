@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +29,9 @@ import com.fan.celover.global.role.Status;
 import com.fan.celover.global.security.model.PrincipalDetails;
 import com.fan.celover.global.tag.service.TagService;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -42,6 +46,9 @@ public class BoardService {
 	
 	@Autowired
 	private TagService tagService;
+	
+	@PersistenceContext
+	private EntityManager entityManager;
 	
 	@Transactional
 	public Board saveBoard(EnrollBoardRequestDto enrollBoardReq, User user) {
@@ -89,18 +96,80 @@ public class BoardService {
 		
 	}
 
+//	@Transactional(readOnly = true)
+//	public Page<BoardListResponseDto> boardList(Pageable pageable) {
+//		/*pageable 사용전
+//		System.out.println(boardRepository.findByTypeAndStatus("F", Status.Y, pageable));
+//		return BoardListResponseDto.from(boardRepository.findByTypeAndStatus("F", Status.Y, pageable));
+//		*/
+//		Page<Board> entity = boardRepository.findByTypeAndStatus("F", Status.Y, pageable);
+//		// e 는 내부의 각 요소들을 의미함, 이 각 요소들을 매개변수로 dto 를 만들어준다.
+//		Page<BoardListResponseDto> dto = entity.map(e -> new BoardListResponseDto(e));
+//		
+//		return dto;
+//	}
+	
 	@Transactional(readOnly = true)
 	public Page<BoardListResponseDto> boardList(Pageable pageable) {
-		/*pageable 사용전
-		System.out.println(boardRepository.findByTypeAndStatus("F", Status.Y, pageable));
-		return BoardListResponseDto.from(boardRepository.findByTypeAndStatus("F", Status.Y, pageable));
-		*/
-		Page<Board> entity = boardRepository.findByTypeAndStatus("F", Status.Y, pageable);
-		// e 는 내부의 각 요소들을 의미함, 이 각 요소들을 매개변수로 dto 를 만들어준다.
-		Page<BoardListResponseDto> dto = entity.map(e -> new BoardListResponseDto(e));
+
+		String sql = "SELECT b.id, b.title, b.content"
+				+ ", b.type"
+				+ ", b.count"
+				+ ", u.nickName"
+				+ ", b.createDate"
+				+ ", IFNULL(r.replyCount, 0) AS replyCount"
+				+ ", IFNULL(l.likesCount, 0) AS likesCount"
+				+ ", GROUP_CONCAT(bt.tagName SEPARATOR ',') AS tagNames "
+				+ "FROM board b "
+				+ "LEFT JOIN user u ON (b.userId = u.id) "
+				+ "LEFT JOIN ( "
+				+ "SELECT boardId, count(id) AS replyCount "
+				+ "FROM reply "
+				+ "GROUP BY boardId "
+				+ ") r ON (b.id = r.boardId) "
+				+ "LEFT JOIN ( "
+				+ "SELECT referenceId, count(id) AS likesCount "
+				+ "FROM likes "
+				+ "WHERE category = 0 "
+				+ "GROUP BY referenceId "
+				+ ") l on (b.id = l.referenceId) "
+				+ "LEFT JOIN ( "
+				+ "SELECT bt.id, bt.boardId, t.tagName "
+				+ "FROM boardTag bt "
+				+ "LEFT JOIN tag t "
+				+ "ON (bt.tagId = t.id) "
+				+ ") bt ON (b.id = bt.boardId) "
+				+ "WHERE b.type = 'F' AND b.status = :status "
+				+ "GROUP BY b.id"
+				+ ", b.title"
+				+ ", b.content"
+				+ ", b.type"
+				+ ", b.count"
+				+ ", u.nickName"
+				+ ", b.createDate"
+				+ ", replyCount"
+				+ ", likesCount "
+				+ "ORDER BY b.id desc";
 		
-		return dto;
+		Query query = entityManager.createNativeQuery(sql, BoardListResponseDto.class);
+		
+		query.setMaxResults(pageable.getPageSize());
+		query.setFirstResult((int) pageable.getOffset());
+		query.setParameter("status", Status.Y.toString());
+		
+		List<BoardListResponseDto> myDtoList = query.getResultList();
+		
+	    String countSql = "SELECT COUNT(*) FROM (" + sql + ") AS countQuery";
+	    Query countQuery = entityManager.createNativeQuery(countSql);
+	    countQuery.setParameter("status", Status.Y.toString());
+	    
+	    Long total = (Long) countQuery.getSingleResult();
+	    
+	    Page<BoardListResponseDto> pageResult = new PageImpl<>(myDtoList, pageable, total);
+		
+		return pageResult;
 	}
+	
 	
 	@Transactional
 	public void updateCount(int boardId) {

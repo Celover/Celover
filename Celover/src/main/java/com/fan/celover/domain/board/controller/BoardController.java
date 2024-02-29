@@ -1,6 +1,7 @@
 package com.fan.celover.domain.board.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -10,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.fan.celover.domain.board.dto.BoardListResponseDto;
 import com.fan.celover.domain.board.service.BoardService;
 import com.fan.celover.global.security.model.PrincipalDetails;
 
@@ -40,7 +42,10 @@ public class BoardController {
 	@GetMapping("board/freeboards")
 	public String boardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable) {
 		System.out.println(boardService.boardList(pageable));
-		model.addAttribute("boards", boardService.boardList(pageable));
+		
+		Page<BoardListResponseDto> boards = boardService.boardList(pageable);
+		
+		model.addAttribute("boards", boards);
 		return "main/board/board-freeboards";
 	}
 	

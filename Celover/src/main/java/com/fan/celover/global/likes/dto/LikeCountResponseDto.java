@@ -1,7 +1,5 @@
 package com.fan.celover.global.likes.dto;
 
-import com.fan.celover.global.likes.model.Likes;
-
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

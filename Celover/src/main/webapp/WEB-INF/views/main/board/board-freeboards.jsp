@@ -58,16 +58,16 @@
 				</div>
 				<div id="topPaginationArea" class="col-md-2" style="text-align: right;">
 					<c:choose>
-						<c:when test="${empty boards.content}">
+						<c:when test="${empty boardstest.content}">
 						
 						</c:when>
 						<c:otherwise>
 							<div>
-								<span> <span id="currentPage">${boards.number}</span>/<span id="totalPage">${boards.totalPages - 1}</span> 페이지 
+								<span> <span id="currentPage">${boardstest.number}</span>/<span id="totalPage">${boardstest.totalPages -1}</span> 페이지 
 								<c:choose>
-									<c:when test="${!boards.first }">
+									<c:when test="${!boardstest.first }">
 										<!-- 페이지가 첫번째가 아닐 경우 previous 버튼 활성화 -->
-										<a class="prev-next" href="?page=${boards.number - 1}"><i class="fa-solid fa-arrow-left-long"></i></a>&nbsp;
+										<a class="prev-next" href="?page=${boardstest.number - 1}"><i class="fa-solid fa-arrow-left-long"></i></a>&nbsp;
 									</c:when>
 									<c:otherwise>
 										<!-- 페이지가 첫번째가 일 경우 previous 버튼 비활성화 -->
@@ -75,9 +75,9 @@
 									</c:otherwise>
 								</c:choose>
 								<c:choose>
-									<c:when test="${!boards.last }">
+									<c:when test="${!boardstest.last }">
 										<!-- 페이지가 마지막이 아닐 경우 next 버튼 활성화 -->	
-										<a class="prev-next" href="?page=${boards.number + 1}"><i class="fa-solid fa-arrow-right"></i></a>
+										<a class="prev-next" href="?page=${boardstest.number + 1}"><i class="fa-solid fa-arrow-right"></i></a>
 									</c:when>
 									<c:otherwise>
 										<!-- 페이지가 첫번째가 일 경우 next 버튼 비활성화 -->
@@ -113,14 +113,16 @@
 									<input class="hiddenPageNo" type="hidden" value="${boards.number }">
 								</div>
 								<div class="bottom-area d-flex">
-									<c:forEach var="tag" items="${board.boardTags}">
-										<span>#${tag.tagObjResponseDto.tagName}</span>&nbsp;
+									<c:forEach var="tag" items="${board.tagNames}">
+										<span>#${tag}</span>&nbsp;
 									</c:forEach>
 								</div>
 							</div>
 							<div class="right-area">
 								<div>
-									<i class="fa-regular fa-eye"> ${board.count }</i> <i class="fa-regular fa-comment-dots"> 0</i> <i class="fa-regular fa-thumbs-up"> 30</i>
+									<i class="fa-regular fa-eye"> ${board.count }</i> 
+									<i class="fa-regular fa-comment-dots"> ${board.replyCount }</i> 
+									<i class="fa-regular fa-thumbs-up"> ${board.likesCount }</i>
 								</div>
 							</div>
 						</div>
@@ -250,7 +252,10 @@
 </div>
 
 <script>
-	console.log("${empty boards.content}")
+
+	console.log("${boardstest.totalPages - 1}")
+	console.log("${boardstest}")
+	
 </script>
 
 <script src="/js/boardFreeboards.js"></script>
