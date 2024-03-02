@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fan.celover.domain.board.dto.BoardAndReplyDetailResponseDto;
+import com.fan.celover.domain.board.dto.BoardListResponseDto;
 import com.fan.celover.domain.board.dto.EnrollBoardRequestDto;
 import com.fan.celover.domain.board.dto.ReplyDeleteRequestDto;
 import com.fan.celover.domain.board.dto.ReplyResponseDto;
@@ -45,6 +50,17 @@ public class BoardApiController {
 	
 	@Autowired
 	private LikesService likesService;
+	
+//	@GetMapping("/api/board/search")
+//	public ResponseDto<Integer> searchBoard(@RequestParam String keyword, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable){
+//		
+//		System.out.println(keyword);
+//		Page<BoardListResponseDto> searchBoards = boardService.searchBoard(keyword, pageable);
+//		
+//		System.out.println(searchBoards);
+//		return new ResponseDto<Integer>(HttpStatus.OK.value(), searchBoards ,1);
+//		
+//	}
 	
 	@PostMapping("/api/board")
 	public ResponseDto<Integer> saveBoard(@RequestBody EnrollBoardRequestDto enrollBoardReq, @AuthenticationPrincipal PrincipalDetails principal){

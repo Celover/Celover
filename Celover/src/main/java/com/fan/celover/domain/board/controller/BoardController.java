@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.fan.celover.domain.board.dto.BoardListResponseDto;
 import com.fan.celover.domain.board.service.BoardService;
@@ -40,12 +41,14 @@ public class BoardController {
 	}
 
 	@GetMapping("board/freeboards")
-	public String boardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable) {
-		System.out.println(boardService.boardList(pageable));
+	public String boardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
 		
-		Page<BoardListResponseDto> boards = boardService.boardList(pageable);
+		// lastest : 최근순, recommended : 추천순, comment : 댓글순, view : 조회순
+		Page<BoardListResponseDto> boards = boardService.searchBoard(keyword, pageable, sort);
 		
+		model.addAttribute("sort", sort);
 		model.addAttribute("boards", boards);
+		model.addAttribute("keyword", keyword);
 		return "main/board/board-freeboards";
 	}
 	

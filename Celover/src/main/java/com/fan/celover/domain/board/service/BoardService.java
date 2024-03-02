@@ -51,6 +51,88 @@ public class BoardService {
 	private EntityManager entityManager;
 	
 	@Transactional
+	public Page<BoardListResponseDto> searchBoard(String keyword, Pageable pageable, String sort) {
+
+		String orderBy = "b.id";
+		
+		System.out.println(sort);
+		
+		switch (sort) {
+			case "lastest":
+				orderBy = "b.id";
+				break;
+			case "recommend":
+				orderBy = "likesCount";
+				break;
+			case "comment":
+				orderBy = "replyCount";
+				break;
+			case "view":
+				orderBy = "b.count";
+				break;
+			default:
+				throw new IllegalArgumentException("잘못된 요청입니다!");
+		}
+
+		String sql = "SELECT b.id, b.title, b.content, b.type, b.count, u.nickName, b.createDate"
+				+ ", IFNULL(r.replyCount, 0) AS replyCount"
+				+ ", IFNULL(l.likesCount, 0) AS likesCount"
+				+ ", GROUP_CONCAT(bt.tagName SEPARATOR ',') AS tagNames "
+				+ "FROM board b "
+				+ "LEFT JOIN user u ON (b.userId = u.id) "
+				+ "LEFT JOIN ( "
+				+ "SELECT boardId, count(id) AS replyCount "
+				+ "FROM reply "
+				+ "GROUP BY boardId "
+				+ ") r ON (b.id = r.boardId) "
+				+ "LEFT JOIN ( "
+				+ "SELECT referenceId, count(id) AS likesCount "
+				+ "FROM likes "
+				+ "WHERE category = 0 "
+				+ "GROUP BY referenceId "
+				+ ") l on (b.id = l.referenceId) "
+				+ "LEFT JOIN ( "
+				+ "SELECT bt.id, bt.boardId, t.tagName "
+				+ "FROM boardTag bt "
+				+ "LEFT JOIN tag t "
+				+ "ON (bt.tagId = t.id) "
+				+ ") bt ON (b.id = bt.boardId) "
+				+ "WHERE b.type = 'F' AND b.status = :status AND b.title LIKE CONCAT('%', :keyword, '%') "
+				+ "GROUP BY b.id"
+				+ ", b.title"
+				+ ", b.content"
+				+ ", b.type"
+				+ ", b.count"
+				+ ", u.nickName"
+				+ ", b.createDate"
+				+ ", replyCount"
+				+ ", likesCount "
+				+ "ORDER BY "
+				+ orderBy
+				+ " DESC, b.id DESC";
+		
+		Query query = entityManager.createNativeQuery(sql, BoardListResponseDto.class);
+		
+		query.setMaxResults(pageable.getPageSize());
+		query.setFirstResult((int) pageable.getOffset());
+		query.setParameter("status", Status.Y.toString());
+		query.setParameter("keyword", keyword);
+		
+		List<BoardListResponseDto> myDtoList = query.getResultList();
+		
+	    String countSql = "SELECT COUNT(*) FROM (" + sql + ") AS countQuery";
+	    Query countQuery = entityManager.createNativeQuery(countSql);
+	    countQuery.setParameter("status", Status.Y.toString());
+	    countQuery.setParameter("keyword", keyword);
+	    
+	    Long total = (Long) countQuery.getSingleResult();
+	    
+	    Page<BoardListResponseDto> pageResult = new PageImpl<>(myDtoList, pageable, total);
+		
+		return pageResult;
+	}
+	
+	@Transactional
 	public Board saveBoard(EnrollBoardRequestDto enrollBoardReq, User user) {
 
 		// back에서 게시글 제목 null check

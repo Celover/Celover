@@ -52,6 +52,10 @@
 	margin-right: 12px;
 }
 
+#boardMain #boardNavigation .filter-area ul li:hover {
+	cursor: pointer;
+}
+
 #boardMain #boardNavigation>div:first-child {
 	border-bottom: 2px solid #dee2e6;
 }
@@ -85,20 +89,22 @@
 	border-bottom: 3px solid #0d6efd;
 }
 
-#boardMain #boardNavigation #searchArea div {
+#boardMain #boardNavigation #searchArea form {
 	border: 2px solid #dee2e6;
 	border-radius: 0.75rem;
 	padding: 5px 10px;
 	width: 230px;
-}
-
-#boardMain #boardNavigation #searchArea>div {
 	margin: auto;
 }
 
-#boardMain #boardNavigation #searchArea>div input {
+#boardMain #boardNavigation #searchArea input {
 	border: none;
 	outline: none;
+}
+
+#boardMain #boardNavigation #refreshArea i:hover {
+	color: #0d6efd;
+	cursor: pointer;
 }
 
 #boardMain #boardNavigation #refreshArea i {
@@ -111,6 +117,10 @@
 
 #boardMain #boardNavigation #topPaginationArea .disabled {
 	color: rgb(203, 213, 225);
+}
+
+#boardMain #boardNavigation .filter:hover {
+	border: 1px solid black !important;
 }
 
 #boardMain #boardList .boardItem {
