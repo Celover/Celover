@@ -135,12 +135,7 @@
 					<i class="fas fa-ellipsis-vertical">
 						<div class="msgbox">
 			                <ul>
-			                	<li id="updateBoard">
-			                		<i class="fa-solid fa-pen-to-square"></i>수정하기
-			                	</li>
-			                	<li id="deleteBoard">
-			                		<i class="fa-solid fa-trash-can"></i>삭제하기		 					
-			                	</li>
+
 			                </ul>
 		                </div>
                 	</i>
@@ -209,7 +204,6 @@
 		<script>
 
 			$(function () {
-				
 				// 현재 게시글의 리스트 페이지 번호를 가져오는 메서드
 				if(sessionStorage.getItem('currentPage') == null){
 					// 만약 리스트를 통해서 board에 접근한것이 아닌 url을 직접 입력하여 들어온경우 0으로 세팅
@@ -239,7 +233,21 @@
 								alert(res.data);
 							} else {
 								alert("게시글이 삭제 되었습니다.");
-								location.href="/board/freeboards?page=" + sessionStorage.getItem("currentPage");
+								
+								// keyword가 비어있고 정렬이 최신순이 아닐경우
+								if(sessionStorage.getItem("keyword") == "" && sessionStorage.getItem("sort") == "lastest"){
+									location.href="/board/freeboards?page=" + sessionStorage.getItem("currentPage");
+								// keyword가 비어있을경우
+								}else if(sessionStorage.getItem("keyword") == ""){
+									location.href="/board/freeboards?page=" + sessionStorage.getItem("currentPage") + "&sort=" + sessionStorage.getItem("sort");
+								// sort가 비어있을 경우
+								}else if(sessionStorage.getItem("sort") == "lastest"){
+									location.href="/board/freeboards?keyword=" + sessionStorage.getItem("keyword") + "&page=" + sessionStorage.getItem("currentPage");
+								// 둘다 비어있지 않은 경우
+								}else{
+									location.href="/board/freeboards?keyword=" + sessionStorage.getItem("keyword") + "&page=" + sessionStorage.getItem("currentPage") + "&sort=" + sessionStorage.getItem("sort");
+								}
+								
 							}
 						},error:function(){
 							console.log("게시글 삭제 ajax 통신 실패!")	
@@ -526,6 +534,22 @@
 						$(".count").html("&bull; <i class='fa-regular fa-eye'></i> " + board.count);
 						$("#boardTitle h4").text(board.title);
 						$("#boardContent").html(board.content);		
+						
+						if(board.userId =="${principal.user.id}"){
+							
+							let html = `<li id="updateBoard">
+	                					<i class="fa-solid fa-pen-to-square"></i>수정하기
+		                			</li>
+		                			<li id="deleteBoard">
+		                				<i class="fa-solid fa-trash-can"></i>삭제하기		 					
+		                			</li>`;
+		                	$(".etc-area .msgbox ul").html(html);
+						}else{
+							let html = `<li id="reportBoard">
+	                					<i class="fa-solid fa-pen-to-square"></i>신고하기
+		                			</li>`
+		                	$(".etc-area .msgbox ul").html(html);
+						}
 						
 						
 						let tags = board.boardTags.map(e => e.tagObjResponseDto.tagName);

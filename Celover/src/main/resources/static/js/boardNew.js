@@ -90,7 +90,9 @@ $(function() {
 			contentType: "application/json; charset=UTF-8",
 			dataType: "json",
 			success: function(res) {
-
+				
+				console.log(res)
+				
 				if (res.status === 500) {
 					alert(res.data);
 				} else {

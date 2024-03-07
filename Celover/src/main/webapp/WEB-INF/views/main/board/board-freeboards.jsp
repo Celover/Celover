@@ -35,8 +35,16 @@
 				<div class="col-8">
 
 					<ul class="nav justify-content-center">
-						<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">자유게시판</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">공지사항</a></li>
+						<c:choose>
+							<c:when test="${category eq 'N' }">
+								<li class="nav-item"><a class="nav-link" aria-current="page" href="/board/freeboards">자유게시판</a></li>
+								<li class="nav-item"><a class="nav-link active" href="/board/notices">공지사항</a></li>
+							</c:when>
+							<c:otherwise>
+								<li class="nav-item"><a class="nav-link active" aria-current="page" href="/board/freeboards">자유게시판</a></li>
+								<li class="nav-item"><a class="nav-link" href="/board/notices">공지사항</a></li>
+							</c:otherwise>
+						</c:choose>
 					</ul>
 
 				</div>
@@ -155,7 +163,10 @@
 									<img src="/img/user_profile_default.png" alt=""> <span class="nickname me-2">${board.nickname }</span> <span class="create-date">&bull; ${board.createDate }</span>
 								</div>
 								<div class="middle-area my-2 d-flex title">
-									<a href="/board/${board.id }">${board.title }</a> <input class="hiddenPageNo" type="hidden" value="${boards.number }">
+									<a href="/board/${board.id }">${board.title }</a> 
+									<input class="hiddenPageNo" type="hidden" value="${boards.number }">
+									<input class="hiddenSort" type="hidden" value="${sort }">
+									<input class="hiddenKeyword" type="hidden" value="${keyword}">
 								</div>
 								<div class="bottom-area d-flex">
 									<c:forEach var="tag" items="${board.tagNames}">

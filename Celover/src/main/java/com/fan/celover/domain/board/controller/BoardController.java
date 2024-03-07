@@ -41,14 +41,32 @@ public class BoardController {
 	}
 
 	@GetMapping("board/freeboards")
-	public String boardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
+	public String freeBoardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
 		
+		String type= "F";
+
 		// lastest : 최근순, recommended : 추천순, comment : 댓글순, view : 조회순
-		Page<BoardListResponseDto> boards = boardService.searchBoard(keyword, pageable, sort);
+		Page<BoardListResponseDto> boards = boardService.searchBoard(keyword, pageable, sort, type);
 		
 		model.addAttribute("sort", sort);
 		model.addAttribute("boards", boards);
 		model.addAttribute("keyword", keyword);
+		model.addAttribute("category", type);
+		return "main/board/board-freeboards";
+	}
+	
+	@GetMapping("board/notices")
+	public String noticeBoardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
+		
+		String type= "N";
+		
+		// lastest : 최근순, recommended : 추천순, comment : 댓글순, view : 조회순
+		Page<BoardListResponseDto> boards = boardService.searchBoard(keyword, pageable, sort, type);
+		
+		model.addAttribute("sort", sort);
+		model.addAttribute("boards", boards);
+		model.addAttribute("keyword", keyword);
+		model.addAttribute("category", type);
 		return "main/board/board-freeboards";
 	}
 	
@@ -58,8 +76,4 @@ public class BoardController {
 		return "main/board/board-detail";
 	}
 
-	@GetMapping("board/notices")
-	public String noticeForm() {
-		return "main/board/notices";
-	}
 }

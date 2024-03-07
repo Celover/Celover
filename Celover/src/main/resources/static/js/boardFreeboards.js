@@ -5,6 +5,8 @@ $(function() {
 	})
 
 	$(document).on("click", ".middle-area a", function() {
-		sessionStorage.setItem('currentPage', $(this).next().val())
+		sessionStorage.setItem('currentPage', $(this).parent().find(".hiddenPageNo").val())
+		sessionStorage.setItem('keyword', $(this).parent().find(".hiddenKeyword").val())
+		sessionStorage.setItem('sort', $(this).parent().find(".hiddenSort").val())
 	})
 })	

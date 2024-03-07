@@ -51,7 +51,7 @@ public class BoardService {
 	private EntityManager entityManager;
 	
 	@Transactional
-	public Page<BoardListResponseDto> searchBoard(String keyword, Pageable pageable, String sort) {
+	public Page<BoardListResponseDto> searchBoard(String keyword, Pageable pageable, String sort, String type) {
 
 		String orderBy = "b.id";
 		
@@ -97,7 +97,7 @@ public class BoardService {
 				+ "LEFT JOIN tag t "
 				+ "ON (bt.tagId = t.id) "
 				+ ") bt ON (b.id = bt.boardId) "
-				+ "WHERE b.type = 'F' AND b.status = :status AND b.title LIKE CONCAT('%', :keyword, '%') "
+				+ "WHERE b.type = :type AND b.status = :status AND b.title LIKE CONCAT('%', :keyword, '%') "
 				+ "GROUP BY b.id"
 				+ ", b.title"
 				+ ", b.content"
@@ -115,6 +115,7 @@ public class BoardService {
 		
 		query.setMaxResults(pageable.getPageSize());
 		query.setFirstResult((int) pageable.getOffset());
+		query.setParameter("type", type);
 		query.setParameter("status", Status.Y.toString());
 		query.setParameter("keyword", keyword);
 		
@@ -122,6 +123,7 @@ public class BoardService {
 		
 	    String countSql = "SELECT COUNT(*) FROM (" + sql + ") AS countQuery";
 	    Query countQuery = entityManager.createNativeQuery(countSql);
+	    countQuery.setParameter("type", type);
 	    countQuery.setParameter("status", Status.Y.toString());
 	    countQuery.setParameter("keyword", keyword);
 	    

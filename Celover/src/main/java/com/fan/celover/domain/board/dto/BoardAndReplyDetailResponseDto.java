@@ -25,6 +25,7 @@ public class BoardAndReplyDetailResponseDto {
 	private int count;	
 	private String nickname;
 	private String content;
+	private int userId;
 	// @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private String createDate;
 	private String lastModifiedDate;
@@ -36,6 +37,7 @@ public class BoardAndReplyDetailResponseDto {
 		this.title = board.getTitle();
 		this.type = board.getType();
 		this.count = board.getCount();
+		this.userId = board.getUser().getId();
 		this.nickname = board.getUser().getNickname();
 		this.content = board.getContent();
 		this.createDate = ConvertLocaldatetimeToString.calculateTime(board.getCreateDate());
