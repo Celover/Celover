@@ -41,7 +41,7 @@ public class BoardController {
 	}
 
 	@GetMapping("board/freeboards")
-	public String freeBoardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
+	public String freeBoardForm(Model model, @PageableDefault(page=0, size=3, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
 		
 		String type= "F";
 
@@ -56,7 +56,7 @@ public class BoardController {
 	}
 	
 	@GetMapping("board/notices")
-	public String noticeBoardForm(Model model, @PageableDefault(page=0, size=10, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
+	public String noticeBoardForm(Model model, @PageableDefault(page=0, size=3, sort="id", direction = Sort.Direction.DESC)Pageable pageable, @RequestParam(required = false, defaultValue = "") String keyword, @RequestParam(required = false, defaultValue = "lastest") String sort) {
 		
 		String type= "N";
 		

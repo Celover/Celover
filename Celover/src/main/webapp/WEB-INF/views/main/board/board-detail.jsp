@@ -119,7 +119,7 @@
 		<div id="boardDetailTop" class="mb-4">
 			<div class="d-flex">
 				<div class="left-area">
-					<img src="sampleImg/user_profile_default.png" alt="">
+					<img src="/img/user_profile_default.png" alt="">
 				</div>
 				<div class="right-area ps-2 flex-grow-1">
 					<div id="writerNickname" class="d-flex">
@@ -358,7 +358,7 @@
 									html += `<div class="reply-item py-3">
 												<div class="d-flex">
 													<div class="reply-first-section me-2">
-														<img src="sampleImg/user_profile_default.png" alt="">
+														<img src="/img/user_profile_default.png" alt="">
 													</div>
 													<div class="reply-second-section flex-grow-1">
 														<div class="reply-writer fw-bold">
@@ -395,6 +395,7 @@
 									html += `</ul></div></i></div></div></div>`;
 								
 								$("#replyItems").append(html);
+								$("#replyCount").html($(".reply-item").length);
 								
 								if(imgHtml != ""){
 									$(".imgArea").last().html('<div class="m-2"><img src="/img/로딩.gif"></div>');
@@ -571,7 +572,7 @@
 							html += `<div class="reply-item py-3">
 										<div class="d-flex">
 											<div class="reply-first-section me-2">
-												<img src="sampleImg/user_profile_default.png" alt="">
+												<img src="/img/user_profile_default.png" alt="">
 											</div>
 											<div class="reply-second-section flex-grow-1">
 												<div class="reply-writer fw-bold">

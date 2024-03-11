@@ -18,5 +18,7 @@ public interface BoardRepository extends JpaRepository<Board, Integer> {
 	Optional<Board> findByIdAndUserId(int id, int userId);
 	
 	Optional<Board> findByIdAndStatusAndUserId(int id, Status status, int userId);
+	
+	int deleteByUserId(int userId);
 
 }

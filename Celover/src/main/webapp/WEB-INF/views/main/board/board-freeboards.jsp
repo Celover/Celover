@@ -395,23 +395,21 @@
 												</c:choose>
 											</c:forEach>
 											<a class="btn">...</a>
-											<c:otherwise>
-												<c:choose>
-													<c:when test="${sort eq '' and keyword eq '' }">
-														<a class="btn" href="?page=${boards.totalPages -1}">${boards.totalPages -1}</a>
-													</c:when>
-													<c:when test="${keyword eq '' }">
-														<a class="btn" href="?page=${boards.totalPages -1}&sort=${sort}">${boards.totalPages -1}</a>
-													</c:when>
-													<c:when test="${sort eq '' }">
-														<a class="btn" href="?keyword=${keyword }&page=${boards.totalPages -1}">${boards.totalPages -1}</a>
-													</c:when>
-													<c:otherwise>
-														<a class="btn" href="?keyword=${keyword }&page=${boards.totalPages -1}&sort=${sort}">${boards.totalPages -1}</a>
-													</c:otherwise>
-												</c:choose>
-											</c:otherwise>
-										</c:otherwise>
+											<c:choose>
+												<c:when test="${sort eq '' and keyword eq '' }">
+													<a class="btn" href="?page=${boards.totalPages -1}">${boards.totalPages -1}</a>
+												</c:when>
+												<c:when test="${keyword eq '' }">
+													<a class="btn" href="?page=${boards.totalPages -1}&sort=${sort}">${boards.totalPages -1}</a>
+												</c:when>
+												<c:when test="${sort eq '' }">
+													<a class="btn" href="?keyword=${keyword }&page=${boards.totalPages -1}">${boards.totalPages -1}</a>
+												</c:when>
+												<c:otherwise>
+													<a class="btn" href="?keyword=${keyword }&page=${boards.totalPages -1}&sort=${sort}">${boards.totalPages -1}</a>
+												</c:otherwise>
+											</c:choose>
+										</c:otherwise> 
 									</c:choose>
 								</c:when>
 							</c:choose>

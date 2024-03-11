@@ -263,6 +263,21 @@ $(function() {
 			return;
 		}
 	})
+	
+	$("#withdrawal").click(function(){
+		if(confirm("정말로 탈퇴하시겠습니까 ?")){
+			$.ajax({
+				type: "DELETE",
+				url: "/mypage/users",
+				contentType: "application/json; charset=UTF-8",
+				dataType: "json",
+				success: function(resp) {
+					alert("회원탈퇴가 완료되었습니다.");
+					location.href="/logout";
+				}
+			})
+		}
+	})
 
 	$("#submitChangeInfo").click(function() {
 		let data = {

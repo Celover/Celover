@@ -44,16 +44,16 @@
 					<form action="/auth/login" method="post" id="loginForm">
 						<div id="idArea" class="input-group flex-nowrap my-1">
 							<span class="input-group-text" id="addon-wrapping"> <img src="/img/id_icon.png" alt="">
-							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디" value="admin">
+							</span> <input id="userId" name="userId" type="text" class="form-control" placeholder="아이디">
 						</div>
 						<div id="pwdArea" class="input-group flex-nowrap my-2">
 							<span class="input-group-text" id="addon-wrapping"> <img src="/img/password_icon.png" alt="">
-							</span> <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호" value="1234">
+							</span> <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호">
 						</div>
 						<div class="d-grid mt-4">
-							<div class="find-account mb-2">
+<!-- 							<div class="find-account mb-2">
 								<a href="/auth/find-id">아이디 찾기</a> / <a href="/auth/find-password">비밀번호 찾기</a>
-							</div>
+							</div> -->
 							<div class="login-account d-grid gap-2">
 								<button class="btn btn-primary" id="signIn">로그인</button>
 							</div>

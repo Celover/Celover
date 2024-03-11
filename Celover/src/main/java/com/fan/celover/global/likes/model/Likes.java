@@ -3,6 +3,7 @@ package com.fan.celover.global.likes.model;
 import com.fan.celover.domain.user.model.User;
 import com.fan.celover.global.role.Category;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

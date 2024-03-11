@@ -14,4 +14,6 @@ public interface LikesRepository extends JpaRepository<Likes, Integer>{
 	long countByReferenceIdAndCategory(int referenceId, Category category);
 	
 	int deleteByReferenceIdAndUserIdAndCategory(int referenceId, int userId, Category category);
+	
+	int deleteByUserId(int userId);
 }

@@ -126,7 +126,7 @@ public class Board {
 	@Column(length = 100)
 	private String title;
 
-	@Lob
+	@Column(columnDefinition="LONGTEXT")
 	private String content;
 
 	@NotBlank
@@ -144,7 +144,7 @@ public class Board {
 	@JoinColumn(name = "userId")
 	private User user;
 
-	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "board", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
 	@JsonIgnoreProperties({ "board" })
 	private List<BoardTag> boardTag;
 

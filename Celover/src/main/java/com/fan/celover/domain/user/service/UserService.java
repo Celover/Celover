@@ -12,16 +12,25 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fan.celover.domain.board.repository.BoardRepository;
 import com.fan.celover.domain.user.model.Role;
 import com.fan.celover.domain.user.model.User;
 import com.fan.celover.domain.user.model.UserStatus;
 import com.fan.celover.domain.user.repository.UserRepository;
+import com.fan.celover.global.likes.likesRepository.LikesRepository;
+import com.fan.celover.global.security.model.PrincipalDetails;
 
 @Service
 public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private LikesRepository likesRepository;
+
+	@Autowired
+	private BoardRepository boardRepository;
 
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -64,6 +73,16 @@ public class UserService {
 			return new NoSuchElementException();
 		});
 		return user;
+	}
+	
+	@Transactional
+	public void deleteUser(PrincipalDetails principal) {
+		int userId = principal.getUser().getId();
+		System.out.println(userId);
+		likesRepository.deleteByUserId(userId);
+		boardRepository.deleteByUserId(userId);
+		/* likesRepository.deleteById(principal.getUser().getId()); */
+		userRepository.deleteById(principal.getUser().getId());
 	}
 	
 	@Transactional

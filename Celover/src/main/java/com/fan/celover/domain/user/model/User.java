@@ -1,14 +1,24 @@
 package com.fan.celover.domain.user.model;
 
-import com.fan.celover.global.common.BaseTimeEntity;
+import java.util.List;
 
+import com.fan.celover.domain.board.model.Board;
+import com.fan.celover.domain.board.model.BoardTag;
+import com.fan.celover.domain.board.model.Reply;
+import com.fan.celover.global.common.BaseTimeEntity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -62,6 +72,10 @@ public class User extends BaseTimeEntity {
 
 	@Column(nullable = true, length = 13)
 	private String phone;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties({ "user" })
+	private List<Reply> replies;
 	
 	@Enumerated(EnumType.STRING)
     private UserStatus status;

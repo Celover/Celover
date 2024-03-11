@@ -68,25 +68,25 @@
 
 				<div class="p-4">
 					<ul class="nav">
-						<div id="searchArea" style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px; margin-right: 20px;'">
+<!-- 						<div id="searchArea" style="width: 260px; height: 45px; border: 0px; background-color: #f4f6f8; border-radius: 20px; margin-right: 20px;'">
 							<table style="border: 0px solid red;" align="center">
 								<tr style="line-height: 37px;">
 									<td style="width: 30px;"><img src="/img/돋보기.png" style="height: 20px; width: 20px;" alt=""></td>
 									<td><input type="text" style="background-color: #f4f6f8; border: 0;" placeholder="아티스트 검색"></td>
 								</tr>
 							</table>
-						</div>
+						</div> -->
 						<c:choose>
 							<c:when test="${ empty principal }">
 								<li class="nav-item sign-in-btn"><a href="/auth/login-form">Sign-in</a></li>
 							</c:when>
 							<c:otherwise>
 								<li class="nav-item mx-930"><a href="/board/freeboards"><img class="header_btn" src="/img/게시판.png" alt=""></a></li>
-								<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li>
+				<!-- 				<li class="nav-item mx-930"><a href="#"><img class="header_btn" src="/img/랭킹.png" alt=""></a></li> -->
 								<li class="nav-item mx-930"><a href="/mypage/info"><img class="header_btn" src="/img/사람.png" alt=""></a></li>
 								<!-- 							<li class="nav-item mx-930"><a href="/logout">임시로그아웃버튼</a></li>
  -->
-								<li class="nav-item mx-930"><a href="/cs/csmain"><img class="header_btn" src="/img/고객센터.png" alt=""></a></li>
+	<!-- 							<li class="nav-item mx-930"><a href="/cs/csmain"><img class="header_btn" src="/img/고객센터.png" alt=""></a></li> -->
 								<li class="nav-item mn-930"><a href="#"><img class="header_btn" src="/img/햄버거.png" alt=""></a></li>
 							</c:otherwise>
 						</c:choose>
@@ -97,16 +97,16 @@
 		</div>
 		<div class="dropdown-area">
 			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/알림.png" alt=""> <span>알림관리</span>
-				</a></li>
+<!-- 				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/알림.png" alt=""> <span>알림관리</span>
+				</a></li> -->
 				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/게시판.png" alt=""> <span>게시판</span>
 				</a></li>
-				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/랭킹.png" alt=""> <span>랭킹</span>
-				</a></li>
+		<!-- 		<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/랭킹.png" alt=""> <span>랭킹</span>
+				</a></li> -->
 				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/사람.png" alt=""> <span>마이페이지</span>
 				</a></li>
-				<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/고객센터.png" alt=""> <span>고객센터</span>
-				</a></li>
+	<!-- 			<li><a class="dropdown-item" href="#"> <img class="header_btn" src="/img/고객센터.png" alt=""> <span>고객센터</span>
+				</a></li> -->
 
 			</ul>
 		</div>

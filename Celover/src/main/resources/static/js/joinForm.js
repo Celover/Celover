@@ -106,7 +106,7 @@ $(document).on("click", "#eyeBtn .fa-eye-slash", function() {
 	$("#eyeBtn .fa-eye").css("display", "")
 })
 
-/* $(document).on("blur", "#createAccountArea #password", function () {
+ $(document).on("blur", "#createAccountArea #password", function () {
 
 	let pw = $("#createAccountArea #password").val();
 	let $pw = $("#createAccountArea #password");
@@ -133,7 +133,7 @@ $(document).on("click", "#eyeBtn .fa-eye-slash", function() {
 			$pw.parent().addClass("success");
 		}
 	}
-}) */
+}) 
 
 /* 이메일 유효성 검사 */
 $(document).on("blur", "#createAccountArea #email", function(){

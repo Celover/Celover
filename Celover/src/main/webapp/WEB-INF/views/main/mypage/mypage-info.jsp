@@ -113,7 +113,7 @@
 			</div>
 			<hr>
 			<div class="text-center">
-				<input type="button" class="btn btn-danger" value="탈퇴하기"> <input type="button" id="submitChangeInfo" class="btn btn-success" value="변경하기">
+				<input type="button" id="withdrawal" class="btn btn-danger" value="탈퇴하기"> <input type="button" id="submitChangeInfo" class="btn btn-success" value="변경하기">
 			</div>
 		</div>
 

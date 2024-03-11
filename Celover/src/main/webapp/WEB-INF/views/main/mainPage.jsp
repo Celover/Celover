@@ -6,9 +6,12 @@
 
 
 <!-- 메인페이지 영역 -->
-<div class="container-fluid" id="mainPage">
+<div class="container-fluid" id="mainPage" style="height: 50vh">
+	<div class="container" style="text-align:center;">
+		<h1 class="m-5 fw-bolder">Spring boot ToyProject</h1>
+	</div>
 
-	<!-- 캐러셀 영역 -->
+	<!--  캐러셀 영역 
 	<div style="background-color: black;">
 
 		<div style="height: 50px;"></div>
@@ -47,9 +50,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- 캐러셀 영역 끝 -->
+	캐러셀 영역 끝
 
-	<!--팬월드컵 모달-->
+	팬월드컵 모달
 	<div class="modal fade" id="fan_worldCup" tabindex="-1" aria-labelledby="fan_worldCup" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
@@ -65,10 +68,10 @@
 			</div>
 		</div>
 	</div>
-	<!-- 팬월드컵 모달 끝 -->
+	팬월드컵 모달 끝
 
 
-	<!--퀴즈 모달-->
+	퀴즈 모달
 	<div class="modal fade" id="quiz" tabindex="-1" aria-labelledby="quiz" aria-hidden="true">
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
@@ -99,11 +102,11 @@
 			</div>
 		</div>
 	</div>
-	<!--퀴즈 모달 끝 -->
+	퀴즈 모달 끝
 
 
 
-	<!-- following list 영역  -->
+	following list 영역 
 	<div class="container-fluid">
 		<div class="container following-list-area">
 			<h4 class="fw-bolder mt-5 mb-2">나의 커뮤니티</h4>
@@ -139,11 +142,11 @@
 				</button>
 			</div>
 		</div>
-		<!-- following list 영역 끝  -->
+		following list 영역 끝 
 
 		<br>
 
-		<!-- 1, 2, 3 등 영역 -->
+		1, 2, 3 등 영역
 		<div class="container ranking-area">
 			<div class="mt-4 mb-3" id="selectedArea">
 				<div class="form-group">
@@ -165,15 +168,15 @@
 						<div class="num-item">
 							<p class="ranking">1</p>
 							<p class="change-info">
-								<span> <!-- 순위 상승 --> <i class="fas fa-chevron-up"> <span>1</span>
-								</i> <!-- 순위 유지 --> <!--
+								<span> 순위 상승 <i class="fas fa-chevron-up"> <span>1</span>
+								</i> 순위 유지 
                                         <i class="fas fa-minus">
                                         </i>
-                                    --> <!-- 순위 하락 --> <!-- 
+                                    순위 하락 
                                         <i class="fas fa-chevron-down">
                                             <span>1</span>
                                         </i>
-                                    -->
+                                   
 								</span>
 							</p>
 						</div>
@@ -238,10 +241,10 @@
 
 			</div>
 		</div>
-		<!-- 1, 2, 3 등 영역 끝 -->
+		1, 2, 3 등 영역 끝
 
 		<br> <br>
-		<!-- 스타가 남긴 글 -->
+		스타가 남긴 글
 		<div class="mt-4 p-5 text-white rounded" id="starRemainArea">
 			<div class="container">
 				<div id="srContent" class="sr-content">
@@ -331,9 +334,9 @@
 				</div>
 			</div>
 		</div>
-		<!-- 스타가 남긴 글 끝 -->
+		스타가 남긴 글 끝
 
-		<!-- 순위 (3등 ~ 9등) -->
+		순위 (3등 ~ 9등)
 		<div class="container" id="rankingEtc">
 			<div class="row mt-5 ranking-cards">
 				<div class="col-sm-6 ranking-card">
@@ -341,12 +344,12 @@
 						<p class="ranking">4</p>
 						<p class="change-info">
 							<span> <i class="fas fa-chevron-down"> <span>1</span>
-							</i> <!-- <i class="fas fa-minus">
+							</i> <i class="fas fa-minus">
                                         <span>1</span>
                                     </i>
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -369,12 +372,12 @@
 						<p class="ranking">5</p>
 						<p class="change-info">
 							<span> <i class="fas fa-chevron-up"> <span>1</span>
-							</i> <!-- <i class="fas fa-minus">
+							</i> <i class="fas fa-minus">
                                         <span>1</span>
                                     </i>
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -397,12 +400,12 @@
 						<p class="ranking">6</p>
 						<p class="change-info">
 							<span> <i class="fas fa-chevron-down"> <span>1</span>
-							</i> <!-- <i class="fas fa-minus">
+							</i> <i class="fas fa-minus">
                                         <span>1</span>
                                     </i>
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -424,13 +427,13 @@
 					<div class="num-item">
 						<p class="ranking">7</p>
 						<p class="change-info">
-							<span> <!-- <i class="fas fa-chevron-down">
+							<span> <i class="fas fa-chevron-down">
                                         <span>1</span>
-                                    </i> --> <i class="fas fa-minus"> <span></span>
-							</i> <!--
+                                    </i> <i class="fas fa-minus"> <span></span>
+							</i> 
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -453,12 +456,12 @@
 						<p class="ranking">7</p>
 						<p class="change-info">
 							<span> <i class="fas fa-chevron-down"> <span>1</span>
-							</i> <!-- <i class="fas fa-minus">
+							</i> <i class="fas fa-minus">
                                         <span>1</span>
                                     </i>
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -481,12 +484,12 @@
 						<p class="ranking">7</p>
 						<p class="change-info">
 							<span> <i class="fas fa-chevron-down"> <span>1</span>
-							</i> <!-- <i class="fas fa-minus">
+							</i> <i class="fas fa-minus">
                                         <span>1</span>
                                     </i>
                                     <i class="fas fa-chevron-down">
                                         <span></span>
-                                    </i> -->
+                                    </i>
 							</span>
 						</p>
 					</div>
@@ -507,10 +510,10 @@
 				</div>
 			</div>
 		</div>
-		<!-- 순위 (3등 ~ 9등) 끝 -->
+		순위 (3등 ~ 9등) 끝
 		<br> <br>
 
-		<!-- 아티스트 추천 -->
+		아티스트 추천
 		<div class="container" id="recommendArtist">
 			<h4 class="fw-bolder mt-5 mb-2">새로운 아티스트를 만나보세요!</h4>
 			<br>
@@ -518,13 +521,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -534,13 +537,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -550,13 +553,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -566,13 +569,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -582,13 +585,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -598,13 +601,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -614,13 +617,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -630,13 +633,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -646,13 +649,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -662,13 +665,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -678,13 +681,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -694,13 +697,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -710,13 +713,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -726,13 +729,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -742,13 +745,13 @@
 				<div class="col">
 					<div class="card">
 
-						<a class="" href=""> <!-- 프로필 배경 -->
+						<a class="" href=""> 프로필 배경
 							<div class="profile-bg">
 								<img src="https://phinf.wevpstatic.net/MjAyMzEwMTRfMjY5/MDAxNjk3MjA5OTkzOTM4.UEC7tLYqLUzOlW5cc54El--PEP81n8dkzDq9SFGLYqAg.dzsdCU9XcC192CtzOAPBU4H7z4non_mry7cytUJLbkcg.JPEG/f6336076-baa0-4097-a0a2-dc8e1dc90135.jpeg?type=f416_416" alt="">
-							</div> <!-- 프로필 사진-->
+							</div> 프로필 사진
 							<div class="profile-img">
 								<img src="https://phinf.wevpstatic.net/MjAyMzA5MjBfMjky/MDAxNjk1MTM1NjgzMDc4.bgN1B4pIYMfOVchSm9mrkt-8L8yXyVWjjK8Xywaa7Cog.tTiSoucynyTjgCYgALOgAKPlIVzdMk6yTsn13TrXgaUg.JPEG/987421d1-0863-44d9-863b-ec3de74e43fe.jpeg?type=s86">
-							</div> <!-- 프로필 이름 -->
+							</div> 프로필 이름
 							<div class="profile-name">
 								<span>SEVENTEEN</span>
 							</div>
@@ -758,8 +761,8 @@
 
 			</div>
 		</div>
-		<!-- 아티스트 추천 끝 -->
-	</div>
+		아티스트 추천 끝
+	</div> -->
 </div>
 
 <script type="text/javascript" src="/js/mainPage.js"></script>

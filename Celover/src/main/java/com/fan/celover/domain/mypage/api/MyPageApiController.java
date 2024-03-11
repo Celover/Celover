@@ -5,11 +5,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.token.TokenService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -20,6 +22,7 @@ import com.fan.celover.domain.mypage.dto.UpdatePasswordReq;
 import com.fan.celover.domain.mypage.dto.UpdateUserReq;
 import com.fan.celover.domain.mypage.service.MyPageService;
 import com.fan.celover.domain.user.model.User;
+import com.fan.celover.domain.user.service.UserService;
 import com.fan.celover.global.dto.ResponseDto;
 import com.fan.celover.global.security.model.PrincipalDetails;
 import com.fan.celover.global.security.service.PrincipalDetailsService;
@@ -36,8 +39,11 @@ public class MyPageApiController {
 	private MyPageService myPageService;
 
 	@Autowired
-	private AuthenticationManager authenticationManager;
+	private UserService userService;
 
+	@Autowired
+	private AuthenticationManager authenticationManager;
+	
 	@Autowired
 	private SecurityUtils securityUtils;
 
@@ -81,6 +87,16 @@ public class MyPageApiController {
 
 		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 
+	}
+	
+	// 마이페이지 회원탈퇴
+	@DeleteMapping("/mypage/users")
+	public ResponseDto<Integer> deleteUser(@AuthenticationPrincipal PrincipalDetails principal){
+		
+		userService.deleteUser(principal);
+		
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1); 
+		
 	}
 
 	// 마이페이지 회원정보 수정

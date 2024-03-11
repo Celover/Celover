@@ -32,13 +32,14 @@
 					</div>
 					<ul class="nav flex-column">
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">내 정보 수정</a> <i class="fas fa-chevron-right p-2"></i></li>
+<!-- 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">내 정보 수정</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">나의 아티스트</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">내 글 관리</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">알림 관리</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">장바구니</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">구매내역</a> <i class="fas fa-chevron-right p-2"></i></li>
 						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">신고내역</a> <i class="fas fa-chevron-right p-2"></i></li>
-						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">문의내역</a> <i class="fas fa-chevron-right p-2"></i></li>
+						<li class="nav-item d-flex justify-content-between"><a class="nav-link p-3">문의내역</a> <i class="fas fa-chevron-right p-2"></i></li> -->
 					</ul>
 				</div>
 			</div>
